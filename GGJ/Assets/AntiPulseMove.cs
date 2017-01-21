@@ -17,4 +17,14 @@ public class AntiPulseMove : MonoBehaviour {
 	void Update () {
 		transform.Translate (new Vector3 (Time.deltaTime * -speed, 0, 0));
 	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        print("hoi");
+        if (other.gameObject.GetComponent<SquareBehavior>() != null)
+        {
+            
+            other.gameObject.GetComponent<SpriteRenderer>().color = color;
+        }
+    }
 }

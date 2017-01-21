@@ -18,4 +18,9 @@ public class PulseMove : MonoBehaviour {
 		transform.Translate (new Vector3 (Time.deltaTime * speed, 0, 0));
 	}
 
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.GetComponent<SquareBehavior>() != null) {
+            other.gameObject.GetComponent<SpriteRenderer>().color = color;
+        }
+    }
 }
