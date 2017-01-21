@@ -6,10 +6,10 @@ public class SquareBehavior : MonoBehaviour {
 
 	//public int Amplitude = 2;
 	public float Wavelength = 2f;
-
-	// Use this for initialization
+    // Use this for initialization
+    Vector2 lastPosition;
 	void Start () {
-
+        lastPosition = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -22,6 +22,10 @@ public class SquareBehavior : MonoBehaviour {
 			if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength) {
 				FinalYPos += pulse.GetComponent<PulseMove>().Amplitude * Mathf.Sin (((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
             }
+
+            if (pulse.transform.position.x < this.transform.position.x) {
+                GetComponent<SpriteRenderer>().color = pulse.GetComponent<PulseMove>().color;
+            }
 		}
 		foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("AntiPulse")) {
 			float xPos = transform.position.x;
@@ -31,7 +35,22 @@ public class SquareBehavior : MonoBehaviour {
 				FinalYPos += -pulse.GetComponent<AntiPulseMove>().Amplitude * Mathf.Sin ((Mathf.PI / Wavelength) * (xPos - xPulsePos));
 			}
 
-		}
+            if (pulse.transform.position.x > this.transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().color = pulse.GetComponent<AntiPulseMove>().color;
+            }
+
+        }
 		transform.position = new Vector3 (transform.position.x, FinalYPos, 0);
-	}
+        getVelocity();
+
+        GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.white, Time.deltaTime);
+
+    }
+
+    [HideInInspector] public float velocity;
+    void getVelocity() {
+        velocity =  transform.position.y - lastPosition.y;
+        lastPosition = transform.position;
+    }
 }

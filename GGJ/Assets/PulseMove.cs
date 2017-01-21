@@ -17,4 +17,5 @@ public class PulseMove : MonoBehaviour {
 	void Update () {
 		transform.Translate (new Vector3 (Time.deltaTime * speed, 0, 0));
 	}
+
 }
