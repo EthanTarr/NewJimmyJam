@@ -6,6 +6,7 @@ public class PulseMove : MonoBehaviour {
 
 	public float speed = 5;
 	public float Amplitude = 1;
+    public Color color = Color.white;
 
 	// Use this for initialization
 	void Start () {
@@ -16,4 +17,5 @@ public class PulseMove : MonoBehaviour {
 	void Update () {
 		transform.Translate (new Vector3 (Time.deltaTime * speed, 0, 0));
 	}
+
 }

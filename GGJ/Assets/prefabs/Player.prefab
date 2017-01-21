@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 50178276076775588}
   - component: {fileID: 114714135248306996}
   - component: {fileID: 58289229999886628}
+  - component: {fileID: 70378048699263238}
+  - component: {fileID: 95619662148139376}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -37,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737880092333408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.29, y: -1.37, z: 0}
+  m_LocalPosition: {x: -4.03, y: 4.48, z: 0}
   m_LocalScale: {x: 4.4809265, y: 4.4809265, z: 4.4809265}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,7 +71,7 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737880092333408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -77,6 +79,37 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07429673
+--- !u!70 &70378048699263238
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737880092333408}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.11, y: 0.15}
+  m_Direction: 0
+--- !u!95 &95619662148139376
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737880092333408}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4fdc94eb03c7b1743bc55e5f1e81b02a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114714135248306996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,10 +122,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control:
-    left: 97
-    right: 100
-    jump: 119
-    down: 115
+    left: 276
+    right: 275
+    jump: 273
+    down: 274
 --- !u!212 &212035578677471066
 SpriteRenderer:
   m_ObjectHideFlags: 1

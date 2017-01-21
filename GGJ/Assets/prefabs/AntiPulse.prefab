@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4417340531871820}
   - component: {fileID: 212587825395812110}
   - component: {fileID: 114827673971016512}
+  - component: {fileID: 61592502441605666}
   m_Layer: 0
   m_Name: AntiPulse
   m_TagString: AntiPulse
@@ -35,12 +36,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1554315179964700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.87, y: 0.19, z: 0}
+  m_LocalPosition: {x: 0.083621144, y: 1.5739716, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61592502441605666
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1554315179964700}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -1.1301432}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6.539915}
 --- !u!114 &114827673971016512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53,6 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  Amplitude: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &212587825395812110
 SpriteRenderer:
   m_ObjectHideFlags: 1
