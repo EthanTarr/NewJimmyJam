@@ -19,6 +19,11 @@ public class playertest : MonoBehaviour {
     public float smashSpeed;
     bool smashing;
 	private int jumps = 0;
+    public float bounceForce;
+
+    public bool laggin = false;
+    public bool canSmash = true;
+
 
     void Start() {
         rigid = GetComponent<Rigidbody2D>();
@@ -59,12 +64,13 @@ public class playertest : MonoBehaviour {
             }
 
 
-            if (Input.GetKeyDown(control.down)) {
+            if (Input.GetKeyDown(control.down) && canSmash && !smashing) {
                 rigid.velocity = new Vector2(0, -smashSpeed);
+                anim.SetBool("smashing", true);
                 smashing = true;
             }
         }
-        anim.SetBool("smashing", smashing);
+
 		if (touchingGround) {
 			checkForWave ();
 		}
@@ -85,35 +91,61 @@ public class playertest : MonoBehaviour {
         return hit;
     }
 
-    void recover() {
-        smashing = false;
-    }
-
     float velocity;
     void LateUpdate() {
         velocity = rigid.velocity.y;
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8) {
-            float strength = other.relativeVelocity.magnitude / 10f;
-            if (smashing) {
+        if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8)
+        {
+            float strength = other.relativeVelocity.magnitude / 20f;
+            if (smashing)
+            {
+                canSmash = false;
                 GameObject shockwave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
                 shockwave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, shockwave.GetComponent<SpriteRenderer>().color.a);
                 Shake.instance.shake(2, 3);
-                smashing = false;
+                rigid.velocity = Vector3.zero;
+                WaveGenerator.instance.makeWave(transform.position.x, strength,  GetComponent<SpriteRenderer>().color);
+                StartCoroutine(recovery());
             }
-            
+            else {
+                WaveGenerator.instance.makeWave(transform.position.x, strength, Color.white);
+            }
 
-            WaveGenerator.instance.makeWave(transform.position.x, strength, GetComponent<SpriteRenderer>().color);
+
+            
         }
     }
 
-    void OnCollisionStay2D(Collision2D other)
+    void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.tag.Equals("Floor")) {
-            rigid.AddForce(new Vector2(0, other.gameObject.GetComponent<SquareBehavior>().velocity * 1500));
+            rigid.AddForce(new Vector2(0, other.gameObject.GetComponent<SquareBehavior>().velocity * (canSmash ? 5000 : 1000)));
         }
+    }
+
+    void regainSmash() { 
+        canSmash = true;
+    }
+
+    IEnumerator recovery() {
+        smashing = false;
+        Color color = GetComponent<SpriteRenderer>().color;
+        color.a = 0.5f;
+        GetComponent<SpriteRenderer>().color = color;
+        laggin = true;
+        yield return new WaitForSeconds(1);
+        laggin = false;
+        anim.SetBool("smashing", false);
+        yield return new WaitForSeconds(3);
+        GameObject shockwave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
+
+        color = GetComponent<SpriteRenderer>().color;
+        color.a = 255f;
+        GetComponent<SpriteRenderer>().color = color;
+        canSmash = true;
     }
 }
 

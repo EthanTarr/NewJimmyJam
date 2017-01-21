@@ -15,7 +15,8 @@ public class SquareBehavior : MonoBehaviour {
         lastPosition = transform.position;
 		standardY = transform.position.y;
 	}
-	
+
+    float maxAmplitude = 5f;
 	// Update is called once per frame
 	void Update () {
 		initialY = transform.position.y;
@@ -36,7 +37,10 @@ public class SquareBehavior : MonoBehaviour {
 				TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * Mathf.Sin ((Mathf.PI / Wavelength) * (xPos - xPulsePos));
 			}
         }
-		transform.position = new Vector3 (transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime), 0);
+
+        TotalAmplitude = Mathf.Min(TotalAmplitude, maxAmplitude);
+        TotalAmplitude = Mathf.Max(TotalAmplitude, -maxAmplitude);
+        transform.position = new Vector3 (transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime), 0);
         getVelocity();
 
         GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.white, Time.deltaTime);
