@@ -133,8 +133,9 @@ MonoBehaviour:
   maxJumpHeight: 15
   minJumpHeight: 5
   shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
+  dustParticles: {fileID: 0}
   smashSpeed: 15
-  bounceForce: 25
+  bounceForce: 50
   laggin: 0
   canSmash: 1
 --- !u!212 &212035578677471066
