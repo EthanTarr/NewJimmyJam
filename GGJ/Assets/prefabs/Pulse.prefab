@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4518372638439382}
   - component: {fileID: 212058059531942750}
   - component: {fileID: 114581425084310468}
+  - component: {fileID: 61976861351347916}
   m_Layer: 0
   m_Name: Pulse
   m_TagString: Pulse
@@ -35,12 +36,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370316028781630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9974595, y: 2.3882666, z: 0}
+  m_LocalPosition: {x: -2.4425812, y: 0.59894633, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61976861351347916
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370316028781630}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -1.1301432}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6.539915}
 --- !u!114 &114581425084310468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53,6 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  Amplitude: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &212058059531942750
 SpriteRenderer:
   m_ObjectHideFlags: 1
