@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour {
 
 	void SpawnSqures() {
 		for (int i = -FloorSpawns; i < FloorSpawns; i++) {
-			Instantiate (Square, new Vector3 (.5f * i, -Mathf.Abs(Mathf.Pow(.08f *i,2)), 0), Quaternion.identity);
-		}
+			//Instantiate (Square, new Vector3 (.5f * i, -Mathf.Abs(Mathf.Pow(.08f *i,2)), 0), Quaternion.identity);
+            Instantiate(Square, new Vector3(.5f * i, 0), Quaternion.identity);
+        }
 	}
 }

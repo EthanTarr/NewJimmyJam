@@ -107,11 +107,12 @@ public class playertest : MonoBehaviour {
                 shockwave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, shockwave.GetComponent<SpriteRenderer>().color.a);
                 Shake.instance.shake(2, 3);
                 rigid.velocity = Vector3.zero;
-                WaveGenerator.instance.makeWave(transform.position.x, strength,  GetComponent<SpriteRenderer>().color);
+                strength *= 5;
+                WaveGenerator.instance.makeWave(transform.position.x, strength,  GetComponent<SpriteRenderer>().color, 7);
                 StartCoroutine(recovery());
             }
             else {
-                WaveGenerator.instance.makeWave(transform.position.x, strength, Color.white);
+                WaveGenerator.instance.makeWave(transform.position.x, strength, Color.white, 3);
             }
 
 

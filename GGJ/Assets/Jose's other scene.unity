@@ -997,7 +997,7 @@ Prefab:
     - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
       propertyPath: bounceForce
-      value: 1
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}

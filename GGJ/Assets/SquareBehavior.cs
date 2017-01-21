@@ -5,7 +5,7 @@ using UnityEngine;
 public class SquareBehavior : MonoBehaviour {
 
 	public float TotalAmplitude;
-	public float Wavelength = 2f;
+	public float Wavelength = 5f;
 	private float initialY = 0;
 	private float standardY;
 
