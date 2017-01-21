@@ -18,6 +18,7 @@ public class playertest : MonoBehaviour {
 
     public float smashSpeed;
     bool smashing;
+	private float previousAmplitude = 0;
 	private int jumps = 0;
     public float bounceForce;
 
@@ -74,12 +75,16 @@ public class playertest : MonoBehaviour {
 		if (touchingGround) {
 			checkForWave ();
 		}
+
     }
 		
 	void checkForWave() {
 		foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor")) {
-			if (Mathf.Abs (square.transform.position.x - transform.position.x) < .5f && square.GetComponent<SquareBehavior> ().TotalAmplitude > 1) {
-				rigid.AddForce (new Vector2(0, square.GetComponent<SquareBehavior> ().TotalAmplitude * bounceForce));
+			if (Mathf.Abs (square.transform.position.x - transform.position.x) < .5f) {
+				if (square.GetComponent<SquareBehavior> ().TotalAmplitude - previousAmplitude > .5) {
+					rigid.AddForce (new Vector2 (0, square.GetComponent<SquareBehavior> ().TotalAmplitude * bounceForce));
+				}
+				previousAmplitude = square.GetComponent<SquareBehavior> ().TotalAmplitude;
 			}
 		}
 	}

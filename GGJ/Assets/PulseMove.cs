@@ -20,7 +20,7 @@ public class PulseMove : MonoBehaviour {
 			transform.Translate (new Vector3 (Time.deltaTime * speed, 0, 0));
 		} else if (forward) {
 			forward = false;
-			if (Amplitude < .5f) {
+			if (Amplitude < 1f) {
 				Destroy (this.gameObject);
 			}
 			Amplitude = Amplitude / 4;
@@ -28,7 +28,7 @@ public class PulseMove : MonoBehaviour {
 			transform.Translate (new Vector3 (Time.deltaTime * -speed, 0, 0));
 		} else if (!forward) {
 			forward = true;
-			if (Amplitude < .5f) {
+			if (Amplitude < 1f) {
 				Destroy (this.gameObject);
 			}
 			Amplitude = Amplitude / 4;
