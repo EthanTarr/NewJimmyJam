@@ -1863,8 +1863,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cafd1507cdf9147989cecc19cd7c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shockWave: {fileID: 0}
-  deathParticle: {fileID: 0}
+  shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
+  deathParticle: {fileID: 1879571905062228, guid: 5b8a694f9d402434bb03b70352435cac,
+    type: 2}
 --- !u!1 &1487924129
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,7 @@ public class playertest : MonoBehaviour {
 	private float previousAmplitude = 0;
 	private int jumps = 0;
     public float bounceForce;
+	public GameObject Spike;
 
     public bool laggin = false;
     public bool canSmash = true;
@@ -116,6 +117,9 @@ public class playertest : MonoBehaviour {
                 strength *= 5;
                 WaveGenerator.instance.makeWave(transform.position.x, strength,  GetComponent<SpriteRenderer>().color, 7);
                 dustParticles.Emit(UnityEngine.Random.Range(5, 8));
+				if (UnityEngine.Random.value < .5f) {
+					//Instantiate(
+				}
                 StartCoroutine(recovery());
             }
             else {
