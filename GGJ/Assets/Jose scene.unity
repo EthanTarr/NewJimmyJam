@@ -246,12 +246,23 @@ Prefab:
     - target: {fileID: 50178276076775588, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
       propertyPath: m_CollisionDetection
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
       propertyPath: bounceForce
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: shockWave
+      value: 
+      objectReference: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1,
+        type: 2}
+    - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: smashSpeed
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
@@ -311,7 +322,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Square: {fileID: 1472568061012158, guid: c51cb9dfa9dd2d641bfa1591c5e7af6d, type: 2}
-  FloorSpawns: 20
+  FloorSpawns: 23
+  minFloorPlacement: -18
+  maxFloorPlacement: 18
 --- !u!1001 &321515912
 Prefab:
   m_ObjectHideFlags: 0
@@ -949,6 +962,17 @@ Prefab:
         type: 2}
       propertyPath: bounceForce
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: shockWave
+      value: 
+      objectReference: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1,
+        type: 2}
+    - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: smashSpeed
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
@@ -1839,6 +1863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cafd1507cdf9147989cecc19cd7c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shockWave: {fileID: 0}
+  deathParticle: {fileID: 0}
 --- !u!1 &1487924129
 GameObject:
   m_ObjectHideFlags: 0
