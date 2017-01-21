@@ -27,10 +27,6 @@ public class SquareBehavior : MonoBehaviour {
 			if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength) {
 				TotalAmplitude += pulse.GetComponent<PulseMove>().Amplitude * Mathf.Sin (((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
             }
-
-            if (pulse.transform.position.x < this.transform.position.x) {
-                GetComponent<SpriteRenderer>().color = pulse.GetComponent<PulseMove>().color;
-            }
 		}
 		foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("AntiPulse")) {
 			float xPos = transform.position.x;
@@ -39,12 +35,6 @@ public class SquareBehavior : MonoBehaviour {
 			if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength) {
 				TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * Mathf.Sin ((Mathf.PI / Wavelength) * (xPos - xPulsePos));
 			}
-
-            if (pulse.transform.position.x > this.transform.position.x)
-            {
-                GetComponent<SpriteRenderer>().color = pulse.GetComponent<AntiPulseMove>().color;
-            }
-
         }
 		transform.position = new Vector3 (transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime), 0);
         getVelocity();

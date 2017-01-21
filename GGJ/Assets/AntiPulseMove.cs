@@ -34,4 +34,14 @@ public class AntiPulseMove : MonoBehaviour {
 			Amplitude = Amplitude / 2;
 		}
 	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        print("hoi");
+        if (other.gameObject.GetComponent<SquareBehavior>() != null)
+        {
+            
+            other.gameObject.GetComponent<SpriteRenderer>().color = color;
+        }
+    }
 }
