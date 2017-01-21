@@ -18,6 +18,7 @@ public class playertest : MonoBehaviour {
 
     public float smashSpeed;
     bool smashing;
+	private int jumps = 0;
 
     void Start() {
         rigid = GetComponent<Rigidbody2D>();
@@ -27,6 +28,9 @@ public class playertest : MonoBehaviour {
     void Update() {
         anim.SetFloat("velocity", 0);
         bool touchingGround = checkGround();
+		if (touchingGround) {
+			jumps = 1;
+		}
         if (!smashing)
         {
             if (Input.GetKey(control.right))
@@ -45,6 +49,7 @@ public class playertest : MonoBehaviour {
             xSpeed = Mathf.Clamp(xSpeed, -speed, speed);
             rigid.velocity = new Vector2(xSpeed , rigid.velocity.y);
 
+
             if (Input.GetKeyDown(control.jump) && touchingGround) {
                 rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight);
             }
@@ -60,8 +65,18 @@ public class playertest : MonoBehaviour {
             }
         }
         anim.SetBool("smashing", smashing);
+		if (touchingGround) {
+			checkForWave ();
+		}
     }
-
+		
+	void checkForWave() {
+		foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor")) {
+			if (Mathf.Abs (square.transform.position.x - transform.position.x) < .5f && square.GetComponent<SquareBehavior> ().TotalAmplitude > 1) {
+				rigid.AddForce (new Vector2(0, square.GetComponent<SquareBehavior> ().TotalAmplitude * bounceForce));
+			}
+		}
+	}
 
     public bool checkGround() {
         RaycastHit2D hit = Physics2D.Raycast(GetComponent<Collider2D>().bounds.min, -transform.up, 0.5f, groundCheck);
@@ -81,7 +96,7 @@ public class playertest : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8) {
-            float strength = other.relativeVelocity.magnitude / 50f;
+            float strength = other.relativeVelocity.magnitude / 10f;
             if (smashing) {
                 GameObject shockwave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
                 shockwave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, shockwave.GetComponent<SpriteRenderer>().color.a);

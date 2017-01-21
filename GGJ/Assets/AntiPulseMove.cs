@@ -7,6 +7,7 @@ public class AntiPulseMove : MonoBehaviour {
 	public float speed = 5;
 	public float Amplitude = 1;
     public Color color = Color.white;
+	private bool forward = true;
 
     // Use this for initialization
     void Start () {
@@ -15,7 +16,23 @@ public class AntiPulseMove : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		transform.Translate (new Vector3 (Time.deltaTime * -speed, 0, 0));
+		if (transform.position.x > -GameManager.boundary && forward) {
+			transform.Translate (new Vector3 (Time.deltaTime * -speed, 0, 0));
+		} else if (forward) {
+			forward = false;
+			if (Amplitude < .1f) {
+				Destroy (this.gameObject);
+			}
+			Amplitude = Amplitude / 2;
+		} else if (!forward && transform.position.x < GameManager.boundary) {
+			transform.Translate (new Vector3 (Time.deltaTime * speed, 0, 0));
+		} else if (!forward) {
+			forward = true;
+			if (Amplitude < .1f) {
+				Destroy (this.gameObject);
+			}
+			Amplitude = Amplitude / 2;
+		}
 	}
 
     void OnTriggerEnter2D(Collider2D other)

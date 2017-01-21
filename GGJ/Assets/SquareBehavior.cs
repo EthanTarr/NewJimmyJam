@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class SquareBehavior : MonoBehaviour {
 
-	//public int Amplitude = 2;
+	public float TotalAmplitude;
 	public float Wavelength = 2f;
+	private float initialY = 0;
+	private float standardY;
+
     // Use this for initialization
     Vector2 lastPosition;
 	void Start () {
         lastPosition = transform.position;
+		standardY = transform.position.y;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		float FinalYPos = 0;
+		initialY = transform.position.y;
+		TotalAmplitude = 0;
 		foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("Pulse")) {
 			float xPos = transform.position.x;
 			float xPulsePos = pulse.transform.position.x;
 
 			if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength) {
-				FinalYPos += pulse.GetComponent<PulseMove>().Amplitude * Mathf.Sin (((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
+				TotalAmplitude += pulse.GetComponent<PulseMove>().Amplitude * Mathf.Sin (((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
             }
 		}
 		foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("AntiPulse")) {
@@ -28,10 +33,10 @@ public class SquareBehavior : MonoBehaviour {
 			float xPulsePos = pulse.transform.position.x;
 
 			if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength) {
-				FinalYPos += -pulse.GetComponent<AntiPulseMove>().Amplitude * Mathf.Sin ((Mathf.PI / Wavelength) * (xPos - xPulsePos));
+				TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * Mathf.Sin ((Mathf.PI / Wavelength) * (xPos - xPulsePos));
 			}
         }
-		transform.position = new Vector3 (transform.position.x, FinalYPos, 0);
+		transform.position = new Vector3 (transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime), 0);
         getVelocity();
 
         GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.white, Time.deltaTime);
