@@ -12,9 +12,9 @@ public class shockWaveDestroy : MonoBehaviour {
 
     IEnumerator expand(float scale) {
         while (transform.localScale.x < scale) {
-            transform.localScale = new Vector2(transform.localScale.x + 0.5f, transform.localScale.y + 0.5f);
-            GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, GetComponent<SpriteRenderer>().color.a - 0.05f);
-            yield return new WaitForSeconds(0.05f);
+            transform.localScale = new Vector2(transform.localScale.x + 0.1f, transform.localScale.y + 0.1f);
+            GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, GetComponent<SpriteRenderer>().color.a - 0.01f);
+            yield return new WaitForSeconds(0.01f);
         }
         destroySelf();
     }

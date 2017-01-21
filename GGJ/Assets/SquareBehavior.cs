@@ -16,7 +16,8 @@ public class SquareBehavior : MonoBehaviour {
         lastPosition = transform.position;
 		standardY = transform.position.y;
 	}
-	
+
+    float maxAmplitude = 5f;
 	// Update is called once per frame
 	void Update () {
 		initialY = transform.position.y;

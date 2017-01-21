@@ -23,7 +23,7 @@ public class PulseMove : MonoBehaviour {
 			if (Amplitude < 1f) {
 				Destroy (this.gameObject);
 			}
-			Amplitude = Amplitude / 2;
+			Amplitude = Amplitude / 4;
 		} else if (!forward && transform.position.x > -GameManager.boundary) {
 			transform.Translate (new Vector3 (Time.deltaTime * -speed, 0, 0));
 		} else if (!forward) {
@@ -31,12 +31,14 @@ public class PulseMove : MonoBehaviour {
 			if (Amplitude < 1f) {
 				Destroy (this.gameObject);
 			}
-			Amplitude = Amplitude / 2;
-		}
-	}
+			Amplitude = Amplitude / 4;
+        }
+        this.color = Color.Lerp(color, Color.white, Time.deltaTime / 32);
+    }
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.GetComponent<SquareBehavior>() != null) {
+            
             other.gameObject.GetComponent<SpriteRenderer>().color = color;
         }
     }
