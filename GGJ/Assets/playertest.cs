@@ -15,6 +15,7 @@ public class playertest : MonoBehaviour {
     public float minJumpHeight;
     [Space()]
     public GameObject shockWave;
+    public ParticleSystem dustParticles;
 
     public float smashSpeed;
     bool smashing;
@@ -115,8 +116,9 @@ public class playertest : MonoBehaviour {
                 rigid.velocity = Vector3.zero;
                 strength *= 5;
                 WaveGenerator.instance.makeWave(transform.position.x, strength,  GetComponent<SpriteRenderer>().color, 7);
+                dustParticles.Emit(UnityEngine.Random.Range(5, 8));
 				if (UnityEngine.Random.value < .5f) {
-					Instantiate(
+					//Instantiate(
 				}
                 StartCoroutine(recovery());
             }
