@@ -21,7 +21,7 @@ public class SquareBehavior : MonoBehaviour {
 
 			if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength) {
 				FinalYPos += pulse.GetComponent<PulseMove>().Amplitude * Mathf.Sin (((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
-			}
+            }
 		}
 		foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("AntiPulse")) {
 			float xPos = transform.position.x;

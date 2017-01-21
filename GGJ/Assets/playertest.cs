@@ -57,7 +57,6 @@ public class playertest : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(GetComponent<Collider2D>().bounds.min, -transform.up, 0.5f, groundCheck);
         Debug.DrawLine(GetComponent<Collider2D>().bounds.min, GetComponent<Collider2D>().bounds.min - transform.up * 0.5f);
         anim.SetBool("airborne", hit == false);
-
         return hit;
     }
 
@@ -72,16 +71,21 @@ public class playertest : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8) {
-            float strength = other.relativeVelocity.magnitude / 200f;
-            if (smashing) { strength *= 5f; }
-            GameObject.Find("Main Camera").GetComponent<WaveGenerator>().makeWave(transform.position.x, strength);
+            float strength = other.relativeVelocity.magnitude / 100f;
+            if (smashing) {
+                strength *= 3;
+                Shake.instance.shake(2, 3);
+            }
+            recover();
+
+            WaveGenerator.instance.makeWave(transform.position.x, strength, GetComponent<SpriteRenderer>().color);
         }
     }
 
     void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag.Equals("Floor")) {
-            //rigid.AddForce(transform.up * 100);
+            recover();
         }
     }
 }

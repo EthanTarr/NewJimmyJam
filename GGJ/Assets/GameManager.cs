@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject Square;
 	public int FloorSpawns = 20;
+    public static GameManager instance;
 
 	// Use this for initialization
 	void Start () {
+        instance = this;
 		SpawnSqures ();
 	}
 	

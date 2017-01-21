@@ -6,9 +6,10 @@ public class AntiPulseMove : MonoBehaviour {
 
 	public float speed = 5;
 	public float Amplitude = 1;
+    public Color color = Color.white;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
 	}
 

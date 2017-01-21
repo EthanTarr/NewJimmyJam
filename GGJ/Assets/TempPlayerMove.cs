@@ -29,7 +29,7 @@ public class TempPlayerMove : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.tag.Equals ("Floor") && other.relativeVelocity.magnitude > 8) {
-			GameObject.Find ("Main Camera").GetComponent<WaveGenerator> ().makeWave (transform.position.x, other.relativeVelocity.magnitude / 100);
+			//GameObject.Find ("Main Camera").GetComponent<WaveGenerator> ().makeWave (transform.position.x, other.relativeVelocity.magnitude / 100);
 		}
 	}
 }
