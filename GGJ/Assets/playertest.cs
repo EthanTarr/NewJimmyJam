@@ -18,7 +18,9 @@ public class playertest : MonoBehaviour {
 
     public float smashSpeed;
     bool smashing;
-	private int jumps = 0;
+	public float bounceForce;
+	private int jumps;
+	private float previousAmplitude = 0;
 
     void Start() {
         rigid = GetComponent<Rigidbody2D>();
@@ -68,12 +70,16 @@ public class playertest : MonoBehaviour {
 		if (touchingGround) {
 			checkForWave ();
 		}
+
     }
 		
 	void checkForWave() {
 		foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor")) {
-			if (Mathf.Abs (square.transform.position.x - transform.position.x) < .5f && square.GetComponent<SquareBehavior> ().TotalAmplitude > 1) {
-				rigid.AddForce (new Vector2(0, square.GetComponent<SquareBehavior> ().TotalAmplitude * bounceForce));
+			if (Mathf.Abs (square.transform.position.x - transform.position.x) < .5f) {
+				if (square.GetComponent<SquareBehavior> ().TotalAmplitude - previousAmplitude > .5) {
+					rigid.AddForce (new Vector2 (0, square.GetComponent<SquareBehavior> ().TotalAmplitude * bounceForce));
+				}
+				previousAmplitude = square.GetComponent<SquareBehavior> ().TotalAmplitude;
 			}
 		}
 	}
@@ -95,7 +101,7 @@ public class playertest : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8) {
+		if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8) {
             float strength = other.relativeVelocity.magnitude / 10f;
             if (smashing) {
                 GameObject shockwave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;

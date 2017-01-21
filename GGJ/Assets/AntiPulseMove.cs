@@ -37,7 +37,6 @@ public class AntiPulseMove : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        print("hoi");
         if (other.gameObject.GetComponent<SquareBehavior>() != null)
         {
             

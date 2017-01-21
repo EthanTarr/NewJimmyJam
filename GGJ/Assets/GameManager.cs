@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject Square;
 	public int FloorSpawns = 20;
+	public float minFloorPlacement = -20;
+	public float maxFloorPlacement = 20;
     public static GameManager instance;
 	public static float boundary;
 
@@ -22,8 +24,10 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void SpawnSqures() {
-		for (int i = -FloorSpawns; i < FloorSpawns; i++) {
-			Instantiate (Square, new Vector3 (.5f * i, -Mathf.Abs(Mathf.Pow(.08f *i,2)), 0), Quaternion.identity);
+		float spaceToFill = Mathf.Abs(minFloorPlacement) + Mathf.Abs(maxFloorPlacement) / Square.transform.localScale.x;
+		for (float i = -spaceToFill / 2; i < spaceToFill / 2f; i++) {
+			//Instantiate (Square, new Vector3 (.5f * i, -Mathf.Abs(Mathf.Pow(.08f *i,2)), 0), Quaternion.identity);
+			Instantiate (Square, new Vector3 (.5f * i, 0, 0), Quaternion.identity);
 		}
 	}
 }
