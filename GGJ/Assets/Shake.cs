@@ -6,16 +6,20 @@ public class Shake : MonoBehaviour {
 	public static Shake instance;
 	public Vector3 startTransform;
     public ParticleSystem dustParticles;
-
     public GameObject Spike;
     private List<GameObject> spikePositions;
+
+
+    [Space()]
+    public AudioClip[] rumbles;
+    public AudioClip spikeFall;
+
     private int spikes = 0;
 
     void Awake(){
 		instance = this;
         spikePositions = new List<GameObject>();
-        foreach (GameObject spike in GameObject.FindGameObjectsWithTag("Spike"))
-        {
+        foreach (GameObject spike in GameObject.FindGameObjectsWithTag("Spike"))  {
             spikePositions.Add(spike);
             spikes++;
         }
@@ -24,6 +28,7 @@ public class Shake : MonoBehaviour {
 	public void shake(float t, float strength){
         dustParticles.Emit(UnityEngine.Random.Range(5, 8));
 
+        audioManager.instance.Play(rumbles[Random.Range(0, rumbles.Length - 1)], 0.25f, Random.Range(0.96f, 1.03f));
 
         if (UnityEngine.Random.value < 0.03f)
         {
@@ -31,6 +36,7 @@ public class Shake : MonoBehaviour {
 			spikePositions.Remove (Spike);
 			spikes--;
 
+            audioManager.instance.Play(spikeFall, 0.15f, Random.Range(0.96f, 1.03f));
             GameObject temp = (GameObject)Instantiate(Spike, ((GameObject)spikePositions[Fallingspike]).transform.position, Quaternion.identity);
             temp.GetComponent<Rigidbody2D>().AddTorque(UnityEngine.Random.value * 30);
             Destroy((GameObject)spikePositions[Fallingspike]);

@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4690635572832680
 Transform:
   m_ObjectHideFlags: 1
@@ -69,8 +69,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737880092333408}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 3.6799998, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.67, y: 3.74, z: 0}
   m_LocalScale: {x: 4.4809265, y: 4.4809265, z: 4.4809265}
   m_Children:
   - {fileID: 4690635572832680}
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticle: {fileID: 1879571905062228, guid: 5b8a694f9d402434bb03b70352435cac,
     type: 2}
+  deathExplosion: {fileID: 8300000, guid: 0673598372542624280eccaca50f268b, type: 3}
 --- !u!114 &114714135248306996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -187,19 +188,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   control:
-    left: 276
-    right: 275
-    jump: 273
-    down: 274
+    left: 97
+    right: 100
+    jump: 119
+    down: 115
   speed: 5
   maxJumpHeight: 15
   minJumpHeight: 5
   shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
   dustParticles: {fileID: 0}
   smashSpeed: 15
-  bounceForce: 75
+  bounceForce: 85
   laggin: 0
   canSmash: 1
+  softLanding:
+  - {fileID: 8300000, guid: e7562e73db5736c40889358c4aa64a95, type: 3}
+  - {fileID: 8300000, guid: 5367508aa6abf394aa3affdab0d6a001, type: 3}
+  - {fileID: 8300000, guid: 194e0706869742b4bb7ec3517ed7cbaf, type: 3}
+  loadPower: {fileID: 8300000, guid: c86466f6045a49f44b657d8c38878823, type: 3}
+  smash: {fileID: 8300000, guid: c26e512d569ab994dbe22729f8eda1ec, type: 3}
 --- !u!212 &212035578677471066
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -232,7 +239,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 53ca9e910eadf8741adf4b8902408786, type: 3}
-  m_Color: {r: 0.91298175, g: 0.5147059, b: 1, a: 1}
+  m_Color: {r: 0.96957403, g: 1, b: 0.44852942, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &212589490845397032
@@ -267,6 +274,6 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4cc8def879588eb478bdcab3f23b37d3, type: 3}
-  m_Color: {r: 1, g: 0.6911765, b: 0.6911765, a: 1}
+  m_Color: {r: 0.8937359, g: 0.9411765, b: 0.449827, a: 1}
   m_FlipX: 0
   m_FlipY: 0
