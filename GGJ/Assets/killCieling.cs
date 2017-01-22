@@ -15,8 +15,12 @@ public class killCieling : MonoBehaviour {
             Shake.instance.shake(2, 3);
             GetComponent<SpriteRenderer>().color = other.gameObject.GetComponent<SpriteRenderer>().color;
             audioManager.instance.Play(deathExplosion, 0.75f, Random.Range(0.96f, 1.04f));
-            Destroy (other.gameObject);
 
+            Destroy(other.gameObject);
+
+            endingUI.instance.startEnd(other.gameObject.GetComponent<playertest>().control.playeriD == 0 ? 1 : 0);
+
+           
 		}
     }
 }

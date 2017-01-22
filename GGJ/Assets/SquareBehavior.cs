@@ -11,6 +11,8 @@ public class SquareBehavior : MonoBehaviour {
 	private float initialY = 0;
 	private float standardY;
 
+    [HideInInspector] public bool firstBlock;
+
     // Use this for initialization
     Vector2 lastPosition;
 	void Start () {
@@ -34,7 +36,7 @@ public class SquareBehavior : MonoBehaviour {
             }
 		}
 		foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("AntiPulse")) {
-			float xPos = transform.position.x;
+            float xPos = transform.position.x;
 			float xPulsePos = pulse.transform.position.x;
 
 			if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength) {
@@ -46,7 +48,9 @@ public class SquareBehavior : MonoBehaviour {
 		transform.position = new Vector3 (transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime), 0);
         getVelocity();
 
-        GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.white, Time.deltaTime);
+        if (firstBlock) {
+            GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.white, Time.deltaTime);
+        }
 
     }
 
