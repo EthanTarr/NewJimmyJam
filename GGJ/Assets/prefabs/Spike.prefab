@@ -88,9 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7c76bdfb4fec94a8814cc2ef329e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
   deathParticle: {fileID: 1406135163314450, guid: 18cde363a11510140b6469e84dfbcb73,
     type: 2}
+  deathExplosion: {fileID: 8300000, guid: 0673598372542624280eccaca50f268b, type: 3}
 --- !u!212 &212004675873431788
 SpriteRenderer:
   m_ObjectHideFlags: 1

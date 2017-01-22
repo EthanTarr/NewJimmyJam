@@ -129,7 +129,7 @@ public class playertest : MonoBehaviour {
                 Color color = GetComponent<SpriteRenderer>().color;
                 color.a = 0.75f;
                 WaveGenerator.instance.makeWave(transform.position.x, strength, color, 7);
-                audioManager.instance.Play(smash, 0.75f, UnityEngine.Random.Range(0.96f, 1.03f));
+                audioManager.instance.Play(smash, 0.75f, UnityEngine.Random.Range(0.95f, 1.05f));
                 StartCoroutine(recovery());
             }
             else
