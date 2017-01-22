@@ -1,16 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Shake : MonoBehaviour {
 	public static Shake instance;
 	public Vector3 startTransform;
     public ParticleSystem dustParticles;
-	void Awake(){
+
+    public GameObject Spike;
+    private List<GameObject> spikePositions;
+    private int spikes = 0;
+
+    void Awake(){
 		instance = this;
-		startTransform = transform.position;
+        spikePositions = new List<GameObject>();
+        foreach (GameObject spike in GameObject.FindGameObjectsWithTag("Spike"))
+        {
+            spikePositions.Add(spike);
+            spikes++;
+        }
+        startTransform = transform.position;
 	}
 	public void shake(float t, float strength){
         dustParticles.Emit(UnityEngine.Random.Range(5, 8));
+
+        if (UnityEngine.Random.value < 0)
+        {
+            int Fallingspike = UnityEngine.Random.Range(0, spikes);
+
+            GameObject temp = (GameObject)Instantiate(Spike, ((GameObject)spikePositions[Fallingspike]).transform.position, Quaternion.identity);
+            temp.GetComponent<Rigidbody2D>().AddTorque(UnityEngine.Random.value * 30);
+            Destroy((GameObject)spikePositions[Fallingspike]);
+        }
+
         StartCoroutine(screenshake(t, strength));
 		
 	}

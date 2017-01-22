@@ -41,7 +41,7 @@ public class SquareBehavior : MonoBehaviour {
 				TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * Mathf.Sin ((Mathf.PI / Wavelength) * (xPos - xPulsePos));
 			}
         }
-		TotalAmplitude = Mathf.Clamp (TotalAmplitude, -4,7);
+		TotalAmplitude = Mathf.Clamp (TotalAmplitude, -10,10);
 
 		transform.position = new Vector3 (transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime), 0);
         getVelocity();
