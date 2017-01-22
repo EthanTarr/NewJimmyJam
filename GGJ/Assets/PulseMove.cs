@@ -8,6 +8,7 @@ public class PulseMove : MonoBehaviour {
 	public float Amplitude = 1;
     public Color color = Color.white;
 	private bool forward = true;
+    public AudioClip roll;
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +39,10 @@ public class PulseMove : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.GetComponent<SquareBehavior>() != null) {
-            other.gameObject.GetComponent<SquareBehavior>().firstBlock = true;
+            if (!other.gameObject.GetComponent<SquareBehavior>().firstBlock) {
+                audioManager.instance.Play(roll, 0.25f);
+            }
+            other.gameObject.GetComponent<SquareBehavior>().firstBlock = true;    
             other.gameObject.GetComponent<SpriteRenderer>().color = color;
         }
     }
