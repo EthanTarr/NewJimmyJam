@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - AntiPulse
   - Spike
+  - Cone
   layers:
   - Default
   - TransparentFX
