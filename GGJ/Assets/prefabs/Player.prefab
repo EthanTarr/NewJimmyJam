@@ -90,8 +90,8 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.11, y: 0.15}
+  m_Offset: {x: -0.0011203357, y: 0}
+  m_Size: {x: 0.12568443, y: 0.15}
   m_Direction: 0
 --- !u!95 &95619662148139376
 Animator:
@@ -136,6 +136,7 @@ MonoBehaviour:
   dustParticles: {fileID: 0}
   smashSpeed: 15
   bounceForce: 50
+  Spike: {fileID: 0}
   laggin: 0
   canSmash: 1
 --- !u!212 &212035578677471066
