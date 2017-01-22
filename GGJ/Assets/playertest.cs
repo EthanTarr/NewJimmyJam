@@ -25,6 +25,7 @@ public class playertest : MonoBehaviour {
 	public GameObject Spike;
 	private ArrayList spikePositions;
 	private int spikes = 0;
+	private float previousStrength = 0;
 
     public bool laggin = false;
     public bool canSmash = true;
@@ -119,7 +120,13 @@ public class playertest : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8)
         {
-            float strength = other.relativeVelocity.magnitude / 20f;
+			float strength;
+			if (previousStrength == 0) {
+				strength = Mathf.Clamp (other.relativeVelocity.magnitude / 20f, 0, .8f);
+			} else {
+				strength = 0;
+			}
+			previousStrength = strength;
             if (smashing)
             {
                 canSmash = false;
@@ -154,7 +161,7 @@ public class playertest : MonoBehaviour {
     void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.tag.Equals("Floor")) {
-            rigid.AddForce(new Vector2(0, other.gameObject.GetComponent<SquareBehavior>().velocity * (canSmash ? 5000 : 1000)));
+			rigid.AddForce(new Vector2(0, other.gameObject.GetComponent<SquareBehavior>().velocity * (canSmash ? 5000 : 1000)));
         }
     }
 
