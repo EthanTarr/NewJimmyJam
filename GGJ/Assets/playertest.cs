@@ -30,6 +30,11 @@ public class playertest : MonoBehaviour {
     public bool laggin = false;
     public bool canSmash = true;
 
+    [Space()]
+    public AudioClip[] softLanding;
+    public AudioClip loadPower;
+    public AudioClip smash;
+
     void Start() {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -126,14 +131,17 @@ public class playertest : MonoBehaviour {
                 Color color = GetComponent<SpriteRenderer>().color;
                 color.a = 0.75f;
                 WaveGenerator.instance.makeWave(transform.position.x, strength, color, 7);
+                audioManager.instance.Play(smash, 0.75f, UnityEngine.Random.Range(0.96f, 1.03f));
                 StartCoroutine(recovery());
             }
             else
             {
+                audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.05f, UnityEngine.Random.Range(0.96f, 1.03f));
                 WaveGenerator.instance.makeWave(transform.position.x, strength, Color.white, 3);
             }
         } else if (other.gameObject.tag.Equals("Player")) {
-            if (smashing) {
+            if (smashing)
+            {
                 smashing = false;
                 Color color = GetComponent<SpriteRenderer>().color;
                 color = GetComponent<SpriteRenderer>().color;
@@ -144,6 +152,8 @@ public class playertest : MonoBehaviour {
                 rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight);
 
                 StartCoroutine(other.gameObject.GetComponent<playertest>().knockedOut());
+            } else {
+                audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.05f, UnityEngine.Random.Range(0.96f, 1.03f));
             }
         }
     }
@@ -198,6 +208,7 @@ public class playertest : MonoBehaviour {
         color = GetComponent<SpriteRenderer>().color;
         color.a = 255f;
         GetComponent<SpriteRenderer>().color = color;
+        audioManager.instance.Play(loadPower, 0.25f, UnityEngine.Random.Range(0.96f, 1.03f));
         canSmash = true;
     }
 }
