@@ -69,8 +69,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
   Wavelength: 2
-  FloorOscillation: 0.01
-  OscillationSpeed: 7
+  FloorOscillation: 0
+  OscillationSpeed: 0
+  firstBlock: 0
   velocity: 0
 --- !u!212 &212567259449933238
 SpriteRenderer:

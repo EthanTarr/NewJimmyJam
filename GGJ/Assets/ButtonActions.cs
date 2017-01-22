@@ -6,7 +6,8 @@ public class ButtonActions : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        scoreCard.instance.isConeHeadMode();
+        scoreCard.instance.gamesToWin = 1;
 	}
 	
 	// Update is called once per frame

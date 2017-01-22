@@ -17,7 +17,13 @@ public class playertest : MonoBehaviour {
     public GameObject shockWave;
     public ParticleSystem dustParticles;
 
-    public float smashSpeed;
+    public float minSmashSpped;
+    public float maxSmashSpeed;
+
+    public float minPow = 5;
+    public float power = 3;
+    public float maxPow = 7;
+
     bool smashing;
     float smashReset;
 
@@ -79,10 +85,7 @@ public class playertest : MonoBehaviour {
 
 
             if (Input.GetKeyDown(control.down) && canSmash && !smashing && !touchingGround) {
-                rigid.velocity = new Vector2(0, -smashSpeed);
-                anim.SetBool("smashing", true);
-                smashing = true;
-                smashReset = 200;
+                StartCoroutine("chargeSmash");
             }
         }
 
@@ -96,6 +99,30 @@ public class playertest : MonoBehaviour {
 			checkForWave ();
 		}
 
+    }
+
+    float chargeLimit = 0.75f;
+    IEnumerator chargeSmash() {
+        //power = 5;
+        rigid.velocity = new Vector2(0, 0);
+        rigid.gravityScale = 0;
+        bool isChargin = true;
+        float chargeValue = 0;
+        yield return new WaitForSeconds(0.25f);
+        while (isChargin && chargeValue < chargeLimit) {
+            //power += Time.deltaTime * 0.85f / 2;
+            if (!Input.GetKey(control.down)) {
+                
+                isChargin = false;
+            }
+            chargeValue += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        rigid.gravityScale = 3;
+        rigid.velocity = new Vector2(0, -minSmashSpped);
+        anim.SetBool("smashing", true);
+        smashing = true;
+        smashReset = 150;
     }
 
 	void checkForWave() {
@@ -119,13 +146,13 @@ public class playertest : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8)
         {
-			float strength = Mathf.Clamp (other.relativeVelocity.magnitude / 20f, 0, .8f);
+			float strength = Mathf.Clamp (other.relativeVelocity.magnitude / 40f, 0, .8f);
             if (smashing)
             {
                 canSmash = false;
                 Shake.instance.shake(2, 3);
                 rigid.velocity = Vector3.zero;
-                strength *= 5;
+                strength *= power;
                 Color color = GetComponent<SpriteRenderer>().color;
                 color.a = 0.75f;
                 WaveGenerator.instance.makeWave(transform.position.x, strength, color, 7);
