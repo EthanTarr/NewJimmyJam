@@ -24,9 +24,12 @@ public class Shake : MonoBehaviour {
 	public void shake(float t, float strength){
         dustParticles.Emit(UnityEngine.Random.Range(5, 8));
 
-        if (UnityEngine.Random.value < 0.3f)
+
+        if (UnityEngine.Random.value < 0.03f)
         {
             int Fallingspike = UnityEngine.Random.Range(0, spikes);
+			spikePositions.Remove (Spike);
+			spikes--;
 
             GameObject temp = (GameObject)Instantiate(Spike, ((GameObject)spikePositions[Fallingspike]).transform.position, Quaternion.identity);
             temp.GetComponent<Rigidbody2D>().AddTorque(UnityEngine.Random.value * 30);
