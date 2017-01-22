@@ -20,6 +20,8 @@ public class playertest : MonoBehaviour {
     public float minSmashSpped;
     public float maxSmashSpeed;
 
+    public ParticleSystem chargeParticle;
+
     public float minPow = 5;
     public float power = 3;
     public float maxPow = 7;
@@ -41,12 +43,24 @@ public class playertest : MonoBehaviour {
     public AudioClip loadPower;
     public AudioClip smash;
     public AudioClip jump;
+    public AudioClip charge;
 
     float xSpeed;
 
     void Start() {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        baseColor = GetComponent<SpriteRenderer>().color;
+        toggleCharge(0);        
+    }
+
+    Color baseColor;
+    public Color fullColor;
+    void toggleCharge(float toggle) {
+        GetComponent<SpriteRenderer>().color = Color.Lerp(baseColor, fullColor, toggle);
+        chargeParticle.startSize = Mathf.Lerp(0, 0.4f, toggle);
+        float changeSize = Mathf.Lerp(0, 0.75f, toggle);
+        chargeParticle.transform.localScale = new Vector3(changeSize, changeSize, changeSize);
     }
 
     void Update() {
@@ -103,21 +117,27 @@ public class playertest : MonoBehaviour {
 
     float chargeLimit = 0.75f;
     IEnumerator chargeSmash() {
-        //power = 5;
+        speed /= 3;
         rigid.velocity = new Vector2(0, 0);
         rigid.gravityScale = 0;
         bool isChargin = true;
         float chargeValue = 0;
-        yield return new WaitForSeconds(0.25f);
+        
         while (isChargin && chargeValue < chargeLimit) {
-            //power += Time.deltaTime * 0.85f / 2;
-            if (!Input.GetKey(control.down)) {
-                
+            toggleCharge(1/(chargeValue*2 /chargeLimit));
+            if (!Input.GetKey(control.down)) {         
                 isChargin = false;
             }
+
             chargeValue += Time.deltaTime;
             yield return new WaitForEndOfFrame();
+           
+
         }
+        audioManager.instance.Play(charge, 0.5f * (chargeValue / chargeLimit));
+        yield return new WaitForSeconds(0.25f);
+        speed *= 3;
+        chargeParticle.gameObject.transform.localScale = Vector3.zero;
         rigid.gravityScale = 3;
 		minSmashSpped = chargeValue * 26.6f + 10;
 		power = chargeValue * 4 + 4;
@@ -125,6 +145,7 @@ public class playertest : MonoBehaviour {
         anim.SetBool("smashing", true);
         smashing = true;
         smashReset = 150;
+        toggleCharge(0);
     }
 
 	void checkForWave() {
@@ -233,10 +254,14 @@ public class playertest : MonoBehaviour {
         GameObject wave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
         wave.transform.SetParent(transform);
         wave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, wave.GetComponent<SpriteRenderer>().color.a);
+
+        float time = 0;
+
+
         color = GetComponent<SpriteRenderer>().color;
         color.a = 255f;
         GetComponent<SpriteRenderer>().color = color;
-        audioManager.instance.Play(loadPower, 0.25f, UnityEngine.Random.Range(0.96f, 1.03f));
+        audioManager.instance.Play(loadPower, 0.5f, UnityEngine.Random.Range(0.96f, 1.03f));
         canSmash = true;
     }
 }
