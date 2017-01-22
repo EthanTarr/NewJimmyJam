@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4521681053894548}
   - component: {fileID: 212004675873431788}
   - component: {fileID: 61079677349324474}
+  - component: {fileID: 50063476094628096}
+  - component: {fileID: 114986874934781904}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Untagged
@@ -41,6 +43,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -59.725002}
+--- !u!50 &50063476094628096
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1603355204529448}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61079677349324474
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -55,6 +77,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &114986874934781904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1603355204529448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7c76bdfb4fec94a8814cc2ef329e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
+  deathParticle: {fileID: 1406135163314450, guid: 18cde363a11510140b6469e84dfbcb73,
+    type: 2}
 --- !u!212 &212004675873431788
 SpriteRenderer:
   m_ObjectHideFlags: 1
