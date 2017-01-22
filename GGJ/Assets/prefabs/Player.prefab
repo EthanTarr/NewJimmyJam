@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4690635572832680
 Transform:
   m_ObjectHideFlags: 1
@@ -57,8 +57,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1792704113142904}
   m_LocalRotation: {x: -0, y: -0, z: 0.86474484, w: 0.5022116}
-  m_LocalPosition: {x: -0.0009999804, y: 0.121, z: 0}
-  m_LocalScale: {x: 0.10595823, y: 0.10595823, z: 0.10595799}
+  m_LocalPosition: {x: -0.0009999804, y: 0.0992, z: 0}
+  m_LocalScale: {x: 0.08363866, y: 0.08363866, z: 0.083638474}
   m_Children: []
   m_Father: {fileID: 4838586899059626}
   m_RootOrder: 0
@@ -170,7 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cafd1507cdf9147989cecc19cd7c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
   deathParticle: {fileID: 1879571905062228, guid: 5b8a694f9d402434bb03b70352435cac,
     type: 2}
 --- !u!114 &114714135248306996

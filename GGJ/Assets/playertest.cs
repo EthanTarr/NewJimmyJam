@@ -19,6 +19,10 @@ public class playertest : MonoBehaviour {
 
     public float smashSpeed;
     bool smashing;
+    float smashReset;
+
+    float timeTillRefresh = 2;
+
 	private float previousAmplitude = 0;
 	private int jumps = 0;
     public float bounceForce;
@@ -69,7 +73,15 @@ public class playertest : MonoBehaviour {
                 rigid.velocity = new Vector2(0, -smashSpeed);
                 anim.SetBool("smashing", true);
                 smashing = true;
+                smashReset = 100;
             }
+        }
+
+        if (smashReset > 0) {
+            smashReset -= 1;
+        }
+        else {
+            smashing = false;
         }
 
 		if (touchingGround) {
@@ -108,14 +120,12 @@ public class playertest : MonoBehaviour {
             if (smashing)
             {
                 canSmash = false;
-                GameObject shockwave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
-                shockwave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, shockwave.GetComponent<SpriteRenderer>().color.a);
                 Shake.instance.shake(2, 3);
                 rigid.velocity = Vector3.zero;
                 strength *= 5;
-                WaveGenerator.instance.makeWave(transform.position.x, strength, GetComponent<SpriteRenderer>().color, 7);
-                dustParticles.Emit(UnityEngine.Random.Range(5, 8));
-
+                Color color = GetComponent<SpriteRenderer>().color;
+                color.a = 0.75f;
+                WaveGenerator.instance.makeWave(transform.position.x, strength, color, 7);
                 StartCoroutine(recovery());
             }
             else
@@ -126,8 +136,6 @@ public class playertest : MonoBehaviour {
             if (smashing) {
                 smashing = false;
                 Color color = GetComponent<SpriteRenderer>().color;
-                GameObject shockwave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
-                shockwave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, shockwave.GetComponent<SpriteRenderer>().color.a);
                 color = GetComponent<SpriteRenderer>().color;
                 color.a = 255f;
                 GetComponent<SpriteRenderer>().color = color;
@@ -183,9 +191,10 @@ public class playertest : MonoBehaviour {
         yield return new WaitForSeconds(1);
         laggin = false;
         anim.SetBool("smashing", false);
-        yield return new WaitForSeconds(3);
-        GameObject shockwave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
-        shockwave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, shockwave.GetComponent<SpriteRenderer>().color.a);
+        yield return new WaitForSeconds(timeTillRefresh);
+        GameObject wave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
+        wave.transform.SetParent(transform);
+        wave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, wave.GetComponent<SpriteRenderer>().color.a);
         color = GetComponent<SpriteRenderer>().color;
         color.a = 255f;
         GetComponent<SpriteRenderer>().color = color;
