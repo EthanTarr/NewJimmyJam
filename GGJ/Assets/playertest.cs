@@ -25,7 +25,6 @@ public class playertest : MonoBehaviour {
 	public GameObject Spike;
 	private ArrayList spikePositions;
 	private int spikes = 0;
-	private float previousStrength = 0;
 
     public bool laggin = false;
     public bool canSmash = true;
@@ -93,7 +92,7 @@ public class playertest : MonoBehaviour {
 
 	void checkForWave() {
 		foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor")) {
-			if (Mathf.Abs (square.transform.position.x - transform.position.x) < .5f) {
+			if (Mathf.Abs (square.transform.position.x - transform.position.x) < GameObject.Find("Managers").GetComponent<GameManager>().Square.transform.localScale.x) {
 				if (square.GetComponent<SquareBehavior> ().TotalAmplitude - previousAmplitude > .5) {
 					rigid.AddForce (new Vector2 (0, square.GetComponent<SquareBehavior> ().TotalAmplitude * bounceForce));
 				}
@@ -117,13 +116,7 @@ public class playertest : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8)
         {
-			float strength;
-			if (previousStrength == 0) {
-				strength = Mathf.Clamp (other.relativeVelocity.magnitude / 20f, 0, .8f);
-			} else {
-				strength = 0;
-			}
-			previousStrength = strength;
+			float strength = Mathf.Clamp (other.relativeVelocity.magnitude / 20f, 0, .8f);
             if (smashing)
             {
                 canSmash = false;
