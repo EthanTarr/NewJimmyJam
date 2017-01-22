@@ -5251,17 +5251,17 @@ Prefab:
     - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
       propertyPath: power
-      value: 20
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
       propertyPath: minSmashSpped
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
       propertyPath: maxSmashSpeed
-      value: 0
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
@@ -5271,6 +5271,10 @@ Prefab:
     - target: {fileID: 1737880092333408, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
       propertyPath: m_IsActive
       value: 0
+    - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: maxPow
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
