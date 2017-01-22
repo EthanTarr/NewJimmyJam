@@ -29,7 +29,6 @@ public class playertest : MonoBehaviour {
     public bool laggin = false;
     public bool canSmash = true;
 
-
     void Start() {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -43,10 +42,8 @@ public class playertest : MonoBehaviour {
 		if (touchingGround) {
 			jumps = 1;
 		}
-        if (!smashing)
-        {
-            if (Input.GetKey(control.right))
-            {
+        if (!smashing && !laggin) {
+            if (Input.GetKey(control.right)) {
                 xSpeed += speed / 8;
                 GetComponent<SpriteRenderer>().flipX = false;
                 anim.SetFloat("velocity", 1);
@@ -117,11 +114,9 @@ public class playertest : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8)
-        {
+        if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8) {
             float strength = other.relativeVelocity.magnitude / 20f;
-            if (smashing)
-            {
+            if (smashing) {
                 canSmash = false;
                 GameObject shockwave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
                 shockwave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, shockwave.GetComponent<SpriteRenderer>().color.a);
@@ -144,11 +139,31 @@ public class playertest : MonoBehaviour {
                 WaveGenerator.instance.makeWave(transform.position.x, strength, Color.white, 3);
             }
         } else if (other.gameObject.tag.Equals("Player")) {
-            if (!smashing) {
-                other.gameObject.GetComponent<Rigidbody2D>().AddForce(-rigid.velocity * 10);
-                rigid.AddForce(-other.gameObject.GetComponent<Rigidbody2D>().velocity * 10);
+            if (smashing) {
+                smashing = false;
+                Color color = GetComponent<SpriteRenderer>().color;
+                GameObject shockwave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
+                shockwave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, shockwave.GetComponent<SpriteRenderer>().color.a);
+                color = GetComponent<SpriteRenderer>().color;
+                color.a = 255f;
+                GetComponent<SpriteRenderer>().color = color;
+                anim.SetBool("smashing", false);
+                canSmash = true;
+                rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight);
+
+                StartCoroutine(other.gameObject.GetComponent<playertest>().knockedOut());
             }
         }
+    }
+
+    IEnumerator knockedOut() {
+        anim.SetBool("knockedOut", true);
+        rigid.velocity = Vector2.zero;
+        laggin = true;
+        rigid.velocity = new Vector2(3, 10);
+        yield return new WaitForSeconds(1);
+        anim.SetBool("knockedOut", false);
+        laggin = false;
     }
 
     void OnCollisionExit2D(Collision2D other)
@@ -156,10 +171,6 @@ public class playertest : MonoBehaviour {
         if (other.gameObject.tag.Equals("Floor")) {
             rigid.AddForce(new Vector2(0, other.gameObject.GetComponent<SquareBehavior>().velocity * (canSmash ? 5000 : 1000)));
         }
-    }
-
-    void regainSmash() { 
-        canSmash = true;
     }
 
     void slopeCheck() {
@@ -175,7 +186,6 @@ public class playertest : MonoBehaviour {
             }
         }
         if (height != 2 && height > -1) {
-            print("hoi");
             transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x, transform.position.y + littleHeight * height + 0.2f), Time.deltaTime * 4);
         }
     }
