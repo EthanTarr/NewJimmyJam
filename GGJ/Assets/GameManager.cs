@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 		float spaceToFill = Mathf.Abs(minFloorPlacement) + Mathf.Abs(maxFloorPlacement) / width;
 		for (float i = -spaceToFill / 2; i < spaceToFill / 2f; i++) {
 			//Instantiate (Square, new Vector3 (.5f * i, -Mathf.Abs(Mathf.Pow(.08f *i,2)), 0), Quaternion.identity);
-			Instantiate (Square, new Vector3 (width * i, 0, 0), Quaternion.identity);
+			Instantiate (Square, new Vector3 (width * i, transform.position.y, 0), Quaternion.identity);
 		}
 	}
 }
