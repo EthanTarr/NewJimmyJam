@@ -7,6 +7,7 @@ public class WaveGenerator : MonoBehaviour {
 	public GameObject antiPulse;
     public static WaveGenerator instance;
 
+
 	// Use this for initialization
 	void Start () {
         instance = this;
@@ -21,8 +22,7 @@ public class WaveGenerator : MonoBehaviour {
 
 
 	void makeWave() {
-		Instantiate (pulse, new Vector3 (0, transform.position.y, 0), Quaternion.identity);
-		Instantiate (antiPulse, new Vector3(0, transform.position.y, 0), Quaternion.identity);
+        makeWave(0, 0, Camera.main.backgroundColor, 5);
 	}
 
 	public void makeWave(float position, float amplitude, Color color, float velocity) {

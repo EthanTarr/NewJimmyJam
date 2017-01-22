@@ -26,9 +26,27 @@ public class GameManager : MonoBehaviour {
 	void SpawnSqures() {
 		float width = Square.transform.localScale.x;
 		float spaceToFill = Mathf.Abs(minFloorPlacement) + Mathf.Abs(maxFloorPlacement) / width;
-		for (float i = -spaceToFill / 2; i < spaceToFill / 2f; i++) {
-			//Instantiate (Square, new Vector3 (.5f * i, -Mathf.Abs(Mathf.Pow(.08f *i,2)), 0), Quaternion.identity);
-			Instantiate (Square, new Vector3 (width * i, transform.position.y, 0), Quaternion.identity);
-		}
-	}
+        int index = UnityEngine.Random.Range(1, 7);
+
+        if (scoreCard.instance.totalScores() == 0) {
+            index = 1;
+        }
+
+        for (float i = -spaceToFill / 2; i < spaceToFill / 2f; i++) {
+            //Instantiate(Square, new Vector3(width * i, transform.position.y - 0.5f - 10/Mathf.Abs(i), 0), Quaternion.identity);
+            chooseMap(index, width, i);
+        }
+    }
+
+    void chooseMap(int index, float width, float i) {
+        switch (index) {
+            case 1: Instantiate(Square, new Vector3(width * i, transform.position.y, 0), Quaternion.identity); break;
+            case 2: Instantiate(Square, new Vector3(width * i, transform.position.y  - Mathf.Sin(i / 10), 0), Quaternion.identity); break;
+            case 3: Instantiate(Square, new Vector3(width * i, transform.position.y - 0.5f + Mathf.Sin(i / 10), 0), Quaternion.identity); break;
+            case 4: Instantiate(Square, new Vector3(width * i, transform.position.y - 1 + Mathf.Abs(i / 15), 0), Quaternion.identity); break;
+            case 5: Instantiate(Square, new Vector3(width * i, transform.position.y - Mathf.Abs(Mathf.Pow(.03f * i, 2)), 0), Quaternion.identity); break;
+            case 6: Instantiate(Square, new Vector3(width * i, transform.position.y - 0.5f + Mathf.Sin(i / 10), 0), Quaternion.identity); break;
+            case 7: Instantiate(Square, new Vector3(width * i, transform.position.y - 0.5f - 10 / Mathf.Abs(i), 0), Quaternion.identity); break;
+        }
+    }
 }

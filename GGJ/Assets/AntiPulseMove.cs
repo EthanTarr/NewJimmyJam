@@ -40,6 +40,7 @@ public class AntiPulseMove : MonoBehaviour {
     {
         if (other.gameObject.GetComponent<SquareBehavior>() != null)
         {
+            other.gameObject.GetComponent<SquareBehavior>().firstBlock = true;
             other.gameObject.GetComponent<SpriteRenderer>().color = color;
         }
     }

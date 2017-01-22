@@ -27,19 +27,22 @@ public class playertest : MonoBehaviour {
 	private int jumps = 0;
     public float bounceForce;
 
-    public bool laggin = false;
-    public bool canSmash = true;
+    bool laggin = false;
+    bool canSmash = true;
 
     [Space()]
     public AudioClip[] softLanding;
     public AudioClip loadPower;
     public AudioClip smash;
+    public AudioClip jump;
+
+    float xSpeed;
 
     void Start() {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-    float xSpeed;
+
     void Update() {
         anim.SetFloat("velocity", 0);
         bool touchingGround = checkGround();
@@ -67,6 +70,7 @@ public class playertest : MonoBehaviour {
 
             if (Input.GetKeyDown(control.jump) && touchingGround) {
                 rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight);
+                audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.97f, 1.03f));
             }
 
             if (Input.GetKeyUp(control.jump) && rigid.velocity.y > minJumpHeight) {
@@ -74,18 +78,17 @@ public class playertest : MonoBehaviour {
             }
 
 
-            if (Input.GetKeyDown(control.down) && canSmash && !smashing) {
+            if (Input.GetKeyDown(control.down) && canSmash && !smashing && !touchingGround) {
                 rigid.velocity = new Vector2(0, -smashSpeed);
                 anim.SetBool("smashing", true);
                 smashing = true;
-                smashReset = 100;
+                smashReset = 200;
             }
         }
 
         if (smashReset > 0) {
             smashReset -= 1;
-        }
-        else {
+        } else {
             smashing = false;
         }
 
@@ -111,11 +114,6 @@ public class playertest : MonoBehaviour {
         Debug.DrawLine(GetComponent<Collider2D>().bounds.min, GetComponent<Collider2D>().bounds.min - transform.up * 0.5f);
         anim.SetBool("airborne", hit == false);
         return hit;
-    }
-
-    float velocity;
-    void LateUpdate() {
-        velocity = rigid.velocity.y;
     }
 
     void OnCollisionEnter2D(Collision2D other) {
@@ -215,6 +213,8 @@ public class playertest : MonoBehaviour {
 
 [Serializable]
 public class Controls {
+    public int playeriD;
+
     public KeyCode left;
     public KeyCode right;
     public KeyCode jump;
