@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class killCieling : MonoBehaviour {
+public class FallingSpike : MonoBehaviour {
 
-    public GameObject shockWave;
-    public GameObject deathParticle;
+	public GameObject shockWave;
+	public GameObject deathParticle;
 
-    void OnCollisionEnter2D(Collision2D other) {
+	void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.GetComponent<playertest> () != null) {
 			GameObject particle = Instantiate (deathParticle, other.gameObject.transform.position, other.gameObject.transform.rotation) as GameObject;
 			GameObject shockwaye = Instantiate (shockWave, other.gameObject.transform.position, other.gameObject.transform.rotation) as GameObject;
@@ -17,6 +17,8 @@ public class killCieling : MonoBehaviour {
 
 			Destroy (other.gameObject);
 
+		} else {
+			this.GetComponent<BoxCollider2D> ().enabled = false;
 		}
-    }
+	}
 }
