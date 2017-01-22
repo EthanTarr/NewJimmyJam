@@ -91,6 +91,7 @@ MonoBehaviour:
   speed: 3
   Amplitude: 1
   color: {r: 1, g: 1, b: 1, a: 1}
+  roll: {fileID: 8300000, guid: f456b975a2fc87348b85eb32525fb7a3, type: 3}
 --- !u!212 &212058059531942750
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -45,8 +45,7 @@ public class GameManager : MonoBehaviour {
             case 3: Instantiate(Square, new Vector3(width * i, transform.position.y - 0.5f + Mathf.Sin(i / 10), 0), Quaternion.identity); break;
             case 4: Instantiate(Square, new Vector3(width * i, transform.position.y - 1 + Mathf.Abs(i / 15), 0), Quaternion.identity); break;
             case 5: Instantiate(Square, new Vector3(width * i, transform.position.y - Mathf.Abs(Mathf.Pow(.03f * i, 2)), 0), Quaternion.identity); break;
-            case 6: Instantiate(Square, new Vector3(width * i, transform.position.y - 0.5f + Mathf.Sin(i / 10), 0), Quaternion.identity); break;
-            case 7: Instantiate(Square, new Vector3(width * i, transform.position.y - 0.5f - 10 / Mathf.Abs(i), 0), Quaternion.identity); break;
+            case 6: Instantiate(Square, new Vector3(width * i, transform.position.y - 0.5f - 10 / Mathf.Abs(i), 0), Quaternion.identity); break;
         }
     }
 }

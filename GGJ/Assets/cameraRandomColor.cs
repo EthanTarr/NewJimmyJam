@@ -9,4 +9,14 @@ public class cameraRandomColor : MonoBehaviour {
     void Start() {
         GetComponent<Camera>().backgroundColor = colors[Random.Range(0, colors.Length - 1)];
     }
+
+    public void contactWaveGenerator() {
+        WaveGenerator.instance.StartWave();
+    }
+
+    public void activatePlayers() {
+        foreach(GameObject player in GameObject.FindGameObjectsWithTag("Player")) {
+            player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        }
+    }
 }

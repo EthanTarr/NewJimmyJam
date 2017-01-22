@@ -7,6 +7,7 @@ public class WaveGenerator : MonoBehaviour {
 	public GameObject antiPulse;
     public static WaveGenerator instance;
 
+    public Color fadeIn;
 
 	// Use this for initialization
 	void Start () {
@@ -22,10 +23,14 @@ public class WaveGenerator : MonoBehaviour {
 
 
 	void makeWave() {
-        makeWave(0, 0, Camera.main.backgroundColor, 5);
+        makeWave(0, 0, fadeIn, 5);
 	}
 
-	public void makeWave(float position, float amplitude, Color color, float velocity) {
+    public void StartWave(){
+        makeWave(0, 0, fadeIn, 5);
+    }
+
+    public void makeWave(float position, float amplitude, Color color, float velocity) {
 		GameObject Pulse = Instantiate (pulse, new Vector3 (position, transform.position.y, 0), Quaternion.identity);
 		Pulse.GetComponent<PulseMove> ().Amplitude = amplitude;
         Pulse.GetComponent<PulseMove>().color = color;
