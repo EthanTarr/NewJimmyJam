@@ -373,7 +373,7 @@ Prefab:
     - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
       propertyPath: bounceForce
-      value: 75
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 212589490845397032, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
@@ -790,6 +790,63 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1026446950465250, guid: 40407fa0295872e4ab4e3fb712abdae6,
     type: 2}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4838586899059626, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838586899059626, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.6799998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838586899059626, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838586899059626, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838586899059626, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838586899059626, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838586899059626, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838586899059626, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: dustParticles
+      value: 
+      objectReference: {fileID: 233061185}
+    - target: {fileID: 1737880092333408, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_Name
+      value: Player (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: bounceForce
+      value: 85
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1337004857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
