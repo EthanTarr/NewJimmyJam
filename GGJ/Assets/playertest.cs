@@ -46,10 +46,12 @@ public class playertest : MonoBehaviour {
                 xSpeed += speed / 8;
                 GetComponent<SpriteRenderer>().flipX = false;
                 anim.SetFloat("velocity", 1);
+                slopeCheck();
             } else if (Input.GetKey(control.left)) {
                 xSpeed -= speed / 8;
                 GetComponent<SpriteRenderer>().flipX = true;
                 anim.SetFloat("velocity", 1);
+                slopeCheck();
             } else {
                 xSpeed = Mathf.Lerp(xSpeed, 0, Time.deltaTime * 3);
             }
@@ -115,19 +117,23 @@ public class playertest : MonoBehaviour {
                 Shake.instance.shake(2, 3);
                 rigid.velocity = Vector3.zero;
                 strength *= 5;
-                WaveGenerator.instance.makeWave(transform.position.x, strength,  GetComponent<SpriteRenderer>().color, 7);
+                WaveGenerator.instance.makeWave(transform.position.x, strength, GetComponent<SpriteRenderer>().color, 7);
                 dustParticles.Emit(UnityEngine.Random.Range(5, 8));
-				if (UnityEngine.Random.value < .5f) {
-					//Instantiate(
-				}
+                if (UnityEngine.Random.value < .5f)
+                {
+                    //Instantiate(
+                }
                 StartCoroutine(recovery());
             }
-            else {
+            else
+            {
                 WaveGenerator.instance.makeWave(transform.position.x, strength, Color.white, 3);
             }
-
-
-            
+        } else if (other.gameObject.tag.Equals("Player")) {
+            if (!smashing) {
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(-rigid.velocity * 10);
+                rigid.AddForce(-other.gameObject.GetComponent<Rigidbody2D>().velocity * 10);
+            }
         }
     }
 
@@ -142,6 +148,24 @@ public class playertest : MonoBehaviour {
         canSmash = true;
     }
 
+    void slopeCheck() {
+        float littleHeight = 0.05f;
+        float height = -1;
+
+        for (int i = 0; i < 3; i++)
+        {
+            Debug.DrawRay(transform.position - transform.up * 0.33f + transform.up * littleHeight * i, transform.right * Mathf.Sign(rigid.velocity.x) * 0.6f, Color.red);
+            RaycastHit2D slopeDetect = Physics2D.Raycast(transform.position - transform.up * 0.33f + transform.up * littleHeight * i, transform.right * Mathf.Sign(rigid.velocity.x), 0.6f, groundCheck);
+            if (slopeDetect.collider != null) {
+                height = i;
+            }
+        }
+        if (height != 2 && height > -1) {
+            print("hoi");
+            transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x, transform.position.y + littleHeight * height + 0.2f), Time.deltaTime * 4);
+        }
+    }
+
     IEnumerator recovery() {
         smashing = false;
         Color color = GetComponent<SpriteRenderer>().color;
@@ -153,7 +177,7 @@ public class playertest : MonoBehaviour {
         anim.SetBool("smashing", false);
         yield return new WaitForSeconds(3);
         GameObject shockwave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
-
+        shockwave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, shockwave.GetComponent<SpriteRenderer>().color.a);
         color = GetComponent<SpriteRenderer>().color;
         color.a = 255f;
         GetComponent<SpriteRenderer>().color = color;

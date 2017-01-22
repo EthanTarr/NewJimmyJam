@@ -7,6 +7,7 @@ public class SquareBehavior : MonoBehaviour {
 	public float TotalAmplitude;
 	public float Wavelength = 2f;
 	public float FloorOscillation = .02f;
+    public float OscillationSpeed = 0.01f;
 	private float initialY = 0;
 	private float standardY;
 
@@ -22,8 +23,7 @@ public class SquareBehavior : MonoBehaviour {
 	void Update () {
 		initialY = transform.position.y;
 		TotalAmplitude = 0;
-		Mathf.Sin (Time.time);
-		//standardY += FloorOscillation * (Mathf.Sin (Time.time));
+		standardY += FloorOscillation * (Mathf.Sin (Time.time * OscillationSpeed));
 
 		foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("Pulse")) {
 			float xPos = transform.position.x;
@@ -41,7 +41,7 @@ public class SquareBehavior : MonoBehaviour {
 				TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * Mathf.Sin ((Mathf.PI / Wavelength) * (xPos - xPulsePos));
 			}
         }
-		TotalAmplitude = Mathf.Clamp (TotalAmplitude, -5, 5);
+		TotalAmplitude = Mathf.Clamp (TotalAmplitude, -3,32);
 		transform.position = new Vector3 (transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime), 0);
         getVelocity();
 

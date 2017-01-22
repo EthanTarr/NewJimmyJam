@@ -4,13 +4,14 @@ using System.Collections;
 public class Shake : MonoBehaviour {
 	public static Shake instance;
 	public Vector3 startTransform;
+    public ParticleSystem dustParticles;
 	void Awake(){
 		instance = this;
 		startTransform = transform.position;
 	}
 	public void shake(float t, float strength){
-
-		StartCoroutine(screenshake(t, strength));
+        dustParticles.Emit(UnityEngine.Random.Range(5, 8));
+        StartCoroutine(screenshake(t, strength));
 		
 	}
 	
