@@ -38,7 +38,7 @@ public class PulseMove : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.GetComponent<SquareBehavior>() != null) {
-            
+            other.gameObject.GetComponent<SquareBehavior>().firstBlock = true;
             other.gameObject.GetComponent<SpriteRenderer>().color = color;
         }
     }

@@ -7,3 +7,5 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Title.unity
+  - enabled: 1
+    path: Assets/Jose's other scene.unity
