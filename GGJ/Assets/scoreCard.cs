@@ -7,6 +7,7 @@ public class scoreCard : MonoBehaviour {
     public static scoreCard instance;
     public int[] playerScores;
     public int numOfPlayers = 2;
+	public static bool ConeHeadMode = false;
 
     void Awake() {
 
@@ -14,7 +15,7 @@ public class scoreCard : MonoBehaviour {
             instance = this;
             DontDestroyOnLoad(this);
         } else {
-            Destroy(this);
+			Destroy(this.gameObject);
         }
         playerScores = new int[numOfPlayers];
     }
@@ -27,4 +28,19 @@ public class scoreCard : MonoBehaviour {
 
         return total;
     }
+		
+	public void isConeHeadMode() {
+		ConeHeadMode = GameObject.Find("Toggle").GetComponent<UnityEngine.UI.Toggle>().isOn;
+	}
+
+	public void OnLevelWasLoaded(int level) {
+		
+		if (level == 1) {
+			
+			foreach (GameObject cone in GameObject.FindGameObjectsWithTag("Cone")) {
+				Debug.Log (ConeHeadMode);
+				cone.SetActive (ConeHeadMode);
+			}
+		}
+	}
 }
