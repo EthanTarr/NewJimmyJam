@@ -22,9 +22,6 @@ public class playertest : MonoBehaviour {
 	private float previousAmplitude = 0;
 	private int jumps = 0;
     public float bounceForce;
-	public GameObject Spike;
-	private ArrayList spikePositions;
-	private int spikes = 0;
 
     public bool laggin = false;
     public bool canSmash = true;
@@ -32,8 +29,6 @@ public class playertest : MonoBehaviour {
     void Start() {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-		spikePositions = new ArrayList ();
-		populateSpikePositions ();
     }
     float xSpeed;
     void Update() {
@@ -82,13 +77,6 @@ public class playertest : MonoBehaviour {
 		}
 
     }
-		
-	void populateSpikePositions() {
-		foreach(GameObject spike in GameObject.FindGameObjectsWithTag("Spike")) {
-			spikePositions.Add (spike);
-			spikes++;
-		}
-	}
 
 	void checkForWave() {
 		foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor")) {
@@ -128,12 +116,6 @@ public class playertest : MonoBehaviour {
                 WaveGenerator.instance.makeWave(transform.position.x, strength, GetComponent<SpriteRenderer>().color, 7);
                 dustParticles.Emit(UnityEngine.Random.Range(5, 8));
 
-				if (UnityEngine.Random.value < .03f) {
-					int Fallingspike = UnityEngine.Random.Range (0, spikes);
-					GameObject temp = (GameObject) Instantiate (Spike, ((GameObject) spikePositions [Fallingspike]).transform.position, Quaternion.identity);
-					temp.GetComponent<Rigidbody2D> ().AddTorque (UnityEngine.Random.value * 30);
-					Destroy((GameObject) spikePositions [Fallingspike]);
-				}
                 StartCoroutine(recovery());
             }
             else
