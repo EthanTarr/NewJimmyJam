@@ -379,6 +379,9 @@ Prefab:
         type: 2}
       propertyPath: m_UseFullKinematicContacts
       value: 0
+    - target: {fileID: 1792704113142904, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_TagString
+      value: Cone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
@@ -771,6 +774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScores: 
   numOfPlayers: 2
+  ConeHeadMode: 0
 --- !u!4 &229607171
 Transform:
   m_ObjectHideFlags: 0
@@ -2374,6 +2378,9 @@ Prefab:
         type: 2}
       propertyPath: m_UseFullKinematicContacts
       value: 0
+    - target: {fileID: 1792704113142904, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_TagString
+      value: Cone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}

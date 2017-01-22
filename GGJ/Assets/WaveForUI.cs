@@ -26,7 +26,7 @@ public class WaveForUI : MonoBehaviour {
 			GameObject piece = Instantiate (Square, new Vector3 (width * i, 3, 0), Quaternion.identity);
 			piece.transform.localScale = new Vector3(piece.transform.localScale.x, piece.transform.localScale.y - (Mathf.Abs(i) * .05f), 0);
 			Color fade = piece.GetComponent<SpriteRenderer> ().color;
-			fade.a = fade.a - (Mathf.Abs (i) * .05f);
+			fade.a = fade.a - (Mathf.Abs (i) * .03f);
 			piece.GetComponent<SpriteRenderer> ().color = fade;
 		}
 	}
