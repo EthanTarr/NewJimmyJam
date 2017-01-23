@@ -8,4 +8,8 @@ public class cone : MonoBehaviour {
         this.gameObject.SetActive(scoreCard.instance.ConeHeadMode) ;
 	}
 
+    void Update() {
+        GetComponent<SpriteRenderer>().color = transform.parent.GetComponent<SpriteRenderer>().color;
+    }
+
 }
