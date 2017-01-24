@@ -1,23 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class pause : MonoBehaviour {
 
     public GameObject text;
-    public AudioClip pauseBeep; 
+    public AudioClip pauseBeep;
+    public static pause instance;
+
+    void Start() {
+        if (instance == null) {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        } else {
+            Destroy(this.gameObject);
+        }
+    }
+
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.P)) {
             if (Time.timeScale > 0) {
-                GetComponent<Image>().enabled = true;
                 text.SetActive(true);
                 Time.timeScale = 0;
             } else {
-                Time.timeScale = 1;
-                GetComponent<Image>().enabled = false;
                 text.SetActive(false);
+                Time.timeScale = 1;
+                
             }
 
             audioManager.instance.Play(pauseBeep, 0.25f, 1);

@@ -135,7 +135,7 @@ public class playertest : MonoBehaviour {
 
         }
         audioManager.instance.Play(charge, 0.5f * (chargeValue / chargeLimit));
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.05f);
         speed *= 3;
         chargeParticle.gameObject.transform.localScale = Vector3.zero;
         rigid.gravityScale = 3;
