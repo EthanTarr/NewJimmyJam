@@ -18,22 +18,33 @@ public class pause : MonoBehaviour {
     }
 
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.P)) {
-            if (Time.timeScale > 0) {
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale > 0)
+            {
                 text.SetActive(true);
                 Time.timeScale = 0;
-            } else {
+            }
+            else
+            {
                 text.SetActive(false);
                 Time.timeScale = 1;
-                
+
             }
 
             audioManager.instance.Play(pauseBeep, 0.25f, 1);
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 0) {
-            Application.Quit();
-        }
+    public void gotoMenu(){
+        text.SetActive(false);
+        Time.timeScale = 1;
+        Application.LoadLevel(0);
+    }
+
+    public void quit() {
+        Application.Quit();
     }
 }
