@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
     void chooseMap(int index, float width, float i) {
         switch (index) {
             case 1: Instantiate(Square, new Vector3(width * i, transform.position.y, 0), Quaternion.identity); break;
-            case 2: Instantiate(Square, new Vector3(width * i, transform.position.y - .25f - Mathf.Sin(i / 10), 0), Quaternion.identity); break;
+            case 2: Instantiate(Square, new Vector3(width * i, transform.position.y  - 0.50f + Mathf.Sin(i / 10), 0), Quaternion.identity); break;
             case 3: Instantiate(Square, new Vector3(width * i, transform.position.y - 1 + Mathf.Abs(i / 15), 0), Quaternion.identity); break;
             case 4: Instantiate(Square, new Vector3(width * i, transform.position.y - Mathf.Abs(Mathf.Pow(.03f * i, 2)), 0), Quaternion.identity); break;
             case 5: Instantiate(Square, new Vector3(width * i, transform.position.y - 0.75f - Mathf.Sin(i / 10), 0), Quaternion.identity); break;

@@ -30,7 +30,7 @@ public class Shake : MonoBehaviour {
 
         audioManager.instance.Play(rumbles[Random.Range(0, rumbles.Length - 1)], 0.25f, Random.Range(0.96f, 1.03f));
 
-        if (UnityEngine.Random.value < 0.03f) {
+        if (UnityEngine.Random.value < 0.1f) {
             int Fallingspike = UnityEngine.Random.Range(0, spikes);
 			spikePositions.Remove (Spike);
 			spikes--;
