@@ -322,6 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pulse: {fileID: 1370316028781630, guid: 1370e79f7c728624e83e752638651c4f, type: 2}
   antiPulse: {fileID: 1554315179964700, guid: f7b475a5b96c4614fbaa66d82efdb9b0, type: 2}
+  fadeIn: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &127876803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,6 +1046,36 @@ Prefab:
         type: 2}
       propertyPath: control.down
       value: 274
+      objectReference: {fileID: 0}
+    - target: {fileID: 212035578677471066, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.97160244
+      objectReference: {fileID: 0}
+    - target: {fileID: 212035578677471066, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.4852941
+      objectReference: {fileID: 0}
+    - target: {fileID: 212035578677471066, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: fullColor.r
+      value: 0.8919639
+      objectReference: {fileID: 0}
+    - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: fullColor.g
+      value: 0.362673
+      objectReference: {fileID: 0}
+    - target: {fileID: 114714135248306996, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: fullColor.b
+      value: 0.9485294
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
@@ -1935,9 +1966,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cafd1507cdf9147989cecc19cd7c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
   deathParticle: {fileID: 1879571905062228, guid: 5b8a694f9d402434bb03b70352435cac,
     type: 2}
+  deathExplosion: {fileID: 0}
 --- !u!1 &1487924129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,6 +2236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTransform: {x: 0, y: 0, z: 0}
+  dustParticles: {fileID: 0}
+  Spike: {fileID: 0}
+  rumbles: []
+  spikeFall: {fileID: 0}
 --- !u!1 &1689544647
 GameObject:
   m_ObjectHideFlags: 0
