@@ -110,7 +110,7 @@ public class playertest : MonoBehaviour {
         }
 
 		if (touchingGround) {
-			checkForWave ();
+			//checkForWave ();
 		}
 
     }
@@ -139,6 +139,8 @@ public class playertest : MonoBehaviour {
         speed *= 3;
         chargeParticle.gameObject.transform.localScale = Vector3.zero;
         rigid.gravityScale = 3;
+		minSmashSpped = chargeValue * 26.6f + 10;
+		power = chargeValue * 4 + 4;
         rigid.velocity = new Vector2(0, -minSmashSpped);
         anim.SetBool("smashing", true);
         smashing = true;
@@ -149,7 +151,7 @@ public class playertest : MonoBehaviour {
 	void checkForWave() {
 		foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor")) {
 			if (Mathf.Abs (square.transform.position.x - transform.position.x) < GameObject.Find("Managers").GetComponent<GameManager>().Square.transform.localScale.x) {
-				if (square.GetComponent<SquareBehavior> ().TotalAmplitude - previousAmplitude > .5) {
+				if (square.GetComponent<SquareBehavior> ().TotalAmplitude - previousAmplitude > .1) {
 					rigid.AddForce (new Vector2 (0, square.GetComponent<SquareBehavior> ().TotalAmplitude * bounceForce));
 				}
 				previousAmplitude = square.GetComponent<SquareBehavior> ().TotalAmplitude;
@@ -216,9 +218,10 @@ public class playertest : MonoBehaviour {
 
     void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.tag.Equals("Floor")) {
+		checkForWave ();
+        /*if (other.gameObject.tag.Equals("Floor")) {
 			rigid.AddForce(new Vector2(0, other.gameObject.GetComponent<SquareBehavior>().velocity * (canSmash ? 5000 : 1000)));
-        }
+        }*/
     }
 
     void slopeCheck() {
