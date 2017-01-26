@@ -23,7 +23,7 @@ public class audioManager : MonoBehaviour {
 
     public void Play(AudioClip sound, float volume, float pitch) {
         source[index].clip = sound;
-        source[index].volume = volume;
+        source[index].volume = volume * settings.instance.fx;
         source[index].pitch = pitch;
         source[index].PlayOneShot(sound);
 

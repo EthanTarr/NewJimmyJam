@@ -267,7 +267,8 @@ public class playertest : MonoBehaviour {
 }
 
 [Serializable]
-public class Controls {
+public class Controls
+{
     public int playeriD;
 
     public KeyCode left;
