@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class pause : MonoBehaviour {
 
-    public GameObject text;
+    public GameObject Pause;
+    public GameObject settings;
     public AudioClip pauseBeep;
     public static pause instance;
 
@@ -17,19 +18,15 @@ public class pause : MonoBehaviour {
         }
     }
 
-
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (Time.timeScale > 0)
-            {
-                text.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (Time.timeScale > 0) {
+                Pause.SetActive(true);
                 Time.timeScale = 0;
-            }
-            else
-            {
-                text.SetActive(false);
+            } else {
+                Pause.SetActive(false);
+                settings.SetActive(false);
                 Time.timeScale = 1;
 
             }
@@ -39,12 +36,17 @@ public class pause : MonoBehaviour {
     }
 
     public void gotoMenu(){
-        text.SetActive(false);
+        Pause.SetActive(false);
         Time.timeScale = 1;
         Application.LoadLevel(0);
     }
 
     public void quit() {
         Application.Quit();
+    }
+
+    public void toggleSettings() {
+            settings.SetActive(!settings.activeSelf);
+            Pause.SetActive(!Pause.activeSelf);
     }
 }
