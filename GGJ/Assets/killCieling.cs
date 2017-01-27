@@ -18,7 +18,7 @@ public class killCieling : MonoBehaviour {
 
             Destroy(other.gameObject);
 
-            endingUI.instance.startEnd(other.gameObject.GetComponent<playertest>().control.playeriD == 0 ? 1 : 0);
+            endingUI.instance.startEnd(other.gameObject.GetComponent<playertest>().playerNum == 0 ? 0 : 1);
 
            
 		}
