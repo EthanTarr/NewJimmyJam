@@ -17,7 +17,7 @@ public class FallingSpike : MonoBehaviour {
 
             Destroy(other.gameObject);
 
-            endingUI.instance.startEnd(other.gameObject.GetComponent<playertest>().control.playeriD == 0 ? 1 : 0);
+            endingUI.instance.startEnd(other.gameObject.GetComponent<playertest>().playerNum == 0 ? 0 : 1);
 
         } else if (other.gameObject.tag == "Floor"){
 			this.GetComponent<BoxCollider2D> ().enabled = false;

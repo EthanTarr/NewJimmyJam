@@ -9,6 +9,7 @@ public class playertest : MonoBehaviour {
     Animator anim;
     public LayerMask groundCheck;
     public Controls control;
+    public int playerNum;
     [Space()]
     public float speed = 5;
     public float maxJumpHeight = 10;
@@ -70,14 +71,9 @@ public class playertest : MonoBehaviour {
 			jumps = 1;
 		}
         if (!smashing && !laggin) {
-            if (Input.GetKey(control.right)) {
-                xSpeed += speed / 8;
-                GetComponent<SpriteRenderer>().flipX = false;
-                anim.SetFloat("velocity", 1);
-                slopeCheck();
-            } else if (Input.GetKey(control.left)) {
-                xSpeed -= speed / 8;
-                GetComponent<SpriteRenderer>().flipX = true;
+            if (Mathf.Abs(Input.GetAxis("Horizontal" + playerNum)) > 0.1f) {
+                xSpeed += speed * Input.GetAxis("Horizontal" + playerNum) / 8;
+                GetComponent<SpriteRenderer>().flipX = Input.GetAxisRaw("Horizontal" + playerNum) < 0;
                 anim.SetFloat("velocity", 1);
                 slopeCheck();
             } else {
@@ -88,17 +84,17 @@ public class playertest : MonoBehaviour {
             rigid.velocity = new Vector2(xSpeed , rigid.velocity.y);
 
 
-            if (Input.GetKeyDown(control.jump) && touchingGround) {
+            if (Input.GetButtonDown("Jump" + playerNum) && touchingGround) {
                 rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight);
                 audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.97f, 1.03f));
             }
 
-            if (Input.GetKeyUp(control.jump) && rigid.velocity.y > minJumpHeight) {
+            if (Input.GetButtonUp("Jump" + playerNum) && rigid.velocity.y > minJumpHeight) {
                 rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight);
             }
 
 
-            if (Input.GetKeyDown(control.down) && canSmash && !smashing && !touchingGround) {
+            if (Input.GetButtonDown("Smash" + playerNum) && canSmash && !smashing && !touchingGround) {
                 StartCoroutine("chargeSmash");
             }
         }
@@ -125,7 +121,7 @@ public class playertest : MonoBehaviour {
         
         while (isChargin && chargeValue < chargeLimit) {
             toggleCharge(1/(chargeValue*2 /chargeLimit));
-            if (!Input.GetKey(control.down)) {         
+            if (!Input.GetButton("Smash" + playerNum)) {         
                 isChargin = false;
             }
 
@@ -216,12 +212,8 @@ public class playertest : MonoBehaviour {
         laggin = false;
     }
 
-    void OnCollisionExit2D(Collision2D other)
-    {
+    void OnCollisionExit2D(Collision2D other) {
 		checkForWave ();
-        /*if (other.gameObject.tag.Equals("Floor")) {
-			rigid.AddForce(new Vector2(0, other.gameObject.GetComponent<SquareBehavior>().velocity * (canSmash ? 5000 : 1000)));
-        }*/
     }
 
     void slopeCheck() {
@@ -267,7 +259,8 @@ public class playertest : MonoBehaviour {
 }
 
 [Serializable]
-public class Controls {
+public class Controls
+{
     public int playeriD;
 
     public KeyCode left;
