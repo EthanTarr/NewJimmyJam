@@ -12,7 +12,7 @@ public class WaveGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         instance = this;
-	}
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -23,7 +23,7 @@ public class WaveGenerator : MonoBehaviour {
 
 
 	void makeWave() {
-        makeWave(0, 0, fadeIn, 5);
+        makeWave(0, -1, fadeIn, 5);
 	}
 
     public void StartWave(){

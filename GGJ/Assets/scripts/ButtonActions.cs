@@ -16,6 +16,7 @@ public class ButtonActions : MonoBehaviour {
 	}
 
 	public void PlayGame() {
-		Application.LoadLevel ("Jose's other scene");
+        print("hoihoihoi");
+		Application.LoadLevel(1);
 	}
 }

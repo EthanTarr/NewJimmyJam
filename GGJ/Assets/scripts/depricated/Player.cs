@@ -17,11 +17,15 @@ public class Player : MonoBehaviour {
     float gravity = -20;
     float maxJumpVelocity = 8;
     float minJumpVelocity = 8;
-    Vector3 velocity;
+    [HideInInspector] public Vector3 velocity;
     float velocityXSmoothing;
     private Animator anim;
 
     Controller2D controller;
+    private float previousAmplitude = 0;
+    public float bounceForce;
+
+    bool fart;
 
     void Start() {
         controller = GetComponent<Controller2D>();
@@ -35,11 +39,12 @@ public class Player : MonoBehaviour {
     void Update() {
 
         if (controller.collisions.above || controller.collisions.below) {
+            if(!fart)
             velocity.y = 0;
         }
 
         if (Input.GetButtonDown("Jump" + playerController) && controller.collisions.below) {
-            velocity.y = maxJumpVelocity;
+            velocity.y += maxJumpVelocity;
         }
 
         if (Input.GetButtonUp("Jump" + playerController) && velocity.y > minJumpVelocity) {
@@ -58,7 +63,34 @@ public class Player : MonoBehaviour {
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+        //checkForWave();
+
         handleAnim(targetVelocityX);
+    }
+
+    public void checkForWave() {
+        fart = true;
+        foreach (GameObject square in controller.collisions.belowCollisions) {
+            //print(square.GetComponent<squareBehaviorv2>().TotalAmplitude - previousAmplitude);
+            //if (Mathf.Abs(square.transform.position.x - transform.position.x) < GameObject.Find("Managers").GetComponent<GameManager>().Square.transform.localScale.x) {
+                if (square.GetComponent<squareBehaviorv2>().TotalAmplitude - previousAmplitude < 0.01f) {
+                    velocity = new Vector2(0, square.GetComponent<squareBehaviorv2>().TotalAmplitude * bounceForce);
+                }
+
+                previousAmplitude = square.GetComponent<squareBehaviorv2>().TotalAmplitude;
+            
+            //}
+        }
+        //fart = false;
+        /* foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor")) {
+             if (Mathf.Abs(square.transform.position.x - transform.position.x) < GameObject.Find("Managers").GetComponent<GameManager>().Square.transform.localScale.x) {
+                 print("hio");
+                 if (square.GetComponent<squareBehaviorv2>().TotalAmplitude - previousAmplitude < .1) {
+                     velocity = new Vector2(velocity.x, square.GetComponent<squareBehaviorv2>().TotalAmplitude * bounceForce);
+                 }
+                 previousAmplitude = square.GetComponent<squareBehaviorv2>().TotalAmplitude;
+             }
+         } */
     }
 
     void handleAnim(float xInput) {

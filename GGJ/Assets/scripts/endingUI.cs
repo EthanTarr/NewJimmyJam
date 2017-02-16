@@ -12,6 +12,7 @@ public class endingUI : MonoBehaviour {
     public Text[] ps;
     public GameObject anyKey;
     bool inputallowed;
+    public int levelNum = 2;
 
     public GameObject winParticles;
 
@@ -22,23 +23,22 @@ public class endingUI : MonoBehaviour {
 
     void Update() {
         if (inputallowed && Input.anyKeyDown) {
-            if (scoreCard.instance.highestScore() >= scoreCard.instance.gamesToWin)  {
+            if (scoreCard.instance.highestScore() >= scoreCard.instance.gamesToWin) {
                 Application.LoadLevel(0);
                 Destroy(scoreCard.instance.gameObject);
             } else {
                 print(scoreCard.instance.highestScore());
-                Application.LoadLevel(1);
+                Application.LoadLevel(levelNum);
             }
         }
     }
 
-    public void startEnd(int playerId) {
+    public void checkPlayersLeft() {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        
-        foreach (GameObject player in players) {
-            player.GetComponent<playertest>().enabled = false;       
-        }
-        StartCoroutine(ending(playerId));
+        if (players.Length == 1) {
+            StartCoroutine(ending(players[0].GetComponent<playertest>().playerNum));
+            players[0].GetComponent<playertest>().enabled = false;
+        }       
     }
 
     public Transform particlePosition;
