@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4461427429604528}
   - component: {fileID: 198909840887975788}
   - component: {fileID: 199486443631791630}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 58289229999886628}
   - component: {fileID: 70378048699263238}
   - component: {fileID: 95619662148139376}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 60091148330383142}
   - component: {fileID: 114088267750227140}
   - component: {fileID: 114387569553538420}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Triangle (25)
   m_TagString: Cone
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737880092333408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.67, y: 2.71, z: 0}
+  m_LocalPosition: {x: -8.66, y: 2.71, z: 0}
   m_LocalScale: {x: 4.4809265, y: 4.4809265, z: 4.4809265}
   m_Children:
   - {fileID: 4461427429604528}
@@ -230,24 +230,28 @@ MonoBehaviour:
   groundCheck:
     serializedVersion: 2
     m_Bits: 256
-  control:
-    playeriD: 0
-    left: 97
-    right: 100
-    jump: 119
-    down: 115
+  playerControl: 
+  playerNum: 1
   speed: 5
+  accelerate: 8
+  decelerate: 4
   maxJumpHeight: 15
   minJumpHeight: 5
+  minSmashSpeed: 4
+  maxSmashSpeed: 30
+  minSmashPower: 4
+  maxSmashPower: 7
+  bounceForce: 120
+  smashCooldownTime: 2
+  maxChargeTime: 0.75
+  dashSpeed: 7
   shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
-  dustParticles: {fileID: 0}
-  minSmashSpped: 30
-  maxSmashSpeed: 25
   chargeParticle: {fileID: 198909840887975788}
-  minPow: 5
-  power: 7
-  maxPow: 5
-  bounceForce: 100
+  fullColor: {r: 0.9617647, g: 1, b: 0.78676474, a: 1}
+  dashCancelParticle: {fileID: 1900380800443328, guid: 9a97a8cd8945f5945872eb54642d0f34,
+    type: 2}
+  dashTrailParticle: {fileID: 1758561289175910, guid: 0a4f7917e12c237458fa646035a820b2,
+    type: 2}
   softLanding:
   - {fileID: 8300000, guid: e7562e73db5736c40889358c4aa64a95, type: 3}
   - {fileID: 8300000, guid: 5367508aa6abf394aa3affdab0d6a001, type: 3}
@@ -256,7 +260,7 @@ MonoBehaviour:
   smash: {fileID: 8300000, guid: 5cdfdf3ef0ca2e2459aca5d95c148237, type: 3}
   jump: {fileID: 8300000, guid: abdf7a4834af47140b3a1a9a4d403fc2, type: 3}
   charge: {fileID: 8300000, guid: 68ae9f5d4d86e454dbf8bb8152aa9ddf, type: 3}
-  fullColor: {r: 0.9617647, g: 1, b: 0.78676474, a: 1}
+  cancel: {fileID: 8300000, guid: 1a97530295f2d61468f45f3c99ed6771, type: 3}
 --- !u!198 &198909840887975788
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -265,7 +269,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1327981461603060}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -312,7 +316,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2142351046
+  randomSeed: -1245879782
   InitialModule:
     serializedVersion: 3
     enabled: 1

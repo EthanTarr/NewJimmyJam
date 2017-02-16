@@ -6,6 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Title.unity
+    path: Assets/Scenes/Title.unity
   - enabled: 1
-    path: Assets/Jose's other scene.unity
+    path: Assets/Scenes/Controller Setup.unity
+  - enabled: 1
+    path: Assets/Scenes/Jose's other scene.unity
+  - enabled: 1
+    path: Assets/Scenes/4-player scene.unity
