@@ -76,7 +76,7 @@ public class playertest : MonoBehaviour {
         float changeSize = Mathf.Lerp(0, 0.75f, toggle);
         chargeParticle.transform.localScale = new Vector3(changeSize, changeSize, changeSize);
     }
-
+    
     void Update() {
 
         if (playerControl == "") {
@@ -115,7 +115,7 @@ public class playertest : MonoBehaviour {
             }
 
 
-            if (Input.GetButtonDown("Smash" + playerControl) && canSmash && !smashing && !touchingGround) {
+            if (Input.GetButtonDown("Smash" + playerControl) && !isChargin && canSmash && !smashing && !touchingGround) {
                 StartCoroutine(chargeSmash(Input.GetAxis("Horizontal" + playerControl)));
             }
         }
@@ -127,12 +127,13 @@ public class playertest : MonoBehaviour {
         }
     }
 
+    bool isChargin;
     IEnumerator chargeSmash(float currentDirection) {
         float originalSpeed = speed;
         speed /= 3;
         rigid.velocity = new Vector2(0, 0);
         rigid.gravityScale = 0;
-        bool isChargin = true;
+        isChargin = true;
         bool cancel = false;
         bool direction = GetComponent<SpriteRenderer>().flipX;
         float chargeValue = 0;
@@ -147,7 +148,8 @@ public class playertest : MonoBehaviour {
             speed = Mathf.Lerp(speed, 0, lerp / 24);
             SmashSpeed = Mathf.Lerp(minSmashSpeed, maxSmashSpeed, lerp);
             smashPower = Mathf.Lerp(minSmashPower, maxSmashPower, lerp);
-            if (!Input.GetButton("Smash" + playerControl)) {         
+            if (!Input.GetButton("Smash" + playerControl)) {
+                speed = originalSpeed;
                 isChargin = false;
             }
 
@@ -161,21 +163,25 @@ public class playertest : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
 
+        speed = originalSpeed;
         if (!cancel) {
             audioManager.instance.Play(charge, 0.5f * (chargeValue / maxChargeTime));
             yield return new WaitForSeconds(0.05f);
-            speed = originalSpeed;
+            isChargin = false;
             chargeParticle.gameObject.transform.localScale = Vector3.zero;
             rigid.gravityScale = 3;
-
             rigid.velocity = new Vector2(0, -SmashSpeed);
             anim.SetBool("smashing", true);
             smashing = true;
             smashReset = 50;
+
+            GameObject dashTrail = Instantiate(dashTrailParticle, transform.position, transform.rotation);
+            dashTrail.transform.parent = this.transform;
+            dashTrail.GetComponent<ParticleSystem>().startColor = fullColor;
+            Destroy(dashTrail, 1.5f);
             toggleCharge(0);
         } else {
-            vunrabilityFrames = true;
-            speed = originalSpeed;
+            vunrabilityFrames = true;    
             GetComponent<SpriteRenderer>().flipX = direction;
             rigid.velocity = new Vector2(dashSpeed * Input.GetAxis("Dash" + playerControl), 1);
                   
@@ -183,7 +189,6 @@ public class playertest : MonoBehaviour {
             rigid.gravityScale = 3;
             SmashSpeed = 0;
             smashPower = 0;
-            isChargin = false;
             smashReset = 50;
 
             audioManager.instance.Play(this.cancel, 0.25f * (chargeValue / maxChargeTime));
@@ -205,6 +210,7 @@ public class playertest : MonoBehaviour {
     }
 
 	void checkForWave() {
+        
         foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor")) {
 			if (Mathf.Abs (square.transform.position.x - transform.position.x) < GameObject.Find("Managers").GetComponent<GameManager>().Square.transform.localScale.x) {
 				if (square.GetComponent<SquareBehavior> ().TotalAmplitude - previousAmplitude > .1) {
@@ -213,10 +219,15 @@ public class playertest : MonoBehaviour {
 				previousAmplitude = square.GetComponent<SquareBehavior> ().TotalAmplitude;
 			}
 		}
+
+        if (!canMakeWave) {
+            return;
+        }
+
+        StartCoroutine("checkIfWaved");
 	}
 
     public bool checkGround() {
-
         RaycastHit2D hit = Physics2D.Raycast(GetComponent<Collider2D>().bounds.min, -transform.up, 0.5f, groundCheck);
         Debug.DrawLine(GetComponent<Collider2D>().bounds.min, GetComponent<Collider2D>().bounds.min - transform.up * 0.5f);
         anim.SetBool("airborne", hit == false);
@@ -224,43 +235,34 @@ public class playertest : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8) {
-			float strength = Mathf.Clamp (other.relativeVelocity.magnitude / 40f, 0, .8f);
-            if (smashing) {
-                canSmash = false;
-                Shake.instance.shake(2, 3);
-                rigid.velocity = Vector3.zero;
-                strength *= smashPower;
-                Color color = GetComponent<SpriteRenderer>().color;
-                color.a = 0.75f;
-                WaveGenerator.instance.makeWave(transform.position.x, strength, color, 7);
-                audioManager.instance.Play(smash, 0.75f, UnityEngine.Random.Range(0.95f, 1.05f));
+        if (other.gameObject.tag.Equals("Floor")) {
+            if (other.relativeVelocity.magnitude > 8) {
+                float strength = Mathf.Clamp(other.relativeVelocity.magnitude / 40f, 0, .8f);
+                if (smashing) {
+                    canSmash = false;
+                    Shake.instance.shake(2, 3);
+                    rigid.velocity = Vector3.zero;
+                    strength *= smashPower;
+                    Color color = GetComponent<SpriteRenderer>().color;
+                    color.a = 0.75f;
+                    WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, color, 7);
+                    audioManager.instance.Play(smash, 0.75f, UnityEngine.Random.Range(0.95f, 1.05f));
 
-                SmashSpeed = 0;
-                smashPower = 0;
-                smashing = false;
+                    SmashSpeed = 0;
+                    smashPower = 0;
 
-                StartCoroutine(recovery());
-            } else {
-                rigid.velocity = Vector3.zero;
-                audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.05f, UnityEngine.Random.Range(0.96f, 1.03f));
-                WaveGenerator.instance.makeWave(transform.position.x, strength, Color.white, 3);
-            }
+                    StartCoroutine(recovery());
+                } else {
+                    rigid.velocity = Vector3.zero;
+                    audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.05f, UnityEngine.Random.Range(0.96f, 1.03f));
+
+                    if (canMakeWave)
+                        WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, Color.white, 3);
+                }
+            } 
         } else if (other.gameObject.tag.Equals("Player")) {
-            if (smashing) {
-                smashing = false;
-                Color color = GetComponent<SpriteRenderer>().color;
-                color = GetComponent<SpriteRenderer>().color;
-                color.a = 255f;
-                GetComponent<SpriteRenderer>().color = color;
-                anim.SetBool("smashing", false);
-                canSmash = true;
-                rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight);
-
-                StartCoroutine(other.gameObject.GetComponent<playertest>().knockedOut());
-            } else {
-                audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.05f, UnityEngine.Random.Range(0.96f, 1.03f));
-            }
+            if(other.gameObject.transform.position.y < transform.position.y)
+                rigid.velocity = new Vector2(rigid.velocity.x, (smashing || isChargin) ? 15 : 5);
         }
     }
 
@@ -274,6 +276,13 @@ public class playertest : MonoBehaviour {
         vunrabilityFrames = false;
     }
 
+    bool canMakeWave = true;
+    IEnumerator checkIfWaved() {
+        canMakeWave = false;
+        yield return new WaitForSeconds(0.75f);
+        canMakeWave = true;
+    }
+
     void OnCollisionExit2D(Collision2D other) {
         checkForWave ();
     }
@@ -282,7 +291,7 @@ public class playertest : MonoBehaviour {
         float littleHeight = 0.05f;
         float height = -1;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 1; i < 3; i++) {
             Debug.DrawRay(transform.position - transform.up * 0.33f + transform.up * littleHeight * i, transform.right * Mathf.Sign(rigid.velocity.x) * 0.6f, Color.red);
             RaycastHit2D slopeDetect = Physics2D.Raycast(transform.position - transform.up * 0.33f + transform.up * littleHeight * i, transform.right * Mathf.Sign(rigid.velocity.x), 0.6f, groundCheck);
             if (slopeDetect.collider != null) {
