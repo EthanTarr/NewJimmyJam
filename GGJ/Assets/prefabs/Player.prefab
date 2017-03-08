@@ -92,7 +92,7 @@ Transform:
   m_GameObject: {fileID: 1338795899029746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.480927, y: 2.82, z: 0}
-  m_LocalScale: {x: 4.480927, y: 4.480927, z: 0}
+  m_LocalScale: {x: 4.480927, y: 4.480927, z: 4.480927}
   m_Children:
   - {fileID: 4461427429604528}
   - {fileID: 4838586899059626}
@@ -272,7 +272,7 @@ MonoBehaviour:
   minSmashPower: 4
   maxSmashPower: 15
   bounceForce: 100
-  smashCooldownTime: 2
+  maxSmashCooldownTime: 2
   maxChargeTime: 0.75
   dashSpeed: 7
   shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}

@@ -34,8 +34,11 @@ public class playertest : MonoBehaviour {
 
     bool smashing;
     float smashReset;
-    public float smashCooldownTime = 2;
-	private float previousAmplitude = 0;
+
+    public float maxSmashCooldownTime = 2;
+    float SmashCooldownTime = 0;
+
+    private float previousAmplitude = 0;
     public float maxChargeTime = 0.75f;
 
     bool canMakeWave = true;
@@ -82,9 +85,6 @@ public class playertest : MonoBehaviour {
         chargeParticle.startSize = Mathf.Lerp(0, 0.4f, toggle);
         float changeSize = Mathf.Lerp(0, 0.75f, toggle);
         chargeParticle.transform.localScale = new Vector3(changeSize, changeSize, changeSize);
-
-        SmashSpeed = Mathf.Lerp(minSmashSpeed, maxSmashSpeed, toggle);
-        smashPower = Mathf.Lerp(minSmashPower, maxSmashPower, toggle);
         speed = Mathf.Lerp(speed, 0, toggle / 24);
     }
     
@@ -103,7 +103,7 @@ public class playertest : MonoBehaviour {
             }
 
             xSpeed = Mathf.Clamp(xSpeed, -speed, speed);
-            rigid.velocity = new Vector2(xSpeed , rigid.velocity.y);
+
 
             if (Input.GetButtonDown("Jump" + playerControl) && touchingGround) {
                 rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight);
@@ -118,6 +118,8 @@ public class playertest : MonoBehaviour {
                     && canSmash && !smashing && !touchingGround) {
                 StartCoroutine(chargeSmash(Input.GetAxis("Horizontal" + playerControl)));
             }
+
+            rigid.velocity = new Vector2(xSpeed, rigid.velocity.y);
         }
     }
 
@@ -137,6 +139,11 @@ public class playertest : MonoBehaviour {
         while (chargeValue < maxChargeTime) {
             float lerp = (chargeValue / maxChargeTime);
             toggleCharge(lerp);
+
+            SmashSpeed = Mathf.Lerp(minSmashSpeed, maxSmashSpeed, lerp);
+            smashPower = Mathf.Lerp(minSmashPower, maxSmashPower, lerp);
+            SmashCooldownTime = Mathf.Lerp(0.25f, maxSmashCooldownTime, lerp);
+
 
             if (!Input.GetButton("Smash" + playerControl)) {
                 speed = originalSpeed;
@@ -160,11 +167,11 @@ public class playertest : MonoBehaviour {
     IEnumerator dashOutOfCharge(float chargeValue, bool direction) {
         vunrabilityFrames = true;
         GetComponent<SpriteRenderer>().flipX = direction;
-        rigid.velocity = new Vector2(dashSpeed * Input.GetAxis("Dash" + playerControl), 1);
+        rigid.velocity = new Vector2(dashSpeed * Input.GetAxis("Dash" + playerControl), 0);
 
         smashing = false;
         toggleCharge(0);
-        rigid.gravityScale = 3;
+
         SmashSpeed = 0;
         smashPower = 0;
         smashReset = 50;
@@ -173,15 +180,16 @@ public class playertest : MonoBehaviour {
         GameObject dashExpurosion = Instantiate(dashCancelParticle, transform.position, transform.rotation);
         dashExpurosion.GetComponent<ParticleSystem>().startColor = fullColor;
         Destroy(dashExpurosion, 1.5f);
+
         GameObject dashTrail = Instantiate(dashTrailParticle, transform.position, transform.rotation);
         dashTrail.transform.parent = this.transform;
         dashTrail.GetComponent<ParticleSystem>().startColor = fullColor;
-        Destroy(dashTrail, 1.5f);
+        Destroy(dashTrail, 2f);
 
         //canSmash = false;
-        //StartCoroutine(recovery());
-        yield return new WaitForSeconds(0.5f);
-
+        StartCoroutine(recovery(0.5f));
+        yield return new WaitForSeconds(0.15f);
+        rigid.gravityScale = 3;
         chargeParticle.gameObject.transform.localScale = new Vector3(rigid.velocity.x, 0);
         vunrabilityFrames = false;
     }
@@ -238,12 +246,12 @@ public class playertest : MonoBehaviour {
                     strength *= smashPower;
                     Color color = GetComponent<SpriteRenderer>().color;
                     color.a = 0.75f;
-                    WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength * 2, color, 7);
+                    WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, color, 7);
                     audioManager.instance.Play(smash, 0.75f, UnityEngine.Random.Range(0.95f, 1.05f));
 
                     SmashSpeed = 0;
                     smashPower = 0;
-                    StartCoroutine(recovery());
+                    StartCoroutine(recovery(SmashCooldownTime));
                 } else {
                     rigid.velocity = Vector3.zero;
                     audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.05f, UnityEngine.Random.Range(0.96f, 1.03f));
@@ -285,8 +293,9 @@ public class playertest : MonoBehaviour {
         }
     }
 
-    IEnumerator recovery() {
+    IEnumerator recovery(float recoveryTime) {
         smashing = false;
+        canSmash = false;
         Color color = GetComponent<SpriteRenderer>().color;
         color.a = 0.5f;
         anim.GetComponent<SpriteRenderer>().color = color;
@@ -296,7 +305,7 @@ public class playertest : MonoBehaviour {
 
         vunrabilityFrames = false;
         anim.SetBool("smashing", false);
-        yield return new WaitForSeconds(smashCooldownTime);
+        yield return new WaitForSeconds(recoveryTime);
         GameObject wave = Instantiate(shockWave, transform.position, transform.rotation) as GameObject;
         wave.transform.SetParent(transform);
         wave.GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, wave.GetComponent<SpriteRenderer>().color.a);
@@ -304,6 +313,7 @@ public class playertest : MonoBehaviour {
         color.a = 255f;
         anim.GetComponent<SpriteRenderer>().color = color;
         audioManager.instance.Play(loadPower, 0.5f, UnityEngine.Random.Range(0.96f, 1.03f));
+        SmashCooldownTime = 0.25f;
         canSmash = true;
     }
 
@@ -313,7 +323,7 @@ public class playertest : MonoBehaviour {
         particle.GetComponent<ParticleSystem>().startColor = fullColor;
         GetComponent<SpriteRenderer>().color = fullColor;
         Shake.instance.shake(2, 3);
-        endingUI.instance.Invoke("checkPlayersLeft", 1f);
+        endingUI.instance.Invoke("checkPlayersLeft", 0.5f);
         Destroy(this.gameObject);
     }
 }

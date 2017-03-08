@@ -99,7 +99,7 @@ Transform:
   m_GameObject: {fileID: 1891045804806710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.9318027, y: 5.2989974, z: 0}
-  m_LocalScale: {x: 4.480927, y: 4.480927, z: 0}
+  m_LocalScale: {x: 4.480927, y: 4.480927, z: 4.480927}
   m_Children:
   - {fileID: 4477690250935848}
   - {fileID: 4722927918418254}
@@ -184,7 +184,7 @@ MonoBehaviour:
   minSmashPower: 4
   maxSmashPower: 15
   bounceForce: 100
-  smashCooldownTime: 2
+  maxSmashCooldownTime: 2
   maxChargeTime: 0.75
   dashSpeed: 7
   shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
@@ -194,6 +194,8 @@ MonoBehaviour:
     type: 2}
   dashTrailParticle: {fileID: 1758561289175910, guid: 0a4f7917e12c237458fa646035a820b2,
     type: 2}
+  deathParticle: {fileID: 0}
+  deathExplosion: {fileID: 0}
   softLanding:
   - {fileID: 8300000, guid: e7562e73db5736c40889358c4aa64a95, type: 3}
   - {fileID: 8300000, guid: 5367508aa6abf394aa3affdab0d6a001, type: 3}
@@ -203,7 +205,6 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: abdf7a4834af47140b3a1a9a4d403fc2, type: 3}
   charge: {fileID: 8300000, guid: 68ae9f5d4d86e454dbf8bb8152aa9ddf, type: 3}
   cancel: {fileID: 8300000, guid: 1a97530295f2d61468f45f3c99ed6771, type: 3}
-  canMakeWave: 1
 --- !u!114 &114745485632716922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,8 +219,8 @@ MonoBehaviour:
   originalScale: {x: 1, y: 1}
   sprite: {fileID: 1743019270981024}
   animatedStretch: 0
-  verticalSquish: 0
-  verticalStretch: 0
+  elasticForce: 25
+  collisionSquish: 0.75
 --- !u!198 &198752938891598310
 ParticleSystem:
   m_ObjectHideFlags: 1
