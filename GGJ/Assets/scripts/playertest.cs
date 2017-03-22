@@ -106,11 +106,6 @@ public class playertest : MonoBehaviour {
 
             xSpeed = Mathf.Clamp(xSpeed, -speed, speed);
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> refs/remotes/origin/master
             if (Input.GetButtonDown("Jump" + playerControl) && touchingGround) {
                 rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight);
                 audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.97f, 1.03f));
