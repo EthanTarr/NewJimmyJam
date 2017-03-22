@@ -9,6 +9,7 @@ public class scoreCard : MonoBehaviour {
     public int numOfPlayers = 2;
 	public bool ConeHeadMode = false;
     public int gamesToWin;
+    private UnityEngine.UI.Toggle ConeHeadToggle;
 
     void Awake() {
 
@@ -19,6 +20,18 @@ public class scoreCard : MonoBehaviour {
 			Destroy(this.gameObject);
         }
         playerScores = new int[numOfPlayers];
+        if (ConeHeadToggle == null)
+        {
+            //ConeHeadToggle = GameObject.Find("ConeHeadToggle").GetComponent<UnityEngine.UI.Toggle>();
+           // Debug.Log("1" + ConeHeadToggle);
+            //GameObject.Find("GameOptions").active = false;
+        }
+    }
+
+    private void Start() {
+        ConeHeadToggle = GameObject.Find("ConeHeadToggle").GetComponent<UnityEngine.UI.Toggle>();
+        scoreCard.instance.isConeHeadMode();
+        GameObject.Find("GameOptions").active = false;
     }
 
     public int totalScores() {
@@ -39,11 +52,12 @@ public class scoreCard : MonoBehaviour {
     }
 
 	public void isConeHeadMode() {
-		ConeHeadMode = GameObject.Find("Toggle").GetComponent<UnityEngine.UI.Toggle>().isOn;
+        Debug.Log("2" + ConeHeadToggle);
+        ConeHeadMode = ConeHeadToggle.isOn;
 	}
 
     public void maxGames() {
-        int.TryParse(GameObject.Find("InputField").GetComponent<UnityEngine.UI.InputField>().text, out gamesToWin);
+        int.TryParse(GameObject.Find("GameCounter").GetComponent<UnityEngine.UI.InputField>().text, out gamesToWin);
     }
 
     public void clearScore() {

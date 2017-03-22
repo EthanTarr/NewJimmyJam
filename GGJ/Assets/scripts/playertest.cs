@@ -61,7 +61,7 @@ public class playertest : MonoBehaviour {
     public AudioClip cancel;
 
     void Start() {
-        rigid = GetComponent<Rigidbody2D>();
+        rigid = this.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         baseColor = GetComponent<SpriteRenderer>().color;
         toggleCharge(0);
@@ -102,6 +102,7 @@ public class playertest : MonoBehaviour {
             }
 
             xSpeed = Mathf.Clamp(xSpeed, -speed, speed);
+            float test = rigid.velocity.y;
             rigid.velocity = new Vector2(xSpeed , rigid.velocity.y);
 
 
