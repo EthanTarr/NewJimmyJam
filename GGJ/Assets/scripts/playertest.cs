@@ -68,10 +68,12 @@ public class playertest : MonoBehaviour {
     public AudioClip cancel;
 
     void Start() {
+
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
 
         anim.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
+
         baseColor = GetComponent<SpriteRenderer>().color;
 
         toggleCharge(0);
@@ -103,6 +105,7 @@ public class playertest : MonoBehaviour {
             }
 
             xSpeed = Mathf.Clamp(xSpeed, -speed, speed);
+
 
 
             if (Input.GetButtonDown("Jump" + playerControl) && touchingGround) {
