@@ -184,6 +184,7 @@ MonoBehaviour:
   minSmashPower: 4
   maxSmashPower: 15
   bounceForce: 100
+  smashing: 0
   maxSmashCooldownTime: 2
   maxChargeTime: 0.75
   dashSpeed: 7
@@ -194,8 +195,9 @@ MonoBehaviour:
     type: 2}
   dashTrailParticle: {fileID: 1758561289175910, guid: 0a4f7917e12c237458fa646035a820b2,
     type: 2}
-  deathParticle: {fileID: 0}
-  deathExplosion: {fileID: 0}
+  deathParticle: {fileID: 1879571905062228, guid: 5b8a694f9d402434bb03b70352435cac,
+    type: 2}
+  deathExplosion: {fileID: 8300000, guid: 0673598372542624280eccaca50f268b, type: 3}
   softLanding:
   - {fileID: 8300000, guid: e7562e73db5736c40889358c4aa64a95, type: 3}
   - {fileID: 8300000, guid: 5367508aa6abf394aa3affdab0d6a001, type: 3}

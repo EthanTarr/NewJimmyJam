@@ -106,8 +106,6 @@ public class playertest : MonoBehaviour {
 
             xSpeed = Mathf.Clamp(xSpeed, -speed, speed);
 
-
-
             if (Input.GetButtonDown("Jump" + playerControl) && touchingGround) {
                 rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight);
                 audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.97f, 1.03f));
@@ -129,7 +127,7 @@ public class playertest : MonoBehaviour {
     IEnumerator chargeSmash(float currentDirection) {
         float originalSpeed = speed;
         speed /= 3;
-        rigid.velocity = new Vector2(0, 0);
+        rigid.velocity = Vector2.zero;
         rigid.gravityScale = 0;
 
         smashing = true;
@@ -147,7 +145,6 @@ public class playertest : MonoBehaviour {
             smashPower = Mathf.Lerp(minSmashPower, maxSmashPower, lerp);
             SmashCooldownTime = Mathf.Lerp(0.25f, maxSmashCooldownTime, lerp);
 
-
             if (!Input.GetButton("Smash" + playerControl)) {
                 speed = originalSpeed;
                 StartCoroutine(smashAfterCharge(chargeValue));
@@ -161,6 +158,7 @@ public class playertest : MonoBehaviour {
                 yield break;
             } 
             chargeValue += Time.deltaTime;
+            rigid.velocity = Vector2.right * speed * currentDirection;
             yield return new WaitForEndOfFrame();
         }
         speed = originalSpeed;
@@ -168,6 +166,7 @@ public class playertest : MonoBehaviour {
     }
 
     IEnumerator dashOutOfCharge(float chargeValue, bool direction) {
+        InvokeRepeating("SpawnTrail", 0, 0.035f);
         vunrabilityFrames = true;
         GetComponent<SpriteRenderer>().flipX = direction;
         rigid.velocity = new Vector2(dashSpeed * Input.GetAxis("Dash" + playerControl), 0);
@@ -195,9 +194,13 @@ public class playertest : MonoBehaviour {
         rigid.gravityScale = 3;
         chargeParticle.gameObject.transform.localScale = new Vector3(rigid.velocity.x, 0);
         vunrabilityFrames = false;
+        CancelInvoke("SpawnTrail");
     }
 
     IEnumerator smashAfterCharge(float chargeValue) {
+        if (chargeValue > maxChargeTime / 2)
+            InvokeRepeating("SpawnTrail", 0, 0.035f);
+
         audioManager.instance.Play(charge, 0.5f * (chargeValue / maxChargeTime));
         yield return new WaitForSeconds(0.05f);
         chargeParticle.gameObject.transform.localScale = Vector3.zero;
@@ -243,6 +246,7 @@ public class playertest : MonoBehaviour {
             if (other.relativeVelocity.magnitude > 8) {
                 float strength = Mathf.Clamp(other.relativeVelocity.magnitude / 40f, 0, .8f);
                 if (smashing) {
+                    CancelInvoke("SpawnTrail");
                     canSmash = false;
                     Shake.instance.shake(2, 3);
                     rigid.velocity = Vector3.zero;
@@ -256,7 +260,6 @@ public class playertest : MonoBehaviour {
                     smashPower = 0;
                     StartCoroutine(recovery(SmashCooldownTime));
                 } else {
-                    rigid.velocity = Vector3.zero;
                     audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.05f, UnityEngine.Random.Range(0.96f, 1.03f));
 
                     if (canMakeWave)
@@ -328,6 +331,33 @@ public class playertest : MonoBehaviour {
         Shake.instance.shake(2, 3);
         endingUI.instance.Invoke("checkPlayersLeft", 0.5f);
         Destroy(this.gameObject);
+    }
+
+    void SpawnTrail() {
+        GameObject trailPart = new GameObject();
+        SpriteRenderer trailPartRenderer = trailPart.AddComponent<SpriteRenderer>();
+        trailPartRenderer.sprite = anim.GetComponent<SpriteRenderer>().sprite;
+        trailPartRenderer.flipX = anim.GetComponent<SpriteRenderer>().flipX;
+
+        Color targetColor = fullColor;
+        targetColor.a = 0.5f;
+        trailPartRenderer.color = targetColor;
+
+        trailPart.transform.position = transform.position;
+        trailPart.transform.localScale = transform.localScale;
+        Destroy(trailPart, 2f); // replace 0.5f with needed lifeTime
+
+        StartCoroutine("FadeTrailPart", trailPartRenderer);
+    }
+
+    IEnumerator FadeTrailPart(SpriteRenderer trailPartRenderer) {
+        while (trailPartRenderer.color.a > 0) {
+            Color color = trailPartRenderer.color;
+            color.a -= 0.01f; // replace 0.5f with needed alpha decrement
+            trailPartRenderer.color = color;
+
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
 

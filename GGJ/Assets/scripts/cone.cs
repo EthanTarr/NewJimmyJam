@@ -13,6 +13,10 @@ public class cone : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.tag == "Spike") {
+            print("hoi");
+        }
+
         if (collision.gameObject.GetComponent<playertest>()) {
             collision.gameObject.GetComponent<playertest>().die();
         }

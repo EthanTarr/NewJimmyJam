@@ -39,7 +39,11 @@ public class endingUI : MonoBehaviour {
         if (players.Length == 1) {
             StartCoroutine(ending(players[0].GetComponent<playertest>().playerNum));
             players[0].GetComponent<playertest>().enabled = false;
-        }       
+        } else if(players.Length == 0) {
+            StartCoroutine(ending(-1));
+        }
+        
+              
     }
 
     public Transform particlePosition;
@@ -48,17 +52,20 @@ public class endingUI : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         cameraAnim.Play("endingTransition");
         yield return new WaitForSeconds(1);
-
         ps[0].gameObject.SetActive(true);
 
-        for (int i = 0; i < scoreCard.instance.numOfPlayers; i++)
-        {
-            ps[i].text = "" + scoreCard.instance.playerScores[i];
+        if (playerId != -1) {
+            
 
+            for (int i = 0; i < scoreCard.instance.numOfPlayers; i++) {
+                ps[i].text = "" + scoreCard.instance.playerScores[i];
+
+            }
+
+            yield return new WaitForSeconds(0.5f);
+            scoreCard.instance.playerScores[playerId]++;
+            audioManager.instance.Play(ding, 0.5f, 1);
         }
-        yield return new WaitForSeconds(0.5f);
-        scoreCard.instance.playerScores[playerId]++;
-        audioManager.instance.Play(ding, 0.5f, 1);
         inputallowed = true;
         for (int i = 0; i < scoreCard.instance.numOfPlayers;i++) {
             ps[i].text = "" + scoreCard.instance.playerScores[i];
