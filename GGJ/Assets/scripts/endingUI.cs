@@ -35,6 +35,7 @@ public class endingUI : MonoBehaviour {
 
     public void checkPlayersLeft() {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
         if (players.Length == 1) {
             StartCoroutine(ending(players[0].GetComponent<playertest>().playerNum));
             players[0].GetComponent<playertest>().enabled = false;

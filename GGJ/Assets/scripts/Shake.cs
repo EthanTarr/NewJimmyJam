@@ -36,9 +36,13 @@ public class Shake : MonoBehaviour {
 			spikes--;
 
             audioManager.instance.Play(spikeFall, 0.15f, Random.Range(0.96f, 1.03f));
-            GameObject temp = (GameObject)Instantiate(Spike, ((GameObject)spikePositions[Fallingspike]).transform.position, Quaternion.identity);
-            temp.GetComponent<Rigidbody2D>().AddTorque(UnityEngine.Random.value * 30);
-            Destroy((GameObject)spikePositions[Fallingspike]);
+
+            if (spikePositions[Fallingspike] != null)
+            {
+                GameObject temp = (GameObject)Instantiate(Spike, ((GameObject)spikePositions[Fallingspike]).transform.position, Quaternion.identity);
+                temp.GetComponent<Rigidbody2D>().AddTorque(UnityEngine.Random.value * 30);
+                Destroy((GameObject)spikePositions[Fallingspike]);
+            }
         }
 
         StartCoroutine(screenshake(t, strength));

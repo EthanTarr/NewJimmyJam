@@ -23,19 +23,19 @@ public class WaveGenerator : MonoBehaviour {
 
 
 	void makeWave() {
-        makeWave(0, -1, fadeIn, 5);
+        makeWave(transform.position, -1, fadeIn, 5);
 	}
 
     public void StartWave(){
-        makeWave(0, 0, fadeIn, 5);
+        makeWave(transform.position, 0, fadeIn, 5);
     }
 
-    public void makeWave(float position, float amplitude, Color color, float velocity) {
-		GameObject Pulse = Instantiate (pulse, new Vector3 (position, transform.position.y, 0), Quaternion.identity);
+    public void makeWave(Vector2 position, float amplitude, Color color, float velocity) {
+		GameObject Pulse = Instantiate (pulse, new Vector3 (position.x, position.y , 0), Quaternion.identity);
 		Pulse.GetComponent<PulseMove> ().Amplitude = amplitude;
         Pulse.GetComponent<PulseMove>().color = color;
         Pulse.GetComponent<PulseMove>().speed = velocity;
-        GameObject AntiPulse = Instantiate (antiPulse, new Vector3(position, transform.position.y, 0), Quaternion.identity);
+        GameObject AntiPulse = Instantiate (antiPulse, new Vector3(position.x, position.y, 0), Quaternion.identity);
 		AntiPulse.GetComponent<AntiPulseMove> ().Amplitude = amplitude;
         AntiPulse.GetComponent<AntiPulseMove>().color = color;
         AntiPulse.GetComponent<AntiPulseMove>().speed = velocity;
