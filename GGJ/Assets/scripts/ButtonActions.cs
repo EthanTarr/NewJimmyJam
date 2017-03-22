@@ -6,7 +6,7 @@ public class ButtonActions : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        scoreCard.instance.isConeHeadMode();
+        //scoreCard.instance.isConeHeadMode();
         scoreCard.instance.gamesToWin = 1;
 	}
 	

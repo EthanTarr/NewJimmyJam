@@ -268,8 +268,12 @@ public class playerv2 : MonoBehaviour {
         }
     }
 
+<<<<<<< HEAD
     void checkForWave()
     {
+=======
+    void checkForWave() {
+>>>>>>> refs/remotes/origin/master
 
         foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor")) {
             if (Mathf.Abs(square.transform.position.x - transform.position.x) < GameObject.Find("Managers").GetComponent<GameManager>().Square.transform.localScale.x) {
