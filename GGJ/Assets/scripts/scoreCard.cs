@@ -29,9 +29,14 @@ public class scoreCard : MonoBehaviour {
     }
 
     private void Start() {
-        ConeHeadToggle = GameObject.Find("ConeHeadToggle").GetComponent<UnityEngine.UI.Toggle>();
+
+        if(GameObject.Find("ConeHeadToggle") != null)
+            ConeHeadToggle = GameObject.Find("ConeHeadToggle").GetComponent<UnityEngine.UI.Toggle>();
+
         scoreCard.instance.isConeHeadMode();
-        GameObject.Find("GameOptions").active = false;
+
+        if(GameObject.Find("GameOptions") != null)
+            GameObject.Find("GameOptions").active = false;
     }
 
     public int totalScores() {
@@ -53,7 +58,8 @@ public class scoreCard : MonoBehaviour {
 
 	public void isConeHeadMode() {
         Debug.Log("2" + ConeHeadToggle);
-        ConeHeadMode = ConeHeadToggle.isOn;
+
+        ConeHeadMode = ConeHeadToggle != null ? ConeHeadToggle.isOn: true;
 	}
 
     public void maxGames() {
