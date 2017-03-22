@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playertest : MonoBehaviour {
+public class playerv2 : MonoBehaviour {
 
     Rigidbody2D rigid;
     private Animator anim;
     public LayerMask groundCheck;
+    public Transform centerOfGravity;
     public string playerControl;
     public int playerNum;
 
@@ -66,7 +66,8 @@ public class playertest : MonoBehaviour {
     public AudioClip charge;
     public AudioClip cancel;
 
-    void Start() {
+    void Start()
+    {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
 
@@ -88,12 +89,13 @@ public class playertest : MonoBehaviour {
         speed = Mathf.Lerp(speed, 0, toggle / 24);
     }
 
-    void Update()  {
+    void Update() {
         anim.SetFloat("velocity", 0);
         bool touchingGround = checkGround();
+        setGravity();
         if (!smashing && !vunrabilityFrames && playerControl != "") {
-            if (Mathf.Abs(Input.GetAxis("Horizontal" + playerControl)) > 0.1f)
-            {
+            if (Mathf.Abs(Input.GetAxis("Horizontal" + playerControl)) > 0.1f) {
+
                 xSpeed += speed * Input.GetAxis("Horizontal" + playerControl) / (accelerate * 4);
                 anim.GetComponent<SpriteRenderer>().flipX = Input.GetAxisRaw("Horizontal" + playerControl) < 0;
                 anim.SetFloat("velocity", 1);
@@ -104,29 +106,41 @@ public class playertest : MonoBehaviour {
 
             xSpeed = Mathf.Clamp(xSpeed, -speed, speed);
 
-            if (Input.GetButtonDown("Jump" + playerControl) && touchingGround)
-            {
-                rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight);
+            if (Input.GetButtonDown("Jump" + playerControl) && touchingGround) {
+                //rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight);
+                rigid.velocity = (Vector2)transform.up * maxJumpHeight; 
                 audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.97f, 1.03f));
             }
 
-            if (Input.GetButtonUp("Jump" + playerControl) && rigid.velocity.y > minJumpHeight)
-            {
-                rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight);
+            if (Input.GetButtonUp("Jump" + playerControl) && rigid.velocity.y > minJumpHeight)  {
+                //rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight);
+                rigid.velocity = (Vector2)transform.up * -minJumpHeight; 
             }
 
             if (Input.GetButtonDown("Smash" + playerControl)
-                    && canSmash && !smashing && !touchingGround)
-            {
+                    && canSmash && !smashing && !touchingGround) {
                 StartCoroutine(chargeSmash(Input.GetAxis("Horizontal" + playerControl)));
             }
 
-            rigid.velocity = new Vector2(xSpeed, rigid.velocity.y);
+            rigid.velocity = transform.TransformDirection(new Vector3(xSpeed, transform.InverseTransformDirection(rigid.velocity).y));
+            Debug.DrawRay(transform.position, transform.right * xSpeed, Color.green);
+            //rigid.velocity = (Vector3)rigid.velocity + transform.right * xSpeed;
         }
     }
 
-    IEnumerator chargeSmash(float currentDirection)
-    {
+    void setGravity() {
+        Vector2 dirOfGravity = (-transform.position + centerOfGravity.position).normalized;
+
+        rigid.AddForce(dirOfGravity * 10);
+
+        Vector2 dirUp = -dirOfGravity;
+        this.transform.up = Vector2.Lerp(this.transform.up, dirUp, Time.deltaTime * 500);
+        //Quaternion targetRotation = Quaternion.FromToRotation(dirUp, transform.up);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 7) * transform.rotation;
+        //Debug.DrawRay(transform.position, dirOfGravity * 10, Color.green);
+    }
+
+    IEnumerator chargeSmash(float currentDirection) {
         smashing = true;
         bool direction = GetComponent<SpriteRenderer>().flipX;
         float chargeValue = 0;
@@ -139,8 +153,7 @@ public class playertest : MonoBehaviour {
         SmashSpeed = minSmashSpeed;
         smashPower = minSmashPower;
 
-        while (chargeValue < maxChargeTime)
-        {
+        while (chargeValue < maxChargeTime) {
             float lerp = (chargeValue / maxChargeTime);
             toggleCharge(lerp);
             SmashSpeed = Mathf.Lerp(minSmashSpeed, maxSmashSpeed, lerp);
@@ -148,15 +161,14 @@ public class playertest : MonoBehaviour {
             SmashCooldownTime = Mathf.Lerp(0.25f, maxSmashCooldownTime, lerp);
 
 
-            if (!Input.GetButton("Smash" + playerControl))  {
+            if (!Input.GetButton("Smash" + playerControl)) {
                 speed = originalSpeed;
                 StartCoroutine(smashAfterCharge(chargeValue));
                 yield break;
             }
 
             //Dash out of charge
-            if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && Input.GetAxis("Dash" + playerControl) != currentDirection)
-            {
+            if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && Input.GetAxis("Dash" + playerControl) != currentDirection)  {
                 speed = originalSpeed;
                 StartCoroutine(dashOutOfCharge(chargeValue, direction));
                 yield break;
@@ -169,12 +181,11 @@ public class playertest : MonoBehaviour {
         StartCoroutine(smashAfterCharge(chargeValue));
     }
 
-    IEnumerator dashOutOfCharge(float chargeValue, bool direction)
-    {
-        InvokeRepeating("SpawnTrail", 0, 0.035f);
+    IEnumerator dashOutOfCharge(float chargeValue, bool direction) {
         vunrabilityFrames = true;
         GetComponent<SpriteRenderer>().flipX = direction;
-        rigid.velocity = new Vector2(dashSpeed * Input.GetAxis("Dash" + playerControl), 0);
+        //rigid.velocity = new Vector2(dashSpeed * Input.GetAxis("Dash" + playerControl), 0);
+        rigid.velocity = transform.TransformDirection(new Vector3(dashSpeed * Input.GetAxis("Dash" + playerControl), 0));
 
         smashing = false;
         toggleCharge(0);
@@ -196,21 +207,17 @@ public class playertest : MonoBehaviour {
         //canSmash = false;
         StartCoroutine(recovery(0.5f));
         yield return new WaitForSeconds(0.15f);
-        rigid.gravityScale = 3;
         chargeParticle.gameObject.transform.localScale = new Vector3(rigid.velocity.x, 0);
         vunrabilityFrames = false;
-        CancelInvoke("SpawnTrail");
     }
 
     IEnumerator smashAfterCharge(float chargeValue) {
-        if(chargeValue > maxChargeTime / 2)
-        InvokeRepeating("SpawnTrail", 0, 0.035f);
-
         audioManager.instance.Play(charge, 0.5f * (chargeValue / maxChargeTime));
         yield return new WaitForSeconds(0.05f);
         chargeParticle.gameObject.transform.localScale = Vector3.zero;
-        rigid.gravityScale = 3;
-        rigid.velocity = new Vector2(0, -SmashSpeed);
+        //rigid.velocity = new Vector2(0, -SmashSpeed);
+        rigid.velocity = transform.TransformDirection(new Vector3(0, -SmashSpeed));
+
         anim.SetBool("smashing", true);
         smashReset = 50;
 
@@ -221,8 +228,7 @@ public class playertest : MonoBehaviour {
         toggleCharge(0);
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
+    void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("Floor"))
         {
             if (other.relativeVelocity.magnitude > 8)
@@ -230,7 +236,6 @@ public class playertest : MonoBehaviour {
                 float strength = Mathf.Clamp(other.relativeVelocity.magnitude / 40f, 0, .8f);
                 if (smashing)
                 {
-                    CancelInvoke("SpawnTrail");
                     canSmash = false;
                     Shake.instance.shake(2, 3);
                     rigid.velocity = Vector3.zero;
@@ -243,9 +248,7 @@ public class playertest : MonoBehaviour {
                     SmashSpeed = 0;
                     smashPower = 0;
                     StartCoroutine(recovery(SmashCooldownTime));
-                }
-                else
-                {
+                } else {
                     //rigid.velocity = Vector3.zero;
                     audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.05f, UnityEngine.Random.Range(0.96f, 1.03f));
 
@@ -268,15 +271,14 @@ public class playertest : MonoBehaviour {
     void checkForWave()
     {
 
-        foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor"))
-        {
-            if (Mathf.Abs(square.transform.position.x - transform.position.x) < GameObject.Find("Managers").GetComponent<GameManager>().Square.transform.localScale.x)
-            {
-                if (square.GetComponent<SquareBehavior>().TotalAmplitude - previousAmplitude > .1)
-                {
+        foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor")) {
+            if (Mathf.Abs(square.transform.position.x - transform.position.x) < GameObject.Find("Managers").GetComponent<GameManager>().Square.transform.localScale.x) {
+                if (square.GetComponent<SquareBehavior>() != null && square.GetComponent<SquareBehavior>().TotalAmplitude - previousAmplitude > .1) {
                     rigid.AddForce(new Vector2(0, square.GetComponent<SquareBehavior>().TotalAmplitude * bounceForce));
                 }
-                previousAmplitude = square.GetComponent<SquareBehavior>().TotalAmplitude;
+
+                if(square.GetComponent<SquareBehavior>() != null)
+                    previousAmplitude = square.GetComponent<SquareBehavior>().TotalAmplitude;
             }
         }
 
@@ -363,32 +365,4 @@ public class playertest : MonoBehaviour {
         endingUI.instance.Invoke("checkPlayersLeft", 0.5f);
         Destroy(this.gameObject);
     }
-
-    void SpawnTrail() {
-        GameObject trailPart = new GameObject();
-        SpriteRenderer trailPartRenderer = trailPart.AddComponent<SpriteRenderer>();
-        trailPartRenderer.sprite = anim.GetComponent<SpriteRenderer>().sprite;
-        trailPartRenderer.flipX = anim.GetComponent<SpriteRenderer>().flipX;
-
-        Color targetColor = fullColor;
-        targetColor.a = 0.5f;
-        trailPartRenderer.color = targetColor;
-
-        trailPart.transform.position = transform.position;
-        trailPart.transform.localScale = transform.localScale;
-        Destroy(trailPart, 2f); // replace 0.5f with needed lifeTime
-
-        StartCoroutine("FadeTrailPart", trailPartRenderer);
-    }
-
-    IEnumerator FadeTrailPart(SpriteRenderer trailPartRenderer) {
-        while (trailPartRenderer.color.a > 0)  {
-            Color color = trailPartRenderer.color;
-            color.a -= 0.01f; // replace 0.5f with needed alpha decrement
-            trailPartRenderer.color = color;
-
-            yield return new WaitForEndOfFrame();
-        }
-    }
 }
-
