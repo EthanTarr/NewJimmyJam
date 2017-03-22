@@ -21,7 +21,7 @@ public class debugShootCieling : MonoBehaviour {
             GameObject testDummy = Instantiate(player, transform.position, transform.rotation);
             testDummy.GetComponent<Rigidbody2D>().isKinematic = false;
             testDummy.GetComponent<Rigidbody2D>().velocity = Vector2.down * 50;
-            testDummy.GetComponent<playertest>().smashing = true;
+            //testDummy.GetComponent<playertest>().smashing = true;
             yield return new WaitForSeconds(1f);
         }
     }
