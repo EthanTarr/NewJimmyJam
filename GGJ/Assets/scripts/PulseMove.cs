@@ -42,7 +42,7 @@ public class PulseMove : MonoBehaviour {
             if (!other.gameObject.GetComponent<SquareBehavior>().firstBlock) {
                 audioManager.instance.Play(roll, 0.25f);
             }
-            other.gameObject.GetComponent<SquareBehavior>().firstBlock = true;    
+            other.gameObject.GetComponent<SquareBehavior>().firstBlock = true;
             other.gameObject.GetComponent<SpriteRenderer>().color = color;
         }
     }

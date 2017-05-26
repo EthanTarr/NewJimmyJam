@@ -8,7 +8,7 @@ public class SquareBehavior : MonoBehaviour {
 	public float Wavelength = 2f;
 	public float FloorOscillation = .02f;
     public float OscillationSpeed = 0.01f;
-	private float initialY = 0;
+	[HideInInspector] public float initialY = 0;
 	private float standardY;
     [HideInInspector] public bool firstBlock;
 
@@ -53,11 +53,12 @@ public class SquareBehavior : MonoBehaviour {
         transform.position = new Vector3(transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime), 0);
         getVelocity();
 
-        if (firstBlock)
-        {
-            GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.white, Time.deltaTime);
+        if (firstBlock) {
+            GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, floorColor, Time.deltaTime);
         }
     }
+
+    public Color floorColor = Color.white;
 
     [HideInInspector] public float velocity;
     void getVelocity() {

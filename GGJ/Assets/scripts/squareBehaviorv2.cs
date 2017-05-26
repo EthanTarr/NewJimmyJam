@@ -81,8 +81,7 @@ public class squareBehaviorv2 : RaycastController {
             }
 
             if (passenger.moveBeforePlatform == beforeMovePlatfrom) {
-                PassengerDictionary[passenger.transforms].Move(passenger.velocity, passenger.standingOnPlatform);
-                
+                PassengerDictionary[passenger.transforms].Move(passenger.velocity, passenger.standingOnPlatform);            
             } 
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class scoreCard : MonoBehaviour {
 
@@ -11,25 +12,37 @@ public class scoreCard : MonoBehaviour {
     public int gamesToWin;
     private UnityEngine.UI.Toggle ConeHeadToggle;
 
+    [Header("Debug Stuff")]
+    public int debugMaxSmash = 25;
+    public int debugBounciness = 125;
+    public InputField smashDebugInput;
+    public InputField bouncinessDebugInput;
+
     void Awake() {
 
         if (instance == null) {
             instance = this;
             DontDestroyOnLoad(this);
+
+            if (smashDebugInput != null)
+            {
+                smashDebugInput.text = "" + debugMaxSmash;
+                bouncinessDebugInput.text = "" + debugBounciness;
+            }
         } else {
 			Destroy(this.gameObject);
         }
         playerScores = new int[numOfPlayers];
-        if (ConeHeadToggle == null)
-        {
+        if (ConeHeadToggle == null) {
             //ConeHeadToggle = GameObject.Find("ConeHeadToggle").GetComponent<UnityEngine.UI.Toggle>();
-           // Debug.Log("1" + ConeHeadToggle);
+            //Debug.Log("1" + ConeHeadToggle);
             //GameObject.Find("GameOptions").active = false;
         }
+
+        
     }
 
     private void Start() {
-
         if(GameObject.Find("ConeHeadToggle") != null)
             ConeHeadToggle = GameObject.Find("ConeHeadToggle").GetComponent<UnityEngine.UI.Toggle>();
 
@@ -56,15 +69,26 @@ public class scoreCard : MonoBehaviour {
         return max;
     }
 
-	public void isConeHeadMode() {
-        Debug.Log("2" + ConeHeadToggle);
+    public void debugChangeMaxSmash() {
+        debugMaxSmash = int.Parse(smashDebugInput.text);
+    }
 
-        ConeHeadMode = ConeHeadToggle != null ? ConeHeadToggle.isOn: true;
-	}
+    public void debugChangeBounciness() {
+        debugBounciness = int.Parse(bouncinessDebugInput.text);
+    }
+    public void isConeHeadMode() {
+        ConeHeadMode = !ConeHeadMode;
+
+    }
 
     public void maxGames() {
         if (int.TryParse(GameObject.Find("GameCounter").GetComponent<UnityEngine.UI.InputField>().text, out gamesToWin))
             int.TryParse(GameObject.Find("GCPlaceholder").GetComponent<UnityEngine.UI.Text>().text, out gamesToWin);
+    }
+
+    public void increaseGames(int increment) {
+        gamesToWin += increment;
+        GameObject.Find("GameCounter").GetComponent<Text>().text = "" + gamesToWin;
     }
 
     public void clearScore() {
