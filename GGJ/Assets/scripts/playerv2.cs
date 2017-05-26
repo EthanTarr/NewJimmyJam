@@ -112,9 +112,10 @@ public class playerv2 : MonoBehaviour {
                 audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.97f, 1.03f));
             }
 
-            if (Input.GetButtonUp("Jump" + playerControl) && rigid.velocity.y > minJumpHeight)  {
+            if (Input.GetButtonUp("Jump" + playerControl) && transform.InverseTransformDirection(rigid.velocity).y > minJumpHeight)  {
+                print("hoi");
                 //rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight);
-                rigid.velocity = (Vector2)transform.up * -minJumpHeight; 
+                rigid.velocity = (Vector2)transform.up * minJumpHeight; 
             }
 
             if (Input.GetButtonDown("Smash" + playerControl)

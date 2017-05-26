@@ -25,7 +25,10 @@ public class AntiPulseMove : MonoBehaviour {
 			}
 			Amplitude = Amplitude / 4;
         } else if (!forward && transform.position.x < GameManager.boundary) {
-			transform.Translate (new Vector3 (Time.deltaTime * speed, 0, 0));
+            transform.Translate(new Vector3(Time.deltaTime * speed, 0, 0));
+            GameObject Pulse = Instantiate(WaveGenerator.instance.pulse, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            
 		} else if (!forward) {
 			forward = true;
 			if (Amplitude < .1f) {

@@ -27,7 +27,7 @@ public class endingUI : MonoBehaviour {
                 Application.LoadLevel(0);
                 Destroy(scoreCard.instance.gameObject);
             } else {
-                print(scoreCard.instance.highestScore());
+                //print(scoreCard.instance.highestScore());
                 Application.LoadLevel(levelNum);
             }
         }
@@ -36,7 +36,10 @@ public class endingUI : MonoBehaviour {
     public void checkPlayersLeft() {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
+        print("HOIT");
         if (players.Length == 1) {
+            players[0].GetComponent<Rigidbody2D>().gravityScale = 6;
+            StopCoroutine("ending");
             StartCoroutine(ending(players[0].GetComponent<playertest>().playerNum));
             players[0].GetComponent<playertest>().enabled = false;
         } else if(players.Length == 0) {
@@ -49,6 +52,7 @@ public class endingUI : MonoBehaviour {
     public Transform particlePosition;
 
     IEnumerator ending(int playerId) {
+        
         yield return new WaitForSeconds(0.5f);
         cameraAnim.Play("endingTransition");
         yield return new WaitForSeconds(1);
