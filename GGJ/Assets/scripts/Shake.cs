@@ -19,8 +19,8 @@ public class Shake : MonoBehaviour {
     void Awake(){
 		instance = this;
         spikePositions = new List<GameObject>();
-        foreach (GameObject spike in GameObject.FindGameObjectsWithTag("Spike"))  {
-            spikePositions.Add(spike);
+        foreach (killCieling spike in FindObjectsOfType<killCieling>())  {
+            spikePositions.Add(spike.gameObject);
             spikes++;
         }
         startTransform = transform.position;
@@ -37,8 +37,7 @@ public class Shake : MonoBehaviour {
 
             audioManager.instance.Play(spikeFall, 0.15f, Random.Range(0.96f, 1.03f));
 
-            if (spikePositions[Fallingspike] != null)
-            {
+            if (spikePositions.Count > 0 && spikePositions[Fallingspike] != null) {
                 GameObject temp = (GameObject)Instantiate(Spike, ((GameObject)spikePositions[Fallingspike]).transform.position, Quaternion.identity);
                 temp.GetComponent<Rigidbody2D>().AddTorque(UnityEngine.Random.value * 30);
                 Destroy((GameObject)spikePositions[Fallingspike]);
