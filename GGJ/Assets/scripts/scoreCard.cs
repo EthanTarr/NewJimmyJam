@@ -57,8 +57,7 @@ public class scoreCard : MonoBehaviour {
 	}
 
     public void maxGames() {
-        if (int.TryParse(GameObject.Find("GameCounter").GetComponent<UnityEngine.UI.InputField>().text, out gamesToWin))
-            int.TryParse(GameObject.Find("GCPlaceholder").GetComponent<UnityEngine.UI.Text>().text, out gamesToWin);
+        int.TryParse(GameObject.Find("GameCounter").GetComponent<UnityEngine.UI.InputField>().text, out gamesToWin);
     }
 
     public void clearScore() {
