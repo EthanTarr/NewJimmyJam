@@ -312,7 +312,8 @@ public class playertest : MonoBehaviour {
 
                     SmashSpeed = 0;
                     smashPower = 0;
-                    StartCoroutine(recovery(SmashCooldownTime)); 
+                    StartCoroutine(recovery(SmashCooldownTime));
+
                 } else {
                     audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.05f, UnityEngine.Random.Range(0.96f, 1.03f));
 

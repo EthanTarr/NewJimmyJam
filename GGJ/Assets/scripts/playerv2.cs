@@ -113,7 +113,6 @@ public class playerv2 : MonoBehaviour {
             }
 
             if (Input.GetButtonUp("Jump" + playerControl) && transform.InverseTransformDirection(rigid.velocity).y > minJumpHeight)  {
-                print("hoi");
                 //rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight);
                 rigid.velocity = (Vector2)transform.up * minJumpHeight; 
             }
@@ -245,6 +244,11 @@ public class playerv2 : MonoBehaviour {
                     color.a = 0.75f;
                     WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, color, 7);
                     audioManager.instance.Play(smash, 0.75f, UnityEngine.Random.Range(0.95f, 1.05f));
+
+                    sphericalWorld world = FindObjectOfType<sphericalWorld>();
+                    if (world != null) {
+                        world.applyForceToPlanet((-transform.position + centerOfGravity.position).normalized, strength / 8);
+                    }
 
                     SmashSpeed = 0;
                     smashPower = 0;
