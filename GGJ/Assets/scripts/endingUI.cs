@@ -13,12 +13,40 @@ public class endingUI : MonoBehaviour {
     public GameObject anyKey;
     bool inputallowed;
     public int levelNum = 2;
+    public float spacing;
+    float width;
+
+    [Space()]
+    public GameObject scoreText;
 
     public GameObject winParticles;
 
     void Start() {
         instance = this;
-        ps[0].gameObject.SetActive(false);
+        levelNum = scoreCard.instance.numOfPlayers;
+
+        width = spacing * 4 * levelNum;
+        for (int i = 0; i < levelNum - 1; i++) {
+            GameObject text = Instantiate(scoreText, transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width / (levelNum - 1)) / 2, transform.rotation);
+            text.transform.parent = this.transform;
+
+            text.transform.position = transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width / (levelNum - 1)) / 2;
+        }
+
+        ps = new Text[levelNum];
+        for (int i = 0; i < levelNum; i++) {
+            GameObject text = Instantiate(scoreText, transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i), transform.rotation);
+            text.transform.parent = this.transform;
+            
+            text.GetComponent<Text>().color = Color.red;
+            text.GetComponent<Text>().text = "0";
+            ps[i] = text.GetComponent<Text>();
+            text.GetComponent<Text>().color  = playerSpawner.instance.characterColors[i];
+
+
+            text.transform.position = transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i);
+        }
+            //ps[0].gameObject.SetActive(false);
     }
 
     void Update() {
@@ -36,7 +64,6 @@ public class endingUI : MonoBehaviour {
     public void checkPlayersLeft() {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
-        print("HOIT");
         if (players.Length == 1) {
             players[0].GetComponent<Rigidbody2D>().gravityScale = 6;
             StopCoroutine("ending");
@@ -48,9 +75,6 @@ public class endingUI : MonoBehaviour {
         
               
     }
-
-    public Transform particlePosition;
-
     IEnumerator ending(int playerId) {
         
         yield return new WaitForSeconds(0.5f);
@@ -76,7 +100,7 @@ public class endingUI : MonoBehaviour {
         }
 
         if (scoreCard.instance.highestScore() >= scoreCard.instance.gamesToWin) {
-            Instantiate(winParticles, particlePosition.position, particlePosition.rotation);
+            winParticles.SetActive(true);
         }
 
         yield return new WaitForSeconds(1f);
@@ -84,4 +108,22 @@ public class endingUI : MonoBehaviour {
 
 
     }
+
+    void OnDrawGizmos() {
+        width = spacing * 4 * levelNum;
+            
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, new Vector3(width, 1, 1));
+
+        for (int i = 0; i < levelNum; i++) {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i), 25);
+        }
+
+        for (int i = 0; i < levelNum - 1; i++) {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireCube(transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width/(levelNum - 1))/2, new Vector3(10f,7f,1));
+        }
+    }
+    
 }

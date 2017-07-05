@@ -66,8 +66,7 @@ public class playerv2 : MonoBehaviour {
     public AudioClip charge;
     public AudioClip cancel;
 
-    void Start()
-    {
+    void Start() {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
 
@@ -75,8 +74,7 @@ public class playerv2 : MonoBehaviour {
         baseColor = GetComponent<SpriteRenderer>().color;
 
         toggleCharge(0);
-        if (controllerHandler.controlOrder.Count > playerNum)
-        {
+        if (controllerHandler.controlOrder.Count > playerNum) {
             playerControl = controllerHandler.controlOrder[playerNum];
         }
     }
@@ -147,7 +145,7 @@ public class playerv2 : MonoBehaviour {
 
         float originalSpeed = speed;
         speed /= 3;
-        rigid.velocity = Vector2.zero;
+        //rigid.velocity = Vector2.zero;
         rigid.gravityScale = 0;
 
         SmashSpeed = minSmashSpeed;
@@ -229,13 +227,10 @@ public class playerv2 : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag.Equals("Floor"))
-        {
-            if (other.relativeVelocity.magnitude > 8)
-            {
+        if (other.gameObject.tag.Equals("Floor")) {
+            if (other.relativeVelocity.magnitude > 8) {
                 float strength = Mathf.Clamp(other.relativeVelocity.magnitude / 40f, 0, .8f);
-                if (smashing)
-                {
+                if (smashing) {
                     canSmash = false;
                     Shake.instance.shake(2, 3);
                     rigid.velocity = Vector3.zero;
@@ -294,20 +289,17 @@ public class playerv2 : MonoBehaviour {
         StartCoroutine("checkIfWaved");
     }
 
-    IEnumerator checkIfWaved()
-    {
+    IEnumerator checkIfWaved() {
         canMakeWave = false;
         yield return new WaitForSeconds(0.75f);
         canMakeWave = true;
     }
 
-    void OnCollisionExit2D(Collision2D other)
-    {
+    void OnCollisionExit2D(Collision2D other) {
         checkForWave();
     }
 
-    void slopeCheck()
-    {
+    void slopeCheck() {
         float littleHeight = 0.05f;
         float height = -1;
 

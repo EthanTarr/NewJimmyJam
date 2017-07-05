@@ -36,7 +36,7 @@ public class SquareBehavior : MonoBehaviour {
 
             if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength)
             {
-                TotalAmplitude += pulse.GetComponent<PulseMove>().Amplitude * Mathf.Sin(((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
+                TotalAmplitude += pulse.GetComponent<PulseMove>().Amplitude * (pulse.GetComponent<PulseMove>().speed / 4) * Mathf.Sin(((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
             }
         }
         foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("AntiPulse"))
@@ -46,7 +46,7 @@ public class SquareBehavior : MonoBehaviour {
 
             if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength)
             {
-                TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * Mathf.Sin((Mathf.PI / Wavelength) * (xPos - xPulsePos));
+                TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * (pulse.GetComponent<AntiPulseMove>().speed / 4) * Mathf.Sin((Mathf.PI / Wavelength) * (xPos - xPulsePos));
             }
         }
         TotalAmplitude = Mathf.Clamp(TotalAmplitude, -10, 10);

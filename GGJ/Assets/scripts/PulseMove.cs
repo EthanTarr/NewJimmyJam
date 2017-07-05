@@ -24,17 +24,22 @@ public class PulseMove : MonoBehaviour {
 			if (Amplitude < 1f) {
 				Destroy (this.gameObject);
 			}
-			Amplitude = Amplitude / 4;
+			//Amplitude = Amplitude / 4;
 		} else if (!forward && transform.position.x > -GameManager.boundary) {
-			transform.Translate (new Vector3 (Time.deltaTime * -speed, 0, 0));
-		} else if (!forward) {
+            transform.Translate(new Vector3(Time.deltaTime * speed, 0, 0));
+            GameObject Pulse = Instantiate(WaveGenerator.instance.antiPulse, transform.position, Quaternion.identity);
+            Pulse.GetComponent<AntiPulseMove>().color = color;
+            Pulse.GetComponent<AntiPulseMove>().Amplitude = Amplitude / 2;
+            Pulse.GetComponent<AntiPulseMove>().speed = speed / 2;
+            Destroy(this.gameObject);
+        } else if (!forward) {
 			forward = true;
 			if (Amplitude < 1f) {
 				Destroy (this.gameObject);
 			}
-			Amplitude = Amplitude / 4;
+			//Amplitude = Amplitude / 4;
         }
-        this.color = Color.Lerp(color, Color.white, Time.deltaTime / 32);
+        //this.color = Color.Lerp(color, Color.white, Amplitude);
     }
 
     void OnTriggerEnter2D(Collider2D other) {

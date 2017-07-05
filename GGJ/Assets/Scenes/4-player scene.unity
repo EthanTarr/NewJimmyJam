@@ -7703,7 +7703,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1412262659
 GameObject:
@@ -13867,6 +13867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2294e9c09e61f8c4bb49526ceedfea01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugControlOrder: []
 --- !u!114 &2041869984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14161,11 +14162,11 @@ GameObject:
   - component: {fileID: 2097216436}
   - component: {fileID: 2097216435}
   - component: {fileID: 2097216434}
-  - component: {fileID: 2097216433}
-  - component: {fileID: 2097216432}
   - component: {fileID: 2097216431}
   - component: {fileID: 2097216430}
   - component: {fileID: 2097216429}
+  - component: {fileID: 2097216432}
+  - component: {fileID: 2097216433}
   - component: {fileID: 2097216428}
   m_Layer: 0
   m_Name: Main Camera
