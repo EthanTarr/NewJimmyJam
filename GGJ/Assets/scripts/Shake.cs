@@ -24,7 +24,9 @@ public class Shake : MonoBehaviour {
 
         audioManager.instance.Play(rumbles[Random.Range(0, rumbles.Length - 1)], 0.25f, Random.Range(0.96f, 1.03f));
 
-        enviornmentManager.instance.enviornmentCall();
+        if(enviornmentManager.instance != null)
+            enviornmentManager.instance.enviornmentCall();
+
         StartCoroutine(screenshake(t, strength));	
 	}
 	

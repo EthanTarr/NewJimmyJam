@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4461427429604528}
   - component: {fileID: 198909840887975788}
   - component: {fileID: 199486443631791630}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 4302188338843528}
   - component: {fileID: 212544977023675752}
   - component: {fileID: 50178276076775588}
-  - component: {fileID: 114714135248306996}
   - component: {fileID: 114663717933150222}
   - component: {fileID: 70811956582830920}
+  - component: {fileID: 114110477045581720}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4838586899059626}
   - component: {fileID: 212035578677471066}
   - component: {fileID: 95619662148139376}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 212589490845397032}
   - component: {fileID: 60091148330383142}
   - component: {fileID: 114387569553538420}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Triangle (25)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1338795899029746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 4.44, z: 0}
+  m_LocalPosition: {x: -1.87, y: 1.9, z: 0}
   m_LocalScale: {x: 4.480927, y: 4.480927, z: 4.480927}
   m_Children:
   - {fileID: 4461427429604528}
@@ -217,6 +217,62 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114110477045581720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338795899029746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c05d517b87cf384ca869cfdd5a57993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 95619662148139376}
+  groundCheck:
+    serializedVersion: 2
+    m_Bits: 256
+  playerControl: Arrow
+  playerNum: 0
+  speed: 5
+  accelerate: 4
+  decelerate: 5
+  maxJumpHeight: 15
+  minJumpHeight: 5
+  gravityStrength: 1.25
+  gravityDirection: {x: 0, y: -1}
+  minSmashSpeed: 4
+  maxSmashSpeed: 13
+  minSmashPower: 3
+  maxSmashPower: 3
+  bounceForce: 0
+  maxSmashCooldownTime: 2
+  maxChargeTime: 0.75
+  dashSpeed: 14
+  shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
+  chargeParticle: {fileID: 198909840887975788}
+  fullColor: {r: 0.97486645, g: 0.97794116, b: 0.7550281, a: 0.472}
+  dashCancelParticle: {fileID: 1900380800443328, guid: 9a97a8cd8945f5945872eb54642d0f34,
+    type: 2}
+  dashTrailParticle: {fileID: 1758561289175910, guid: 0a4f7917e12c237458fa646035a820b2,
+    type: 2}
+  deathParticle: {fileID: 1879571905062228, guid: 5b8a694f9d402434bb03b70352435cac,
+    type: 2}
+  collisionParticle: {fileID: 1072802130077604, guid: dce94496cc569db4e9d83d8499d716d8,
+    type: 2}
+  deathExplosion: {fileID: 8300000, guid: 0673598372542624280eccaca50f268b, type: 3}
+  softLanding:
+  - {fileID: 8300000, guid: e7562e73db5736c40889358c4aa64a95, type: 3}
+  - {fileID: 8300000, guid: 5367508aa6abf394aa3affdab0d6a001, type: 3}
+  - {fileID: 8300000, guid: 194e0706869742b4bb7ec3517ed7cbaf, type: 3}
+  loadPower: {fileID: 8300000, guid: 7153ad6aba24d69418f08dae6354f40f, type: 3}
+  smash: {fileID: 8300000, guid: 5cdfdf3ef0ca2e2459aca5d95c148237, type: 3}
+  jump: {fileID: 8300000, guid: abdf7a4834af47140b3a1a9a4d403fc2, type: 3}
+  charge: {fileID: 8300000, guid: 68ae9f5d4d86e454dbf8bb8152aa9ddf, type: 3}
+  cancel: {fileID: 8300000, guid: 1a97530295f2d61468f45f3c99ed6771, type: 3}
+  bounciness: 1.5
+  slidingFloor: 0
+  downLazy: 0.33
 --- !u!114 &114387569553538420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,61 +300,6 @@ MonoBehaviour:
   animatedStretch: 0
   elasticForce: 25
   collisionSquish: 0.75
---- !u!114 &114714135248306996
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1338795899029746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c05d517b87cf384ca869cfdd5a57993, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 95619662148139376}
-  groundCheck:
-    serializedVersion: 2
-    m_Bits: 256
-  playerControl: Arrow
-  playerNum: 1
-  speed: 5
-  accelerate: 8
-  decelerate: 4
-  maxJumpHeight: 15
-  minJumpHeight: 5
-  gravityStrength: 1.75
-  gravityDirection: {x: 0, y: -1}
-  minSmashSpeed: 4
-  maxSmashSpeed: 30
-  minSmashPower: 4
-  maxSmashPower: 20
-  bounceForce: 1
-  maxSmashCooldownTime: 3
-  maxChargeTime: 1.5
-  dashSpeed: 14
-  shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
-  chargeParticle: {fileID: 198909840887975788}
-  fullColor: {r: 0.93803245, g: 1, b: 0.6544118, a: 0.528}
-  dashCancelParticle: {fileID: 1900380800443328, guid: 9a97a8cd8945f5945872eb54642d0f34,
-    type: 2}
-  dashTrailParticle: {fileID: 1758561289175910, guid: 0a4f7917e12c237458fa646035a820b2,
-    type: 2}
-  deathParticle: {fileID: 1879571905062228, guid: 5b8a694f9d402434bb03b70352435cac,
-    type: 2}
-  collisionParticle: {fileID: 1072802130077604, guid: dce94496cc569db4e9d83d8499d716d8,
-    type: 2}
-  deathExplosion: {fileID: 8300000, guid: 0673598372542624280eccaca50f268b, type: 3}
-  softLanding:
-  - {fileID: 8300000, guid: e7562e73db5736c40889358c4aa64a95, type: 3}
-  - {fileID: 8300000, guid: 5367508aa6abf394aa3affdab0d6a001, type: 3}
-  - {fileID: 8300000, guid: 194e0706869742b4bb7ec3517ed7cbaf, type: 3}
-  loadPower: {fileID: 8300000, guid: 7153ad6aba24d69418f08dae6354f40f, type: 3}
-  smash: {fileID: 8300000, guid: 5cdfdf3ef0ca2e2459aca5d95c148237, type: 3}
-  jump: {fileID: 8300000, guid: abdf7a4834af47140b3a1a9a4d403fc2, type: 3}
-  charge: {fileID: 8300000, guid: 68ae9f5d4d86e454dbf8bb8152aa9ddf, type: 3}
-  cancel: {fileID: 8300000, guid: 1a97530295f2d61468f45f3c99ed6771, type: 3}
-  bounciness: 0
-  slidingFloor: 0
 --- !u!198 &198909840887975788
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -354,7 +355,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -417449427
+  randomSeed: -940763692
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3363,7 +3364,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 53ca9e910eadf8741adf4b8902408786, type: 3}
-  m_Color: {r: 1, g: 0.9695741, b: 0.5588235, a: 1}
+  m_Color: {r: 0.887424, g: 1, b: 0.18382353, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -3403,7 +3404,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 53ca9e910eadf8741adf4b8902408786, type: 3}
-  m_Color: {r: 0.92880327, g: 1, b: 0.60294116, a: 1}
+  m_Color: {r: 0.9211968, g: 1, b: 0.18382353, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0

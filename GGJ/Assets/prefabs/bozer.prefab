@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1390147153120742}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 4.44, z: 0}
+  m_LocalPosition: {x: 3.5000806, y: 4.1683674, z: 0}
   m_LocalScale: {x: 7.4208407, y: 7.420839, z: 7.420839}
   m_Children:
   - {fileID: 4976071209347376}
@@ -243,13 +243,13 @@ MonoBehaviour:
   groundCheck:
     serializedVersion: 2
     m_Bits: 256
-  playerControl: Joy1
+  playerControl: Joy2
   playerNum: 1
-  speed: 4.5
+  speed: 4
   accelerate: 6
   decelerate: 2
   maxJumpHeight: 15
-  minJumpHeight: 5
+  minJumpHeight: 4
   gravityStrength: 2
   gravityDirection: {x: 0, y: -1}
   minSmashSpeed: 4
@@ -281,8 +281,9 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: abdf7a4834af47140b3a1a9a4d403fc2, type: 3}
   charge: {fileID: 8300000, guid: 68ae9f5d4d86e454dbf8bb8152aa9ddf, type: 3}
   cancel: {fileID: 8300000, guid: 1a97530295f2d61468f45f3c99ed6771, type: 3}
-  bounciness: 0
+  bounciness: 1.5
   slidingFloor: 0
+  downLazy: 0.6
 --- !u!114 &114645735380730240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -354,7 +355,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -417449427
+  randomSeed: -234778481
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3443,7 +3444,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 53ca9e910eadf8741adf4b8902408786, type: 3}
-  m_Color: {r: 1, g: 0.9695741, b: 0.5588235, a: 1}
+  m_Color: {r: 1, g: 0.5588235, b: 0.5588235, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0

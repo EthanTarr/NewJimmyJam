@@ -34,6 +34,7 @@ public class controlAssigmentManager : MonoBehaviour {
                     controllerHandler.controlOrder.Add(control);
                     controllers.Remove(control);
                     setControls++;
+                    scoreCard.instance.numOfPlayers = setControls;
                     print("player " + setControls + " mapped to " + newPlayer.playerControl);
                     break;
                 }
