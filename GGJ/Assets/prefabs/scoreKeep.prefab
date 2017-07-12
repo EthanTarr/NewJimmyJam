@@ -64,10 +64,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScores: 
-  numOfPlayers: 2
   ConeHeadMode: 0
   gamesToWin: 5
+  numOfPlayers: 2
+  selectedCharacters:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   debugMaxSmash: 25
-  debugBounciness: 135
+  debugBounciness: 125
   smashDebugInput: {fileID: 0}
   bouncinessDebugInput: {fileID: 0}

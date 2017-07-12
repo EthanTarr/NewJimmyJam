@@ -7,6 +7,12 @@ public class horseFront : playertest{
     public horseBack back;
     public SpriteRenderer horseHead;
 
+    private void Start() {
+        fullColor = GetComponent<SpriteRenderer>().color;
+        fullColor.a = 0.75f;
+        base.Start(); 
+    }
+
     // Update is called once per frame
     void Update() {
         anim.SetFloat("velocity", 0);
@@ -46,9 +52,10 @@ public class horseFront : playertest{
                 rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight);
             }
 
-            //if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f) {
-            //    StartCoroutine(dashOutOfCharge(Input.GetAxis("Dash" + playerControl), true));
-            //}
+            if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && canSmash && !touchingGround)
+            {
+                StartCoroutine(dashOutOfCharge(Input.GetAxis("Dash" + playerControl), true));
+            }
 
             if (Input.GetButtonDown("Smash" + playerControl)
                     && canSmash && !smashing && !touchingGround)
@@ -65,17 +72,6 @@ public class horseFront : playertest{
         }
     }
 
-    public override void die() {
-        alreadyDead = true;
-        print("hoi");
-        audioManager.instance.Play(deathExplosion, 0.5f, UnityEngine.Random.Range(0.96f, 1.04f));
-        GameObject particle = Instantiate(deathParticle, transform.position, Quaternion.identity) as GameObject;
-        particle.GetComponent<ParticleSystem>().startColor = fullColor;
-        GetComponent<SpriteRenderer>().color = fullColor;
-        Shake.instance.shake(2, 3);
-        Destroy(this.transform.parent.gameObject);
-        endingUI.instance.Invoke("checkPlayersLeft", 0.25f);
-    }
     void queueBackJump() {
         back.jumpQueued = true;
     }

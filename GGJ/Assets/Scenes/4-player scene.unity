@@ -1157,6 +1157,18 @@ Prefab:
       propertyPath: gamesToWin
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
+        type: 2}
+      propertyPath: selectedCharacters.Array.data[0]
+      value: 
+      objectReference: {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
+        type: 2}
+      propertyPath: selectedCharacters.Array.data[1]
+      value: 
+      objectReference: {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 82692072093511186, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
@@ -8573,7 +8585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1765388765
 Animator:
   serializedVersion: 3
@@ -9296,7 +9308,7 @@ MonoBehaviour:
   ps: []
   anyKey: {fileID: 0}
   levelNum: 4
-  spacing: 11.39
+  spacing: 33.18
   scoreText: {fileID: 1293354200339552, guid: e3ffe57eecce77a4dad1c285d7350f9c, type: 2}
   winParticles: {fileID: 0}
 --- !u!1 &1875266927
@@ -13004,6 +13016,9 @@ MonoBehaviour:
   FloorSpawns: 120
   minFloorPlacement: -20
   maxFloorPlacement: 20
+  mat: {fileID: 0}
+  yScale: 0
+  xOffset: 0
 --- !u!4 &2041869982
 Transform:
   m_ObjectHideFlags: 0
@@ -13919,7 +13934,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2097216427}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fceaeb339b971b429c4cc600acabd13, type: 3}
   m_Name: 

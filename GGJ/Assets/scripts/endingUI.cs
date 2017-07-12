@@ -31,13 +31,14 @@ public class endingUI : MonoBehaviour {
             text.transform.parent = this.transform;
 
             text.transform.position = transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width / (levelNum - 1)) / 2;
+            text.gameObject.SetActive(false);
         }
 
         ps = new Text[levelNum];
         for (int i = 0; i < levelNum; i++) {
             GameObject text = Instantiate(scoreText, transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i), transform.rotation);
             text.transform.parent = this.transform;
-            
+
             text.GetComponent<Text>().color = Color.red;
             text.GetComponent<Text>().text = "0";
             ps[i] = text.GetComponent<Text>();
@@ -45,8 +46,9 @@ public class endingUI : MonoBehaviour {
 
 
             text.transform.position = transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i);
+            ps[i].gameObject.SetActive(false);
         }
-            //ps[0].gameObject.SetActive(false);
+
     }
 
     void Update() {
@@ -63,6 +65,7 @@ public class endingUI : MonoBehaviour {
 
     public void checkPlayersLeft() {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        
 
         if (players.Length == 1) {
             players[0].GetComponent<Rigidbody2D>().gravityScale = 6;
@@ -83,8 +86,10 @@ public class endingUI : MonoBehaviour {
         ps[0].gameObject.SetActive(true);
 
         if (playerId != -1) {
-            
 
+            for (int i = 0; i < transform.childCount; i++) {
+                transform.GetChild(i).gameObject.SetActive(true);
+            }
             for (int i = 0; i < scoreCard.instance.numOfPlayers; i++) {
                 ps[i].text = "" + scoreCard.instance.playerScores[i];
 

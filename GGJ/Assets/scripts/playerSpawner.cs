@@ -13,13 +13,13 @@ public class playerSpawner : MonoBehaviour {
 
     public Color[] characterColors;
 
-    void Start() {
+    void Awake() {
         instance = this;
         numOfPlayers = scoreCard.instance.numOfPlayers;
 
         for (int i = 0; i < numOfPlayers; i++) {
             Vector3 pos = transform.position - Vector3.right * (width / 2 - width / (numOfPlayers - 1) * i);
-            GameObject player = Instantiate(playerPrefab, pos, transform.rotation);
+            GameObject player = Instantiate(scoreCard.instance.selectedCharacters[i], pos, transform.rotation);
 
             player.GetComponent<playertest>().playerNum = i;
             player.GetComponent<playertest>().fullColor = characterColors[i];

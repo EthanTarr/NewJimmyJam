@@ -9,6 +9,21 @@ public class horseBack : playertest {
     public float followDistance;
     public bool jumpQueued;
     public GameObject tail;
+    public GameObject[] allObjects;
+
+    void Start() {
+        setSettings();
+        base.Start();
+    }
+
+    void setSettings() {
+        this.GetComponent<SpriteRenderer>().color = front.GetComponent<SpriteRenderer>().color;
+        this.playerControl = front.playerControl;
+        this.fullColor = front.fullColor;
+        foreach (GameObject segment in allObjects) {
+            segment.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
+        }
+    }
 
     void Update() {
         anim.SetFloat("velocity", 0);
@@ -32,6 +47,11 @@ public class horseBack : playertest {
 
             if (front.transform.position.y < transform.position.y && rigid.velocity.y > minJumpHeight) {
                 rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight);
+            }
+
+            if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && canSmash && !touchingGround)
+            {
+                StartCoroutine(dashOutOfCharge(Input.GetAxis("Dash" + playerControl), true));
             }
 
             if (Input.GetButtonDown("Smash" + playerControl)

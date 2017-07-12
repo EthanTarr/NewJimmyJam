@@ -37,7 +37,7 @@ public class playertest : MonoBehaviour {
     public float bounceForce;
 
     protected bool smashing;
-    protected float smashReset;
+
 
     public float maxSmashCooldownTime = 2;
     protected float SmashCooldownTime = 0;
@@ -49,6 +49,7 @@ public class playertest : MonoBehaviour {
 
     [Header("Dash Cancel Properties")]
     public float dashSpeed = 7;
+    public float dashCharge = 0.35f;
 
     protected bool vunrabilityFrames = false;
     protected bool canSmash = true;
@@ -79,7 +80,7 @@ public class playertest : MonoBehaviour {
 
     public float slidingFloor;
 
-    void Start() {
+    protected void Start() {
 
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
@@ -95,7 +96,7 @@ public class playertest : MonoBehaviour {
         toggleCharge(0);   
     }
 
-    void toggleCharge(float toggle) {
+    protected void toggleCharge(float toggle) {
         GetComponent<SpriteRenderer>().color = Color.Lerp(baseColor, fullColor, toggle);
         chargeParticle.startSize = Mathf.Lerp(0, 0.4f, toggle);
         float changeSize = Mathf.Lerp(0, 0.75f, toggle);
@@ -136,9 +137,9 @@ public class playertest : MonoBehaviour {
                 rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight);
             }
 
-            //if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f) {
-            //    StartCoroutine(dashOutOfCharge(Input.GetAxis("Dash" + playerControl), true));
-            //}
+            if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && canSmash && !touchingGround) {
+               StartCoroutine(dashOutOfCharge(Input.GetAxis("Dash" + playerControl), true));
+            }
 
             if (Input.GetButtonDown("Smash" + playerControl)
                     && canSmash && !smashing && !touchingGround) {
@@ -154,7 +155,7 @@ public class playertest : MonoBehaviour {
     }
 
     protected IEnumerator chargeSmash(float currentDirection) {
-        bounceDirection = Vector2.zero;
+        bounceDirection = bounceDirection / 8;
         rigid.velocity =  Vector2.right * rigid.velocity.x + bounceDirection;
 
         
@@ -192,18 +193,19 @@ public class playertest : MonoBehaviour {
         StartCoroutine(smashAfterCharge(chargeValue));
     }
 
-    IEnumerator dashOutOfCharge(float chargeValue, bool direction) {
+    protected IEnumerator dashOutOfCharge(float chargeValue, bool direction) {
         InvokeRepeating("SpawnTrail", 0, 0.035f);
-        vunrabilityFrames = true;
+        //vunrabilityFrames = true;
         GetComponent<SpriteRenderer>().flipX = direction;
-        rigid.velocity = new Vector2(dashSpeed * Input.GetAxis("Dash" + playerControl), bounceDirection.y);
+        bounceDirection += new Vector2(dashSpeed * Input.GetAxisRaw("Dash" + playerControl), 0);
+        rigid.velocity = new Vector2(rigid.velocity.x, 1);
+        print(bounceDirection);
 
         smashing = false;
         toggleCharge(0);
 
         SmashSpeed = 0;
         smashPower = 0;
-        smashReset = 50;
 
         audioManager.instance.Play(this.cancel, 0.25f * (chargeValue / maxChargeTime));
         GameObject dashExpurosion = Instantiate(dashCancelParticle, transform.position, transform.rotation);
@@ -215,15 +217,17 @@ public class playertest : MonoBehaviour {
         dashTrail.GetComponent<ParticleSystem>().startColor = fullColor;
         Destroy(dashTrail, 2f);
 
-        //canSmash = false;
-        StartCoroutine(recovery(0.5f));
-        yield return new WaitForSeconds(0.15f);
-        chargeParticle.gameObject.transform.localScale = new Vector3(rigid.velocity.x, 0);
+        canSmash = false;
+        StartCoroutine(recovery(dashCharge));
+        
         vunrabilityFrames = false;
+        yield return new WaitForSeconds(0.25f);
+
+        chargeParticle.gameObject.transform.localScale = new Vector3(rigid.velocity.x, 0);
         CancelInvoke("SpawnTrail");
     }
 
-    IEnumerator smashAfterCharge(float chargeValue) {
+    protected IEnumerator smashAfterCharge(float chargeValue) {
         if (chargeValue > maxChargeTime / 2)
             InvokeRepeating("SpawnTrail", 0, 0.035f);
 
@@ -232,7 +236,6 @@ public class playertest : MonoBehaviour {
         chargeParticle.gameObject.transform.localScale = Vector3.zero;
         rigid.velocity = new Vector2(0, -SmashSpeed + bounceDirection.y * 10);
         anim.SetBool("smashing", true);
-        smashReset = 50;
 
         GameObject dashTrail = Instantiate(dashTrailParticle, transform.position, transform.rotation);
         dashTrail.transform.parent = this.transform;
@@ -346,7 +349,7 @@ public class playertest : MonoBehaviour {
 
     IEnumerator recovery(float recoveryTime) {
 
-        if (smashing) {
+        //if (smashing) {
             smashing = false;
             canSmash = false;
             Color color = GetComponent<SpriteRenderer>().color;
@@ -354,7 +357,7 @@ public class playertest : MonoBehaviour {
             anim.GetComponent<SpriteRenderer>().color = color;
             vunrabilityFrames = true;
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(recoveryTime);
 
             vunrabilityFrames = false;
             anim.SetBool("smashing", false);
@@ -368,7 +371,7 @@ public class playertest : MonoBehaviour {
             audioManager.instance.Play(loadPower, 0.5f, UnityEngine.Random.Range(0.96f, 1.03f));
             SmashCooldownTime = 0.25f;
             canSmash = true;
-        }
+        //}
     }
 
     protected bool alreadyDead;
