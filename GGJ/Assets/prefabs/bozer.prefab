@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 4154233941249006}
   - component: {fileID: 212746559995486268}
   - component: {fileID: 95892902538420184}
+  - component: {fileID: 114447273192875028}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -117,8 +118,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1390147153120742}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5000806, y: 4.1683674, z: 0}
-  m_LocalScale: {x: 7.4208407, y: 7.420839, z: 7.420839}
+  m_LocalPosition: {x: -3.5051289, y: 3.5951762, z: 0}
+  m_LocalScale: {x: 4.4, y: 4.4, z: 7.420839}
   m_Children:
   - {fileID: 4976071209347376}
   - {fileID: 4154233941249006}
@@ -197,8 +198,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.11, y: 0.15}
+  m_Offset: {x: -0.004349351, y: -0.014787884}
+  m_Size: {x: 0.1987274, y: 0.23524798}
   m_Direction: 0
 --- !u!95 &95892902538420184
 Animator:
@@ -217,6 +218,29 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114447273192875028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643337282199006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8aa3ef5ca216614685b0e7396c43532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteSheet: {fileID: 21300000, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
+  subsprites:
+  - {fileID: 21300000, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
+  - {fileID: 21300002, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
+  - {fileID: 21300004, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
+  - {fileID: 21300006, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
+  - {fileID: 21300008, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
+  - {fileID: 21300010, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
+  - {fileID: 21300012, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
+  - {fileID: 21300014, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
+  - {fileID: 21300016, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
+  - {fileID: 21300018, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
 --- !u!114 &114559766935119368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +284,7 @@ MonoBehaviour:
   maxSmashCooldownTime: 3
   maxChargeTime: 2
   dashSpeed: 14
+  dashCharge: 0.35
   shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
   chargeParticle: {fileID: 198537840020618046}
   fullColor: {r: 1, g: 0.6544118, b: 0.6544118, a: 0.528}
@@ -282,6 +307,7 @@ MonoBehaviour:
   charge: {fileID: 8300000, guid: 68ae9f5d4d86e454dbf8bb8152aa9ddf, type: 3}
   cancel: {fileID: 8300000, guid: 1a97530295f2d61468f45f3c99ed6771, type: 3}
   bounciness: 1.5
+  bounceDirection: {x: 0, y: 0}
   slidingFloor: 0
   downLazy: 0.6
 --- !u!114 &114645735380730240
@@ -3443,7 +3469,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 53ca9e910eadf8741adf4b8902408786, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbb73b52c5c5a0f4db4bc7e6e98e7838, type: 3}
   m_Color: {r: 1, g: 0.5588235, b: 0.5588235, a: 1}
   m_FlipX: 1
   m_FlipY: 0

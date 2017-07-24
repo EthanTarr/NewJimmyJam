@@ -6,7 +6,7 @@ public class playerSpawner : MonoBehaviour {
 
     public static playerSpawner instance;
     public float width;
-    public float numOfPlayers = 2;
+    float numOfPlayers = 2;
     public GameObject playerPrefab;
 
     public bool showSpawners;

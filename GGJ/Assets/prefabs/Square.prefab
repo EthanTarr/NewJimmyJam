@@ -154,6 +154,7 @@ MonoBehaviour:
   OscillationSpeed: 0
   initialY: 0
   firstBlock: 0
+  dampen: 1
   floorColor: {r: 1, g: 1, b: 1, a: 1}
   velocity: 0
 --- !u!212 &212255483709922236

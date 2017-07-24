@@ -16,6 +16,8 @@ public class endingUI : MonoBehaviour {
     public float spacing;
     float width;
 
+    string levelName;
+
     [Space()]
     public GameObject scoreText;
 
@@ -24,6 +26,7 @@ public class endingUI : MonoBehaviour {
     void Start() {
         instance = this;
         levelNum = scoreCard.instance.numOfPlayers;
+        levelName = Application.loadedLevelName;
 
         width = spacing * 4 * levelNum;
         for (int i = 0; i < levelNum - 1; i++) {
@@ -58,7 +61,7 @@ public class endingUI : MonoBehaviour {
                 Destroy(scoreCard.instance.gameObject);
             } else {
                 //print(scoreCard.instance.highestScore());
-                Application.LoadLevel(levelNum);
+                Application.LoadLevel(levelName);
             }
         }
     }
@@ -109,7 +112,7 @@ public class endingUI : MonoBehaviour {
         }
 
         yield return new WaitForSeconds(1f);
-        anyKey.SetActive(true);
+        //anyKey.SetActive(true);
 
 
     }

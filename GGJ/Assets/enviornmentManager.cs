@@ -22,7 +22,7 @@ public class enviornmentManager : MonoBehaviour {
 
     GameObject targetSpike;
 	// Update is called once per frame
-	public void enviornmentCall() {
+	public virtual void enviornmentCall() {
         if (targetSpike != null) {
             audioManager.instance.Play(spikeFall, 1f, Random.Range(0.96f, 1.03f));
 

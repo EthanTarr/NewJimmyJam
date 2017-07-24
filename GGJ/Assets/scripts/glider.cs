@@ -80,7 +80,7 @@ public class glider : playertest{
         while (chargeValue <= maxChargeTime) {
 
             float lerp = (chargeValue / maxChargeTime);
-            toggleCharge(lerp);
+            chargeVisualEffects(lerp);
 
             SmashSpeed = Mathf.Lerp(minSmashSpeed, maxSmashSpeed, lerp);
             smashPower = Mathf.Lerp(minSmashPower, maxSmashPower, lerp);

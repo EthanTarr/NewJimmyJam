@@ -68,10 +68,10 @@ MonoBehaviour:
   gamesToWin: 5
   numOfPlayers: 2
   selectedCharacters:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+  - {fileID: 1632265846656780, guid: ccea8d17f88a67942b9a580c69ad5083, type: 2}
+  - {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+  - {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
   debugMaxSmash: 25
   debugBounciness: 125
   smashDebugInput: {fileID: 0}

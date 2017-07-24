@@ -20,6 +20,9 @@ public class SquareBehavior : MonoBehaviour {
 	}
 
     float maxAmplitude = 5f;
+
+    public float dampen = 1;
+
 	void Update () {
         //getPosition();
     }
@@ -50,7 +53,7 @@ public class SquareBehavior : MonoBehaviour {
             }
         }
         TotalAmplitude = Mathf.Clamp(TotalAmplitude, -10, 10);
-        transform.position = new Vector3(transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime), 0);
+        transform.position = new Vector3(transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime / dampen), transform.position.z);
         getVelocity();
 
         if (firstBlock) {

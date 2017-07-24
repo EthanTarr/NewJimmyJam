@@ -10,6 +10,7 @@ public class controlAssigmentManager : MonoBehaviour {
     int setControls = 0;
     public Color[] colors;
 
+    public string selectedLevel;
 
     void Start() {
         controllerHandler.controlOrder.Clear();
@@ -44,8 +45,12 @@ public class controlAssigmentManager : MonoBehaviour {
         }
 
         if (Input.GetButton("Submit") && scoreCard.instance.numOfPlayers >= 2) {
-            Application.LoadLevel((setControls <= 2) ? 2 : 3);
+            Application.LoadLevel(selectedLevel);
         }
+    }
+
+    public void changeSelectedLevel(string level) {
+        selectedLevel = level;
     }
 
     public void changeTargetSpawn(GameObject player) {
