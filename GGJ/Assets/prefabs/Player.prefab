@@ -272,6 +272,7 @@ MonoBehaviour:
   charge: {fileID: 8300000, guid: 68ae9f5d4d86e454dbf8bb8152aa9ddf, type: 3}
   cancel: {fileID: 8300000, guid: 1a97530295f2d61468f45f3c99ed6771, type: 3}
   bounciness: 1.5
+  bounceDirection: {x: 0, y: 0}
   slidingFloor: 0
   downLazy: 0.33
 --- !u!114 &114387569553538420

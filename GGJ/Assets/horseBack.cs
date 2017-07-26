@@ -25,7 +25,7 @@ public class horseBack : playertest {
         }
     }
 
-    void Update() {
+    void LateUpdate() {
         anim.SetFloat("velocity", 0);
         bool touchingGround = checkGround();
         bounceDirection = new Vector2(Mathf.Lerp(bounceDirection.x, 0, Time.deltaTime * 2.5f), Mathf.Lerp(bounceDirection.y, 0, Time.deltaTime * (smashing ? 5 : 45)));

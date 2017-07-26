@@ -93,11 +93,7 @@ public class playertest : MonoBehaviour {
         chargeVisualEffects(0);   
     }
     
-    void Update() {
-
-        if (bounceDirection.sqrMagnitude > 0.1f) {
-           // print("player " + playerNum + " bounciness is " + bounceDirection.sqrMagnitude);
-        }
+    void LateUpdate() {
 
         float HorizInput = Input.GetAxis("Horizontal" + playerControl);
         
@@ -105,11 +101,7 @@ public class playertest : MonoBehaviour {
         anim.SetFloat("velocity", Mathf.Abs(HorizInput));
         checkGround();
 
-        bounceDirection = new Vector2(Mathf.Lerp(bounceDirection.x, 0, Time.deltaTime * 2.5f), Mathf.Lerp(bounceDirection.y, 0, Time.deltaTime * (smashing ? 5 : 45)));
-        //bounceDirection.y = Mathf.Min(bounceDirection.y, 20);
-
-        //if(bounceDirection.y > 1)
-       // print(bounceDirection.y);
+        bounceDirection = new Vector2(Mathf.Lerp(bounceDirection.x, 0, Time.deltaTime * (smashing ? 25 : 2.5f)), Mathf.Lerp(bounceDirection.y, 0, Time.deltaTime * (smashing ? 5 : 45)));
 
         if (!smashing && !vunrabilityFrames && playerControl != "" && rigid.bodyType == RigidbodyType2D.Dynamic) {
             movement(HorizInput);
@@ -154,7 +146,7 @@ public class playertest : MonoBehaviour {
 
         //shortHop
         if (Input.GetButtonUp("Jump" + playerControl) && rigid.velocity.y > minJumpHeight) {
-            rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight);
+            rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight + bounceDirection.y);
         }
     }
 
@@ -166,7 +158,8 @@ public class playertest : MonoBehaviour {
     }
 
     protected IEnumerator chargeSmash(float currentDirection) {
-        bounceDirection = bounceDirection / 8;
+        bounceDirection.x = bounceDirection.x / 12;
+        bounceDirection.y = bounceDirection.y / 2;
         rigid.velocity =  Vector2.right * rigid.velocity.x + bounceDirection;
 
         smashing = true;
@@ -256,50 +249,33 @@ public class playertest : MonoBehaviour {
     [Space()]
     //this is really lazy to position raycasts to size
     public float downLazy = 0.33f;
-	void checkForWave() {
-
-        for (int i = 0; i < 4; i++) {
-            Vector3 downward = transform.position - transform.up * downLazy - transform.right * 0.25f + transform.right * 0.15f * i;
+	public bool checkGround() {
+        bool grounded = false;
+        for (int i = 0; i < 5; i++) {
+            float dir = -1 + (i % 2) * 2;
+            Vector3 downward = transform.position - transform.up * downLazy + transform.right * 0.1f * Mathf.Ceil(i/2f) * dir;
             RaycastHit2D hit = Physics2D.Raycast(downward, -transform.up, 0.4f);
 
             Debug.DrawRay(downward, -transform.up, Color.red);
 
             if (hit && hit.transform.GetComponent<SquareBehavior>() != null) {
                 SquareBehavior square = hit.transform.GetComponent<SquareBehavior>();
-                if (square.GetComponent<SquareBehavior>().TotalAmplitude - previousAmplitude > 0.5f) {
+                grounded = true;
+                if (square.GetComponent<SquareBehavior>().TotalAmplitude - previousAmplitude > 0.1f) {
                     bounceDirection += Vector2.up * square.GetComponent<SquareBehavior>().TotalAmplitude;
-                    bounceDirection.y *= bounceForce / (square.transform.position.y < square.GetComponent<SquareBehavior>().initialY + 0.5f ? 15 : 4);
-
-                    print(square.GetComponent<SquareBehavior>().TotalAmplitude - previousAmplitude);
+                    //bounceDirection.y *= bounceForce / (square.transform.position.y < square.GetComponent<SquareBehavior>().initialY ? 15 : 4);
+                    bounceDirection.y *= bounceForce / 15;
                 }
-                previousAmplitude = square.GetComponent<SquareBehavior>().TotalAmplitude; //there has got to be a better way to do this
+                previousAmplitude = square.GetComponent<SquareBehavior>().TotalAmplitude; // have the swuare itself keep track of its own acceleration or something
             } 
         }
 
+        anim.SetBool("airborne", !grounded);
         if (!canMakeWave) {
-            return;
+            return grounded;
         }
 
         StartCoroutine("checkIfWaved");
-    }
-
-    public bool checkGround() {
-        bool grounded = false;
-        for (int i = 0; i < 4; i++) {
-            Vector3 downward = transform.position - transform.up * downLazy - transform.right * 0.25f + transform.right * 0.15f * i;
-            RaycastHit2D hit = Physics2D.Raycast(downward, -transform.up, 0.2f);
-
-            Debug.DrawRay(downward, -transform.up * 0.2f, Color.blue);
-            if (hit && hit.transform.GetComponent<SquareBehavior>() != null) {
-                grounded = true;
-            }
-        }
-
-        if (grounded) {
-            //checkForWave();
-        }
-
-        anim.SetBool("airborne", !grounded);
         return grounded;
     }
 
@@ -336,6 +312,10 @@ public class playertest : MonoBehaviour {
 
             Vector2 dir;
             dir.x = other.relativeVelocity.x * (smashing ? 0.05f : 1);
+
+            if (!checkGround())
+                dir.x *= 1.25f;
+
             dir.x = Mathf.Min(Mathf.Abs(dir.x), 50) * Mathf.Sign(dir.x);
 
             dir.y = Mathf.Clamp(other.relativeVelocity.y * (smashing ? 3 : 1f), aboveMultiplyer, smashing ? 25 : 15);
@@ -351,10 +331,6 @@ public class playertest : MonoBehaviour {
         canMakeWave = true;
     }
 
-    void OnCollisionExit2D(Collision2D other) {
-        checkForWave();
-    }
-
     protected void slopeCheck() {
         float littleHeight = 0.07f;
         float height = -1;
@@ -367,7 +343,7 @@ public class playertest : MonoBehaviour {
             }
         } if (height > -1 && height < 6) {
             transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x, transform.position.y + littleHeight * height + 0.2f), Time.deltaTime * 12);
-            checkForWave(); //THIS MAY OR MAY NOT BE PART O THE PROBLEM. ONCE I STANDARDIZE WAVES WE MAY BE ABLE TO TAKE THIS OUT
+            checkGround(); //THIS MAY OR MAY NOT BE PART O THE PROBLEM. ONCE I STANDARDIZE WAVES WE MAY BE ABLE TO TAKE THIS OUT
         }
     }
 

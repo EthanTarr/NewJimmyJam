@@ -14,7 +14,7 @@ public class horseFront : playertest{
     }
 
     // Update is called once per frame
-    void Update() {
+    void LateUpdate() {
         anim.SetFloat("velocity", 0);
         bool touchingGround = checkGround();
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class glider : playertest{
 
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.M))
         {

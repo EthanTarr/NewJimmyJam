@@ -12,8 +12,8 @@ public class windFlag : MonoBehaviour {
 
 	void Update () {
         float yStretch = 1;
-        yStretch = (transform.position.y - baseY)/dampen;
-        yStretch = Mathf.Clamp(yStretch, minScale, maxScale);
+        //yStretch = (transform.position.y - baseY)/dampen;
+        //yStretch = Mathf.Clamp(yStretch, minScale, maxScale);
 
         changeYScale(yStretch * Mathf.Sign(windZoneManager.instance.windDirection.x));
 	}

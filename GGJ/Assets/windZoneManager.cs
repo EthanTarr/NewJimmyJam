@@ -8,6 +8,7 @@ public class windZoneManager : MonoBehaviour {
     public static windZoneManager instance;
     private windController[] windControllers;
     public bool visible;
+    public objectTranslate[] clouds;
 
     [Range(0, 360)]public float windAngle;
 
@@ -20,6 +21,9 @@ public class windZoneManager : MonoBehaviour {
             windAngle = 180 * Random.Range(0, 2);
         }
         setup();
+
+        foreach (objectTranslate cloud in clouds)
+            cloud.direction = windDirection;
     }
 
     private void Update() {

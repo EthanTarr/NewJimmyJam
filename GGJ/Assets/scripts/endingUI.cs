@@ -125,12 +125,12 @@ public class endingUI : MonoBehaviour {
 
         for (int i = 0; i < levelNum; i++) {
             Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i), 25);
+            Gizmos.DrawWireSphere(transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i), 1);
         }
 
         for (int i = 0; i < levelNum - 1; i++) {
             Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width/(levelNum - 1))/2, new Vector3(10f,7f,1));
+            Gizmos.DrawWireCube(transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width/(levelNum - 1))/2, new Vector3(1.0f,0.7f,1));
         }
     }
     
