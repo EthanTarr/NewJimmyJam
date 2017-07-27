@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour {
         instance = this;
 		SpawnSqures ();
 		boundary = FloorSpawns * .5f;
-	}
+        Physics.IgnoreLayerCollision(6, 6, true);
+    }
 	
 	// Update is called once per frame
 	void Update () {
