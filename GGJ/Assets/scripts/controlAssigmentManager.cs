@@ -10,6 +10,7 @@ public class controlAssigmentManager : MonoBehaviour {
     int setControls = 0;
     public Color[] colors;
 
+    public string selectedLevel;
 
     void Start() {
         controllerHandler.controlOrder.Clear();
@@ -17,6 +18,7 @@ public class controlAssigmentManager : MonoBehaviour {
 
 
     void Update() {
+
         if (controllerHandler.controlOrder.Count < 4) {
             foreach (string control in controllers) {
                 bool inputFound = Mathf.Abs(Input.GetAxisRaw("Horizontal" + control)) > 0.1f;
@@ -33,15 +35,25 @@ public class controlAssigmentManager : MonoBehaviour {
                     newPlayer.GetComponent<SpriteRenderer>().color = colors[setControls];
                     controllerHandler.controlOrder.Add(control);
                     controllers.Remove(control);
+                    scoreCard.instance.selectedCharacters[setControls] = player;
                     setControls++;
+                    scoreCard.instance.numOfPlayers = setControls;                   
                     print("player " + setControls + " mapped to " + newPlayer.playerControl);
                     break;
                 }
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            Application.LoadLevel((setControls <= 2) ? 2 : 3);
+        if (Input.GetButton("Submit") && scoreCard.instance.numOfPlayers >= 2) {
+            Application.LoadLevel(selectedLevel);
         }
+    }
+
+    public void changeSelectedLevel(string level) {
+        selectedLevel = level;
+    }
+
+    public void changeTargetSpawn(GameObject player) {
+        this.player = player;
     }
 }

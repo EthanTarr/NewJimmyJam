@@ -7,10 +7,13 @@ public class scoreCard : MonoBehaviour {
 
     public static scoreCard instance;
     public int[] playerScores;
-    public int numOfPlayers = 2;
+    
 	public bool ConeHeadMode = false;
     public int gamesToWin;
     private UnityEngine.UI.Toggle ConeHeadToggle;
+    [Space()]
+    public int numOfPlayers = 2;
+    public GameObject[] selectedCharacters;
 
     [Header("Debug Stuff")]
     public int debugMaxSmash = 25;
