@@ -37,8 +37,7 @@ public class squareBehaviorv2 : RaycastController {
         TotalAmplitude = 0;
         standardY += FloorOscillation * (Mathf.Sin(Time.time * OscillationSpeed));
 
-        foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("Pulse"))
-        {
+        foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("Pulse")) {
             float xPos = transform.position.x;
             float xPulsePos = pulse.transform.position.x;
 
