@@ -37,6 +37,7 @@ public class SquashAndStretch : MonoBehaviour
         newScale.x = Mathf.Max(originalScale.x + animatedStretch - verticalStretch + verticalSquish + 0.1f, 0.5f);
         newScale.x = Mathf.Min(newScale.x, 1.5f);
         newScale.y = originalScale.y - animatedStretch + verticalStretch - verticalSquish - 0.1f;
+        newScale.y = Mathf.Min(newScale.y, 2);
         sprite.transform.localScale = newScale;
     }
 

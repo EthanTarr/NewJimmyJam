@@ -6,46 +6,28 @@ public class Shake : MonoBehaviour {
 	public static Shake instance;
 	public Vector3 startTransform;
     public ParticleSystem dustParticles;
-    public GameObject Spike;
-    private List<GameObject> spikePositions;
 
 
     [Space()]
     public AudioClip[] rumbles;
-    public AudioClip spikeFall;
+
 
     private int spikes = 0;
 
     void Awake(){
-		instance = this;
-        spikePositions = new List<GameObject>();
-        foreach (killCieling spike in FindObjectsOfType<killCieling>())  {
-            spikePositions.Add(spike.gameObject);
-            spikes++;
-        }
+        instance = this;
         startTransform = transform.position;
 	}
+
 	public void shake(float t, float strength){
         dustParticles.Emit(UnityEngine.Random.Range(5, 8));
 
         audioManager.instance.Play(rumbles[Random.Range(0, rumbles.Length - 1)], 0.25f, Random.Range(0.96f, 1.03f));
 
-        if (UnityEngine.Random.value < 0.1f) {
-            int Fallingspike = UnityEngine.Random.Range(0, spikes);
-			spikePositions.Remove (Spike);
-			spikes--;
+        if(enviornmentManager.instance != null)
+            enviornmentManager.instance.enviornmentCall();
 
-            audioManager.instance.Play(spikeFall, 0.15f, Random.Range(0.96f, 1.03f));
-
-            if (spikePositions.Count > 0 && spikePositions[Fallingspike] != null) {
-                GameObject temp = (GameObject)Instantiate(Spike, ((GameObject)spikePositions[Fallingspike]).transform.position, Quaternion.identity);
-                temp.GetComponent<Rigidbody2D>().AddTorque(UnityEngine.Random.value * 30);
-                Destroy((GameObject)spikePositions[Fallingspike]);
-            }
-        }
-
-        StartCoroutine(screenshake(t, strength));
-		
+        StartCoroutine(screenshake(t, strength));	
 	}
 	
 	IEnumerator screenshake(float t, float strength){

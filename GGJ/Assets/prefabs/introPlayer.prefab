@@ -180,6 +180,8 @@ MonoBehaviour:
   decelerate: 4
   maxJumpHeight: 15
   minJumpHeight: 5
+  gravityStrength: 0
+  gravityDirection: {x: 0, y: 0}
   minSmashSpeed: 4
   maxSmashSpeed: 25
   minSmashPower: 4
@@ -197,6 +199,8 @@ MonoBehaviour:
     type: 2}
   deathParticle: {fileID: 1879571905062228, guid: 5b8a694f9d402434bb03b70352435cac,
     type: 2}
+  collisionParticle: {fileID: 1072802130077604, guid: dce94496cc569db4e9d83d8499d716d8,
+    type: 2}
   deathExplosion: {fileID: 8300000, guid: 0673598372542624280eccaca50f268b, type: 3}
   softLanding:
   - {fileID: 8300000, guid: e7562e73db5736c40889358c4aa64a95, type: 3}
@@ -207,7 +211,9 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: abdf7a4834af47140b3a1a9a4d403fc2, type: 3}
   charge: {fileID: 8300000, guid: 68ae9f5d4d86e454dbf8bb8152aa9ddf, type: 3}
   cancel: {fileID: 8300000, guid: 1a97530295f2d61468f45f3c99ed6771, type: 3}
+  bounciness: 0
   slidingFloor: 0
+  downLazy: 0.33
 --- !u!114 &114745485632716922
 MonoBehaviour:
   m_ObjectHideFlags: 1

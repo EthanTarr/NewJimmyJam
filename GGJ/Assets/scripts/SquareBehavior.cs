@@ -20,6 +20,9 @@ public class SquareBehavior : MonoBehaviour {
 	}
 
     float maxAmplitude = 5f;
+
+    public float dampen = 1;
+
 	void Update () {
         //getPosition();
     }
@@ -36,7 +39,7 @@ public class SquareBehavior : MonoBehaviour {
 
             if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength)
             {
-                TotalAmplitude += pulse.GetComponent<PulseMove>().Amplitude * Mathf.Sin(((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
+                TotalAmplitude += pulse.GetComponent<PulseMove>().Amplitude * (pulse.GetComponent<PulseMove>().speed / 4) * Mathf.Sin(((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
             }
         }
         foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("AntiPulse"))
@@ -46,11 +49,11 @@ public class SquareBehavior : MonoBehaviour {
 
             if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength)
             {
-                TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * Mathf.Sin((Mathf.PI / Wavelength) * (xPos - xPulsePos));
+                TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * (pulse.GetComponent<AntiPulseMove>().speed / 4) * Mathf.Sin((Mathf.PI / Wavelength) * (xPos - xPulsePos));
             }
         }
         TotalAmplitude = Mathf.Clamp(TotalAmplitude, -10, 10);
-        transform.position = new Vector3(transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime), 0);
+        transform.position = new Vector3(transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime / dampen), transform.position.z);
         getVelocity();
 
         if (firstBlock) {
