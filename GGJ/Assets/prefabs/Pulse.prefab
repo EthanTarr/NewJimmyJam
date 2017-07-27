@@ -100,8 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  angularSpeed: 20
   Amplitude: 1
   color: {r: 1, g: 1, b: 1, a: 1}
+  centerOfGravity: {fileID: 0}
   roll: {fileID: 8300000, guid: f456b975a2fc87348b85eb32525fb7a3, type: 3}
 --- !u!212 &212058059531942750
 SpriteRenderer:
@@ -109,7 +111,7 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370316028781630}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_MotionVectors: 1

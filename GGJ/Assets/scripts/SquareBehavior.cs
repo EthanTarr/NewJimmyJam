@@ -9,32 +9,39 @@ public class SquareBehavior : MonoBehaviour {
 	public float FloorOscillation = .02f;
     public float OscillationSpeed = 0.01f;
 	[HideInInspector] public float initialY = 0;
-	private float standardY;
+    [HideInInspector] public float initialX = 0;
+    private float standardY;
+    private float standardX;
     [HideInInspector] public bool firstBlock;
+    [HideInInspector] public Vector3 CenterOfGravity;
 
     Vector2 lastPosition;
 	void Start () {
         lastPosition = transform.position;
         standardY = transform.position.y;
+        standardX = transform.position.x;
         StartCoroutine(physicsCheck());
 	}
 
     float maxAmplitude = 5f;
 	void Update () {
         //getPosition();
+        
     }
 
     void getPosition() {
         initialY = transform.position.y;
+        initialX = transform.position.x;
         TotalAmplitude = 0;
         standardY += FloorOscillation * (Mathf.Sin(Time.time * OscillationSpeed));
+        standardX += FloorOscillation * (Mathf.Sin(Time.time * OscillationSpeed));
 
         foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("Pulse"))
         {
             float xPos = transform.position.x;
             float xPulsePos = pulse.transform.position.x;
 
-            if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength)
+            if ((transform.position - pulse.transform.position).magnitude < Wavelength && (transform.position - pulse.transform.position).magnitude > -Wavelength)
             {
                 TotalAmplitude += pulse.GetComponent<PulseMove>().Amplitude * Mathf.Sin(((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
             }
@@ -44,13 +51,14 @@ public class SquareBehavior : MonoBehaviour {
             float xPos = transform.position.x;
             float xPulsePos = pulse.transform.position.x;
 
-            if (xPos - xPulsePos < Wavelength && xPos - xPulsePos > -Wavelength)
+            if ((transform.position - pulse.transform.position).magnitude < Wavelength && (transform.position - pulse.transform.position).magnitude > -Wavelength)
             {
                 TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * Mathf.Sin((Mathf.PI / Wavelength) * (xPos - xPulsePos));
             }
         }
         TotalAmplitude = Mathf.Clamp(TotalAmplitude, -10, 10);
-        transform.position = new Vector3(transform.position.x, Mathf.Lerp(initialY, TotalAmplitude + standardY, Time.deltaTime), 0);
+        Vector3 vector = (-((-transform.position + CenterOfGravity).normalized)) * TotalAmplitude;
+        transform.position = new Vector3(Mathf.Lerp(initialX, standardX + vector.x, Time.deltaTime), Mathf.Lerp(initialY, standardY + vector.y, Time.deltaTime), 0);
         getVelocity();
 
         if (firstBlock) {

@@ -307,7 +307,7 @@ public class playertest : MonoBehaviour {
                     strength *= smashPower;
                     Color color = GetComponent<SpriteRenderer>().color;
                     color.a = 0.75f;
-                    WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, color, 7);
+                    WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, color, 7, null);
                     audioManager.instance.Play(smash, 0.75f, UnityEngine.Random.Range(0.95f, 1.05f));
 
                     SmashSpeed = 0;
@@ -317,7 +317,7 @@ public class playertest : MonoBehaviour {
                     audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.05f, UnityEngine.Random.Range(0.96f, 1.03f));
 
                     if (canMakeWave)
-                        WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, Color.white, 3);
+                        WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, Color.white, 3, null);
                 }
             } 
         } else if (other.gameObject.tag.Equals("Player")) {
