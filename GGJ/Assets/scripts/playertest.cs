@@ -293,27 +293,30 @@ public class playertest : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("Floor")) {
-            float strength = Mathf.Clamp(other.relativeVelocity.magnitude / 40f, 0, .8f);
-            if (smashing) {     
-                StopCoroutine("smashAfterCharge");
-                CancelInvoke("SpawnTrail");
-                Shake.instance.shake(2, 3);
-                rigid.velocity = Vector3.zero;
-                strength *= smashPower;
-                Color color = GetComponent<SpriteRenderer>().color;
-                color.a = 0.75f;
-                WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, color, 7);
-                audioManager.instance.Play(smash, 0.75f, UnityEngine.Random.Range(0.95f, 1.05f));
+            if (other.relativeVelocity.magnitude > 8) {
+                float strength = Mathf.Clamp(other.relativeVelocity.magnitude / 40f, 0, .8f);
+                if (smashing) {
+                    StopCoroutine("smashAfterCharge");
+                    CancelInvoke("SpawnTrail");
+                    canSmash = false;
+                    Shake.instance.shake(2, 3);
+                    rigid.velocity = Vector3.zero;
+                    strength *= smashPower;
+                    Color color = GetComponent<SpriteRenderer>().color;
+                    color.a = 0.75f;
+                    WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, color, 7, null);
+                    audioManager.instance.Play(smash, 0.75f, UnityEngine.Random.Range(0.95f, 1.05f));
 
-                SmashSpeed = 0;
-                smashPower = 0;
-                StartCoroutine(recovery(SmashCooldownTime));               
-            } else if (other.relativeVelocity.magnitude > 8) {
-                audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.25f, UnityEngine.Random.Range(0.96f, 1.03f));
-                if (canMakeWave)
-                    WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, Color.white, 3);
-            }
-            
+                    SmashSpeed = 0;
+                    smashPower = 0;
+                    StartCoroutine(recovery(SmashCooldownTime)); 
+                } else {
+                    audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 0.05f, UnityEngine.Random.Range(0.96f, 1.03f));
+
+                    if (canMakeWave)
+                        WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength, Color.white, 3, null);
+                }
+            } 
         } else if (other.gameObject.tag.Equals("Player")) {
 
             float aboveMultiplyer = (other.transform.position.y + 0.5f < this.transform.position.y) ? 1: -1;
