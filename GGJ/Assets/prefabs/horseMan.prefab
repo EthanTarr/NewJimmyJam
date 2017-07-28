@@ -289,8 +289,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1632265846656780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.543208, y: 4.199631, z: 0}
-  m_LocalScale: {x: 4.480927, y: 4.480927, z: 4.480927}
+  m_LocalPosition: {x: -2.6250904, y: 3.0799923, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 4.480927}
   m_Children:
   - {fileID: 4574672789895342}
   - {fileID: 4513192658167554}
@@ -683,9 +683,9 @@ MonoBehaviour:
     m_Bits: 256
   playerControl: Arrow
   playerNum: 0
-  speed: 5
+  speed: 6
   accelerate: 1
-  decelerate: 10
+  decelerate: 7
   maxJumpHeight: 15
   minJumpHeight: 5
   gravityStrength: 1.75
@@ -723,7 +723,8 @@ MonoBehaviour:
   bounciness: 1.25
   bounceDirection: {x: 0, y: 0}
   slidingFloor: 0
-  downLazy: 0.33
+  jumped: 0
+  downLazy: 0.64
   front: {fileID: 114628340924380744}
   followDistance: 0.5
   jumpQueued: 0
@@ -808,9 +809,9 @@ MonoBehaviour:
     m_Bits: 256
   playerControl: Arrow
   playerNum: 1
-  speed: 5
-  accelerate: 8
-  decelerate: 4
+  speed: 6
+  accelerate: 6
+  decelerate: 8
   maxJumpHeight: 15
   minJumpHeight: 5
   gravityStrength: 1.75
@@ -848,7 +849,8 @@ MonoBehaviour:
   bounciness: 1.25
   bounceDirection: {x: 0, y: 0}
   slidingFloor: 0
-  downLazy: 0.33
+  jumped: 0
+  downLazy: 0.64
   back: {fileID: 114376374106595828}
   horseHead: {fileID: 212225501497581088}
 --- !u!114 &114725357932439858

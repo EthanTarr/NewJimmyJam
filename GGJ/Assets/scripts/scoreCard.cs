@@ -17,7 +17,7 @@ public class scoreCard : MonoBehaviour {
 
     [Header("Debug Stuff")]
     public int debugMaxSmash = 25;
-    public int debugBounciness = 125;
+    public float debugBounciness = 125;
     public InputField smashDebugInput;
     public InputField bouncinessDebugInput;
 
@@ -77,7 +77,7 @@ public class scoreCard : MonoBehaviour {
     }
 
     public void debugChangeBounciness() {
-        debugBounciness = int.Parse(bouncinessDebugInput.text);
+        debugBounciness = float.Parse(bouncinessDebugInput.text);
     }
     public void isConeHeadMode() {
         ConeHeadMode = !ConeHeadMode;

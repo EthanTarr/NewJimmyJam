@@ -6,16 +6,18 @@
 		_TransitionTex("Texture",2D) = "white" {}
 		_Cutoff("Cutoff", Range(0,1)) = 0
 		_Color("Color", Color) = (1,1,1,1)
+		
+
 		[MaterialToggle] _Distort("Distort", Float) = 0
+		[MaterialToggle] _reverse("Reverse", Float) = 0
+
 		_fade("fade", Range(0,1)) = 0
 	}
-	SubShader
-	{
+	SubShader {
 		// No culling or depth
 		Cull Off ZWrite Off ZTest Always
 
-		Pass
-		{
+		Pass {
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -59,6 +61,7 @@
 			int _Distort;
 			fixed4 _Color;
 			float _fade;
+			float _reverse;
 
 			fixed4 frag (v2f i) : SV_Target
 			{
@@ -70,7 +73,10 @@
 
 				fixed4 col = tex2D(_MainTex, i.uv + _Cutoff * direction);
 
-				if(transit.b < _Cutoff)
+				if(transit.b < _Cutoff && _reverse == 0)
+					return col = lerp(col, _Color, _fade);
+
+				if(transit.b > _Cutoff && _reverse == 1)
 					return col = lerp(col, _Color, _fade);
 
 				return col;

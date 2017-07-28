@@ -90,8 +90,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1562839045244380}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7935975, y: 3.3829556, z: 0}
-  m_LocalScale: {x: 4.480927, y: 4.480927, z: 4.480927}
+  m_LocalPosition: {x: -1.6006541, y: 2.827769, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 4.480927}
   m_Children:
   - {fileID: 4808216872969946}
   - {fileID: 4288215186195598}
@@ -234,21 +234,22 @@ MonoBehaviour:
     m_Bits: 256
   playerControl: Arrow
   playerNum: 0
-  speed: 4
-  accelerate: 4
-  decelerate: 3
+  speed: 6
+  accelerate: 6
+  decelerate: 8
   maxJumpHeight: 16
   minJumpHeight: 5
   gravityStrength: 0.6
   gravityDirection: {x: 0, y: -1}
-  minSmashSpeed: 3
-  maxSmashSpeed: 10
+  minSmashSpeed: 4
+  maxSmashSpeed: 13
   minSmashPower: 3
   maxSmashPower: 3
   bounceForce: 0
-  maxSmashCooldownTime: 2
+  maxSmashCooldownTime: 0.5
   maxChargeTime: 1.25
   dashSpeed: 10
+  dashCharge: 0.35
   shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
   chargeParticle: {fileID: 198762794434057868}
   fullColor: {r: 0.978499, g: 0.6102941, b: 1, a: 0}
@@ -271,8 +272,10 @@ MonoBehaviour:
   charge: {fileID: 8300000, guid: 68ae9f5d4d86e454dbf8bb8152aa9ddf, type: 3}
   cancel: {fileID: 8300000, guid: 1a97530295f2d61468f45f3c99ed6771, type: 3}
   bounciness: 1.75
+  bounceDirection: {x: 0, y: 0}
   slidingFloor: 0
-  downLazy: 0.33
+  jumped: 0
+  downLazy: 0.62
 --- !u!114 &114502099767988964
 MonoBehaviour:
   m_ObjectHideFlags: 1

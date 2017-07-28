@@ -18,9 +18,9 @@ public class TitleWaveMovers : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
         if (!backWave)
-            yPos = 2.5f + Mathf.Sin(Time.time * (transform.position.x + 10) / 2) / 8;
+           yPos = originalYPos + Mathf.Sin(Time.time * (transform.position.x + 10) / 2) / 8;
         else {
-            yPos = 2.5f + Mathf.Sin(Time.time * (transform.position.x + 10) / 8) / 4;
+            yPos = originalYPos + Mathf.Sin(Time.time * (transform.position.x + 10) / 8) / 4;
         }
 
         transform.position = new Vector3 (transform.position.x, yPos, transform.position.z);

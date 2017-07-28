@@ -89,9 +89,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1338795899029746}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.87, y: 1.9, z: 0}
-  m_LocalScale: {x: 4.480927, y: 4.480927, z: 4.480927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.2744932, y: 2.5290656, z: 0}
+  m_LocalScale: {x: 7.5, y: 7.5, z: 4.480927}
   m_Children:
   - {fileID: 4461427429604528}
   - {fileID: 4838586899059626}
@@ -106,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 1327981461603060}
   m_LocalRotation: {x: -0, y: -0, z: 0.86474484, w: 0.5022116}
   m_LocalPosition: {x: 0.004, y: -0.0082, z: 0}
-  m_LocalScale: {x: 0.21230024, y: 0.21230023, z: 0.21229962}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4302188338843528}
   m_RootOrder: 0
@@ -234,8 +234,8 @@ MonoBehaviour:
     m_Bits: 256
   playerControl: Arrow
   playerNum: 0
-  speed: 4
-  accelerate: 4
+  speed: 7
+  accelerate: 6
   decelerate: 8
   maxJumpHeight: 15
   minJumpHeight: 5
@@ -244,12 +244,12 @@ MonoBehaviour:
   minSmashSpeed: 4
   maxSmashSpeed: 13
   minSmashPower: 3
-  maxSmashPower: 3
-  bounceForce: 0
-  maxSmashCooldownTime: 1.5
+  maxSmashPower: 25
+  bounceForce: 0.85
+  maxSmashCooldownTime: 0.25
   maxChargeTime: 0.75
   dashSpeed: 10
-  dashCharge: 0.2
+  dashCharge: 0.3
   shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
   chargeParticle: {fileID: 198909840887975788}
   fullColor: {r: 0.97486645, g: 0.97794116, b: 0.7550281, a: 0.472}
@@ -274,7 +274,8 @@ MonoBehaviour:
   bounciness: 1.5
   bounceDirection: {x: 0, y: 0}
   slidingFloor: 0
-  downLazy: 0.33
+  jumped: 0
+  downLazy: 0.62
 --- !u!114 &114387569553538420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -357,7 +358,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -940763692
+  randomSeed: 509347388
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -492,7 +493,7 @@ ParticleSystem:
       maxColor: {r: 0.92156863, g: 0.61960787, b: 0.95686275, a: 1}
     startSize:
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3366,7 +3367,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 53ca9e910eadf8741adf4b8902408786, type: 3}
-  m_Color: {r: 0.887424, g: 1, b: 0.18382353, a: 1}
+  m_Color: {r: 0.9211968, g: 1, b: 0.18382353, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0

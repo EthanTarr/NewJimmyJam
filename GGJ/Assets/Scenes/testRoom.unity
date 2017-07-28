@@ -1593,7 +1593,7 @@ Prefab:
     - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
         type: 2}
       propertyPath: debugBounciness
-      value: 15
+      value: 0.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}

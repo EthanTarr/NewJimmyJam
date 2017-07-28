@@ -61,6 +61,6 @@ MonoBehaviour:
   - {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
   - {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
   debugMaxSmash: 25
-  debugBounciness: 15
+  debugBounciness: 0.85
   smashDebugInput: {fileID: 0}
   bouncinessDebugInput: {fileID: 0}

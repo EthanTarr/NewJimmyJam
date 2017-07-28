@@ -56,12 +56,13 @@ public class endingUI : MonoBehaviour {
 
     void Update() {
         if (inputallowed && Input.anyKeyDown) {
+            inputallowed = false;
             if (scoreCard.instance.highestScore() >= scoreCard.instance.gamesToWin) {
                 Application.LoadLevel(0);
                 Destroy(scoreCard.instance.gameObject);
             } else {
                 //print(scoreCard.instance.highestScore());
-                Application.LoadLevel(levelName);
+                StartCoroutine(screenTransition.instance.fadeOut(levelName));
             }
         }
     }
@@ -75,6 +76,7 @@ public class endingUI : MonoBehaviour {
             StopCoroutine("ending");
             StartCoroutine(ending(players[0].GetComponent<playertest>().playerNum));
             players[0].GetComponent<playertest>().enabled = false;
+            players[0].GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         } else if(players.Length == 0) {
             StartCoroutine(ending(-1));
         }

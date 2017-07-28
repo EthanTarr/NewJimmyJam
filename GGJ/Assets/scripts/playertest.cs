@@ -96,24 +96,24 @@ public class playertest : MonoBehaviour {
     void LateUpdate() {
 
         float HorizInput = Input.GetAxis("Horizontal" + playerControl);
-        
-
         anim.SetFloat("velocity", Mathf.Abs(HorizInput));
+
         checkGround();
 
-        bounceDirection = new Vector2(Mathf.Lerp(bounceDirection.x, 0, Time.deltaTime * (smashing ? 25 : 2.5f)), Mathf.Lerp(bounceDirection.y, 0, Time.deltaTime * (smashing ? 5 : 45)));
+        bounceDirection = new Vector2(Mathf.Lerp(bounceDirection.x, 0, Time.deltaTime * (smashing ? 25 : 2.5f)), Mathf.Lerp(bounceDirection.y, 0, Time.deltaTime * (smashing ? 25 : 45)));
 
         if (!smashing && !vunrabilityFrames && playerControl != "" && rigid.bodyType == RigidbodyType2D.Dynamic) {
             movement(HorizInput);
         }
 
-        rigid.velocity += gravityDirection * 0.45f;
-          
         if (!smashing && !vunrabilityFrames) {
-            rigid.velocity = new Vector2(xSpeed, rigid.velocity.y) + bounceDirection;
+            rigid.velocity = new Vector2(xSpeed, rigid.velocity.y);
         }
+
+        rigid.velocity += gravityDirection * 0.45f + bounceDirection;    
     }
 
+    public bool jumped;
     protected void movement(float horizInput) {
         //Horizontal Movement
         bool touchingGround = checkGround();
@@ -126,28 +126,34 @@ public class playertest : MonoBehaviour {
         }
         xSpeed = Mathf.Clamp(xSpeed, -speed, speed);
 
-           //Vertical Movement
+        //Vertical Movement
         if (touchingGround) {
             transform.Translate(slidingFloor, 0, 0); //for levels with moving ground. Probably a neater way of doing this
-
+            jumped = false;
             if (Input.GetButtonDown("Jump" + playerControl)) {
                 rigid.velocity += new Vector2(rigid.velocity.x, maxJumpHeight);
                 audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.93f, 1.05f));
-            }
-        } else  if (canSmash) {
-            if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f) {
-                StartCoroutine(dashOutOfCharge(Input.GetAxis("Dash" + playerControl), true));
-            }
+                Invoke("jumpDelay", 0.05f);
+            } 
+        } else {
+            if (canSmash) {
+                if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f) {
+                    StartCoroutine(dashOutOfCharge(Input.GetAxis("Dash" + playerControl), true));
+                }
 
-            if (Input.GetButtonDown("Smash" + playerControl) && !smashing) {
-                StartCoroutine(chargeSmash(Input.GetAxis("Horizontal" + playerControl)));
+                if (Input.GetButtonDown("Smash" + playerControl) && !smashing) {
+                    StartCoroutine(chargeSmash(Input.GetAxis("Horizontal" + playerControl)));
+                }
             }
         }
-
         //shortHop
-        if (Input.GetButtonUp("Jump" + playerControl) && rigid.velocity.y > minJumpHeight) {
-            rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight + bounceDirection.y);
+        if (Input.GetButtonUp("Jump" + playerControl) && rigid.velocity.y > minJumpHeight && jumped) {
+            rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight);
         }
+    }
+
+    void jumpDelay() {
+        jumped = true;
     }
 
     protected void chargeVisualEffects(float toggle) {
@@ -159,14 +165,17 @@ public class playertest : MonoBehaviour {
 
     protected IEnumerator chargeSmash(float currentDirection) {
         bounceDirection.x = bounceDirection.x / 12;
-        bounceDirection.y = bounceDirection.y / 2;
-        rigid.velocity =  Vector2.right * rigid.velocity.x + bounceDirection;
-
+        //bounceDirection.y = bounceDirection.y / 2;
+        //rigid.velocity =  Vector2.right * rigid.velocity.x + bounceDirection;
+        bounceDirection.y += Mathf.Max(0, rigid.velocity.y);
+        print(bounceDirection.y);
         smashing = true;
         bool direction = GetComponent<SpriteRenderer>().flipX;
         float chargeValue = 0;
         SmashSpeed = minSmashSpeed;
         smashPower = minSmashPower;
+
+        float initialY = Mathf.Max(0, rigid.velocity.y);
 
         while (chargeValue <= maxChargeTime) {
             
@@ -189,7 +198,10 @@ public class playertest : MonoBehaviour {
 
             currentDirection = Input.GetAxis("Dash" + playerControl);
             chargeValue += Time.deltaTime;
-            rigid.velocity = (Vector2.right * rigid.velocity.x) * 0.95f + bounceDirection;
+            rigid.velocity = (Vector2.right * rigid.velocity.x) * 0.95f + Vector2.up * initialY + bounceDirection;
+
+            initialY /= 1.07f;
+
             yield return new WaitForEndOfFrame();
         }
 
@@ -264,7 +276,7 @@ public class playertest : MonoBehaviour {
                 if (square.GetComponent<SquareBehavior>().TotalAmplitude - previousAmplitude > 0.1f) {
                     bounceDirection += Vector2.up * square.GetComponent<SquareBehavior>().TotalAmplitude;
                     //bounceDirection.y *= bounceForce / (square.transform.position.y < square.GetComponent<SquareBehavior>().initialY ? 15 : 4);
-                    bounceDirection.y *= bounceForce / 15;
+                    bounceDirection.y *= bounceForce;
                 }
                 previousAmplitude = square.GetComponent<SquareBehavior>().TotalAmplitude; // have the swuare itself keep track of its own acceleration or something
             } 
@@ -304,13 +316,13 @@ public class playertest : MonoBehaviour {
             
         } else if (other.gameObject.tag.Equals("Player")) {
 
-            float aboveMultiplyer = (other.transform.position.y + 0.5f < this.transform.position.y) ? 10 : -10;
+            float aboveMultiplyer = (other.transform.position.y + 0.5f < this.transform.position.y) ? 1: -1;
 
             GameObject colParticle = Instantiate(collisionParticle, other.contacts[0].point, transform.rotation);
             colParticle.GetComponent<ParticleSystem>().startColor = fullColor;
             audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 1, UnityEngine.Random.Range(0.96f, 1.03f));
 
-            Vector2 dir;
+            Vector2 dir = Vector2.zero;
             dir.x = other.relativeVelocity.x * (smashing ? 0.05f : 1);
 
             if (!checkGround())
@@ -318,7 +330,8 @@ public class playertest : MonoBehaviour {
 
             dir.x = Mathf.Min(Mathf.Abs(dir.x), 50) * Mathf.Sign(dir.x);
 
-            dir.y = Mathf.Clamp(other.relativeVelocity.y * (smashing ? 3 : 1f), aboveMultiplyer, smashing ? 25 : 15);
+            dir.y = Mathf.Clamp(other.relativeVelocity.y,  aboveMultiplyer, smashing ? 25 : 15);
+
             bounceDirection += dir * bounciness;
         } else if (other.gameObject.tag.Equals("Spike") && !alreadyDead) {
             die();

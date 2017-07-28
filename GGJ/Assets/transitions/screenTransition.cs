@@ -9,34 +9,36 @@ public class screenTransition : MonoBehaviour {
     public Material TransitionMaterial;
     [Range(0, 1)] public float fade;
     [Range(0, 1)] public float cutoff;
+    Texture transitionAlpha;
     public Color screenColor;
+    public bool reverseDirection;
 
-    private void Start()
-    {
+    public Texture[] transitionTextures;
+
+    private void Start() {
         if (Application.isPlaying) {
             instance = this;
             cutoff = 1;
+            transitionAlpha = transitionTextures[Random.Range(0, transitionTextures.Length - 1)];
             StartCoroutine("fadeIn");
         }
-
     }
 
     IEnumerator fadeIn() {
         cutoff = 1;
         yield return new WaitForSeconds(0.25f);
         while (cutoff > 0) {
-            cutoff -= 0.075f;
+            cutoff -= 0.035f;
             yield return new WaitForEndOfFrame();
-        }
-        
+        }     
     }
 
     public IEnumerator fadeOut(string nextLevel) {
-        yield return new WaitForSeconds(1);
         cutoff = 1;
-        fade = 0;
-        while (fade < 1)  {
-            fade += 0.01f; ;
+        reverseDirection = !reverseDirection;
+        yield return new WaitForSeconds(0.25f);
+        while (cutoff > 0) {
+            cutoff -= 0.035f;
             yield return new WaitForEndOfFrame();
         }
         Application.LoadLevel(nextLevel);
@@ -45,7 +47,9 @@ public class screenTransition : MonoBehaviour {
     private void OnRenderImage(RenderTexture source, RenderTexture destination) {
         TransitionMaterial.SetFloat("_Cutoff", cutoff);
         TransitionMaterial.SetFloat("_fade", fade);
+        TransitionMaterial.SetFloat("_reverse", reverseDirection ? 1 : 0);
         TransitionMaterial.SetColor("_Color", screenColor);
+        TransitionMaterial.SetTexture("_TransitionTex", transitionAlpha);
         Graphics.Blit(source, destination, TransitionMaterial);
     }
 }

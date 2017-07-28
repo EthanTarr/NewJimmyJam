@@ -24,6 +24,7 @@ public class playerSpawner : MonoBehaviour {
             player.GetComponent<playertest>().playerNum = i;
             player.GetComponent<playertest>().fullColor = characterColors[i];
             player.GetComponent<SpriteRenderer>().color = characterColors[i];
+            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
             if (i < controllerHandler.controlOrder.Count)  {
                 player.GetComponent<playertest>().playerControl = controllerHandler.controlOrder[i];

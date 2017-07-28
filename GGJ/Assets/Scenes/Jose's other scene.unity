@@ -8491,9 +8491,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TransitionMaterial: {fileID: 2100000, guid: 364d47292cde5dd46aff34c8cf31532a, type: 2}
-  fade: 0
+  fade: 1
   cutoff: 0
   screenColor: {r: 0, g: 0, b: 0, a: 0}
+  reverseDirection: 0
+  transitionTextures:
+  - {fileID: 2800000, guid: a9b6f93b753ba78479fd2e1db9e7f80b, type: 3}
+  - {fileID: 2800000, guid: 45c5684c81ac485459aca5580904b67f, type: 3}
+  - {fileID: 2800000, guid: 100b132f38cf55149bf44237f2ae59d5, type: 3}
+  - {fileID: 2800000, guid: 8c20f5d16a016ce4a8acf3254c2f523b, type: 3}
+  - {fileID: 2800000, guid: 2c448f83570d43649a9680935c2bee03, type: 3}
+  - {fileID: 2800000, guid: e165864e5f6f638438f936dcb6eaa679, type: 3}
 --- !u!1 &1391889757
 GameObject:
   m_ObjectHideFlags: 0
