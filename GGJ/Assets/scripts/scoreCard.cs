@@ -15,11 +15,23 @@ public class scoreCard : MonoBehaviour {
     public int numOfPlayers = 2;
     public GameObject[] selectedCharacters;
 
-    [Header("Debug Stuff")]
-    public int debugMaxSmash = 25;
-    public float debugBounciness = 125;
+    [Header("Modifiers")]
+    public int maxSmashPower = 25;
+    public float bounciness = 0.85f;
+    public bool airControl;
+    public bool seperateDashCooldown;
+    public bool canDashOnGround;
+    public bool spikeyHats;
+    public float maxSmashSpeed = 30f;
+
+    [Header("Menu Items")]
     public InputField smashDebugInput;
+    public InputField smashSpeedInput;
     public InputField bouncinessDebugInput;
+
+    public Toggle airControlInput;
+    public Toggle groundDashInput;
+    public Toggle separeteDashCooldownInput;
 
     void Awake() {
 
@@ -29,8 +41,9 @@ public class scoreCard : MonoBehaviour {
 
             if (smashDebugInput != null)
             {
-                smashDebugInput.text = "" + debugMaxSmash;
-                bouncinessDebugInput.text = "" + debugBounciness;
+                smashDebugInput.text = "" + maxSmashPower;
+                bouncinessDebugInput.text = "" + bounciness;
+                updateModifiers();
             }
         } else {
 			Destroy(this.gameObject);
@@ -72,13 +85,16 @@ public class scoreCard : MonoBehaviour {
         return max;
     }
 
-    public void debugChangeMaxSmash() {
-        debugMaxSmash = int.Parse(smashDebugInput.text);
+    public void updateModifiers() {
+        maxSmashPower = int.Parse(smashDebugInput.text);
+        maxSmashSpeed = float.Parse(smashSpeedInput.text);
+        bounciness = float.Parse(bouncinessDebugInput.text);
+
+        airControl = airControlInput.isOn;
+        canDashOnGround = groundDashInput.isOn;
+        seperateDashCooldown = separeteDashCooldownInput.isOn;
     }
 
-    public void debugChangeBounciness() {
-        debugBounciness = float.Parse(bouncinessDebugInput.text);
-    }
     public void isConeHeadMode() {
         ConeHeadMode = !ConeHeadMode;
 

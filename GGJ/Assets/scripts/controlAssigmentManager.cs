@@ -12,12 +12,21 @@ public class controlAssigmentManager : MonoBehaviour {
 
     public string selectedLevel;
 
+    [Header("Camera Position")]
+    public Vector3 regularPosition;
+    public Vector3 modifierMenuPos;
+    bool modifierMenu;
+
     void Start() {
         controllerHandler.controlOrder.Clear();
     }
 
 
     void Update() {
+
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            swapToModifierMenu();
+        }
 
         if (controllerHandler.controlOrder.Count < 4) {
             foreach (string control in controllers) {
@@ -29,7 +38,7 @@ public class controlAssigmentManager : MonoBehaviour {
                 }
 
                 if (inputFound) {
-                    playertest newPlayer = Instantiate(player, new Vector2(0, 3), Quaternion.identity).GetComponent<playertest>();             
+                    playerController newPlayer = Instantiate(player, transform.position, Quaternion.identity).GetComponent<playerController>();             
                     newPlayer.playerControl = control;
                     newPlayer.playerNum = setControls;
                     newPlayer.GetComponent<SpriteRenderer>().color = colors[setControls];
@@ -46,6 +55,33 @@ public class controlAssigmentManager : MonoBehaviour {
 
         if (Input.GetButton("Submit") && scoreCard.instance.numOfPlayers >= 2) {
             Application.LoadLevel(selectedLevel);
+        }
+    }
+
+    public void swapToModifierMenu() {
+        clearCharacterSelection();
+
+        StopAllCoroutines();
+        StartCoroutine(lerpCamera(!modifierMenu ? modifierMenuPos : regularPosition));
+        modifierMenu = !modifierMenu;
+    }
+
+    IEnumerator lerpCamera(Vector3 targetPos) {
+        while (Vector3.Distance(Camera.main.transform.position, targetPos) > 0.1f) {
+            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, targetPos, Time.deltaTime * 7);
+            yield return new WaitForEndOfFrame();
+        }
+
+        Camera.main.transform.position = targetPos;
+    }
+
+    public void clearCharacterSelection() {
+        controllerHandler.controlOrder.Clear();
+        setControls = 0;
+        controllers = new List<string> { "Arrow", "WASD", "Joy1", "Joy2", "Joy3", "Joy4" };
+        scoreCard.instance.numOfPlayers = 0;
+        foreach (playerController player in FindObjectsOfType<playerController>()) {
+            Destroy(player.gameObject);
         }
     }
 

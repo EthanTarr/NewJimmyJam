@@ -28,7 +28,7 @@ public class screenTransition : MonoBehaviour {
         cutoff = 1;
         yield return new WaitForSeconds(0.25f);
         while (cutoff > 0) {
-            cutoff -= 0.035f;
+            cutoff -= 0.055f;
             yield return new WaitForEndOfFrame();
         }     
     }
@@ -38,7 +38,7 @@ public class screenTransition : MonoBehaviour {
         reverseDirection = !reverseDirection;
         yield return new WaitForSeconds(0.25f);
         while (cutoff > 0) {
-            cutoff -= 0.035f;
+            cutoff -= 0.055f;
             yield return new WaitForEndOfFrame();
         }
         Application.LoadLevel(nextLevel);

@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         instance = this;
-		SpawnSqures ();
+		//SpawnSqures ();
 		boundary = FloorSpawns * .5f;
         Physics.IgnoreLayerCollision(6, 6, true);
     }
@@ -60,11 +60,11 @@ public class GameManager : MonoBehaviour {
         }
 
         piece.transform.parent = this.transform;
-        piece.GetComponentInChildren<MeshRenderer>().material = mat;
+        //piece.GetComponentInChildren<MeshRenderer>().material = mat;
 
         float spaceToFill = Mathf.Abs(minFloorPlacement) + Mathf.Abs(maxFloorPlacement) / width;
 
-        piece.GetComponentInChildren<MeshRenderer>().material.SetTextureScale("_MainTex", new Vector2(1f / spaceToFill, yScale));
-        piece.GetComponentInChildren<MeshRenderer>().material.SetTextureOffset("_MainTex", new Vector2(xOffset + i * 1f / spaceToFill, 0));
+        //piece.GetComponentInChildren<MeshRenderer>().material.SetTextureScale("_MainTex", new Vector2(1f / spaceToFill, yScale));
+        //piece.GetComponentInChildren<MeshRenderer>().material.SetTextureOffset("_MainTex", new Vector2(xOffset + i * 1f / spaceToFill, 0));
     }
 }

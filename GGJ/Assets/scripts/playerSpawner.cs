@@ -21,28 +21,28 @@ public class playerSpawner : MonoBehaviour {
             Vector3 pos = transform.position - Vector3.right * (width / 2 - width / (numOfPlayers - 1) * i);
             GameObject player = Instantiate(scoreCard.instance.selectedCharacters[i], pos, transform.rotation);
 
-            player.GetComponent<playertest>().playerNum = i;
-            player.GetComponent<playertest>().fullColor = characterColors[i];
+            player.GetComponent<playerController>().playerNum = i;
+            //player.GetComponent<playertest>().fullColor = characterColors[i];
             player.GetComponent<SpriteRenderer>().color = characterColors[i];
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
             if (i < controllerHandler.controlOrder.Count)  {
-                player.GetComponent<playertest>().playerControl = controllerHandler.controlOrder[i];
+                player.GetComponent<playerController>().playerControl = controllerHandler.controlOrder[i];
             } else {
                 switch (i) {
-                    case 0: player.GetComponent<playertest>().playerControl = "WASD";
+                    case 0: player.GetComponent<playerController>().playerControl = "WASD";
                     break;
 
                     case 1:
-                        player.GetComponent<playertest>().playerControl = "Arrow";
+                        player.GetComponent<playerController>().playerControl = "Arrow";
                         break;
 
                     case 2:
-                        player.GetComponent<playertest>().playerControl = "Joy1";
+                        player.GetComponent<playerController>().playerControl = "Joy1";
                         break;
 
                     case 3:
-                        player.GetComponent<playertest>().playerControl = "Joy2";
+                        player.GetComponent<playerController>().playerControl = "Joy2";
                         break;
                 }
             }

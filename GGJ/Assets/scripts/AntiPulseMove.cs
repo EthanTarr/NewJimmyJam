@@ -19,31 +19,25 @@ public class AntiPulseMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (centerOfGravity == null) {
-            if (transform.position.x > -GameManager.boundary && forward)
-            {
+            if (transform.position.x > -GameManager.boundary && forward) {
                 transform.Translate(new Vector3(Time.deltaTime * -speed, 0, 0));
-            }
-            else if (forward)
-            {
+            } else if (forward) {
                 forward = false;
-                if (Amplitude < .1f)
-                {
+                if (Amplitude < .1f) {
                     Destroy(this.gameObject);
                 }
                 Amplitude = Amplitude / 4;
-            }
-            else if (!forward && transform.position.x < GameManager.boundary)
-            {
+            }else if (!forward && transform.position.x < GameManager.boundary){
                 transform.Translate(new Vector3(Time.deltaTime * speed, 0, 0));
                 GameObject Pulse = Instantiate(WaveGenerator.instance.pulse, transform.position, Quaternion.identity);
+                Pulse.GetComponent<PulseMove>().color = color;
+                Pulse.GetComponent<PulseMove>().Amplitude = Amplitude / 2;
+                Pulse.GetComponent<PulseMove>().speed = speed / 2;
                 Destroy(this.gameObject);
 
-            }
-            else if (!forward)
-            {
+            } else if (!forward) {
                 forward = true;
-                if (Amplitude < .1f)
-                {
+                if (Amplitude < .1f) {
                     Destroy(this.gameObject);
                 }
                 Amplitude = Amplitude / 4;

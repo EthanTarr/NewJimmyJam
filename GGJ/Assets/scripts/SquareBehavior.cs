@@ -29,7 +29,6 @@ public class SquareBehavior : MonoBehaviour {
 
 	void Update () {
         //getPosition();
-        
     }
 
     void getPosition() {
@@ -44,8 +43,7 @@ public class SquareBehavior : MonoBehaviour {
             float xPos = transform.position.x;
             float xPulsePos = pulse.transform.position.x;
 
-            if ((transform.position - pulse.transform.position).magnitude < Wavelength && (transform.position - pulse.transform.position).magnitude > -Wavelength)
-            {
+            if ((transform.position - pulse.transform.position).x < Wavelength && (transform.position - pulse.transform.position).x > -Wavelength) { //when working with sphere switch .x to .magnitude
                 TotalAmplitude += pulse.GetComponent<PulseMove>().Amplitude * (pulse.GetComponent<PulseMove>().speed / 4) * Mathf.Sin(((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
             }
         }
@@ -54,14 +52,20 @@ public class SquareBehavior : MonoBehaviour {
             float xPos = transform.position.x;
             float xPulsePos = pulse.transform.position.x;
 
-            if ((transform.position - pulse.transform.position).magnitude < Wavelength && (transform.position - pulse.transform.position).magnitude > -Wavelength)
-            {
+            if ((transform.position - pulse.transform.position).x < Wavelength && (transform.position - pulse.transform.position).x > -Wavelength) { //when working with sphere switch .x to .magnitude
                 TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * (pulse.GetComponent<AntiPulseMove>().speed / 4) * Mathf.Sin((Mathf.PI / Wavelength) * (xPos - xPulsePos));
             }
         }
-        TotalAmplitude = Mathf.Clamp(TotalAmplitude, -10, 10);
+        TotalAmplitude = Mathf.Clamp(TotalAmplitude, -20, 20);
         Vector3 vector = (-((-transform.position + CenterOfGravity).normalized)) * TotalAmplitude;
-        transform.position = new Vector3(Mathf.Lerp(initialX, standardX + vector.x, Time.deltaTime), Mathf.Lerp(initialY, standardY + vector.y, Time.deltaTime), 0);
+
+        if (TerrainGenerator.instance != null && TerrainGenerator.instance.shape == Shape.Sphere) {
+            transform.position = new Vector3(Mathf.Lerp(initialX, standardX + vector.x, Time.deltaTime), Mathf.Lerp(initialY, standardY + vector.y, Time.deltaTime), 0);
+        } else {
+            transform.position = new Vector3(initialX, Mathf.Lerp(initialY, standardY + vector.y, Time.deltaTime), transform.position.z);
+        }
+
+
         getVelocity();
 
         if (firstBlock) {

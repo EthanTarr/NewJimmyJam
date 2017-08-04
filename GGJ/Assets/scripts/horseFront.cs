@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class horseFront : playertest{
+public class horseFront : playerController{
 
     public horseBack back;
     public SpriteRenderer horseHead;

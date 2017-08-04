@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class horseBack : playertest {
+public class horseBack : playerController {
 
     [Space()]
     public horseFront front;

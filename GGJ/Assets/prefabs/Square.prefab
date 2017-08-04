@@ -53,9 +53,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1472568061012158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31777, y: 0.73181367, z: 0}
-  m_LocalScale: {x: 2, y: 2.418325, z: 1}
-  m_Children: []
+  m_LocalPosition: {x: 6.633085, y: 234.06, z: -3.3530893}
+  m_LocalScale: {x: 0.5, y: 10, z: 1}
+  m_Children:
+  - {fileID: 4492236775312806}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -66,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1276796984696338}
   m_LocalRotation: {x: -0.00017323554, y: 0.7071067, z: -0.7071068, w: 0.00017323544}
-  m_LocalPosition: {x: 0, y: 0.001, z: 0}
-  m_LocalScale: {x: 0.10852205, y: 0.10465998, z: 0.099585086}
+  m_LocalPosition: {x: 0, y: -0.008, z: 0}
+  m_LocalScale: {x: 0.1085221, y: 0.10465998, z: 0.09775885}
   m_Children: []
   m_Father: {fileID: 4185351820530592}
   m_RootOrder: 0
@@ -85,7 +86,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c59a0e0372dbb3a4595bc08e144b0f6f, type: 2}
+  - {fileID: 2100000, guid: 9d435e87152c4c944bddb0a79652f8b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,7 +124,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.009304553}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -134,7 +135,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.9813909}
   m_EdgeRadius: 0
 --- !u!114 &114993821666804228
 MonoBehaviour:
@@ -155,6 +156,7 @@ MonoBehaviour:
   initialX: 0
   firstBlock: 0
   CenterOfGravity: {x: 0, y: 0, z: 0}
+  dampen: 1
   floorColor: {r: 1, g: 1, b: 1, a: 1}
   velocity: 0
 --- !u!212 &212255483709922236

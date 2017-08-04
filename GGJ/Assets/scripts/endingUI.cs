@@ -43,7 +43,7 @@ public class endingUI : MonoBehaviour {
             text.transform.parent = this.transform;
 
             text.GetComponent<Text>().color = Color.red;
-            text.GetComponent<Text>().text = "0";
+            text.GetComponent<Text>().text = "" + scoreCard.instance.playerScores[i];
             ps[i] = text.GetComponent<Text>();
             text.GetComponent<Text>().color  = playerSpawner.instance.characterColors[i];
 
@@ -74,8 +74,8 @@ public class endingUI : MonoBehaviour {
         if (players.Length == 1) {
             players[0].GetComponent<Rigidbody2D>().gravityScale = 6;
             StopCoroutine("ending");
-            StartCoroutine(ending(players[0].GetComponent<playertest>().playerNum));
-            players[0].GetComponent<playertest>().enabled = false;
+            StartCoroutine(ending(players[0].GetComponent<playerController>().playerNum));
+            players[0].GetComponent<playerController>().enabled = false;
             players[0].GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         } else if(players.Length == 0) {
             StartCoroutine(ending(-1));
@@ -88,13 +88,11 @@ public class endingUI : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         cameraAnim.Play("endingTransition");
         yield return new WaitForSeconds(1);
-        ps[0].gameObject.SetActive(true);
+        for (int i = 0; i < transform.childCount; i++)  {
+            transform.GetChild(i).gameObject.SetActive(true);
+        }
 
         if (playerId != -1) {
-
-            for (int i = 0; i < transform.childCount; i++) {
-                transform.GetChild(i).gameObject.SetActive(true);
-            }
             for (int i = 0; i < scoreCard.instance.numOfPlayers; i++) {
                 ps[i].text = "" + scoreCard.instance.playerScores[i];
 

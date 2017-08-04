@@ -16,11 +16,17 @@ public class windZoneManager : MonoBehaviour {
 
     public bool randomDirection;
 
+    public GameObject left;
+    public GameObject right;
+
     private void Start() {
         if (randomDirection) {
             windAngle = 180 * Random.Range(0, 2);
         }
         setup();
+
+        left.SetActive(windAngle != 180);
+        right.SetActive(windAngle == 180);
 
         foreach (objectTranslate cloud in clouds)
             cloud.direction = windDirection;

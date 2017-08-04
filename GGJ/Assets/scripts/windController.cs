@@ -13,7 +13,7 @@ public class windController : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision) {
 
-        if (collision.GetComponent<playertest>() != null) {
+        if (collision.GetComponent<playerController>() != null) {
             Vector2 newDir = collision.transform.position;
             newDir += windDirection * speed;
             collision.transform.position = newDir;
