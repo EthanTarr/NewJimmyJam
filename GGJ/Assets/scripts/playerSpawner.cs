@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class playerSpawner : MonoBehaviour {
+public class playerSpawner : NetworkBehaviour {
 
     public static playerSpawner instance;
     public float width;
@@ -10,16 +11,44 @@ public class playerSpawner : MonoBehaviour {
     public GameObject playerPrefab;
 
     public bool showSpawners;
+    public bool online;
 
     public Color[] characterColors;
 
+    //onlineManagement
+    public playerController[] players;
+    [SyncVar] public int queuedPlayer;
+
+    public override void OnStartServer()
+    {
+        players = new playerController[(int)numOfPlayers];
+        if (online)
+        {
+            for (int i = 0; i < numOfPlayers; i++)
+            {
+                Vector3 pos = transform.position - Vector3.right * (width / 2 - width / (numOfPlayers - 1) * i);
+                GameObject player = Instantiate(playerPrefab, pos, transform.rotation);
+
+                player.GetComponent<playerController>().playerNum = i;
+                player.GetComponent<SpriteRenderer>().color = characterColors[i]; 
+                players[i] = player.GetComponent<playerController>();
+                NetworkServer.Spawn(player);
+            }
+        }
+    }
+
     void Awake() {
         instance = this;
-        numOfPlayers = scoreCard.instance.numOfPlayers;
+
+        if (online) {
+            return;
+        }
+
+        numOfPlayers = GameManager.instance.numOfPlayers;
 
         for (int i = 0; i < numOfPlayers; i++) {
             Vector3 pos = transform.position - Vector3.right * (width / 2 - width / (numOfPlayers - 1) * i);
-            GameObject player = Instantiate(scoreCard.instance.selectedCharacters[i], pos, transform.rotation);
+            GameObject player = Instantiate(GameManager.instance.selectedCharacters[i], pos, transform.rotation);
 
             player.GetComponent<playerController>().playerNum = i;
             //player.GetComponent<playertest>().fullColor = characterColors[i];

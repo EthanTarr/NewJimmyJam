@@ -11,6 +11,11 @@ public class TitleWaveMovers : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        if (!backWave)
+            GetComponent<TextMesh>().color = ButtonActions.instance.textColor;
+        else
+            GetComponent<SpriteRenderer>().color = ButtonActions.instance.waveColor;
+
         originalYPos = transform.position.y;
         yPos = originalYPos;
 	}

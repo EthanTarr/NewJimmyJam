@@ -24,9 +24,9 @@ public class controlAssigmentManager : MonoBehaviour {
 
     void Update() {
 
-        if (Input.GetKeyDown(KeyCode.Q)) {
-            swapToModifierMenu();
-        }
+        //if (Input.GetKeyDown(KeyCode.Q)) {
+        //    swapToModifierMenu();
+        //}
 
         if (controllerHandler.controlOrder.Count < 4) {
             foreach (string control in controllers) {
@@ -44,16 +44,19 @@ public class controlAssigmentManager : MonoBehaviour {
                     newPlayer.GetComponent<SpriteRenderer>().color = colors[setControls];
                     controllerHandler.controlOrder.Add(control);
                     controllers.Remove(control);
-                    scoreCard.instance.selectedCharacters[setControls] = player;
+                    GameManager.instance.selectedCharacters[setControls] = player;
+                    
                     setControls++;
-                    scoreCard.instance.numOfPlayers = setControls;                   
+                    GameManager.instance.numOfPlayers = setControls;
+                    GameManager.instance.playerScores = new int[setControls];
+
                     print("player " + setControls + " mapped to " + newPlayer.playerControl);
                     break;
                 }
             }
         }
 
-        if (Input.GetButton("Submit") && scoreCard.instance.numOfPlayers >= 2) {
+        if (Input.GetButton("Submit") && GameManager.instance.numOfPlayers >= 2) {
             Application.LoadLevel(selectedLevel);
         }
     }
@@ -79,7 +82,7 @@ public class controlAssigmentManager : MonoBehaviour {
         controllerHandler.controlOrder.Clear();
         setControls = 0;
         controllers = new List<string> { "Arrow", "WASD", "Joy1", "Joy2", "Joy3", "Joy4" };
-        scoreCard.instance.numOfPlayers = 0;
+        GameManager.instance.numOfPlayers = 0;
         foreach (playerController player in FindObjectsOfType<playerController>()) {
             Destroy(player.gameObject);
         }

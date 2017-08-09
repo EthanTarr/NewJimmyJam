@@ -25,7 +25,7 @@ public class endingUI : MonoBehaviour {
 
     void Start() {
         instance = this;
-        levelNum = scoreCard.instance.numOfPlayers;
+        levelNum = GameManager.instance.numOfPlayers;
         levelName = Application.loadedLevelName;
 
         width = spacing * 4 * levelNum;
@@ -43,7 +43,7 @@ public class endingUI : MonoBehaviour {
             text.transform.parent = this.transform;
 
             text.GetComponent<Text>().color = Color.red;
-            text.GetComponent<Text>().text = "" + scoreCard.instance.playerScores[i];
+            text.GetComponent<Text>().text = "" + GameManager.instance.playerScores[i];
             ps[i] = text.GetComponent<Text>();
             text.GetComponent<Text>().color  = playerSpawner.instance.characterColors[i];
 
@@ -57,9 +57,9 @@ public class endingUI : MonoBehaviour {
     void Update() {
         if (inputallowed && Input.anyKeyDown) {
             inputallowed = false;
-            if (scoreCard.instance.highestScore() >= scoreCard.instance.gamesToWin) {
+            if (GameManager.instance.highestScore() >= GameManager.instance.gamesToWin) {
                 Application.LoadLevel(0);
-                Destroy(scoreCard.instance.gameObject);
+                Destroy(GameManager.instance.gameObject);
             } else {
                 //print(scoreCard.instance.highestScore());
                 StartCoroutine(screenTransition.instance.fadeOut(levelName));
@@ -93,21 +93,21 @@ public class endingUI : MonoBehaviour {
         }
 
         if (playerId != -1) {
-            for (int i = 0; i < scoreCard.instance.numOfPlayers; i++) {
-                ps[i].text = "" + scoreCard.instance.playerScores[i];
+            for (int i = 0; i < GameManager.instance.numOfPlayers; i++) {
+                ps[i].text = "" + GameManager.instance.playerScores[i];
 
             }
 
             yield return new WaitForSeconds(0.5f);
-            scoreCard.instance.playerScores[playerId]++;
+            GameManager.instance.playerScores[playerId]++;
             audioManager.instance.Play(ding, 0.5f, 1);
         }
         inputallowed = true;
-        for (int i = 0; i < scoreCard.instance.numOfPlayers;i++) {
-            ps[i].text = "" + scoreCard.instance.playerScores[i];
+        for (int i = 0; i < GameManager.instance.numOfPlayers;i++) {
+            ps[i].text = "" + GameManager.instance.playerScores[i];
         }
 
-        if (scoreCard.instance.highestScore() >= scoreCard.instance.gamesToWin) {
+        if (GameManager.instance.highestScore() >= GameManager.instance.gamesToWin) {
             winParticles.SetActive(true);
         }
 

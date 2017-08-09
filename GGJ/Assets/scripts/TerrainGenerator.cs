@@ -97,7 +97,7 @@ public class TerrainGenerator : MonoBehaviour {
         mapIndex = 1;
 
         if(Application.isPlaying)
-            mapIndex = scoreCard.instance.totalScores() == 0 ? 1 : UnityEngine.Random.Range(1, 6);
+            mapIndex = GameManager.instance.totalScores() == 0 ? 1 : UnityEngine.Random.Range(1, 6);
 
         for (float i = -spaceToFill / 2; i < spaceToFill / 2f; i++) {
             GameObject child = Instantiate(Square, new Vector3((SquareWidth * i) + transform.position.x, customPlatformPos(mapIndex, i), 0), Quaternion.identity);
