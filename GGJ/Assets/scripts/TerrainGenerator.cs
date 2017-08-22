@@ -6,35 +6,35 @@ using UnityEngine;
 public class TerrainGenerator : MonoBehaviour {
 
     private float radius;
-    public float SquareWidth = 2f;
-    public Material squareMaterial;
-    public GameObject Square;
+    [HideInInspector] public float SquareWidth = 2f;
+    [HideInInspector] public Material squareMaterial;
+    [HideInInspector] public GameObject Square;
     private float length;
-    public GameObject Spike;
-    public bool invertSpikes = false;
+    [HideInInspector] public GameObject Spike;
+    [HideInInspector] public bool invertSpikes = false;
 
-    [HideInInspector] public int mapIndex;
+    public int FloorSpawns = 20;
+    public static float boundary;
+
+    [Header("Terrain Shape")]
+    public bool mapDebug;
+    public int mapIndex;
 
     //Later on this might not work if we end up using 
     //Terrain Generator to do background/enviornmental Objects
     public static TerrainGenerator instance; 
 
-    [SerializeField]
+    [SerializeField][HideInInspector]
     public Shape shape = Shape.Plane;
 
-    [SerializeField]
+    [SerializeField][HideInInspector]
     public Platform plat = Platform.Square;
 
-    // Use this for initialization
     void Start () {
         instance = this;
+        boundary = FloorSpawns * 0.5f;
         Generate();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
 
     public void Generate() {
         length = this.gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
@@ -94,10 +94,13 @@ public class TerrainGenerator : MonoBehaviour {
 
     void generatePlatform() {
         float spaceToFill = length / SquareWidth;
-        mapIndex = 1;
+        
 
-        if(Application.isPlaying)
-            mapIndex = GameManager.instance.totalScores() == 0 ? 1 : UnityEngine.Random.Range(1, 6);
+        if (Application.isPlaying)
+            if (!mapDebug) {
+                mapIndex = 1;
+                mapIndex = GameManager.instance.totalScores() == 0 ? 1 : UnityEngine.Random.Range(1, 10);
+            }
 
         for (float i = -spaceToFill / 2; i < spaceToFill / 2f; i++) {
             GameObject child = Instantiate(Square, new Vector3((SquareWidth * i) + transform.position.x, customPlatformPos(mapIndex, i), 0), Quaternion.identity);
@@ -118,6 +121,16 @@ public class TerrainGenerator : MonoBehaviour {
                 return transform.position.y - Mathf.Abs(Mathf.Pow(.03f * floorIndex, 2));
             case 5:
                 return transform.position.y - 0.75f - Mathf.Sin(floorIndex / 10);
+            case 6:
+                return transform.position.y - 0.5f - floorIndex * 0.025f;
+            case 7:
+                return transform.position.y + floorIndex * 0.025f;
+            case 8:
+                return transform.position.y - 0.75f - Mathf.Sin((floorIndex + 20) / 10);
+            case 9:
+                return transform.position.y - 0.75f - Mathf.Sin((floorIndex - 15) / 10);
+            case 10:
+                return transform.position.y + 0.5f - Mathf.Abs(floorIndex / 25);
         }
         return 0;
     }

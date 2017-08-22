@@ -9,6 +9,9 @@ TagManager:
   - AntiPulse
   - Spike
   - Cone
+  - sprite_controller
+  - bouncyWall
+  - top
   layers:
   - Default
   - TransparentFX
@@ -25,7 +28,7 @@ TagManager:
   - background Objects
   - PlayerExtra
   - HorseFront
-  - 
+  - backgroundObjects2
   - 
   - 
   - 

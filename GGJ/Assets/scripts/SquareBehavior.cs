@@ -5,13 +5,14 @@ using UnityEngine;
 public class SquareBehavior : MonoBehaviour {
 
 	public float TotalAmplitude;
+    public float previousAmplitude;
 	public float Wavelength = 2f;
 	public float FloorOscillation = .02f;
     public float OscillationSpeed = 0.01f;
 	[HideInInspector] public float initialY = 0;
     [HideInInspector] public float initialX = 0;
-    private float standardY;
-    private float standardX;
+    float standardY;
+    float standardX;
     [HideInInspector] public bool firstBlock;
     [HideInInspector] public Vector3 CenterOfGravity;
 
@@ -20,14 +21,14 @@ public class SquareBehavior : MonoBehaviour {
     public Color ampColor;
 
     Vector2 lastPosition;
-	void Start () {
+	protected void Start () {
         lastPosition = transform.position;
         standardY = transform.position.y;
         standardX = transform.position.x;
        
 
         squareMaterial = transform.GetChild(0).GetComponent<Renderer>();
-        StartCoroutine(physicsCheck());
+        //StartCoroutine(physicsCheck());
     }
 
     float maxAmplitude = 5f;
@@ -46,8 +47,16 @@ public class SquareBehavior : MonoBehaviour {
             float xPos = transform.position.x;
             float xPulsePos = pulse.transform.position.x;
 
-            if ((transform.position - pulse.transform.position).x < Wavelength && (transform.position - pulse.transform.position).x > -Wavelength) { //when working with sphere switch .x to .magnitude
-                TotalAmplitude += pulse.GetComponent<PulseMove>().Amplitude * (pulse.GetComponent<PulseMove>().speed / 4) * Mathf.Sin(((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
+            if (TerrainGenerator.instance.shape == Shape.Plane)
+            {
+                if ((transform.position - pulse.transform.position).x < Wavelength && (transform.position - pulse.transform.position).x > -Wavelength) { 
+                    TotalAmplitude += pulse.GetComponent<PulseMove>().Amplitude * (pulse.GetComponent<PulseMove>().speed / 4) * Mathf.Sin(((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
+                }
+            }
+            else {
+                if ((transform.position - pulse.transform.position).magnitude < Wavelength && (transform.position - pulse.transform.position).magnitude > -Wavelength) { 
+                    TotalAmplitude += pulse.GetComponent<PulseMove>().Amplitude * (pulse.GetComponent<PulseMove>().speed / 4) * Mathf.Sin(((Mathf.PI / Wavelength) * (xPos - xPulsePos)));
+                }
             }
         }
         foreach (GameObject pulse in GameObject.FindGameObjectsWithTag("AntiPulse"))
@@ -55,8 +64,16 @@ public class SquareBehavior : MonoBehaviour {
             float xPos = transform.position.x;
             float xPulsePos = pulse.transform.position.x;
 
-            if ((transform.position - pulse.transform.position).x < Wavelength && (transform.position - pulse.transform.position).x > -Wavelength) { //when working with sphere switch .x to .magnitude
-                TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * (pulse.GetComponent<AntiPulseMove>().speed / 4) * Mathf.Sin((Mathf.PI / Wavelength) * (xPos - xPulsePos));
+            if (TerrainGenerator.instance.shape == Shape.Plane)
+            {
+                if ((transform.position - pulse.transform.position).x < Wavelength && (transform.position - pulse.transform.position).x > -Wavelength)  { //when working with sphere switch .x to .magnitude
+                    TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * (pulse.GetComponent<AntiPulseMove>().speed / 4) * Mathf.Sin((Mathf.PI / Wavelength) * (xPos - xPulsePos));
+                }
+            }
+            else {
+                if ((transform.position - pulse.transform.position).magnitude < Wavelength && (transform.position - pulse.transform.position).magnitude > -Wavelength)  { //when working with sphere switch .x to .magnitude
+                    TotalAmplitude += -pulse.GetComponent<AntiPulseMove>().Amplitude * (pulse.GetComponent<AntiPulseMove>().speed / 4) * Mathf.Sin((Mathf.PI / Wavelength) * (xPos - xPulsePos));
+                }
             }
         }
         TotalAmplitude = Mathf.Clamp(TotalAmplitude, -15, 15);
@@ -82,12 +99,8 @@ public class SquareBehavior : MonoBehaviour {
         lastPosition = transform.position;
     }
 
-    IEnumerator physicsCheck(){
-        while(1 == 1) {
+    void Update(){
             getPosition();
-            squareMaterial.material.SetColor("_Color", Color.Lerp(matColor, ampColor, Mathf.Abs(TotalAmplitude) / 15));
-            //squareMaterial.material.SetColor("_EmmissionColor", matColor);
-            yield return new WaitForSeconds(0.01f);
-        }
+            squareMaterial.material.SetColor("_Color", Color.Lerp(matColor, ampColor, transform.localPosition.y /0.5f));
     }
 }

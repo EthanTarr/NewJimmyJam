@@ -8833,6 +8833,48 @@ MonoBehaviour:
   ampColor: {r: 0.051362462, g: 0.23769532, b: 0.2794118, a: 1}
   dampen: 1
   velocity: 0
+--- !u!1001 &746237429
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4356900362816308, guid: 80040e8a73dd43a4fb110e629d3cdf4a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.817379
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356900362816308, guid: 80040e8a73dd43a4fb110e629d3cdf4a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.7941924
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356900362816308, guid: 80040e8a73dd43a4fb110e629d3cdf4a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356900362816308, guid: 80040e8a73dd43a4fb110e629d3cdf4a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356900362816308, guid: 80040e8a73dd43a4fb110e629d3cdf4a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356900362816308, guid: 80040e8a73dd43a4fb110e629d3cdf4a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356900362816308, guid: 80040e8a73dd43a4fb110e629d3cdf4a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356900362816308, guid: 80040e8a73dd43a4fb110e629d3cdf4a, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 80040e8a73dd43a4fb110e629d3cdf4a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &749522772
 GameObject:
   m_ObjectHideFlags: 0
@@ -22111,11 +22153,14 @@ MonoBehaviour:
   playerPrefab: {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
     type: 2}
   showSpawners: 0
+  online: 0
   characterColors:
   - {r: 0.7633336, g: 0.4282007, b: 0.88235295, a: 0.747}
   - {r: 0.9261664, g: 1, b: 0.58823526, a: 0.747}
   - {r: 0.24264705, g: 1, b: 0.4359025, a: 0.634}
   - {r: 0.31106064, g: 0.25692043, b: 0.9705882, a: 0.709}
+  players: []
+  queuedPlayer: 0
 --- !u!4 &1469090322
 Transform:
   m_ObjectHideFlags: 0

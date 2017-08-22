@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 373edf158d2935c45932f2496cf9dc1e
-timeCreated: 1501045009
+timeCreated: 1502317642
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: officeSupplies_0
     21300002: officeSupplies_1
+    21300004: officeSupplies_2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -124,6 +125,19 @@ TextureImporter:
         y: 1
         width: 28
         height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: officeSupplies_2
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 39
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

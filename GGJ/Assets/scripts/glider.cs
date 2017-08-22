@@ -10,7 +10,7 @@ public class glider : playerController{
         {
             Application.LoadLevel("Jose's other scene");
         }
-        anim.SetFloat("velocity", 0);
+        //anim.SetFloat("velocity", 0);
         bool touchingGround = checkGround();
 
         bounceDirection = new Vector2(Mathf.Lerp(bounceDirection.x, 0, Time.deltaTime * 2.5f), Mathf.Lerp(bounceDirection.y, 0, Time.deltaTime * (smashing ? 5 : 45)));
@@ -20,8 +20,8 @@ public class glider : playerController{
             if (Mathf.Abs(Input.GetAxis("Horizontal" + playerControl)) > 0.1f)
             {
                 xSpeed += speed * Input.GetAxis("Horizontal" + playerControl) / (accelerate * 4);
-                anim.GetComponent<SpriteRenderer>().flipX = Input.GetAxisRaw("Horizontal" + playerControl) < 0;
-                anim.SetFloat("velocity", 1);
+                //anim.GetComponent<SpriteRenderer>().flipX = Input.GetAxisRaw("Horizontal" + playerControl) < 0;
+                //anim.SetFloat("velocity", 1);
                 slopeCheck();
             }
             else
@@ -30,11 +30,6 @@ public class glider : playerController{
             }
 
             xSpeed = Mathf.Clamp(xSpeed, -speed, speed);
-
-            if (touchingGround)
-            {
-                transform.Translate(slidingFloor, 0, 0);
-            }
 
             if (Input.GetButtonDown("Jump" + playerControl) && touchingGround)
             {
@@ -48,7 +43,7 @@ public class glider : playerController{
             }
 
             if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && canSmash && !touchingGround) {
-                StartCoroutine(dashOutOfCharge(Input.GetAxis("Dash" + playerControl), true));
+                StartCoroutine(dash(Input.GetAxis("Dash" + playerControl), true));
             }
 
             if (Input.GetButtonDown("Smash" + playerControl)
@@ -87,13 +82,13 @@ public class glider : playerController{
             SmashCooldownTime = Mathf.Lerp(0.25f, maxSmashVulnerabilityTime, lerp);
 
             if (!Input.GetButton("Smash" + playerControl)) {
-                StartCoroutine(smashAfterCharge(chargeValue));
+                StartCoroutine(smashOutOFCharge(chargeValue));
                 yield break;
             }
 
             //Dash out of charge
             if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && Input.GetAxis("Dash" + playerControl) != currentDirection) {
-               StartCoroutine(dashOutOfCharge(chargeValue, direction));
+               StartCoroutine(dash(chargeValue, direction));
                yield break;
             }
 
@@ -102,6 +97,6 @@ public class glider : playerController{
             rigid.velocity = (Vector2.right * rigid.velocity.x) * 0.95f + bounceDirection + Vector2.right * Input.GetAxis("Horizontal" + playerControl) * 0.2f;
             yield return new WaitForEndOfFrame();
         }
-        StartCoroutine(smashAfterCharge(chargeValue));
+        StartCoroutine(smashOutOFCharge(chargeValue));
     }
 }

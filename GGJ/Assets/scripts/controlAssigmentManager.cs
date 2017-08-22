@@ -56,7 +56,7 @@ public class controlAssigmentManager : MonoBehaviour {
             }
         }
 
-        if (Input.GetButton("Submit") && GameManager.instance.numOfPlayers >= 2) {
+        if (Input.GetButton("Enter") && GameManager.instance.numOfPlayers >= 2) {
             Application.LoadLevel(selectedLevel);
         }
     }

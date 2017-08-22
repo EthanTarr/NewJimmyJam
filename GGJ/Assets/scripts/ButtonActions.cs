@@ -32,8 +32,7 @@ public class ButtonActions : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
-	}
+    }
 
 	public void PlayGame() {
 		Application.LoadLevel(1);

@@ -5,24 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 6a52b569b31f6544a974be7c908ce0bf
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Controller Setup.unity
     guid: 6acd826e70e2e21418c9edec47efeb38
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/tron.unity
     guid: c3881a691d4b78d43a629c70c00d201c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/4-player scene.unity
     guid: decee331b1e35fb47a12d52933fed51e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/cherryBlossom.unity
     guid: 2491683d51e5c6b4ebba0802a70d7440
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/windTurbulence.unity
     guid: 9390621e98561704ebc9340961351ebb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OnlineTest.unity
     guid: cdb1f4077ec5dcc4abce377bdbb72d03
