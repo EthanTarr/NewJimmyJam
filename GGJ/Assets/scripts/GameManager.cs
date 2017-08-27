@@ -1,70 +1,127 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-	public GameObject Square;
-	public int FloorSpawns = 20;
-	public float minFloorPlacement = -20;
-	public float maxFloorPlacement = 20;
     public static GameManager instance;
-	public static float boundary;
-
+    public int[] playerScores;
+    
+	public bool ConeHeadMode = false;
+    public int gamesToWin;
+    private UnityEngine.UI.Toggle ConeHeadToggle;
     [Space()]
-    public Material mat;
-    public float yScale;
-    public float xOffset;
+    public int numOfPlayers = 2;
+    public GameObject[] selectedCharacters;
 
-	// Use this for initialization
-	void Start () {
-        instance = this;
-		SpawnSqures ();
-		boundary = FloorSpawns * .5f;
-        Physics.IgnoreLayerCollision(6, 6, true);
+    [Header("Modifiers")]
+    public int maxSmashPower = 25;
+    public float bounciness = 0.85f;
+    public bool airControl;
+    public bool seperateDashCooldown;
+    public bool canDashOnGround;
+    public bool spikeyHats;
+    public float maxSmashSpeed = 30f;
+    public float maxChargeTime = 1.5f;
+    public bool fullChargeInvinc;
+    public bool holdMaxSmash;
+
+    [Header("Menu Items")]
+    public InputField smashDebugInput;
+    public InputField smashSpeedInput;
+    public InputField bouncinessDebugInput;
+    public InputField maxChargeTimeInput;
+
+    public Toggle airControlInput;
+    public Toggle groundDashInput;
+    public Toggle separeteDashCooldownInput;
+    public Toggle fullChargeInvicInput;
+    public Toggle holdMaxSmashInput;
+    
+    void Awake() {
+
+        if (instance == null) {
+            instance = this;
+            DontDestroyOnLoad(this);
+
+            if (smashDebugInput != null)
+            {
+                smashDebugInput.text = "" + maxSmashPower;
+                bouncinessDebugInput.text = "" + bounciness;
+                updateModifiers();
+            }
+        } else {
+			Destroy(this.gameObject);
+        }
+        playerScores = new int[numOfPlayers];
+        if (ConeHeadToggle == null) {
+            //ConeHeadToggle = GameObject.Find("ConeHeadToggle").GetComponent<UnityEngine.UI.Toggle>();
+            //Debug.Log("1" + ConeHeadToggle);
+            //GameObject.Find("GameOptions").active = false;
+        }
+
+        
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-	void SpawnSqures() {
-		float width = Square.transform.localScale.x;
-		float spaceToFill = Mathf.Abs(minFloorPlacement) + Mathf.Abs(maxFloorPlacement) / width;
-        int index = UnityEngine.Random.Range(1, 6);
+    private void Start() {
+        if(GameObject.Find("ConeHeadToggle") != null)
+            ConeHeadToggle = GameObject.Find("ConeHeadToggle").GetComponent<UnityEngine.UI.Toggle>();
 
-        if (scoreCard.instance.totalScores() == 0) {
-            index = 1;
-        }
+        GameManager.instance.isConeHeadMode();
 
-        for (float i = -spaceToFill / 2; i < spaceToFill / 2f; i++) {
-            //Instantiate(Square, new Vector3(width * i, transform.position.y - 0.5f - 10/Mathf.Abs(i), 0), Quaternion.identity);
-            chooseMap(index, width, i);
-        }
+        if(GameObject.Find("GameOptions") != null)
+            GameObject.Find("GameOptions").active = false;
     }
 
-    void chooseMap(int index, float width, float i) {
-        GameObject piece = null;
-        switch (index) {
-            case 1: piece = Instantiate(Square, new Vector3(width * i, transform.position.y, 0), Quaternion.identity); 
-                break;
-            case 2: piece = Instantiate(Square, new Vector3(width * i, transform.position.y  - 0.50f + Mathf.Sin(i / 10), 0), Quaternion.identity); 
-                break;
-            case 3: piece = Instantiate(Square, new Vector3(width * i, transform.position.y - 1 + Mathf.Abs(i / 15), 0), Quaternion.identity); 
-                break;
-            case 4: piece = Instantiate(Square, new Vector3(width * i, transform.position.y - Mathf.Abs(Mathf.Pow(.03f * i, 2)), 0), Quaternion.identity); 
-                break;
-            case 5: piece = Instantiate(Square, new Vector3(width * i, transform.position.y - 0.75f - Mathf.Sin(i / 10), 0), Quaternion.identity); 
-                break;
+    public int totalScores() {
+        int total = 0;
+        foreach (int i in playerScores) {
+            total += i;
         }
 
-        piece.transform.parent = this.transform;
-        piece.GetComponentInChildren<MeshRenderer>().material = mat;
+        return total;
+    }
 
-        float spaceToFill = Mathf.Abs(minFloorPlacement) + Mathf.Abs(maxFloorPlacement) / width;
+    public int highestScore() {
+        int max = 0;
+        foreach (int i in playerScores) {
+            max = Mathf.Max(max, i);
+        }
+        return max;
+    }
 
-        piece.GetComponentInChildren<MeshRenderer>().material.SetTextureScale("_MainTex", new Vector2(1f / spaceToFill, yScale));
-        piece.GetComponentInChildren<MeshRenderer>().material.SetTextureOffset("_MainTex", new Vector2(xOffset + i * 1f / spaceToFill, 0));
+    public void updateModifiers() {
+        maxSmashPower = int.Parse(smashDebugInput.text);
+        maxSmashSpeed = float.Parse(smashSpeedInput.text);
+        bounciness = float.Parse(bouncinessDebugInput.text);
+
+        maxChargeTime = float.Parse(maxChargeTimeInput.text);
+
+        airControl = airControlInput.isOn;
+        canDashOnGround = groundDashInput.isOn;
+        seperateDashCooldown = separeteDashCooldownInput.isOn;
+        holdMaxSmash = holdMaxSmashInput.isOn;
+        fullChargeInvinc = fullChargeInvicInput.isOn;
+    }
+
+    public void isConeHeadMode() {
+        ConeHeadMode = !ConeHeadMode;
+
+    }
+
+    public void maxGames() {
+        int.TryParse(GameObject.Find("GameCounter").GetComponent<UnityEngine.UI.InputField>().text, out gamesToWin);
+    }
+
+    public void increaseGames(int increment) {
+        gamesToWin += increment;
+        GameObject.Find("GameCounter").GetComponent<Text>().text = "" + gamesToWin;
+    }
+
+    public void clearScore() {
+        for (int j = 0; j < numOfPlayers; j++) {
+            playerScores[j] = 0;
+        }
     }
 }

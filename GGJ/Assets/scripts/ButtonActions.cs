@@ -3,20 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonActions : MonoBehaviour {
+    public static ButtonActions instance;
 
-	// Use this for initialization
-	void Start () {
+    public menuColorScheme[] colorScheme;
+    public int chosenColor = 0;
+
+    [HideInInspector] public Color backgroundColor;
+    [HideInInspector] public Color waveColor;
+    [HideInInspector] public Color textColor;
+
+    // Use this for initialization
+    void Awake () {
+        instance = this;
         //scoreCard.instance.isConeHeadMode();
-        scoreCard.instance.gamesToWin = 1;
+
+        chosenColor = Random.Range(0, colorScheme.Length);
+
+        backgroundColor = colorScheme[chosenColor].backgroundColor;
+        waveColor = colorScheme[chosenColor].waveColor;
+        textColor = colorScheme[chosenColor].textColor;
+
+        Camera.main.backgroundColor = backgroundColor;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void Start() {
+        //scoreCard.instance.gamesToWin = 1;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
 	public void PlayGame() {
-        print("hoihoihoi");
 		Application.LoadLevel(1);
 	}
+
+    [System.Serializable]
+    public struct menuColorScheme {
+        public Color backgroundColor;
+        public Color waveColor;
+        public Color textColor;
+    }
 }

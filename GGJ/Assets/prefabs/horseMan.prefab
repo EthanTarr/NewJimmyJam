@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4474948571249004}
   - component: {fileID: 212582703127860808}
   - component: {fileID: 95761479321906854}
+  - component: {fileID: 114605626318646592}
   m_Layer: 13
   m_Name: sprite
   m_TagString: Untagged
@@ -56,6 +57,7 @@ GameObject:
   - component: {fileID: 4632662426219338}
   - component: {fileID: 212306668709636870}
   - component: {fileID: 95287521598151740}
+  - component: {fileID: 114839640144506978}
   m_Layer: 14
   m_Name: sprite
   m_TagString: Untagged
@@ -253,7 +255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4039315553415198
 Transform:
   m_ObjectHideFlags: 1
@@ -287,8 +289,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1632265846656780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5745246, y: 1.780129, z: 0}
-  m_LocalScale: {x: 4.480927, y: 4.480927, z: 4.480927}
+  m_LocalPosition: {x: -2.6250904, y: 3.0799923, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 4.480927}
   m_Children:
   - {fileID: 4574672789895342}
   - {fileID: 4513192658167554}
@@ -319,7 +321,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1043356575894844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 4946324309958846}
@@ -360,7 +362,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059792230751734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.058, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 4763915319544210}
@@ -681,9 +683,9 @@ MonoBehaviour:
     m_Bits: 256
   playerControl: Arrow
   playerNum: 0
-  speed: 5
+  speed: 6
   accelerate: 1
-  decelerate: 10
+  decelerate: 7
   maxJumpHeight: 15
   minJumpHeight: 5
   gravityStrength: 1.75
@@ -696,6 +698,7 @@ MonoBehaviour:
   maxSmashCooldownTime: 2
   maxChargeTime: 0.75
   dashSpeed: 8
+  dashCharge: 0.35
   shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
   chargeParticle: {fileID: 198709666610492634}
   fullColor: {r: 0.5426336, g: 0.8088235, b: 0.45793685, a: 0}
@@ -718,8 +721,10 @@ MonoBehaviour:
   charge: {fileID: 8300000, guid: 68ae9f5d4d86e454dbf8bb8152aa9ddf, type: 3}
   cancel: {fileID: 8300000, guid: 1a97530295f2d61468f45f3c99ed6771, type: 3}
   bounciness: 1.25
+  bounceDirection: {x: 0, y: 0}
   slidingFloor: 0
-  downLazy: 0.33
+  jumped: 0
+  downLazy: 0.64
   front: {fileID: 114628340924380744}
   followDistance: 0.5
   jumpQueued: 0
@@ -763,6 +768,30 @@ MonoBehaviour:
   back: {fileID: 4768488767491876}
   yOffset: 0.11
   xOffset: 1
+--- !u!114 &114605626318646592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043356575894844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8aa3ef5ca216614685b0e7396c43532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteSheet: {fileID: 21300000, guid: 3fcacae60b526084297da7732572815a, type: 3}
+  subsprites:
+  - {fileID: 21300000, guid: 3fcacae60b526084297da7732572815a, type: 3}
+  - {fileID: 21300002, guid: 3fcacae60b526084297da7732572815a, type: 3}
+  - {fileID: 21300004, guid: 3fcacae60b526084297da7732572815a, type: 3}
+  - {fileID: 21300006, guid: 3fcacae60b526084297da7732572815a, type: 3}
+  - {fileID: 21300008, guid: 3fcacae60b526084297da7732572815a, type: 3}
+  - {fileID: 21300010, guid: 3fcacae60b526084297da7732572815a, type: 3}
+  - {fileID: 21300012, guid: 3fcacae60b526084297da7732572815a, type: 3}
+  - {fileID: 21300014, guid: 3fcacae60b526084297da7732572815a, type: 3}
+  - {fileID: 21300016, guid: 3fcacae60b526084297da7732572815a, type: 3}
+  - {fileID: 21300018, guid: 3fcacae60b526084297da7732572815a, type: 3}
+  - {fileID: 21300020, guid: 3fcacae60b526084297da7732572815a, type: 3}
 --- !u!114 &114628340924380744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -780,9 +809,9 @@ MonoBehaviour:
     m_Bits: 256
   playerControl: Arrow
   playerNum: 1
-  speed: 5
-  accelerate: 8
-  decelerate: 4
+  speed: 6
+  accelerate: 6
+  decelerate: 8
   maxJumpHeight: 15
   minJumpHeight: 5
   gravityStrength: 1.75
@@ -795,6 +824,7 @@ MonoBehaviour:
   maxSmashCooldownTime: 3
   maxChargeTime: 1.5
   dashSpeed: 14
+  dashCharge: 0.35
   shockWave: {fileID: 1850008647842600, guid: 2be16d1e2cd245244a98649f257d0da1, type: 2}
   chargeParticle: {fileID: 198525081699032522}
   fullColor: {r: 0.4868154, g: 0.88235295, b: 0.33088237, a: 0.591}
@@ -817,8 +847,10 @@ MonoBehaviour:
   charge: {fileID: 8300000, guid: 68ae9f5d4d86e454dbf8bb8152aa9ddf, type: 3}
   cancel: {fileID: 8300000, guid: 1a97530295f2d61468f45f3c99ed6771, type: 3}
   bounciness: 1.25
+  bounceDirection: {x: 0, y: 0}
   slidingFloor: 0
-  downLazy: 0.33
+  jumped: 0
+  downLazy: 0.64
   back: {fileID: 114376374106595828}
   horseHead: {fileID: 212225501497581088}
 --- !u!114 &114725357932439858
@@ -832,6 +864,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9161dc80e0f87d34c989c07b65a3d3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114839640144506978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059792230751734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8aa3ef5ca216614685b0e7396c43532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteSheet: {fileID: 21300000, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
+  subsprites:
+  - {fileID: 21300000, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
+  - {fileID: 21300002, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
+  - {fileID: 21300004, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
+  - {fileID: 21300006, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
+  - {fileID: 21300008, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
+  - {fileID: 21300010, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
+  - {fileID: 21300012, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
+  - {fileID: 21300014, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
+  - {fileID: 21300016, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
+  - {fileID: 21300018, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
+  - {fileID: 21300020, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
 --- !u!198 &198525081699032522
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -887,7 +943,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1148979134
+  randomSeed: 1646566795
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7060,7 +7116,7 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413227188240464}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_MotionVectors: 1
@@ -7126,7 +7182,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 53ca9e910eadf8741adf4b8902408786, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d3de3bb786574741991caf8f395d66b, type: 3}
   m_Color: {r: 0.18382353, g: 1, b: 0.5947263, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -7246,7 +7302,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 53ca9e910eadf8741adf4b8902408786, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3fcacae60b526084297da7732572815a, type: 3}
   m_Color: {r: 0.18382353, g: 1, b: 0.5947263, a: 1}
   m_FlipX: 1
   m_FlipY: 0

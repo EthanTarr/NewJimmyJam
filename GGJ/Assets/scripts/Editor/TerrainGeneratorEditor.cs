@@ -12,17 +12,17 @@ public class TerrainGeneratorEditor : Editor {
     {
         TerrainGenerator terrain = (TerrainGenerator)target;
 
-        shape = (TerrainGeneratorEditor.Shape) terrain.shape;
+        shape = (Shape) terrain.shape;
         shape = (Shape)EditorGUILayout.EnumPopup("Shape", shape);
-        plat = (TerrainGeneratorEditor.Platform) terrain.plat;
+        plat = (Platform) terrain.plat;
         plat = (Platform)EditorGUILayout.EnumPopup("Platform type", plat);
 
         switch (shape) {
             case Shape.Plane:
-                terrain.shape = TerrainGenerator.Shape.Plane;
+                terrain.shape = Shape.Plane;
                 break;
             case Shape.Sphere:
-                terrain.shape = TerrainGenerator.Shape.Sphere;
+                terrain.shape = Shape.Sphere;
                 break;
         }
 
@@ -30,30 +30,23 @@ public class TerrainGeneratorEditor : Editor {
             case Platform.Square:
                 terrain.Square = (GameObject)EditorGUILayout.ObjectField("Square", terrain.Square, typeof(GameObject), true);
                 terrain.SquareWidth = EditorGUILayout.FloatField("Square Width", terrain.SquareWidth);
-                terrain.plat = TerrainGenerator.Platform.Square;
+                terrain.plat = Platform.Square;
                 break;
             case Platform.Spike:
                 terrain.Spike = (GameObject)EditorGUILayout.ObjectField("Spike", terrain.Spike, typeof(GameObject), true);
                 terrain.invertSpikes = EditorGUILayout.Toggle("Invert Spikes", terrain.invertSpikes);
-                terrain.plat = TerrainGenerator.Platform.Spike;
+                terrain.plat = Platform.Spike;
                 break;
         }
 
-        if (GUILayout.Button("Build"))
-        {
+        terrain.squareMaterial = (Material)EditorGUILayout.ObjectField("Material", terrain.squareMaterial, typeof(Material), true);
+
+        if (GUILayout.Button("Build")) {
             terrain.Generate();
         }
 
+        if (GUI.changed) {
+            EditorUtility.SetDirty(terrain);
+        }
     }
-
-    public enum Shape {
-        Plane = 0,
-        Sphere = 1,
-    }
-
-    public enum Platform {
-        Square = 0,
-        Spike = 1,
-    }
-
 }

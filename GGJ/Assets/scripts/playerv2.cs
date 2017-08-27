@@ -271,7 +271,7 @@ public class playerv2 : MonoBehaviour {
     void checkForWave() {
 
         foreach (GameObject square in GameObject.FindGameObjectsWithTag("Floor")) {
-            if (Mathf.Abs(square.transform.position.x - transform.position.x) < GameObject.Find("Managers").GetComponent<GameManager>().Square.transform.localScale.x) {
+            if (Mathf.Abs(square.transform.position.x - transform.position.x) < GameObject.Find("Managers").GetComponent<WaveManager>().Square.transform.localScale.x) {
                 if (square.GetComponent<SquareBehavior>() != null && square.GetComponent<SquareBehavior>().TotalAmplitude - previousAmplitude > .1) {
                     rigid.AddForce(new Vector2(0, square.GetComponent<SquareBehavior>().TotalAmplitude * bounceForce));
                 }

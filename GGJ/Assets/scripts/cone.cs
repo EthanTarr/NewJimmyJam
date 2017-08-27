@@ -5,7 +5,7 @@ using UnityEngine;
 public class cone : MonoBehaviour {
 
 	void Start () {
-        this.gameObject.SetActive(scoreCard.instance.ConeHeadMode) ;
+        this.gameObject.SetActive(GameManager.instance.ConeHeadMode) ;
 	}
 
     void Update() {
@@ -17,8 +17,8 @@ public class cone : MonoBehaviour {
             print("hoi");
         }
 
-        if (collision.gameObject.GetComponent<playertest>()) {
-            collision.gameObject.GetComponent<playertest>().die();
+        if (collision.gameObject.GetComponent<playerController>()) {
+            collision.gameObject.GetComponent<playerController>().die();
         }
     }
 }
