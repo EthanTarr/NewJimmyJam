@@ -17,8 +17,8 @@ public class cameraRandomColor : MonoBehaviour {
 
     public void activatePlayers() {
         foreach(GameObject player in GameObject.FindGameObjectsWithTag("Player")) {
-            if(player.GetComponent<Rigidbody2D>() != null)
-            player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            if (player.GetComponent<Rigidbody2D>() != null)
+                player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 

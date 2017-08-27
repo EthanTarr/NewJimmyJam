@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 114581425084310468}
   - component: {fileID: 61976861351347916}
   - component: {fileID: 50471772487449218}
+  - component: {fileID: 114721079075849034}
+  - component: {fileID: 114755032830385172}
   m_Layer: 0
   m_Name: Pulse
   m_TagString: Pulse
@@ -105,13 +107,67 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   centerOfGravity: {fileID: 0}
   roll: {fileID: 8300000, guid: f456b975a2fc87348b85eb32525fb7a3, type: 3}
+  isOnline: 0
+--- !u!114 &114721079075849034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370316028781630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 19
+    i1: 112
+    i2: 231
+    i3: 159
+    i4: 124
+    i5: 114
+    i6: 134
+    i7: 36
+    i8: 232
+    i9: 62
+    i10: 117
+    i11: 38
+    i12: 56
+    i13: 101
+    i14: 28
+    i15: 79
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114755032830385172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370316028781630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!212 &212058059531942750
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370316028781630}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_MotionVectors: 1

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class glider : playertest{
+public class glider : playerController{
 
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -84,7 +84,7 @@ public class glider : playertest{
 
             SmashSpeed = Mathf.Lerp(minSmashSpeed, maxSmashSpeed, lerp);
             smashPower = Mathf.Lerp(minSmashPower, maxSmashPower, lerp);
-            SmashCooldownTime = Mathf.Lerp(0.25f, maxSmashCooldownTime, lerp);
+            SmashCooldownTime = Mathf.Lerp(0.25f, maxSmashVulnerabilityTime, lerp);
 
             if (!Input.GetButton("Smash" + playerControl)) {
                 StartCoroutine(smashAfterCharge(chargeValue));

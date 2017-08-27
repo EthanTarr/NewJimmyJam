@@ -25,7 +25,7 @@ public class endingUI : MonoBehaviour {
 
     void Start() {
         instance = this;
-        levelNum = scoreCard.instance.numOfPlayers;
+        levelNum = GameManager.instance.numOfPlayers;
         levelName = Application.loadedLevelName;
 
         width = spacing * 4 * levelNum;
@@ -43,7 +43,7 @@ public class endingUI : MonoBehaviour {
             text.transform.parent = this.transform;
 
             text.GetComponent<Text>().color = Color.red;
-            text.GetComponent<Text>().text = "0";
+            text.GetComponent<Text>().text = "" + GameManager.instance.playerScores[i];
             ps[i] = text.GetComponent<Text>();
             text.GetComponent<Text>().color  = playerSpawner.instance.characterColors[i];
 
@@ -56,12 +56,13 @@ public class endingUI : MonoBehaviour {
 
     void Update() {
         if (inputallowed && Input.anyKeyDown) {
-            if (scoreCard.instance.highestScore() >= scoreCard.instance.gamesToWin) {
+            inputallowed = false;
+            if (GameManager.instance.highestScore() >= GameManager.instance.gamesToWin) {
                 Application.LoadLevel(0);
-                Destroy(scoreCard.instance.gameObject);
+                Destroy(GameManager.instance.gameObject);
             } else {
                 //print(scoreCard.instance.highestScore());
-                Application.LoadLevel(levelName);
+                StartCoroutine(screenTransition.instance.fadeOut(levelName));
             }
         }
     }
@@ -73,8 +74,9 @@ public class endingUI : MonoBehaviour {
         if (players.Length == 1) {
             players[0].GetComponent<Rigidbody2D>().gravityScale = 6;
             StopCoroutine("ending");
-            StartCoroutine(ending(players[0].GetComponent<playertest>().playerNum));
-            players[0].GetComponent<playertest>().enabled = false;
+            StartCoroutine(ending(players[0].GetComponent<playerController>().playerNum));
+            players[0].GetComponent<playerController>().enabled = false;
+            players[0].GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         } else if(players.Length == 0) {
             StartCoroutine(ending(-1));
         }
@@ -86,28 +88,26 @@ public class endingUI : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         cameraAnim.Play("endingTransition");
         yield return new WaitForSeconds(1);
-        ps[0].gameObject.SetActive(true);
+        for (int i = 0; i < transform.childCount; i++)  {
+            transform.GetChild(i).gameObject.SetActive(true);
+        }
 
         if (playerId != -1) {
-
-            for (int i = 0; i < transform.childCount; i++) {
-                transform.GetChild(i).gameObject.SetActive(true);
-            }
-            for (int i = 0; i < scoreCard.instance.numOfPlayers; i++) {
-                ps[i].text = "" + scoreCard.instance.playerScores[i];
+            for (int i = 0; i < GameManager.instance.numOfPlayers; i++) {
+                ps[i].text = "" + GameManager.instance.playerScores[i];
 
             }
 
             yield return new WaitForSeconds(0.5f);
-            scoreCard.instance.playerScores[playerId]++;
+            GameManager.instance.playerScores[playerId]++;
             audioManager.instance.Play(ding, 0.5f, 1);
         }
         inputallowed = true;
-        for (int i = 0; i < scoreCard.instance.numOfPlayers;i++) {
-            ps[i].text = "" + scoreCard.instance.playerScores[i];
+        for (int i = 0; i < GameManager.instance.numOfPlayers;i++) {
+            ps[i].text = "" + GameManager.instance.playerScores[i];
         }
 
-        if (scoreCard.instance.highestScore() >= scoreCard.instance.gamesToWin) {
+        if (GameManager.instance.highestScore() >= GameManager.instance.gamesToWin) {
             winParticles.SetActive(true);
         }
 
@@ -125,12 +125,12 @@ public class endingUI : MonoBehaviour {
 
         for (int i = 0; i < levelNum; i++) {
             Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i), 25);
+            Gizmos.DrawWireSphere(transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i), 1);
         }
 
         for (int i = 0; i < levelNum - 1; i++) {
             Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width/(levelNum - 1))/2, new Vector3(10f,7f,1));
+            Gizmos.DrawWireCube(transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width/(levelNum - 1))/2, new Vector3(1.0f,0.7f,1));
         }
     }
     
