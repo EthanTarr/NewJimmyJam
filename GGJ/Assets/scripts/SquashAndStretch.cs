@@ -24,7 +24,7 @@ public class SquashAndStretch : MonoBehaviour
     }
 
     void FixedUpdate() {
-        Vector2 newScale;
+        Vector2 newScale = Vector2.one;
         if (Application.isPlaying) {
             float yVel = Mathf.Abs(rigid.velocity.y) * 0.05f;
             verticalStretch = Mathf.Lerp(verticalStretch, yVel, Time.fixedDeltaTime * elasticForce);
@@ -36,14 +36,15 @@ public class SquashAndStretch : MonoBehaviour
 
         newScale.x = Mathf.Max(originalScale.x + animatedStretch - verticalStretch + verticalSquish + 0.1f, 0.5f);
         newScale.x = Mathf.Min(newScale.x, 1.25f);
-        newScale.y = originalScale.y - animatedStretch + verticalStretch - verticalSquish - 0.1f;
+        newScale.y = originalScale.y - animatedStretch + verticalStretch - verticalSquish;
         newScale.y = Mathf.Min(newScale.y, 2);
-        newScale.y = Mathf.Max(newScale.y, 0.65f);
+        newScale.y = Mathf.Max(newScale.y, 0.5f);
         sprite.transform.localScale = newScale;
+        sprite.transform.position = new Vector2(transform.position.x, transform.position.y - Mathf.Lerp(0.75f,0, Mathf.Min(newScale.y / 1, 1)));
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 8) {
+        if (other.gameObject.tag.Equals("Floor") && other.relativeVelocity.magnitude > 12) {
             verticalSquish = collisionSquish;
         }
     }

@@ -8,7 +8,7 @@ public class killCieling : MonoBehaviour {
     Vector2 offset;
 
     private void Start() {
-        if (!GameManager.instance.spikeyHats || Application.loadedLevelName == "Controller Setup") {
+        if (!GameManager.instance.instantBounceKill || Application.loadedLevelName == "Controller Setup") {
             Destroy(this.gameObject);
         }
 

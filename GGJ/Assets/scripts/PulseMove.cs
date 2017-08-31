@@ -18,7 +18,7 @@ public class PulseMove : NetworkBehaviour{
     void Update()
     {
             if (TerrainGenerator.instance.shape == Shape.Plane) {
-                if (transform.position.x < WaveManager.boundary && forward) {
+                if (transform.position.x < TerrainGenerator.boundary && forward) {
 			transform.Translate (new Vector3 (Time.deltaTime * speed, 0, 0));
 		} else if (forward) {
 			forward = false;
@@ -26,7 +26,7 @@ public class PulseMove : NetworkBehaviour{
 				Destroy (this.gameObject);
 			}
 			//Amplitude = Amplitude / 4;
-		} else if (!forward && transform.position.x > -WaveManager.boundary) {
+		} else if (!forward && transform.position.x > -TerrainGenerator.boundary) {
             transform.Translate(new Vector3(Time.deltaTime * speed, 0, 0));
             GameObject Pulse = Instantiate(WaveGenerator.instance.antiPulse, transform.position, Quaternion.identity);
             Pulse.GetComponent<AntiPulseMove>().color = color;

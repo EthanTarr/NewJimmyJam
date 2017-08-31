@@ -377,7 +377,7 @@ RectTransform:
   - {fileID: 1185442668}
   - {fileID: 953827464}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -416,7 +416,7 @@ Transform:
   - {fileID: 1747964614}
   - {fileID: 1634205444}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &12080668
 GameObject:
@@ -692,6 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -1652,6 +1653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -1841,6 +1843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -1961,6 +1964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -2198,6 +2202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -2525,6 +2530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -2714,6 +2720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -3128,6 +3135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -3248,6 +3256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -3368,6 +3377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -3610,6 +3620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -3730,6 +3741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -4126,6 +4138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -4246,6 +4259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -4366,6 +4380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -4486,6 +4501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -4675,6 +4691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -4938,6 +4955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -5058,6 +5076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -5316,6 +5335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -5507,7 +5527,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &480000324
 GameObject:
@@ -5618,6 +5638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -5694,7 +5715,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508674715
 GameObject:
@@ -5956,6 +5977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -8975,7 +8997,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4185351820530592, guid: c51cb9dfa9dd2d641bfa1591c5e7af6d, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c51cb9dfa9dd2d641bfa1591c5e7af6d, type: 2}
@@ -9231,6 +9253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -9624,7 +9647,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4639364246182044, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
         type: 2}
@@ -9886,6 +9909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -10006,6 +10030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -10195,6 +10220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -10384,6 +10410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -10573,6 +10600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -10762,6 +10790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -10882,6 +10911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -11415,6 +11445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -11672,6 +11703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -11792,6 +11824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -12050,6 +12083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -12239,6 +12273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -12497,6 +12532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -12610,7 +12646,7 @@ Transform:
   - {fileID: 2095160400}
   - {fileID: 490265949}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &852692237
 GameObject:
@@ -12790,6 +12826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -12979,6 +13016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -13025,7 +13063,7 @@ Transform:
   - {fileID: 1637139715}
   - {fileID: 604769592}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &889873232
 GameObject:
@@ -13136,6 +13174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -13442,6 +13481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -13720,7 +13760,7 @@ Transform:
   m_LocalScale: {x: 5.2442546, y: 5.2442546, z: 1.191876}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919980680
 GameObject:
@@ -13831,6 +13871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -13951,6 +13992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -14140,6 +14182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -14260,6 +14303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -14380,6 +14424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -15076,6 +15121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -15196,6 +15242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -15316,6 +15363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -15420,7 +15468,7 @@ Transform:
   m_LocalScale: {x: 24.171309, y: 2.5321028, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1009012106
 GameObject:
@@ -15531,6 +15579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -15651,6 +15700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -15771,6 +15821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -15960,6 +16011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -16215,7 +16267,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4071476784632750, guid: d09a29249a308ee4ea5cbfbcd978ed7f, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4071476784632750, guid: d09a29249a308ee4ea5cbfbcd978ed7f, type: 2}
       propertyPath: m_LocalScale.x
@@ -16562,6 +16614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -16682,6 +16735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -16871,6 +16925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -17129,6 +17184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -17387,6 +17443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -17507,6 +17564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -17627,6 +17685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -18002,6 +18061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -18191,6 +18251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -18452,6 +18513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -18641,6 +18703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -18899,6 +18962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -19162,6 +19226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -19282,6 +19347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -19402,6 +19468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -19660,6 +19727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -19918,6 +19986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -20160,6 +20229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -20280,6 +20350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -20607,6 +20678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -20933,6 +21005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -21122,6 +21195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -21311,6 +21385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -21513,6 +21588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -21633,6 +21709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -21753,6 +21830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -21873,6 +21951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -21977,7 +22056,7 @@ Transform:
   m_LocalScale: {x: 19.924498, y: 13.230364, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484500678
 GameObject:
@@ -22088,6 +22167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -22273,6 +22353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -22376,7 +22457,7 @@ RectTransform:
   m_Children:
   - {fileID: 1144874192}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -25743,6 +25824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -25932,6 +26014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -26052,6 +26135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -26373,6 +26457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -26587,6 +26672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -26707,6 +26793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -30035,7 +30122,7 @@ Transform:
   m_LocalScale: {x: 19.924498, y: 15.738144, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1646358893
 GameObject:
@@ -30146,6 +30233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -30266,6 +30354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -30386,6 +30475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -30506,6 +30596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -30626,6 +30717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -30815,6 +30907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -30941,6 +31034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -31135,6 +31229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -31255,6 +31350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -31375,6 +31471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -31495,6 +31592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -31615,6 +31713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -31873,6 +31972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -32144,6 +32244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -32608,6 +32709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -32797,6 +32899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -32992,6 +33095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -33122,7 +33226,7 @@ Transform:
   m_LocalScale: {x: 24.780495, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1834745250
 GameObject:
@@ -33233,6 +33337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -33422,6 +33527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -33733,6 +33839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -34025,6 +34132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -34999,7 +35107,7 @@ Transform:
   m_Children:
   - {fileID: 1590193359}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925071316
 GameObject:
@@ -35365,6 +35473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -35485,6 +35594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -35605,6 +35715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -35858,7 +35969,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2007605535
 MonoBehaviour:
@@ -36001,6 +36112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -36190,6 +36302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -36379,6 +36492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -36751,6 +36865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -36945,6 +37060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -37065,6 +37181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -37076,6 +37193,52 @@ MonoBehaviour:
   ampColor: {r: 0, g: 0, b: 0, a: 0}
   dampen: 1
   velocity: 0
+--- !u!1001 &2062331545
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.0353136
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 247.91756
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2069151107
 GameObject:
   m_ObjectHideFlags: 0
@@ -37185,6 +37348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -37448,6 +37612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -40707,6 +40872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -41178,6 +41344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
@@ -41436,6 +41603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
+  previousAmplitude: 0
   Wavelength: 2
   FloorOscillation: 0
   OscillationSpeed: 0
