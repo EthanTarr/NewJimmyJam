@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
     public bool fullChargeInvinc;
     public bool holdMaxSmash;
     public bool tightDash;
+    public bool doubleJump;
     public float dashDistance = 15;
 
     [Header("Menu Items")]
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour {
     public Toggle holdMaxSmashInput;
     public Toggle tightDashInput;
     public Toggle instantBounceKillInput;
+    public Toggle doubleJumpInput;
 
     void Awake() {
 
@@ -97,6 +99,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void updateModifiers() {
+        print("hoi");
         maxSmashPower = int.Parse(smashDebugInput.text);
         maxSmashSpeed = float.Parse(smashSpeedInput.text);
         bounciness = float.Parse(bouncinessDebugInput.text);
@@ -111,6 +114,7 @@ public class GameManager : MonoBehaviour {
         holdMaxSmash = holdMaxSmashInput.isOn;
         fullChargeInvinc = fullChargeInvicInput.isOn;
         tightDash = tightDashInput.isOn;
+        doubleJump = doubleJumpInput.isOn;
     }
 
     public void isConeHeadMode() {

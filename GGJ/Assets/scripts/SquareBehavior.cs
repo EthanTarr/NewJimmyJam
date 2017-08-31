@@ -11,8 +11,8 @@ public class SquareBehavior : MonoBehaviour {
     public float OscillationSpeed = 0.01f;
 	[HideInInspector] public float initialY = 0;
     [HideInInspector] public float initialX = 0;
-    float standardY;
-    float standardX;
+    protected float standardY;
+    protected float standardX;
     [HideInInspector] public bool firstBlock;
     [HideInInspector] public Vector3 CenterOfGravity;
 
@@ -23,9 +23,13 @@ public class SquareBehavior : MonoBehaviour {
     Vector2 lastPosition;
 	protected void Start () {
         lastPosition = transform.position;
+
+        initialY = transform.localPosition.y;
+        initialX = transform.localPosition.x;
+
         standardY = transform.position.y;
         standardX = transform.position.x;
-       
+        
 
         squareMaterial = transform.GetChild(0).GetComponent<Renderer>();
         //StartCoroutine(physicsCheck());
@@ -36,8 +40,6 @@ public class SquareBehavior : MonoBehaviour {
     public float dampen = 1;
 
     void getPosition() {
-        initialY = transform.position.y;
-        initialX = transform.position.x;
         TotalAmplitude = 0;
         standardY += FloorOscillation * (Mathf.Sin(Time.time * OscillationSpeed));
         standardX += FloorOscillation * (Mathf.Sin(Time.time * OscillationSpeed));
@@ -77,12 +79,12 @@ public class SquareBehavior : MonoBehaviour {
             }
         }
         TotalAmplitude = Mathf.Clamp(TotalAmplitude, -15, 15);
-        Vector3 vector = (-((-transform.position + CenterOfGravity).normalized)) * TotalAmplitude;
+        Vector3 vector = (-((-transform.position + CenterOfGravity).normalized)) * TotalAmplitude /dampen;
 
         if (TerrainGenerator.instance != null && TerrainGenerator.instance.shape == Shape.Sphere) {
-            transform.position = new Vector3(Mathf.Lerp(initialX, standardX + vector.x, Time.deltaTime), Mathf.Lerp(initialY, standardY + vector.y, Time.deltaTime), 0);
+            transform.position = new Vector3(Mathf.Lerp(transform.position.x, standardX + vector.x, Time.deltaTime), Mathf.Lerp(transform.position.y, standardY + vector.y, Time.deltaTime), 0);
         } else {
-            transform.position = new Vector3(initialX, Mathf.Lerp(initialY, standardY + vector.y, Time.deltaTime), transform.position.z);
+            transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, standardY + vector.y, Time.deltaTime), transform.position.z);
         }
 
 
@@ -101,6 +103,6 @@ public class SquareBehavior : MonoBehaviour {
 
     void Update(){
             getPosition();
-            squareMaterial.material.SetColor("_Color", Color.Lerp(matColor, ampColor, transform.localPosition.y /0.5f));
+            squareMaterial.material.SetColor("_Color", Color.Lerp(matColor, ampColor, (transform.localPosition.y - initialY)));
     }
 }

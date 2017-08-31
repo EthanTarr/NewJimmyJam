@@ -283,9 +283,9 @@ MonoBehaviour:
   playerControl: Joy3
   playerNum: 0
   topWidth: 0.55
-  speed: 8
-  accelerate: 3
-  decelerate: 4
+  speed: 8.5
+  accelerate: 4
+  decelerate: 7
   maxJumpHeight: 17
   minJumpHeight: 5
   gravityStrength: 0.6
