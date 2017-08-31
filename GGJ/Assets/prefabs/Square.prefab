@@ -70,7 +70,7 @@ Transform:
   m_GameObject: {fileID: 1472568061012158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.6, y: 228.22, z: -3.3530893}
-  m_LocalScale: {x: 0.3, y: 10, z: 1}
+  m_LocalScale: {x: 0.35, y: 10, z: 1}
   m_Children:
   - {fileID: 4925211213779900}
   - {fileID: 4492236775312806}
@@ -181,8 +181,8 @@ MonoBehaviour:
   TotalAmplitude: 0
   previousAmplitude: 0
   Wavelength: 2
-  FloorOscillation: 0
-  OscillationSpeed: 0
+  FloorOscillation: 0.01
+  OscillationSpeed: 0.5
   initialY: 0
   initialX: 0
   firstBlock: 0
