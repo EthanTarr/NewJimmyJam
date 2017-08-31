@@ -181,8 +181,8 @@ MonoBehaviour:
   TotalAmplitude: 0
   previousAmplitude: 0
   Wavelength: 2
-  FloorOscillation: 0
-  OscillationSpeed: 0
+  FloorOscillation: 0.01
+  OscillationSpeed: 0.5
   initialY: 0
   initialX: 0
   firstBlock: 0
