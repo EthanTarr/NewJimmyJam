@@ -48,5 +48,7 @@ public class TerrainGeneratorEditor : Editor {
         if (GUI.changed) {
             EditorUtility.SetDirty(terrain);
         }
+
+        DrawDefaultInspector();
     }
 }
