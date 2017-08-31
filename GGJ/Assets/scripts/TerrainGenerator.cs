@@ -13,6 +13,7 @@ public class TerrainGenerator : MonoBehaviour {
     [HideInInspector] public GameObject Spike;
     [HideInInspector] public bool invertSpikes = false;
 
+    public GameObject testSquare;
     public int FloorSpawns = 20;
     public static float boundary;
 
@@ -34,6 +35,12 @@ public class TerrainGenerator : MonoBehaviour {
         instance = this;
         boundary = FloorSpawns * 0.5f;
         Generate();
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            WaveGenerator.instance.makeWave(testSquare.transform.position, 10, Color.red, 1, this.transform);
+        }
     }
 
     public void Generate() {

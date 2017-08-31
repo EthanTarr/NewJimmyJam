@@ -43,13 +43,13 @@ public class WaveGenerator : NetworkBehaviour {
 		Pulse.GetComponent<PulseMove> ().Amplitude = amplitude;
         Pulse.GetComponent<PulseMove>().color = color;
         Pulse.GetComponent<PulseMove>().speed = velocity;
-        Pulse.GetComponent<PulseMove>().centerOfGravity = null;
+        Pulse.GetComponent<PulseMove>().centerOfGravity = centerOfGravity;
 
         GameObject AntiPulse = Instantiate (antiPulse, new Vector3(position.x, position.y, 0), Quaternion.identity);
 		AntiPulse.GetComponent<AntiPulseMove> ().Amplitude = amplitude;
         AntiPulse.GetComponent<AntiPulseMove>().color = color;
         AntiPulse.GetComponent<AntiPulseMove>().speed = velocity;
-        AntiPulse.GetComponent<AntiPulseMove>().centerOfGravity = null;
+        AntiPulse.GetComponent<AntiPulseMove>().centerOfGravity = centerOfGravity;
     }
 
     [Command]
