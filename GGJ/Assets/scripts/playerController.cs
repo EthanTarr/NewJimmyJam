@@ -26,6 +26,7 @@ public class playerController : NetworkBehaviour {
     [Header("Gravity")]
     public float gravityStrength;
     public Vector2 gravityDirection;
+    public Transform centerOfGravity;
 
     [Header("Smash Properties")]
     public float minSmashSpeed = 4;
@@ -160,7 +161,16 @@ public class playerController : NetworkBehaviour {
         }
 
         if((canSmash || !seperateDashCooldown || !tightDash)) {
-            rigid.velocity += gravityDirection * gravityStrength;
+            if (centerOfGravity == null) {
+                rigid.velocity += gravityDirection * gravityStrength;
+            } else {
+                Vector2 dirOfGravity = (-transform.position + centerOfGravity.position).normalized;
+
+                rigid.AddForce(dirOfGravity * 10);
+
+                Vector2 dirUp = -dirOfGravity;
+                this.transform.up = Vector2.Lerp(this.transform.up, dirUp, Time.deltaTime * 500);
+            }
         }
         rigid.velocity += bounceDirection + Vector2.right * dashDirection;
     }

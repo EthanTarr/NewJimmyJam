@@ -6122,7 +6122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.4, y: -14.7}
+  m_AnchoredPosition: {x: -0.39999998, y: -14.700001}
   m_SizeDelta: {x: 396, y: 399.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &243369781
@@ -10193,152 +10193,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 433120606}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &433663495
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4639364246182044, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.7714205
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639364246182044, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 243.89
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639364246182044, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639364246182044, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639364246182044, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639364246182044, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639364246182044, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4639364246182044, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1555559242175320, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
-      propertyPath: m_Name
-      value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: smashDebugInput
-      value: 
-      objectReference: {fileID: 1189865003}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: smashSpeedInput
-      value: 
-      objectReference: {fileID: 1298533759}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: bouncinessDebugInput
-      value: 
-      objectReference: {fileID: 175188253}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: maxChargeTimeInput
-      value: 
-      objectReference: {fileID: 607425422}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: dashDistanceInput
-      value: 
-      objectReference: {fileID: 601493103}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: airControlInput
-      value: 
-      objectReference: {fileID: 1455451056}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: groundDashInput
-      value: 
-      objectReference: {fileID: 36332313}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: separeteDashCooldownInput
-      value: 
-      objectReference: {fileID: 1088332161}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: fullChargeInvicInput
-      value: 
-      objectReference: {fileID: 148628596}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: holdMaxSmashInput
-      value: 
-      objectReference: {fileID: 1963507278}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: tightDashInput
-      value: 
-      objectReference: {fileID: 729496695}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: instantBounceKillInput
-      value: 
-      objectReference: {fileID: 296758843}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: doubleJumpInput
-      value: 
-      objectReference: {fileID: 330997197}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: maxSmashSpeed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: maxChargeTime
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: dashDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: fullChargeInvinc
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: bounciness
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
-        type: 2}
-      propertyPath: instantBounceKill
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ea95174612e095c4abfc9cadc91e1961, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &440728931
 GameObject:
   m_ObjectHideFlags: 0
@@ -13489,12 +13343,49 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 579289887}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &585143249 stripped
+--- !u!114 &585143249
 MonoBehaviour:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
     type: 2}
-  m_PrefabInternal: {fileID: 433663495}
-  m_Script: {fileID: 11500000, guid: 6ae094ae017c81d48b15f4dc52896e3c, type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1150762655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fadf94b521c88488b5e9c2039964fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScores: 
+  ConeHeadMode: 0
+  gamesToWin: 0
+  numOfPlayers: 2
+  selectedCharacters: []
+  maxSmashPower: 25
+  bounciness: 0.85
+  airControl: 0
+  seperateDashCooldown: 0
+  canDashOnGround: 0
+  instantBounceKill: 0
+  maxSmashSpeed: 30
+  maxChargeTime: 1.5
+  fullChargeInvinc: 0
+  holdMaxSmash: 0
+  tightDash: 0
+  doubleJump: 0
+  dashDistance: 15
+  smashDebugInput: {fileID: 0}
+  smashSpeedInput: {fileID: 0}
+  bouncinessDebugInput: {fileID: 0}
+  maxChargeTimeInput: {fileID: 0}
+  dashDistanceInput: {fileID: 0}
+  airControlInput: {fileID: 0}
+  groundDashInput: {fileID: 0}
+  separeteDashCooldownInput: {fileID: 0}
+  fullChargeInvicInput: {fileID: 0}
+  holdMaxSmashInput: {fileID: 0}
+  tightDashInput: {fileID: 0}
+  instantBounceKillInput: {fileID: 0}
+  doubleJumpInput: {fileID: 0}
 --- !u!1 &585609620
 GameObject:
   m_ObjectHideFlags: 0
@@ -23898,6 +23789,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1145524230}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1150762655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1555559242175320, guid: ea95174612e095c4abfc9cadc91e1961,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1150762656}
+  - component: {fileID: 585143249}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1150762656
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4639364246182044, guid: ea95174612e095c4abfc9cadc91e1961,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1150762655}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7714205, y: 243.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154303254
 GameObject:
   m_ObjectHideFlags: 0
@@ -25599,7 +25521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -3.768}
+  m_AnchoredPosition: {x: 2, y: -3.7679996}
   m_SizeDelta: {x: 700, y: 202.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1224032293
@@ -37050,7 +36972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.999997, y: -184.13}
+  m_AnchoredPosition: {x: -1.9999971, y: -184.13}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1817463037
