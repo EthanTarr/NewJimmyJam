@@ -151,28 +151,32 @@ public class playerController : NetworkBehaviour {
     // movement for online multiplayer
     public virtual void CmdinputAudit(float HorizInput) {
         checkGround();
+
         bounceDirection = new Vector2(Mathf.Lerp(bounceDirection.x, 0, Time.deltaTime * (smashing ? 25 : 2.5f)), Mathf.Lerp(bounceDirection.y, 0, Time.deltaTime * (smashing ? 2 : 35)));
         dashDirection = Mathf.Lerp(dashDirection, 0, Time.deltaTime * dashDecel);
 
         if (!smashing && !vunrabilityFrames && playerControl != "" && rigid.bodyType == RigidbodyType2D.Dynamic) {
             movement(HorizInput);
         } if (!smashing && !vunrabilityFrames) {
-            rigid.velocity = new Vector2(xSpeed, rigid.velocity.y);
+            rigid.velocity = transform.TransformDirection(new Vector2(xSpeed, transform.InverseTransformDirection(rigid.velocity).y));
         }
 
-        if((canSmash || !seperateDashCooldown || !tightDash)) {
+        if ((canSmash || !seperateDashCooldown || !tightDash))
+        {
             if (centerOfGravity == null) {
                 rigid.velocity += gravityDirection * gravityStrength;
             } else {
-                Vector2 dirOfGravity = (-transform.position + centerOfGravity.position).normalized;
+                Vector2 gravityDirection = (-transform.position + centerOfGravity.position).normalized;
 
-                rigid.AddForce(dirOfGravity * 10);
+                //rigid.AddForce(gravityDirection * gravityStrength);
+                rigid.velocity -= (Vector2)transform.up * gravityStrength;
 
-                Vector2 dirUp = -dirOfGravity;
+                Vector2 dirUp = -gravityDirection;
                 this.transform.up = Vector2.Lerp(this.transform.up, dirUp, Time.deltaTime * 500);
             }
         }
-        rigid.velocity += bounceDirection + Vector2.right * dashDirection;
+
+        rigid.velocity += bounceDirection + (Vector2)transform.right * dashDirection;
     }
 
     protected virtual void movement(float horizInput) {
@@ -192,7 +196,8 @@ public class playerController : NetworkBehaviour {
             jumped = false;
             canDoubleJump = true;
             if (Input.GetButtonDown("Jump" + playerControl) && (canSmash || !seperateDashCooldown || !tightDash)) {
-                rigid.velocity += new Vector2(rigid.velocity.x, maxJumpHeight);
+                //rigid.velocity += new Vector2(rigid.velocity.x, maxJumpHeight);
+                rigid.velocity += (Vector2)transform.up * maxJumpHeight;
                 audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.93f, 1.05f));
                 //checkGround();
                 Invoke("jumpDelay", 0.05f);
@@ -206,7 +211,8 @@ public class playerController : NetworkBehaviour {
             if (canSmash) {
                 if (Input.GetButtonDown("Jump" + playerControl) && doubleJump && canDoubleJump) {
                     canDoubleJump = false;
-                    rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight/1.5f + bounceDirection.y);
+                    rigid.velocity += (Vector2)transform.up * maxJumpHeight/1.5f;
+                    //rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight/1.5f + bounceDirection.y);
                     audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.93f, 1.05f));
 
                     GameObject dashExpurosion = Instantiate(dashCancelParticle, transform.position, transform.rotation);
@@ -227,8 +233,8 @@ public class playerController : NetworkBehaviour {
         }
 
         //shortHop
-        if (Input.GetButtonUp("Jump" + playerControl) && rigid.velocity.y > minJumpHeight && jumped) {
-            rigid.velocity = new Vector2(rigid.velocity.x, minJumpHeight);
+        if (Input.GetButtonUp("Jump" + playerControl) && transform.InverseTransformDirection(rigid.velocity).y > minJumpHeight && jumped) {
+            rigid.velocity = (Vector2)transform.up * minJumpHeight;
         }
 
         spriteAnimationManager(horizInput, touchingGround);
@@ -281,7 +287,7 @@ public class playerController : NetworkBehaviour {
         smashPower = minSmashPower;
         float hold = maxChargeTime + (holdMaxSmash ? 0.5f : 0);
 
-        float initialY = Mathf.Max(0, rigid.velocity.y);
+        float initialY = Mathf.Max(0, transform.InverseTransformDirection(rigid.velocity).y);
 
         while (chargeValue <= hold) {
             float lerp = (chargeValue / maxChargeTime);
@@ -324,12 +330,15 @@ public class playerController : NetworkBehaviour {
                 maxed = true;
             }
 
-            rigid.velocity = (Vector2.right * rigid.velocity.x) * 0.95f + Vector2.up * initialY +  bounceDirection;
+            rigid.velocity = ((Vector2)transform.right * transform.InverseTransformDirection(rigid.velocity).x) * 0.95f + (Vector2)transform.up * initialY +  bounceDirection;
 
             initialY /= 1.1f;
 
-            if(airControl)
-                rigid.velocity  += Vector2.right * Input.GetAxis("Horizontal" + playerControl) * 0.2f;
+            if (airControl)
+            {
+                rigid.velocity += (Vector2)transform.right * Input.GetAxis("Horizontal" + playerControl) * 0.2f;
+                print(rigid.velocity);
+            }
 
             yield return new WaitForEndOfFrame();
         }
@@ -380,7 +389,7 @@ public class playerController : NetworkBehaviour {
 
         } */
 
-        rigid.velocity = new Vector2(0, onGround ? -10 :  Mathf.Max(0,rigid.velocity.y) / 2);
+        rigid.velocity = transform.TransformDirection(new Vector2(0, onGround ? -10 :  Mathf.Max(0, transform.InverseTransformDirection(rigid.velocity).y) / 2));
 
         smashing = false;
         chargeVisualEffects(0);
@@ -430,7 +439,7 @@ public class playerController : NetworkBehaviour {
 
         yield return new WaitForSeconds(0.05f);
         
-        rigid.velocity = new Vector2(0, -SmashSpeed);
+        rigid.velocity = transform.TransformDirection(new Vector3(0, -SmashSpeed));
         bounceDirection.y = 0;
         spriteAnim.SetAnimation("smash");
         createDashParticle(1.5f);
