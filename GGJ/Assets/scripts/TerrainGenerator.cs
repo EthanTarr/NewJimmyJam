@@ -38,7 +38,7 @@ public class TerrainGenerator : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space) && testSquare != null) {
             WaveGenerator.instance.makeWave(testSquare.transform.position, 10, Color.red, 1, this.transform);
         }
     }

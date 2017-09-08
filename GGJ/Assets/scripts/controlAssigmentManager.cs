@@ -16,6 +16,8 @@ public class controlAssigmentManager : MonoBehaviour {
     public Vector3 regularPosition;
     public Vector3 modifierMenuPos;
     bool modifierMenu;
+    [Space()]
+    public AudioClip elevatorDing;
 
     void Start() {
         controllerHandler.controlOrder.Clear();
@@ -23,11 +25,6 @@ public class controlAssigmentManager : MonoBehaviour {
 
 
     void Update() {
-
-        //if (Input.GetKeyDown(KeyCode.Q)) {
-        //    swapToModifierMenu();
-        //}
-
         if (controllerHandler.controlOrder.Count < 4) {
             foreach (string control in controllers) {
                 bool inputFound = Mathf.Abs(Input.GetAxisRaw("Horizontal" + control)) > 0.1f;
@@ -37,29 +34,38 @@ public class controlAssigmentManager : MonoBehaviour {
                     }
                 }
 
-                if (inputFound) {
-                    playerController newPlayer = Instantiate(player, transform.position, Quaternion.identity).GetComponent<playerController>();             
-                    newPlayer.playerControl = control;
-                    newPlayer.playerNum = setControls;
-                    newPlayer.GetComponent<SpriteRenderer>().color = colors[setControls];
+                if (inputFound) {               
+                    
                     controllerHandler.controlOrder.Add(control);
                     controllers.Remove(control);
                     GameManager.instance.selectedCharacters[setControls] = player;
-                    
+
+                    StartCoroutine(spawnPlayer(control, setControls));
                     setControls++;
                     GameManager.instance.numOfPlayers = setControls;
                     GameManager.instance.playerScores = new int[setControls];
 
-                    print("player " + setControls + " mapped to " + newPlayer.playerControl);
                     break;
                 }
             }
         }
 
         if (Input.GetButtonDown("Enter") && GameManager.instance.numOfPlayers >= 2) {
-            print("hoi");
-            Application.LoadLevel(selectedLevel);
+
+            StartCoroutine(screenTransition.instance.fadeOut(selectedLevel));
         }
+    }
+
+    public IEnumerator spawnPlayer(string control, int setControls) {
+        audioManager.instance.Play(elevatorDing, 0.5f);
+        yield return new WaitForSeconds(0.25f);
+        transform.parent.gameObject.GetComponent<Animator>().Play("elevetorAnim");
+        yield return new WaitForSeconds(0.25f);
+        playerController newPlayer = Instantiate(player, transform.position, Quaternion.identity).GetComponent<playerController>();
+        newPlayer.playerControl = control;
+        newPlayer.playerNum = setControls;
+        newPlayer.GetComponent<SpriteRenderer>().color = colors[setControls];
+        print("player " + setControls + " mapped to " + newPlayer.playerControl);
     }
 
     public void swapToModifierMenu() {

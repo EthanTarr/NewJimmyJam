@@ -99,7 +99,6 @@ public class GameManager : MonoBehaviour {
     }
 
     public void updateModifiers() {
-        print("hoi");
         maxSmashPower = int.Parse(smashDebugInput.text);
         maxSmashSpeed = float.Parse(smashSpeedInput.text);
         bounciness = float.Parse(bouncinessDebugInput.text);

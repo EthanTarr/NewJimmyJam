@@ -35,7 +35,7 @@ public class ButtonActions : MonoBehaviour {
     }
 
 	public void PlayGame() {
-		Application.LoadLevel(1);
+        StartCoroutine(screenTransition.instance.fadeOut("Controller Setup"));
 	}
 
     [System.Serializable]
