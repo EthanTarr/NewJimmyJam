@@ -3,14 +3,12 @@ using System.Collections;
 
 public class audioManager : MonoBehaviour {
 
-    private AudioSource[] source;
     public AudioClip soundFX;
     public static audioManager instance;
 
     int index = 0;
     void Start() {
         instance = this;
-        source = GetComponents<AudioSource>();
     }
 
     public void Play(AudioClip sound) {
@@ -22,14 +20,11 @@ public class audioManager : MonoBehaviour {
     }
 
     public void Play(AudioClip sound, float volume, float pitch) {
-        source[index].clip = sound;
-        source[index].volume = volume * settings.instance.fx;
-        source[index].pitch = pitch;
-        source[index].PlayOneShot(sound);
-
-        index++;
-        if (index >= source.Length) {
-            index = 0;
-        }
+        AudioSource source = gameObject.AddComponent<AudioSource>();
+        source.clip = sound;
+        source.volume = volume * settings.instance.fx;
+        source.pitch = pitch;
+        source.PlayOneShot(sound);
+        Destroy(source, sound.length);
     }
 }

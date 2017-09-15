@@ -58,13 +58,30 @@ public class endingUI : MonoBehaviour {
         if (inputallowed && Input.anyKeyDown) {
             inputallowed = false;
             if (GameManager.instance.highestScore() >= GameManager.instance.gamesToWin) {
-                Application.LoadLevel(0);
-                Destroy(GameManager.instance.gameObject);
+                Application.LoadLevel("VictoryScreen");
             } else {
-                //print(scoreCard.instance.highestScore());
-                StartCoroutine(screenTransition.instance.fadeOut(levelName));
+                if(GameManager.instance.randomMap)
+                    StartCoroutine(screenTransition.instance.fadeOut(Random.Range(2, Application.levelCount - 1)));
+                else
+                    StartCoroutine(screenTransition.instance.fadeOut(levelName));
             }
         }
+    }
+
+    public int getRandomStage() {
+        int[] validStages = new int[Application.levelCount - 2];
+        for (int i = 0; i < validStages.Length - 1; i++) {
+            if (i == Application.loadedLevel)
+            {
+                i++;
+                validStages[i - 1] = 2 + i;
+            }
+            else {
+                validStages[i] = 2 + i;
+            }
+            
+        }
+        return validStages[Random.Range(2, validStages.Length)];
     }
 
     public void checkPlayersLeft() {
@@ -75,7 +92,7 @@ public class endingUI : MonoBehaviour {
             players[0].GetComponent<Rigidbody2D>().gravityScale = 6;
             StopCoroutine("ending");
             StartCoroutine(ending(players[0].GetComponent<playerController>().playerNum));
-            players[0].GetComponent<playerController>().enabled = false;
+            players[0].GetComponent<playerController>().active = false;
             players[0].GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         } else if(players.Length == 0) {
             StartCoroutine(ending(-1));

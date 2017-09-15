@@ -435,6 +435,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &20340358
@@ -1040,6 +1041,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &38214056
@@ -1231,6 +1233,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &46685104
@@ -1560,6 +1563,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &62685579
@@ -2507,6 +2511,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &113476814
@@ -2629,6 +2634,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &116777562
@@ -3918,6 +3924,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &135563297
@@ -4300,6 +4307,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &151634038
@@ -4422,6 +4430,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &154719229
@@ -4544,6 +4553,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &156766331
@@ -4666,6 +4676,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &159952214
@@ -4857,6 +4868,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &167460953
@@ -5585,6 +5597,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!4 &193335393
@@ -5722,6 +5735,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &206708307
@@ -6288,6 +6302,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &268623226
@@ -6410,6 +6425,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &274348259
@@ -6952,6 +6968,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &304632444
@@ -7352,6 +7369,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &331913086
@@ -7474,6 +7492,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &335510117
@@ -7596,6 +7615,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &339281736
@@ -7718,6 +7738,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &340120139
@@ -7840,6 +7861,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &347306367
@@ -8169,6 +8191,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &363116003
@@ -8291,6 +8314,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &367535875
@@ -8551,6 +8575,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &377356672
@@ -8742,6 +8767,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &382187642
@@ -9036,6 +9062,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &393310080
@@ -9298,6 +9325,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &413220970
@@ -9972,6 +10000,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &460308858
@@ -10163,6 +10192,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &478301213
@@ -10232,37 +10262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fadf94b521c88488b5e9c2039964fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScores: 
-  ConeHeadMode: 0
-  gamesToWin: 0
-  numOfPlayers: 2
-  selectedCharacters: []
-  maxSmashPower: 25
-  bounciness: 0.85
-  airControl: 0
-  seperateDashCooldown: 0
-  canDashOnGround: 0
-  instantBounceKill: 0
-  maxSmashSpeed: 30
-  maxChargeTime: 1.5
-  fullChargeInvinc: 0
-  holdMaxSmash: 0
-  tightDash: 0
-  doubleJump: 0
-  dashDistance: 15
-  smashDebugInput: {fileID: 0}
-  smashSpeedInput: {fileID: 0}
-  bouncinessDebugInput: {fileID: 0}
-  maxChargeTimeInput: {fileID: 0}
-  dashDistanceInput: {fileID: 0}
-  airControlInput: {fileID: 0}
-  groundDashInput: {fileID: 0}
-  separeteDashCooldownInput: {fileID: 0}
-  fullChargeInvicInput: {fileID: 0}
-  holdMaxSmashInput: {fileID: 0}
-  tightDashInput: {fileID: 0}
-  instantBounceKillInput: {fileID: 0}
-  doubleJumpInput: {fileID: 0}
 --- !u!4 &478301218
 Transform:
   m_ObjectHideFlags: 0
@@ -10688,6 +10687,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1001 &496322160
@@ -10852,6 +10852,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &499262111
@@ -11642,6 +11643,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &543427886
@@ -11901,6 +11903,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &559388168
@@ -12161,6 +12164,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &562556139
@@ -12283,6 +12287,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &566990574
@@ -12547,6 +12552,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &575845001
@@ -13038,6 +13044,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &600160000
@@ -13187,11 +13194,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.09148368
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 50
+      value: 6.09
       objectReference: {fileID: 0}
     - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -13217,21 +13224,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 70811956582830920, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+    - target: {fileID: 114110477045581720, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 70811956582830920, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.110000074
-      objectReference: {fileID: 0}
-    - target: {fileID: 70811956582830920, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.08
-      objectReference: {fileID: 0}
+      propertyPath: centerOfGravity
+      value: 
+      objectReference: {fileID: 598088885}
     - target: {fileID: 114110477045581720, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
       propertyPath: playerControl
@@ -13239,11 +13236,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114110477045581720, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
         type: 2}
-      propertyPath: centerOfGravity
-      value: 
-      objectReference: {fileID: 598088885}
-    - target: {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
-      propertyPath: m_IsActive
+      propertyPath: airControl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110477045581720, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: dashSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110477045581720, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: topWidth
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13369,6 +13372,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &613080932
@@ -13560,6 +13564,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &632127367
@@ -13898,6 +13903,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &643237308
@@ -14118,6 +14124,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &651381713
@@ -14447,6 +14454,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &665928019
@@ -14638,6 +14646,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &670760477
@@ -14967,6 +14976,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &693476993
@@ -15089,6 +15099,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &693672513
@@ -16004,6 +16015,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &757958252
@@ -16333,6 +16345,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &773557371
@@ -16455,6 +16468,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &775278991
@@ -16646,6 +16660,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &782469670
@@ -16768,6 +16783,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &801257670
@@ -17100,6 +17116,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &810800027
@@ -17614,6 +17631,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &845124124
@@ -17736,6 +17754,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &845330427
@@ -18271,6 +18290,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &885703245
@@ -18674,6 +18694,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &899885107
@@ -18796,6 +18817,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &900300704
@@ -19470,6 +19492,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &936708286
@@ -19661,6 +19684,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &943815568
@@ -19783,6 +19807,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &946738514
@@ -20043,6 +20068,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &951149299
@@ -20165,6 +20191,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &951846327
@@ -20425,6 +20452,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &965701451
@@ -20547,6 +20575,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &973296863
@@ -20807,6 +20836,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &977788548
@@ -21274,6 +21304,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1002792122
@@ -21396,6 +21427,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1004209051
@@ -21518,6 +21550,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1004414951
@@ -22799,6 +22832,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1062771810
@@ -23128,6 +23162,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1089581396
@@ -23250,6 +23285,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1096937093
@@ -23441,6 +23477,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1105584150
@@ -23563,6 +23600,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1113171445
@@ -23754,6 +23792,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1116181526
@@ -23945,6 +23984,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1135922434
@@ -24067,6 +24107,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1138392332
@@ -24189,6 +24230,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1146384123
@@ -24380,6 +24422,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1157364732
@@ -24640,6 +24683,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1170551305
@@ -24831,6 +24875,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1172180726
@@ -24953,6 +24998,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1175369872
@@ -25454,6 +25500,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1205073829
@@ -25714,6 +25761,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1211824447
@@ -26117,6 +26165,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1227353657
@@ -26239,6 +26288,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1234850872
@@ -26430,6 +26480,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1242442845
@@ -26764,6 +26815,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1247775022
@@ -26955,6 +27007,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1275322097
@@ -27146,6 +27199,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1286637389
@@ -27613,6 +27667,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1301685019
@@ -28038,6 +28093,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1317167667
@@ -28570,10 +28626,8 @@ ParticleSystem:
   playOnAwake: 1
   autoRandomSeed: 0
   startDelay:
-    serializedVersion: 2
     minMaxState: 0
     scalar: 0
-    minScalar: 0
     maxCurve:
       serializedVersion: 2
       m_Curve:
@@ -28618,10 +28672,8 @@ ParticleSystem:
     serializedVersion: 3
     enabled: 1
     startLifetime:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 11.14
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -28659,10 +28711,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     startSpeed:
-      serializedVersion: 2
       minMaxState: 3
       scalar: 2.54
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -28690,8 +28740,6 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.16078432, b: 0.16078432, a: 1}
-      maxColor: {r: 0.14901961, g: 0.29411766, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0, g: 0.29803923, b: 1, a: 1}
@@ -28750,11 +28798,11 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 0.16078432, b: 0.16078432, a: 1}
+      maxColor: {r: 0.14901961, g: 0.29411766, b: 1, a: 1}
     startSize:
-      serializedVersion: 2
       minMaxState: 3
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -28780,10 +28828,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     startSizeY:
-      serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -28809,10 +28855,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     startSizeZ:
-      serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -28838,10 +28882,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     startRotationX:
-      serializedVersion: 2
       minMaxState: 2
       scalar: 3.1415927
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -28879,10 +28921,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     startRotationY:
-      serializedVersion: 2
       minMaxState: 2
       scalar: 0.8183849
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -28920,10 +28960,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     startRotation:
-      serializedVersion: 2
       minMaxState: 2
       scalar: 0.36128315
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -28965,10 +29003,8 @@ ParticleSystem:
     size3D: 0
     rotation3D: 1
     gravityModifier:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0.05
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29019,10 +29055,8 @@ ParticleSystem:
       mode: 0
       spread: 0
       speed:
-        serializedVersion: 2
         minMaxState: 0
         scalar: 1
-        minScalar: 0
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -29064,10 +29098,8 @@ ParticleSystem:
       mode: 0
       spread: 0
       speed:
-        serializedVersion: 2
         minMaxState: 0
         scalar: 1
-        minScalar: 0
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -29120,10 +29152,8 @@ ParticleSystem:
     enabled: 1
     serializedVersion: 4
     rateOverTime:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 65.86
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29161,10 +29191,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     rateOverDistance:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29206,10 +29234,8 @@ ParticleSystem:
   SizeModule:
     enabled: 0
     curve:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29247,10 +29273,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29288,10 +29312,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     z:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29332,10 +29354,8 @@ ParticleSystem:
   RotationModule:
     enabled: 1
     x:
-      serializedVersion: 2
       minMaxState: 3
       scalar: 0.34906587
-      minScalar: -1.7453293
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29361,10 +29381,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     y:
-      serializedVersion: 2
       minMaxState: 3
       scalar: 3.4906585
-      minScalar: -3.4906585
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29390,10 +29408,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     curve:
-      serializedVersion: 2
       minMaxState: 3
       scalar: 3.4906585
-      minScalar: 1.7453293
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29424,8 +29440,6 @@ ParticleSystem:
     gradient:
       serializedVersion: 2
       minMaxState: 1
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -29484,13 +29498,13 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
   UVModule:
     enabled: 0
     frameOverTime:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 0.9999
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29528,10 +29542,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     startFrame:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29580,10 +29592,8 @@ ParticleSystem:
   VelocityModule:
     enabled: 0
     x:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29621,10 +29631,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29662,10 +29670,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     z:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29707,10 +29713,8 @@ ParticleSystem:
     enabled: 0
     m_Mode: 0
     m_Curve:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29750,10 +29754,8 @@ ParticleSystem:
   ForceModule:
     enabled: 0
     x:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29791,10 +29793,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29832,10 +29832,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     z:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29880,10 +29878,8 @@ ParticleSystem:
   ClampVelocityModule:
     enabled: 0
     x:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29921,10 +29917,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29962,10 +29956,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     z:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30003,10 +29995,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     magnitude:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30049,10 +30039,8 @@ ParticleSystem:
   NoiseModule:
     enabled: 0
     strength:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30090,10 +30078,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     strengthY:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30131,10 +30117,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     strengthZ:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30179,10 +30163,8 @@ ParticleSystem:
     octaveScale: 2
     quality: 2
     scrollSpeed:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30220,10 +30202,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     remap:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30261,10 +30241,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     remapY:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30302,10 +30280,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     remapZ:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30346,10 +30322,8 @@ ParticleSystem:
   SizeBySpeedModule:
     enabled: 0
     curve:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30387,10 +30361,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30428,10 +30400,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     z:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30473,10 +30443,8 @@ ParticleSystem:
   RotationBySpeedModule:
     enabled: 0
     x:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30514,10 +30482,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30555,10 +30521,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     curve:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0.7853982
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30602,8 +30566,6 @@ ParticleSystem:
     gradient:
       serializedVersion: 2
       minMaxState: 1
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -30662,6 +30624,8 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
@@ -30675,10 +30639,8 @@ ParticleSystem:
     plane4: {fileID: 0}
     plane5: {fileID: 0}
     m_Dampen:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30716,10 +30678,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     m_Bounce:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30757,10 +30717,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     m_EnergyLossOnCollision:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30838,10 +30796,8 @@ ParticleSystem:
     range: 1
     intensity: 1
     rangeCurve:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30879,10 +30835,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     intensityCurve:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30924,10 +30878,8 @@ ParticleSystem:
     enabled: 0
     ratio: 1
     lifetime:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30974,8 +30926,6 @@ ParticleSystem:
     colorOverLifetime:
       serializedVersion: 2
       minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -31034,11 +30984,11 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
     widthOverTrail:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31078,8 +31028,6 @@ ParticleSystem:
     colorOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -31138,6 +31086,8 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
   CustomDataModule:
     enabled: 0
     mode0: 0
@@ -31145,8 +31095,6 @@ ParticleSystem:
     color0:
       serializedVersion: 2
       minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -31205,11 +31153,11 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
     vector0_0:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31247,10 +31195,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector0_1:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31288,10 +31234,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector0_2:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31329,10 +31273,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector0_3:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31374,8 +31316,6 @@ ParticleSystem:
     color1:
       serializedVersion: 2
       minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -31434,11 +31374,11 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
     vector1_0:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31476,10 +31416,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector1_1:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31517,10 +31455,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector1_2:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31558,10 +31494,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector1_3:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31869,6 +31803,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1361658409
@@ -32060,6 +31995,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1362704935
@@ -32466,6 +32402,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1381999411
@@ -32588,6 +32525,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1384070251
@@ -32779,6 +32717,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1385335779
@@ -33157,10 +33096,8 @@ ParticleSystem:
   playOnAwake: 1
   autoRandomSeed: 1
   startDelay:
-    serializedVersion: 2
     minMaxState: 0
     scalar: 0
-    minScalar: 0
     maxCurve:
       serializedVersion: 2
       m_Curve:
@@ -33200,15 +33137,13 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1054802097
+  randomSeed: -1100023121
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 5
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33246,10 +33181,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     startSpeed:
-      serializedVersion: 2
       minMaxState: 0
       scalar: -2.55
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33289,8 +33222,6 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.95686275, g: 0.91764706, b: 1, a: 0.627451}
-      maxColor: {r: 1, g: 0.7647059, b: 0.7647059, a: 0.4392157}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -33349,11 +33280,11 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 0.95686275, g: 0.91764706, b: 1, a: 0.627451}
+      maxColor: {r: 1, g: 0.7647059, b: 0.7647059, a: 0.4392157}
     startSize:
-      serializedVersion: 2
       minMaxState: 3
       scalar: 0.049999993
-      minScalar: 0.099999994
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33379,10 +33310,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     startSizeY:
-      serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33408,10 +33337,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     startSizeZ:
-      serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33437,10 +33364,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     startRotationX:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33478,10 +33403,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     startRotationY:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33519,10 +33442,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     startRotation:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33564,10 +33485,8 @@ ParticleSystem:
     size3D: 0
     rotation3D: 0
     gravityModifier:
-      serializedVersion: 2
       minMaxState: 3
       scalar: 2.61
-      minScalar: 0.97
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33606,10 +33525,8 @@ ParticleSystem:
       mode: 0
       spread: 0
       speed:
-        serializedVersion: 2
         minMaxState: 0
         scalar: 1
-        minScalar: 0
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -33651,10 +33568,8 @@ ParticleSystem:
       mode: 0
       spread: 0
       speed:
-        serializedVersion: 2
         minMaxState: 0
         scalar: 1
-        minScalar: 0
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -33707,10 +33622,8 @@ ParticleSystem:
     enabled: 1
     serializedVersion: 4
     rateOverTime:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33748,10 +33661,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     rateOverDistance:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33793,10 +33704,8 @@ ParticleSystem:
   SizeModule:
     enabled: 0
     curve:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33834,10 +33743,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33875,10 +33782,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     z:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33919,10 +33824,8 @@ ParticleSystem:
   RotationModule:
     enabled: 0
     x:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33960,10 +33863,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34001,10 +33902,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     curve:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0.7853982
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34047,8 +33946,6 @@ ParticleSystem:
     gradient:
       serializedVersion: 2
       minMaxState: 1
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -34107,13 +34004,13 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
   UVModule:
     enabled: 0
     frameOverTime:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 0.9999
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34151,10 +34048,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     startFrame:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34203,10 +34098,8 @@ ParticleSystem:
   VelocityModule:
     enabled: 0
     x:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34244,10 +34137,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34285,10 +34176,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     z:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34330,10 +34219,8 @@ ParticleSystem:
     enabled: 0
     m_Mode: 0
     m_Curve:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34373,10 +34260,8 @@ ParticleSystem:
   ForceModule:
     enabled: 0
     x:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34414,10 +34299,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34455,10 +34338,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     z:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34503,10 +34384,8 @@ ParticleSystem:
   ClampVelocityModule:
     enabled: 0
     x:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34544,10 +34423,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34585,10 +34462,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     z:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34626,10 +34501,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     magnitude:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34672,10 +34545,8 @@ ParticleSystem:
   NoiseModule:
     enabled: 0
     strength:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34713,10 +34584,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     strengthY:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34754,10 +34623,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     strengthZ:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34802,10 +34669,8 @@ ParticleSystem:
     octaveScale: 2
     quality: 2
     scrollSpeed:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34843,10 +34708,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     remap:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34884,10 +34747,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     remapY:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34925,10 +34786,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     remapZ:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34969,10 +34828,8 @@ ParticleSystem:
   SizeBySpeedModule:
     enabled: 0
     curve:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35010,10 +34867,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35051,10 +34906,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     z:
-      serializedVersion: 2
       minMaxState: 1
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35096,10 +34949,8 @@ ParticleSystem:
   RotationBySpeedModule:
     enabled: 0
     x:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35137,10 +34988,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     y:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35178,10 +35027,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     curve:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0.7853982
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35225,8 +35072,6 @@ ParticleSystem:
     gradient:
       serializedVersion: 2
       minMaxState: 1
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -35285,6 +35130,8 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
@@ -35298,10 +35145,8 @@ ParticleSystem:
     plane4: {fileID: 0}
     plane5: {fileID: 0}
     m_Dampen:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35339,10 +35184,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     m_Bounce:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35380,10 +35223,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     m_EnergyLossOnCollision:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35461,10 +35302,8 @@ ParticleSystem:
     range: 1
     intensity: 1
     rangeCurve:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35502,10 +35341,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     intensityCurve:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35547,10 +35384,8 @@ ParticleSystem:
     enabled: 0
     ratio: 1
     lifetime:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35597,8 +35432,6 @@ ParticleSystem:
     colorOverLifetime:
       serializedVersion: 2
       minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -35657,11 +35490,11 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
     widthOverTrail:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35701,8 +35534,6 @@ ParticleSystem:
     colorOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -35761,6 +35592,8 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
   CustomDataModule:
     enabled: 0
     mode0: 0
@@ -35768,8 +35601,6 @@ ParticleSystem:
     color0:
       serializedVersion: 2
       minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -35828,11 +35659,11 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
     vector0_0:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35870,10 +35701,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector0_1:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35911,10 +35740,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector0_2:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35952,10 +35779,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector0_3:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -35997,8 +35822,6 @@ ParticleSystem:
     color1:
       serializedVersion: 2
       minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -36057,11 +35880,11 @@ ParticleSystem:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
+      minColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
     vector1_0:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -36099,10 +35922,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector1_1:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -36140,10 +35961,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector1_2:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -36181,10 +36000,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vector1_3:
-      serializedVersion: 2
       minMaxState: 0
       scalar: 0
-      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -36405,6 +36222,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1406435838
@@ -36966,6 +36784,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1457132418
@@ -37295,6 +37114,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1474297732
@@ -37417,6 +37237,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1474839202
@@ -37608,6 +37429,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1481614000
@@ -37730,6 +37552,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1484171672
@@ -37921,6 +37744,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1486349526
@@ -38183,6 +38007,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1500072908
@@ -38443,6 +38268,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1508609291
@@ -38841,6 +38667,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1531380775
@@ -38963,6 +38790,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1533728430
@@ -39154,6 +38982,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1544419215
@@ -39695,6 +39524,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1594008334
@@ -39886,6 +39716,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1609594526
@@ -40904,6 +40735,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1646681203
@@ -41639,6 +41471,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1679233731
@@ -42324,6 +42157,91 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+--- !u!1 &1710549109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1710549111}
+  - component: {fileID: 1710549110}
+  - component: {fileID: 1710549112}
+  m_Layer: 8
+  m_Name: Circle
+  m_TagString: Floor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!212 &1710549110
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710549109}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 3d7d27c13dea73a4c849890a9da387d6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+--- !u!4 &1710549111
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710549109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 9.034796, y: 9.034791, z: 9.034791}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1710549112
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710549109}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.50000006
 --- !u!1 &1715996078
 GameObject:
   m_ObjectHideFlags: 0
@@ -42513,6 +42431,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1724235760
@@ -42635,6 +42554,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1726577469
@@ -42757,6 +42677,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1730305348
@@ -42948,6 +42869,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1732885225
@@ -43070,6 +42992,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1734376436
@@ -43192,6 +43115,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1734723172
@@ -43376,6 +43300,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1744855311
@@ -43774,6 +43699,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1776203131
@@ -44309,6 +44235,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1795476773
@@ -44431,6 +44358,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1795961224
@@ -44553,6 +44481,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1810201992
@@ -44675,6 +44604,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1811984737
@@ -44935,6 +44865,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1820688092
@@ -45057,6 +44988,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1820773557
@@ -45179,6 +45111,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1824013440
@@ -45370,6 +45303,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1850070053
@@ -45697,6 +45631,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1874336535
@@ -46122,6 +46057,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1897383853
@@ -46244,6 +46180,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1902197171
@@ -46504,6 +46441,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1925609095
@@ -46626,6 +46564,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1929474731
@@ -46817,6 +46756,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1934310160
@@ -46964,6 +46904,96 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1945584766}
+--- !u!1001 &1947729905
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302188338843528, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110477045581720, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: centerOfGravity
+      value: 
+      objectReference: {fileID: 598088885}
+    - target: {fileID: 114110477045581720, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: playerControl
+      value: WASD
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110477045581720, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: airControl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110477045581720, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: dashSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_Name
+      value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212544977023675752, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.9559837
+      objectReference: {fileID: 0}
+    - target: {fileID: 212544977023675752, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.5441177
+      objectReference: {fileID: 0}
+    - target: {fileID: 212544977023675752, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110477045581720, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b,
+        type: 2}
+      propertyPath: topWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1950539264
 GameObject:
   m_ObjectHideFlags: 0
@@ -47291,6 +47321,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1980398331
@@ -47413,6 +47444,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1982049310
@@ -47535,6 +47567,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1985393311
@@ -48262,6 +48295,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2039774349
@@ -48462,6 +48496,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2041320934
@@ -48860,6 +48895,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2076769911
@@ -48982,6 +49018,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2077945455
@@ -49104,6 +49141,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2082088215
@@ -49507,6 +49545,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2107000568
@@ -49629,6 +49668,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2109576700
@@ -49967,6 +50007,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1001 &2124384301
@@ -50229,6 +50270,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2131173291
@@ -50567,6 +50609,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2146053992
@@ -50689,5 +50732,6 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0

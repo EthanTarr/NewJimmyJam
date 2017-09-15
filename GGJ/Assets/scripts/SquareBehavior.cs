@@ -15,7 +15,6 @@ public class SquareBehavior : MonoBehaviour {
     protected float standardX;
     [HideInInspector] public bool firstBlock;
     [HideInInspector] public Vector3 CenterOfGravity;
-
     Renderer squareMaterial;
     public Color matColor;
     public Color ampColor;
@@ -35,7 +34,7 @@ public class SquareBehavior : MonoBehaviour {
         //StartCoroutine(physicsCheck());
     }
 
-    float maxAmplitude = 5f;
+    public float maxAmplitude = 15f;
 
     public float dampen = 1;
 
@@ -78,7 +77,7 @@ public class SquareBehavior : MonoBehaviour {
                 }
             }
         }
-        TotalAmplitude = Mathf.Clamp(TotalAmplitude, -15, 15);
+        TotalAmplitude = Mathf.Clamp(TotalAmplitude, -maxAmplitude, maxAmplitude);
         Vector3 vector = (-((-transform.position + CenterOfGravity).normalized)) * TotalAmplitude /dampen;
 
         if (TerrainGenerator.instance != null && TerrainGenerator.instance.shape == Shape.Sphere) {
