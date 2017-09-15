@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class playerController : NetworkBehaviour {
+public class playerController : NetworkBehaviour, IComparable<playerController> {
 
     protected Rigidbody2D rigid;
     public SpriteScript spriteAnim;
@@ -11,7 +12,7 @@ public class playerController : NetworkBehaviour {
     public string playerControl;
     public int playerNum;
     bool canDoubleJump;
-    bool touchingGround;
+    protected bool touchingGround;
     public float topWidth;
 
     [Header("Control")]
@@ -105,10 +106,12 @@ public class playerController : NetworkBehaviour {
     public GameObject antiPulse;
     public onlineClient client;
 
-    protected void Start() {
+    protected virtual void Start() {
         rigid = GetComponent<Rigidbody2D>();
         spriteAnim = GetComponentInChildren<SpriteScript>();
 
+        active = true;
+         
         changeModifiers();
 
         spriteAnim.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
@@ -121,7 +124,7 @@ public class playerController : NetworkBehaviour {
         chargeCircle.transform.localScale = Vector3.zero;
     }
 
-    void changeModifiers() {
+    protected void changeModifiers() {
         airControl = GameManager.instance.airControl;
         seperateDashCooldown = GameManager.instance.seperateDashCooldown;
         canDashOnGround = GameManager.instance.canDashOnGround;
@@ -138,8 +141,6 @@ public class playerController : NetworkBehaviour {
     }
 
     void LateUpdate() {
-        //Debug.DrawLine(transform.position, (transform.position - centerOfGravity.position) + downLazy / 2 * transform.up, Color.green);
-
         if (onlinePlayer) {
             if (client != null) {
                 CmdinputAudit(client.HorizInput);
@@ -163,7 +164,7 @@ public class playerController : NetworkBehaviour {
 
         if (!smashing && !vunrabilityFrames && playerControl != "" && rigid.bodyType == RigidbodyType2D.Dynamic) {
             movement(HorizInput);
-        } if (!smashing && !vunrabilityFrames) {
+        } if (!smashing && !vunrabilityFrames && active) {
             rigid.velocity = transform.TransformDirection(new Vector2(xSpeed, transform.InverseTransformDirection(rigid.velocity).y));
         }
 
@@ -182,68 +183,78 @@ public class playerController : NetworkBehaviour {
             }
         }
 
-        rigid.velocity += (Vector2)transform.up * bounceDirection.y + (Vector2)transform.right * (dashDirection + bounceDirection.x);
+        rigid.velocity += (Vector2)transform.up * bounceDirection.y;
+        if (active) {
+            rigid.velocity += (Vector2)transform.right * (dashDirection + bounceDirection.x);
+        }
     }
 
+     public bool active = true;
     protected virtual void movement(float horizInput) {
         //Horizontal Movement
         touchingGround = checkGround();
-        if (Mathf.Abs(horizInput) > 0.1f && (canSmash || !seperateDashCooldown)) {
-            xSpeed += speed * horizInput / (accelerate * 4);
-            spriteAnim.GetComponent<SpriteRenderer>().flipX = horizInput < 0;
-            slopeCheck();
-        } else {
-            xSpeed = Mathf.Lerp(xSpeed, 0, Time.deltaTime * decelerate);
-        }
-        xSpeed = Mathf.Clamp(xSpeed, -speed, speed);
 
-        //Vertical Movement
-        if (touchingGround) {
-            jumped = false;
-            canDoubleJump = true;
-            if (Input.GetButtonDown("Jump" + playerControl) && (canSmash || !seperateDashCooldown || !tightDash)) {
-                //rigid.velocity += new Vector2(rigid.velocity.x, maxJumpHeight);
-                rigid.velocity += (Vector2)transform.up * maxJumpHeight;
-                audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.93f, 1.05f));
-                //checkGround();
-                Invoke("jumpDelay", 0.05f);
+        if (active) {
+            if (Mathf.Abs(horizInput) > 0.1f && (canSmash || !seperateDashCooldown)) {
+                xSpeed += speed * horizInput / (accelerate * 4);
+                spriteAnim.GetComponent<SpriteRenderer>().flipX = horizInput < 0;
+                slopeCheck();
+            } else {
+                xSpeed = Mathf.Lerp(xSpeed, 0, Time.deltaTime * decelerate);
             }
+            xSpeed = Mathf.Clamp(xSpeed, -speed, speed);
 
-            //dashingOnGround
-            if (canDash && Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && (canDashOnGround && canSmash)) {
-                StartCoroutine(dash(Input.GetAxis("Dash" + playerControl), true, true));
-            }
-        } else {
-            if (canSmash) {
-                if (Input.GetButtonDown("Jump" + playerControl) && doubleJump && canDoubleJump) {
-                    canDoubleJump = false;
-                    rigid.velocity += (Vector2)transform.up * maxJumpHeight/1.5f;
-                    //rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight/1.5f + bounceDirection.y);
+            //Vertical Movement
+            if (touchingGround) {
+                jumped = false;
+                canDoubleJump = true;
+                if (Input.GetButtonDown("Jump" + playerControl) && (canSmash || !seperateDashCooldown || !tightDash)) {
+                    //rigid.velocity += new Vector2(rigid.velocity.x, maxJumpHeight);
+                    rigid.velocity += (Vector2)transform.up * maxJumpHeight;
                     audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.93f, 1.05f));
-
-                    GameObject dashExpurosion = Instantiate(dashCancelParticle, transform.position, transform.rotation);
-                    dashExpurosion.GetComponent<ParticleSystem>().startColor = spriteAnim.GetComponent<SpriteRenderer>().color;
-                    Destroy(dashExpurosion, 1.5f);
-
-                    checkGround();
+                    //checkGround();
+                    Invoke("jumpDelay", 0.05f);
                 }
 
-                if (canDash && Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && !smashing) {
-                    StartCoroutine(dash(Input.GetAxis("Dash" + playerControl), true, false));
+                //dashingOnGround
+                if (canDash && Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && (canDashOnGround && canSmash)) {
+                    StartCoroutine(dash(Input.GetAxis("Dash" + playerControl), true, true));
                 }
+            } else {
+                if (canSmash)
+                {
+                    if (Input.GetButtonDown("Jump" + playerControl) && doubleJump && canDoubleJump)
+                    {
+                        canDoubleJump = false;
+                        rigid.velocity += (Vector2)transform.up * maxJumpHeight / 1.5f;
+                        //rigid.velocity = new Vector2(rigid.velocity.x, maxJumpHeight/1.5f + bounceDirection.y);
+                        audioManager.instance.Play(jump, 0.5f, UnityEngine.Random.Range(0.93f, 1.05f));
 
-                if (Input.GetButtonDown("Smash" + playerControl) && !smashing) {
-                    StartCoroutine(chargeSmash(Input.GetAxis("Horizontal" + playerControl)));
+                        GameObject dashExpurosion = Instantiate(dashCancelParticle, transform.position, transform.rotation);
+                        dashExpurosion.GetComponent<ParticleSystem>().startColor = spriteAnim.GetComponent<SpriteRenderer>().color;
+                        Destroy(dashExpurosion, 1.5f);
+
+                        checkGround();
+                    }
+
+                    if (canDash && Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && !smashing)
+                    {
+                        StartCoroutine(dash(Input.GetAxis("Dash" + playerControl), true, false));
+                    }
+
+                    if (Input.GetButtonDown("Smash" + playerControl) && !smashing)
+                    {
+                        StartCoroutine(chargeSmash(Input.GetAxis("Horizontal" + playerControl)));
+                    }
                 }
             }
-        }
 
-        //shortHop
-        if (Input.GetButtonUp("Jump" + playerControl) && transform.InverseTransformDirection(rigid.velocity).y > minJumpHeight && jumped) {
-            rigid.velocity = (Vector2)transform.up * minJumpHeight;
+            //shortHop
+            if (Input.GetButtonUp("Jump" + playerControl) && transform.InverseTransformDirection(rigid.velocity).y > minJumpHeight && jumped) {
+                rigid.velocity = (Vector2)transform.up * minJumpHeight;
+            }
+            spriteAnimationManager(horizInput, touchingGround);
         }
-
-        spriteAnimationManager(horizInput, touchingGround);
     }
 
     protected void spriteAnimationManager(float HorizInput, bool touchingGround) {
@@ -309,7 +320,7 @@ public class playerController : NetworkBehaviour {
             }
 
             //Dash out of charge
-            if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && Input.GetAxis("Dash" + playerControl) != currentDirection) {
+            if (Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && Input.GetAxis("Dash" + playerControl) != currentDirection && canDash) {
                 chargeValue = 0;
                 chargeCircle.transform.localScale = Vector3.zero;
                 StartCoroutine(dash(chargeValue, direction, false));
@@ -362,10 +373,10 @@ public class playerController : NetworkBehaviour {
         InvokeRepeating("SpawnTrail", 0, 0.035f);
         GetComponent<SpriteRenderer>().flipX = direction;
 
-        //float dir = Input.GetAxis("Horizontal" + playerControl);
+        float dir = Input.GetAxis("Horizontal" + playerControl);
        // print(dir);
-        //if (Mathf.Abs(dir) < 0.5f)
-           float dir = (spriteAnim.GetComponent<SpriteRenderer>().flipX ? -1 : 1);
+        if (Mathf.Abs(dir) < 0.5f)
+           dir = (spriteAnim.GetComponent<SpriteRenderer>().flipX ? -1 : 1);
 
         dashDirection += dashSpeed * dir/ (onGround ? 1.5f : 1);
         dashDirection *= 1.5f;
@@ -403,7 +414,7 @@ public class playerController : NetworkBehaviour {
             vunrabilityFrames = false;
 
             float j = 0;
-            while (j < 0.25f) {
+            while (j < 0.1f) {
                 j += Time.deltaTime;
                 rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y/1.1f +  bounceDirection.y);
                 yield return new WaitForEndOfFrame();
@@ -683,13 +694,16 @@ public class playerController : NetworkBehaviour {
     }
 
     public IEnumerator headBoopSquish() {
-        while (sqetch.animatedStretch < 1.5f) {
+        float t = 1f;
+        while (sqetch.animatedStretch < 1.5f && t > 0) {
             sqetch.animatedStretch += 0.5f;
+            t -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
-        while (sqetch.animatedStretch > 0.1f) {
+        while (sqetch.animatedStretch > 0.1f && t > 0) {
             sqetch.animatedStretch -= 0.55f;
+            t -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
         sqetch.animatedStretch = 0;
@@ -738,6 +752,10 @@ public class playerController : NetworkBehaviour {
         AntiPulse.GetComponent<AntiPulseMove>().speed = velocity;
 
         NetworkServer.Spawn(AntiPulse);
+    }
+
+    public int CompareTo(playerController other) {
+        return GameManager.instance.playerScores[playerNum].CompareTo(GameManager.instance.playerScores[other.playerNum]);
     }
 }
 

@@ -10,8 +10,6 @@ public class controlAssigmentManager : MonoBehaviour {
     int setControls = 0;
     public Color[] colors;
 
-    public string selectedLevel;
-
     [Header("Camera Position")]
     public Vector3 regularPosition;
     public Vector3 modifierMenuPos;
@@ -50,10 +48,7 @@ public class controlAssigmentManager : MonoBehaviour {
             }
         }
 
-        if (Input.GetButtonDown("Enter") && GameManager.instance.numOfPlayers >= 2) {
 
-            StartCoroutine(screenTransition.instance.fadeOut(selectedLevel));
-        }
     }
 
     public IEnumerator spawnPlayer(string control, int setControls) {
@@ -93,10 +88,6 @@ public class controlAssigmentManager : MonoBehaviour {
         foreach (playerController player in FindObjectsOfType<playerController>()) {
             Destroy(player.gameObject);
         }
-    }
-
-    public void changeSelectedLevel(string level) {
-        selectedLevel = level;
     }
 
     public void changeTargetSpawn(GameObject player) {

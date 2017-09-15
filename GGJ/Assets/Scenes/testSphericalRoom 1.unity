@@ -435,6 +435,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &20340358
@@ -1040,6 +1041,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &38214056
@@ -1231,6 +1233,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &46685104
@@ -1560,6 +1563,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &62685579
@@ -2507,6 +2511,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &113476814
@@ -2629,6 +2634,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &116777562
@@ -3918,6 +3924,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &135563297
@@ -4300,6 +4307,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &151634038
@@ -4422,6 +4430,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &154719229
@@ -4544,6 +4553,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &156766331
@@ -4666,6 +4676,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &159952214
@@ -4857,6 +4868,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &167460953
@@ -5585,6 +5597,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!4 &193335393
@@ -5722,6 +5735,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &206708307
@@ -6288,6 +6302,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &268623226
@@ -6410,6 +6425,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &274348259
@@ -6952,6 +6968,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &304632444
@@ -7352,6 +7369,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &331913086
@@ -7474,6 +7492,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &335510117
@@ -7596,6 +7615,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &339281736
@@ -7718,6 +7738,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &340120139
@@ -7840,6 +7861,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &347306367
@@ -8169,6 +8191,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &363116003
@@ -8291,6 +8314,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &367535875
@@ -8551,6 +8575,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &377356672
@@ -8742,6 +8767,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &382187642
@@ -9036,6 +9062,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &393310080
@@ -9298,6 +9325,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &413220970
@@ -9972,6 +10000,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &460308858
@@ -10163,6 +10192,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &478301213
@@ -10657,6 +10687,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1001 &496322160
@@ -10821,6 +10852,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &499262111
@@ -11611,6 +11643,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &543427886
@@ -11870,6 +11903,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &559388168
@@ -12130,6 +12164,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &562556139
@@ -12252,6 +12287,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &566990574
@@ -12516,6 +12552,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &575845001
@@ -13007,6 +13044,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &600160000
@@ -13334,6 +13372,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &613080932
@@ -13525,6 +13564,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &632127367
@@ -13863,6 +13903,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &643237308
@@ -14083,6 +14124,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &651381713
@@ -14412,6 +14454,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &665928019
@@ -14603,6 +14646,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &670760477
@@ -14932,6 +14976,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &693476993
@@ -15054,6 +15099,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &693672513
@@ -15969,6 +16015,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &757958252
@@ -16298,6 +16345,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &773557371
@@ -16420,6 +16468,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &775278991
@@ -16611,6 +16660,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &782469670
@@ -16733,6 +16783,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &801257670
@@ -17065,6 +17116,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &810800027
@@ -17579,6 +17631,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &845124124
@@ -17701,6 +17754,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &845330427
@@ -18236,6 +18290,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &885703245
@@ -18639,6 +18694,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &899885107
@@ -18761,6 +18817,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &900300704
@@ -19435,6 +19492,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &936708286
@@ -19626,6 +19684,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &943815568
@@ -19748,6 +19807,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &946738514
@@ -20008,6 +20068,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &951149299
@@ -20130,6 +20191,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &951846327
@@ -20390,6 +20452,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &965701451
@@ -20512,6 +20575,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &973296863
@@ -20772,6 +20836,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &977788548
@@ -21239,6 +21304,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1002792122
@@ -21361,6 +21427,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1004209051
@@ -21483,6 +21550,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1004414951
@@ -22764,6 +22832,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1062771810
@@ -23093,6 +23162,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1089581396
@@ -23215,6 +23285,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1096937093
@@ -23406,6 +23477,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1105584150
@@ -23528,6 +23600,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1113171445
@@ -23719,6 +23792,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1116181526
@@ -23910,6 +23984,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1135922434
@@ -24032,6 +24107,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1138392332
@@ -24154,6 +24230,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1146384123
@@ -24345,6 +24422,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1157364732
@@ -24605,6 +24683,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1170551305
@@ -24796,6 +24875,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1172180726
@@ -24918,6 +24998,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1175369872
@@ -25419,6 +25500,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1205073829
@@ -25679,6 +25761,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1211824447
@@ -26082,6 +26165,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1227353657
@@ -26204,6 +26288,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1234850872
@@ -26395,6 +26480,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1242442845
@@ -26729,6 +26815,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1247775022
@@ -26920,6 +27007,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1275322097
@@ -27111,6 +27199,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1286637389
@@ -27578,6 +27667,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1301685019
@@ -28003,6 +28093,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1317167667
@@ -31712,6 +31803,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1361658409
@@ -31903,6 +31995,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1362704935
@@ -32309,6 +32402,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1381999411
@@ -32431,6 +32525,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1384070251
@@ -32622,6 +32717,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1385335779
@@ -36126,6 +36222,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1406435838
@@ -36687,6 +36784,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1457132418
@@ -37016,6 +37114,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1474297732
@@ -37138,6 +37237,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1474839202
@@ -37329,6 +37429,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1481614000
@@ -37451,6 +37552,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1484171672
@@ -37642,6 +37744,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1486349526
@@ -37904,6 +38007,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1500072908
@@ -38164,6 +38268,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1508609291
@@ -38562,6 +38667,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1531380775
@@ -38684,6 +38790,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1533728430
@@ -38875,6 +38982,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1544419215
@@ -39416,6 +39524,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1594008334
@@ -39607,6 +39716,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1609594526
@@ -40625,6 +40735,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1646681203
@@ -40923,7 +41034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1669216015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41360,6 +41471,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1679233731
@@ -42061,7 +42173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1710549110
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42319,6 +42431,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1724235760
@@ -42441,6 +42554,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1726577469
@@ -42563,6 +42677,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1730305348
@@ -42754,6 +42869,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1732885225
@@ -42876,6 +42992,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1734376436
@@ -42998,6 +43115,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1734723172
@@ -43182,6 +43300,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1744855311
@@ -43580,6 +43699,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1776203131
@@ -44115,6 +44235,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1795476773
@@ -44237,6 +44358,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1795961224
@@ -44359,6 +44481,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1810201992
@@ -44481,6 +44604,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1811984737
@@ -44741,6 +44865,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1820688092
@@ -44863,6 +44988,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1820773557
@@ -44985,6 +45111,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1824013440
@@ -45176,6 +45303,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1850070053
@@ -45503,6 +45631,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1874336535
@@ -45928,6 +46057,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1897383853
@@ -46050,6 +46180,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1902197171
@@ -46310,6 +46441,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1925609095
@@ -46432,6 +46564,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1929474731
@@ -46623,6 +46756,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1934310160
@@ -47187,6 +47321,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1980398331
@@ -47309,6 +47444,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1982049310
@@ -47431,6 +47567,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &1985393311
@@ -48158,6 +48295,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2039774349
@@ -48358,6 +48496,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2041320934
@@ -48756,6 +48895,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2076769911
@@ -48878,6 +49018,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2077945455
@@ -49000,6 +49141,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2082088215
@@ -49403,6 +49545,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2107000568
@@ -49525,6 +49668,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2109576700
@@ -49863,6 +50007,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1001 &2124384301
@@ -50125,6 +50270,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2131173291
@@ -50463,6 +50609,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0
 --- !u!1 &2146053992
@@ -50585,5 +50732,6 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 42.65, z: 0}
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
+  maxAmplitude: 15
   dampen: 1
   velocity: 0

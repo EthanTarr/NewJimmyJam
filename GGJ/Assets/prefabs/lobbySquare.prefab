@@ -189,6 +189,7 @@ MonoBehaviour:
   CenterOfGravity: {x: 0, y: 0, z: 0}
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.12975778, g: 0.29411763, b: 0.24630386, a: 1}
+  maxAmplitude: 10
   dampen: 1
   velocity: 0
 --- !u!212 &212129321745653668

@@ -12,7 +12,7 @@ public class killCieling : MonoBehaviour {
             Destroy(this.gameObject);
         }
 
-        target = transform.parent.gameObject.transform.parent.gameObject;
+        target = this.gameObject;
         offset = transform.position - target.transform.position;
         transform.parent = null;
     }
