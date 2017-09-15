@@ -44,6 +44,19 @@ public class screenTransition : MonoBehaviour {
         Application.LoadLevel(nextLevel);
     }
 
+    public IEnumerator fadeOut(int nextLevel)
+    {
+        cutoff = 1;
+        reverseDirection = !reverseDirection;
+        yield return new WaitForSeconds(0.25f);
+        while (cutoff > 0)
+        {
+            cutoff -= 0.055f;
+            yield return new WaitForEndOfFrame();
+        }
+        Application.LoadLevel(nextLevel);
+    }
+
     private void OnRenderImage(RenderTexture source, RenderTexture destination) {
         TransitionMaterial.SetFloat("_Cutoff", cutoff);
         TransitionMaterial.SetFloat("_fade", fade);

@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
     public int[] playerScores;
-    
+
+    public bool randomMap;
 	public bool ConeHeadMode = false;
     public int gamesToWin;
     private UnityEngine.UI.Toggle ConeHeadToggle;
@@ -29,6 +30,8 @@ public class GameManager : MonoBehaviour {
     public bool tightDash;
     public bool doubleJump;
     public float dashDistance = 15;
+
+    public string[] validStages;
 
     [Header("Menu Items")]
     public InputField smashDebugInput;
@@ -99,7 +102,6 @@ public class GameManager : MonoBehaviour {
     }
 
     public void updateModifiers() {
-        print("hoi");
         maxSmashPower = int.Parse(smashDebugInput.text);
         maxSmashSpeed = float.Parse(smashSpeedInput.text);
         bounciness = float.Parse(bouncinessDebugInput.text);
@@ -129,6 +131,10 @@ public class GameManager : MonoBehaviour {
     public void increaseGames(int increment) {
         gamesToWin += increment;
         GameObject.Find("GameCounter").GetComponent<Text>().text = "" + gamesToWin;
+    }
+
+    public void setRandom(bool random) {
+        randomMap = random;
     }
 
     public void clearScore() {

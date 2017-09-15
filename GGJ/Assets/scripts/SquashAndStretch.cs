@@ -40,7 +40,8 @@ public class SquashAndStretch : MonoBehaviour
         newScale.y = Mathf.Min(newScale.y, 2);
         newScale.y = Mathf.Max(newScale.y, 0.5f);
         sprite.transform.localScale = newScale;
-        sprite.transform.position = new Vector2(transform.position.x, transform.position.y - Mathf.Lerp(0.75f,0, Mathf.Min(newScale.y / 1, 1)));
+        //sprite.transform.position = new Vector2(transform.position.x, transform.position.y - Mathf.Lerp(0.75f,0, Mathf.Min(newScale.y / 1, 1)));
+        sprite.transform.position = transform.position - transform.up * Mathf.Lerp(0.75f, 0, Mathf.Min(newScale.y / 1, 1));
     }
 
     void OnCollisionEnter2D(Collision2D other) {

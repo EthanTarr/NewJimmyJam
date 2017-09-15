@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 60564812634852700}
   - component: {fileID: 114628200633412790}
   - component: {fileID: 50974185774783504}
-  m_Layer: 9
+  - component: {fileID: 114960362752812180}
+  m_Layer: 0
   m_Name: Spike
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1152123269662348}
   m_LocalRotation: {x: -0, y: -0, z: -0.49792394, w: 0.8672207}
-  m_LocalPosition: {x: -8.4, y: -0.70000076, z: 0}
+  m_LocalPosition: {x: -5.3258243, y: 242.60834, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,6 +100,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30cafd1507cdf9147989cecc19cd7c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114960362752812180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1152123269662348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7c76bdfb4fec94a8814cc2ef329e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212477598058424934

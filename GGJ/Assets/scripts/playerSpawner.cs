@@ -45,7 +45,7 @@ public class playerSpawner : NetworkBehaviour {
         }
 
         numOfPlayers = GameManager.instance.numOfPlayers;
-
+        players = new playerController[(int)numOfPlayers];
         for (int i = 0; i < numOfPlayers; i++) {
             Vector3 pos = transform.position - Vector3.right * (width / 2 - width / (numOfPlayers - 1) * i);
             GameObject player = Instantiate(GameManager.instance.selectedCharacters[i], pos, transform.rotation);
@@ -54,7 +54,7 @@ public class playerSpawner : NetworkBehaviour {
             //player.GetComponent<playertest>().fullColor = characterColors[i];
             player.GetComponent<SpriteRenderer>().color = characterColors[i];
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-
+            players[i] = player.GetComponent<playerController>();
             if (i < controllerHandler.controlOrder.Count)  {
                 player.GetComponent<playerController>().playerControl = controllerHandler.controlOrder[i];
             } else {

@@ -8,7 +8,12 @@ public class cameraRandomColor : MonoBehaviour {
     public AudioClip go;
 
     void Start() {
-        GetComponent<Camera>().backgroundColor = colors[Random.Range(0, colors.Length - 1)];
+
+        if (Application.loadedLevelName == "VictoryScreen") {
+            activatePlayers();
+        } else {
+            GetComponent<Camera>().backgroundColor = colors[Random.Range(0, colors.Length - 1)];
+        }
     }
 
     public void contactWaveGenerator() {
