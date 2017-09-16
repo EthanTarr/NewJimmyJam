@@ -10836,7 +10836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &462094914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39242,9 +39242,9 @@ MonoBehaviour:
   m_VerticalAxis: Vertical
   m_SubmitButton: EnterArrow
   m_CancelButton: Cancel
-  m_InputActionsPerSecond: 4
-  m_RepeatDelay: 0.25
-  m_ForceModuleActive: 1
+  m_InputActionsPerSecond: 15
+  m_RepeatDelay: 0.1
+  m_ForceModuleActive: 0
 --- !u!114 &1717697410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39258,7 +39258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 1667409534}
   m_sendNavigationEvents: 1
-  m_DragThreshold: 5
+  m_DragThreshold: 10
 --- !u!4 &1717697411
 Transform:
   m_ObjectHideFlags: 0
