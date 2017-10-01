@@ -44,7 +44,7 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
     [HideInInspector] public bool jumped;
 
     protected float maxSmashVulnerabilityTime;
-    [SyncVar] protected bool smashing;
+    [HideInInspector] public bool smashing;
     protected float SmashCooldownTime = 0;
     public float waveSpeed = 7;
     public float maxChargeTime = 0.75f;
@@ -174,8 +174,8 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
         {
             if (centerOfGravity == null) {
                 rigid.velocity += gravityDirection * gravityStrength;
-                if (fastFall) {
-                    rigid.velocity += gravityDirection * 1.25f;
+                if (Input.GetAxis("Vertical" + playerControl) < -0.7f) {
+                    rigid.velocity += gravityDirection * 0.25f;
                 }
             } else {
                 Vector2 gravityDirection = (-transform.position + centerOfGravity.position).normalized;
@@ -257,10 +257,12 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
 
 
                     //fastFall
-                    if (Input.GetAxis("Vertical" + playerControl) < -0.7 && !fastFall && canFastFall) {
+                    /*
+                    if (Input.GetAxis("Vertical" + playerControl) < -0.7 && !fastFall && canFastFall && !smashing) {
                         fastFall = true;
                         canFastFall = false;
                     }
+                    */
 
                     if (canDash && Mathf.Abs(Input.GetAxis("Dash" + playerControl)) > 0.5f && !smashing)
                     {
@@ -271,6 +273,7 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
                     {
                         StartCoroutine(chargeSmash(Input.GetAxis("Horizontal" + playerControl)));
                     }
+                    
                 }
             }
 
@@ -320,6 +323,8 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
         dashDirection = 0;
 
         bool direction = GetComponent<SpriteRenderer>().flipX;
+
+        fastFall = false;
 
         smashing = true;
         bool maxed = false;
@@ -613,6 +618,10 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
             smashPower = 0;
             chargeValue = 0;
             StartCoroutine(recovery(SmashCooldownTime));
+
+            if (FindObjectOfType<TerrainTilt>() != null) {
+                FindObjectOfType<TerrainTilt>().applySmashForce(this.transform.position, strength);
+            }
         } else {
             /*
             if (other.relativeVelocity.magnitude > 12 && !onlinePlayer) {
@@ -661,21 +670,21 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
 
         bool onTop = false;
         if (centerOfGravity == null) {
-
             onTop = other.transform.position.y + downLazy / 2 < this.transform.position.y - downLazy;
         } else { 
-            onTop = Vector3.Distance(centerOfGravity.position, transform.position + downLazy / 2 * transform.up) < Vector3.Distance(other.transform.GetComponent<playerController>().centerOfGravity.position, other.transform.position - transform.GetComponent<playerController>().downLazy / 2 * other.transform.up);
+            onTop = Vector3.Distance(centerOfGravity.position, transform.position + downLazy / 2 * transform.up) < Vector3.Distance(other.transform.GetComponent<playerController>().centerOfGravity.position, other.transform.position - transform.GetComponent<playerController>().downLazy / 1.5f * other.transform.up);
         }
         float aboveMultiplyer = (onTop) ? (instantBounceKill ? 20 : 10) : 0;
 
         dir.y = Mathf.Clamp(transform.InverseTransformDirection(other.relativeVelocity).y, aboveMultiplyer, 50);
-        dir.y *= (smashing ? 1 : 1.5f) * (chargeValue > 0.1f ? 2 : 1);
+        dir.y *= (smashing ? 1 : 1.5f) * (chargeValue > 0.1f ? 1.25f : 1);
+        dir.y = Mathf.Min(dir.y, 15);
 
         dir.x = transform.InverseTransformDirection(other.relativeVelocity).x * (smashing ? 0.2f : 1);
         if (!touchingGround) {
             dir.x *= 1.25f;
         }
-        dir.x = Mathf.Min(Mathf.Abs(dir.x), 50) * Mathf.Sign(dir.x);
+        dir.x = Mathf.Min(Mathf.Abs(dir.x), 32) * Mathf.Sign(dir.x);
 
         if (onTop) {
             colParticle.GetComponent<ParticleSystem>().startSize = 1.5f;
