@@ -146,7 +146,8 @@ public class SquareBehavior : MonoBehaviour {
             Debug.Log(name + " " + (initialY + vector.y));
             transform.localPosition = new Vector3(Mathf.Lerp(transform.localPosition.x, initialX + vector.x, Time.deltaTime), Mathf.Lerp(transform.localPosition.y, initialY + vector.y, Time.deltaTime), 0);
         } else {
-            transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, standardY + vector.y, Time.deltaTime), transform.position.z);
+            //transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, standardY + vector.y, Time.deltaTime), transform.position.z);
+            transform.position = transform.right * transform.position.x + Vector3.up * Mathf.Lerp(transform.position.y, standardY + vector.y, Time.deltaTime)+ transform.forward * transform.position.z;
         }
 
 
