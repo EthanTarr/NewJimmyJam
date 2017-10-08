@@ -82,6 +82,7 @@ public class TerrainGenerator : MonoBehaviour {
     void generateCircle() {
         for (float i = 0; i < (2 * Mathf.PI); i+= (2 * SquareWidth / (Mathf.PI * radius))) {
             GameObject child = Instantiate(Square, new Vector3(Mathf.Cos(i) * radius, Mathf.Sin(i) * radius, 0) + transform.position, Quaternion.Euler(new Vector3(0, 0, (Mathf.Rad2Deg * i) + 90)));
+            child.name = "Square" + i;
             child.GetComponent<SquareBehavior>().CenterOfGravity = transform.position;
             child.GetComponentInChildren<MeshRenderer>().material = squareMaterial;
             child.transform.parent = this.gameObject.transform;
@@ -96,6 +97,7 @@ public class TerrainGenerator : MonoBehaviour {
         for (float i = 0; i < (2 * Mathf.PI); i += (2.5f * Spike.transform.localScale.x / (Mathf.PI * radius))) {
             GameObject child = Instantiate(Spike, new Vector3(Mathf.Cos(i) * radius, Mathf.Sin(i) * radius, 0) + transform.position, Quaternion.Euler(new Vector3(0, 0, (Mathf.Rad2Deg * i + rotate))));
             child.transform.parent = this.gameObject.transform;
+            child.name = "Spike" + i;
         }
     }
 
@@ -111,6 +113,7 @@ public class TerrainGenerator : MonoBehaviour {
 
         for (float i = -spaceToFill / 2; i < spaceToFill / 2f; i++) {
             GameObject child = Instantiate(Square, new Vector3((SquareWidth * i) + transform.position.x, customPlatformPos(mapIndex, i), 0), Quaternion.identity);
+            child.name = "Square" + i;
             child.transform.parent = this.gameObject.transform;
             child.GetComponentInChildren<MeshRenderer>().material = squareMaterial;
         }
@@ -151,6 +154,7 @@ public class TerrainGenerator : MonoBehaviour {
         for (float i = -spaceToFill / 2f; i < spaceToFill / 2f; i++) {
             GameObject child = Instantiate(Spike, new Vector3(((Spike.transform.localScale.x * .85f) * i) + transform.position.x, transform.position.y, 0), Quaternion.Euler(0,0,rotate));
             child.transform.parent = this.gameObject.transform;
+            child.name = "Spike" + i;
         }
     }
 }
