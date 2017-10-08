@@ -23,18 +23,19 @@ public class stageSelectManager : MonoBehaviour {
 
     IEnumerator turnOnInput(string controller) {
         yield return new WaitForSeconds(0.02f);
-        input.enabled = true;
-        input.horizontalAxis = "Horizontal" + controller;
-        input.submitButton = "Jump" + controller;
         extraOptions.SetActive(false);
         yield return new WaitForSeconds(0.25f);
         EventSystem.current.SetSelectedGameObject(firstMap);
         stageSelect.SetActive(true);
-
+        yield return new WaitForSeconds(2f);
+        input.horizontalAxis = "Horizontal" + controller;
+        input.submitButton = "Jump" + controller;
+        input.enabled = true;
     }
 
     private void Update() {
         if (input.enabled  && curPlayer != null && Input.GetButtonDown(input.submitButton) && GameManager.instance.numOfPlayers >= 2) {
+            input.enabled = false;
             StartCoroutine(screenTransition.instance.fadeOut(selectedLevel));
         }
         if (curPlayer != null && Input.GetAxis("Vertical" + curPlayer.playerControl) < -0.75f) {

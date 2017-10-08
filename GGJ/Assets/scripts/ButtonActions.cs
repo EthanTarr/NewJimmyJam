@@ -56,6 +56,10 @@ public class ButtonActions : MonoBehaviour {
         StartCoroutine(screenTransition.instance.fadeOut("Controller Setup"));
 	}
 
+    public void Quit() {
+        Application.Quit();
+    }
+
     [System.Serializable]
     public struct menuColorScheme {
         public Color backgroundColor;
