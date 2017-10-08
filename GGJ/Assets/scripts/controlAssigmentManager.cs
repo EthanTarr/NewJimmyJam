@@ -23,7 +23,7 @@ public class controlAssigmentManager : MonoBehaviour {
 
 
     void Update() {
-        if (controllerHandler.controlOrder.Count < 4) {
+        if (controllerHandler.controlOrder.Count < 4 && Time.timeScale > 0) {
             foreach (string control in controllers) {
                 bool inputFound = Mathf.Abs(Input.GetAxisRaw("Horizontal" + control)) > 0.1f;
                 foreach (string input in inputs) {

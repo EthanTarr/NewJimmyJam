@@ -53,12 +53,23 @@ public class AntiPulseMove : NetworkBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.GetComponent<SquareBehavior>() != null)
-        {
+    bool first;
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.GetComponent<SquareBehavior>() != null) {
             other.gameObject.GetComponent<SquareBehavior>().firstBlock = true;
             //other.gameObject.GetComponent<SpriteRenderer>().color = color;
+        }
+        else if (other.GetComponent<PulseMove>() != null) {
+            if (!first) {
+                first = true;
+            } else if(Mathf.Abs(other.GetComponent<PulseMove>().Amplitude - Amplitude) <= 1.25f) {
+                print("hoi1");
+                other.GetComponent<PulseMove>().Amplitude /= 2;
+                Amplitude /= 2;
+                other.GetComponent<PulseMove>().speed /= 1.75f;
+                speed /= 1.75f;
+            }
         }
     }
 }
