@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class stageSelectManager : MonoBehaviour {
 
     myInputModule input;
     playerController curPlayer;
     public GameObject stageSelect;
+    public GameObject extraOptions;
+
+    public GameObject firstMap;
     public GameObject hitA;
 
     public string selectedLevel;
@@ -15,24 +19,25 @@ public class stageSelectManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         input = EventSystem.current.gameObject.GetComponent<myInputModule>();
-        input.enabled = false;
 	}
 
-    IEnumerator turnOnInput(string controller)
-    {
+    IEnumerator turnOnInput(string controller) {
         yield return new WaitForSeconds(0.02f);
         input.enabled = true;
         input.horizontalAxis = "Horizontal" + controller;
-        input.submitButton = "Enter" + controller;
+        input.submitButton = "Jump" + controller;
+        extraOptions.SetActive(false);
         yield return new WaitForSeconds(0.25f);
+        EventSystem.current.SetSelectedGameObject(firstMap);
         stageSelect.SetActive(true);
+
     }
 
     private void Update() {
         if (input.enabled  && curPlayer != null && Input.GetButtonDown(input.submitButton) && GameManager.instance.numOfPlayers >= 2) {
             StartCoroutine(screenTransition.instance.fadeOut(selectedLevel));
         }
-        if (curPlayer != null && Input.GetButtonDown("Smash" + curPlayer.playerControl)) {
+        if (curPlayer != null && Input.GetAxis("Vertical" + curPlayer.playerControl) < -0.75f) {
             curPlayer.active = true;
             curPlayer.transform.gameObject.layer = LayerMask.NameToLayer("Player");
             curPlayer.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -47,7 +52,7 @@ public class stageSelectManager : MonoBehaviour {
     }
 
     void turnOffInput() {
-        input.enabled = false;
+        extraOptions.SetActive(true);
         stageSelect.SetActive(false);
         hitA.SetActive(true);
         hitA.GetComponent<Animator>().Play("SelectAnim");
@@ -63,7 +68,7 @@ public class stageSelectManager : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.GetComponent<playerController>() && curPlayer == null) {
-            if (Input.GetButtonDown("Enter" + collision.gameObject.GetComponent<playerController>().playerControl))
+            if (Input.GetAxis("Vertical" + collision.gameObject.GetComponent<playerController>().playerControl) > 0)
             {
                 curPlayer = collision.gameObject.GetComponent<playerController>();
                 curPlayer.transform.gameObject.layer = LayerMask.NameToLayer("background Objects");

@@ -12,6 +12,7 @@ public class victoryScreenManager : MonoBehaviour {
     public GameObject[] animSpotLights;
     [Space()]
     public AudioClip drumroll;
+    public AudioClip end;
     public AudioClip ding;
 
 
@@ -24,7 +25,7 @@ public class victoryScreenManager : MonoBehaviour {
 
         Array.Sort(players);
         yield return new WaitForSeconds(1f);
-        audioManager.instance.Play(drumroll, 0.75f, 1);
+        GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < 4; i++) {
             yield return new WaitForSeconds(0.5f * (i + 1));
@@ -37,6 +38,9 @@ public class victoryScreenManager : MonoBehaviour {
                 newUI.GetComponent<TextMesh>().color = players[i].spriteAnim.GetComponent<SpriteRenderer>().color;
                 if (i == players.Length - 1) {
                     winner = players[i];
+                    GetComponent<AudioSource>().loop = false;
+                    GetComponent<AudioSource>().clip = end;
+                    GetComponent<AudioSource>().Play();
                 }
                 audioManager.instance.Play(ding, 1, 0.85f + 0.1f * i);
             }

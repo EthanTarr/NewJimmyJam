@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class pause : MonoBehaviour {
 
@@ -8,37 +10,34 @@ public class pause : MonoBehaviour {
     public GameObject settings;
     public AudioClip pauseBeep;
     public static pause instance;
+    [Space()]
+    public GameObject firstButton;
+    public GameObject firstSettingsButton;
 
-    void Start() {
-        if (instance == null) {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        } else {
-            Destroy(this.gameObject);
+    void Update() {
+        if (Input.GetButtonDown("Pause")) {
+            togglePause();
         }
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (Time.timeScale > 0) {
-                Pause.SetActive(true);
-                Time.timeScale = 0;
-            } else {
-                Pause.SetActive(false);
-                settings.SetActive(false);
-                Time.timeScale = 1;
-
-            }
-
-            audioManager.instance.Play(pauseBeep, 0.25f, 1);
+    public void togglePause() {
+        if (Pause.activeSelf || settings.activeSelf) {
+            Pause.SetActive(false);
+            settings.SetActive(false);
+            Time.timeScale = 1;
+        } else {
+            Pause.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(firstButton);
+            EventSystem.current.gameObject.GetComponent<myInputModule>().submitButton = "Submit";
+            Time.timeScale = 0;
         }
+        audioManager.instance.Play(pauseBeep, 0.25f, 1);
     }
 
     public void gotoMenu(){
         Pause.SetActive(false);
         Time.timeScale = 1;
-        Application.LoadLevel(0);
+        SceneManager.LoadScene(0);
     }
 
     public void quit() {
@@ -46,7 +45,12 @@ public class pause : MonoBehaviour {
     }
 
     public void toggleSettings() {
-            settings.SetActive(!settings.activeSelf);
-            Pause.SetActive(!Pause.activeSelf);
+        settings.SetActive(!settings.activeSelf);
+        Pause.SetActive(!Pause.activeSelf);
+        if (settings.activeSelf) {
+            EventSystem.current.SetSelectedGameObject(firstSettingsButton);
+        } else {
+            EventSystem.current.SetSelectedGameObject(firstButton);
+        }
     }
 }

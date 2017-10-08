@@ -46,11 +46,13 @@ public class PulseMove : NetworkBehaviour{
                 transform.RotateAround(centerOfGravity.position, new Vector3(0, 0, 1), angularSpeed * Time.deltaTime);
             }
         }
-    
 
+    bool first;
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.GetComponent<SquareBehavior>() != null) {
-            if (!other.gameObject.GetComponent<SquareBehavior>().firstBlock) {
+        if (other.gameObject.GetComponent<SquareBehavior>() != null)
+        {
+            if (!other.gameObject.GetComponent<SquareBehavior>().firstBlock)
+            {
                 //audioManager.instance.Play(roll, 0.25f);
             }
             other.gameObject.GetComponent<SquareBehavior>().firstBlock = true;

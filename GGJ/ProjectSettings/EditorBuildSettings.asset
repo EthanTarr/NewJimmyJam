@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/windTurbulence.unity
     guid: 9390621e98561704ebc9340961351ebb
   - enabled: 1
+    path: Assets/Scenes/iceberg.unity
+    guid: e90370bbfe656284495dd556c5bf29ba
+  - enabled: 1
     path: Assets/Scenes/VictoryScreen.unity
     guid: 88f138af051812e43b5787826e3eb3cd
   - enabled: 0

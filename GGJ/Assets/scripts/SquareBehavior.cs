@@ -83,7 +83,8 @@ public class SquareBehavior : MonoBehaviour {
         if (TerrainGenerator.instance != null && TerrainGenerator.instance.shape == Shape.Sphere) {
             transform.position = new Vector3(Mathf.Lerp(transform.position.x, standardX + vector.x, Time.deltaTime), Mathf.Lerp(transform.position.y, standardY + vector.y, Time.deltaTime), 0);
         } else {
-            transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, standardY + vector.y, Time.deltaTime), transform.position.z);
+            //transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, standardY + vector.y, Time.deltaTime), transform.position.z);
+            transform.position = transform.right * transform.position.x + Vector3.up * Mathf.Lerp(transform.position.y, standardY + vector.y, Time.deltaTime)+ transform.forward * transform.position.z;
         }
 
 
