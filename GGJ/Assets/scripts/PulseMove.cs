@@ -15,37 +15,35 @@ public class PulseMove : NetworkBehaviour{
     public bool isOnline;
 
     // Update is called once per frame
-    void Update()
-    {
-            if (TerrainGenerator.instance.shape == Shape.Plane) {
-                if (transform.position.x < TerrainGenerator.boundary && forward) {
-			transform.Translate (new Vector3 (Time.deltaTime * speed, 0, 0));
-		} else if (forward) {
-			forward = false;
-			if (Amplitude < 1f) {
-				Destroy (this.gameObject);
-			}
-			//Amplitude = Amplitude / 4;
-		} else if (!forward && transform.position.x > -TerrainGenerator.boundary) {
-            transform.Translate(new Vector3(Time.deltaTime * speed, 0, 0));
-            GameObject Pulse = Instantiate(WaveGenerator.instance.antiPulse, transform.position, Quaternion.identity);
-            Pulse.GetComponent<AntiPulseMove>().color = color;
-            Pulse.GetComponent<AntiPulseMove>().Amplitude = Amplitude / 2;
-            Pulse.GetComponent<AntiPulseMove>().speed = speed / 2;
-            Destroy(this.gameObject);
-        } else if (!forward) {
-			forward = true;
-			if (Amplitude < 1f) {
-				Destroy (this.gameObject);
-			}
-			//Amplitude = Amplitude / 4;
-        }
-        //this.color = Color.Lerp(color, Color.white, Amplitude);
+    void Update() {
+        if (TerrainGenerator.instance.shape == Shape.Plane) {
+            if (transform.position.x < TerrainGenerator.boundary && forward) {
+		        transform.Translate (new Vector3 (Time.deltaTime * speed, 0, 0));
+		    } else if (forward) {
+			    forward = false;
+			    if (Amplitude < 1f) {
+				    Destroy (this.gameObject);
+			    }
+			    //Amplitude = Amplitude / 4;
+		    } else if (!forward && transform.position.x > -TerrainGenerator.boundary) {
+                transform.Translate(new Vector3(Time.deltaTime * speed, 0, 0));
+                GameObject Pulse = Instantiate(WaveGenerator.instance.antiPulse, transform.position, Quaternion.identity);
+                Pulse.GetComponent<AntiPulseMove>().color = color;
+                Pulse.GetComponent<AntiPulseMove>().Amplitude = Amplitude / 2;
+                Pulse.GetComponent<AntiPulseMove>().speed = speed / 2;
+                Destroy(this.gameObject);
+            } else if (!forward) {
+			    forward = true;
+			    if (Amplitude < 1f) {
+				    Destroy (this.gameObject);
+			    }
+			    //Amplitude = Amplitude / 4;
             }
-            else if (TerrainGenerator.instance.shape == Shape.Sphere) {
-                transform.RotateAround(centerOfGravity.position, new Vector3(0, 0, 1), angularSpeed * Time.deltaTime);
-            }
+            //this.color = Color.Lerp(color, Color.white, Amplitude);
+        } else if (TerrainGenerator.instance.shape == Shape.Sphere) {
+            transform.RotateAround(centerOfGravity.position, new Vector3(0, 0, 1), angularSpeed * Time.deltaTime);
         }
+    }
     
 
     void OnTriggerEnter2D(Collider2D other) {
