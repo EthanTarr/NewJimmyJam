@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class controlAssigmentManager : MonoBehaviour {
 
-    List<string> controllers = new List<string> { "Arrow", "WASD", "Joy1", "Joy2", "Joy3", "Joy4" };
+    public List<string> controllers = new List<string> { "Arrow", "WASD", "Joy1", "Joy2", "Joy3", "Joy4" };
     string[] inputs = new string[] { "Jump", "Smash" };
     public GameObject player;
     int setControls = 0;
     public Color[] colors;
+    public List<playerController> players;
 
     [Header("Camera Position")]
     public Vector3 regularPosition;
@@ -18,9 +19,22 @@ public class controlAssigmentManager : MonoBehaviour {
     public AudioClip elevatorDing;
 
     void Start() {
-        controllerHandler.controlOrder.Clear();
+        //controllerHandler.controlOrder.Clear();
+        grabOldControllerSet();
     }
 
+
+    void grabOldControllerSet() {
+        foreach (string control in controllerHandler.controlOrder) {
+            controllers.Remove(control);
+        }
+
+        if (Application.isEditor) {
+            foreach (playerController player in FindObjectsOfType<playerController>()) {
+                controllers.Remove(player.playerControl);
+            }
+        }
+    }
 
     void Update() {
         if (controllerHandler.controlOrder.Count < 4 && Time.timeScale > 0) {
@@ -32,8 +46,7 @@ public class controlAssigmentManager : MonoBehaviour {
                     }
                 }
 
-                if (inputFound) {               
-                    
+                if (inputFound) {                                  
                     controllerHandler.controlOrder.Add(control);
                     controllers.Remove(control);
                     GameManager.instance.selectedCharacters[setControls] = player;
@@ -42,13 +55,10 @@ public class controlAssigmentManager : MonoBehaviour {
                     setControls++;
                     GameManager.instance.numOfPlayers = setControls;
                     GameManager.instance.playerScores = new int[setControls];
-
                     break;
                 }
             }
         }
-
-
     }
 
     public IEnumerator spawnPlayer(string control, int setControls) {
@@ -57,9 +67,11 @@ public class controlAssigmentManager : MonoBehaviour {
         transform.parent.gameObject.GetComponent<Animator>().Play("elevetorAnim");
         yield return new WaitForSeconds(0.25f);
         playerController newPlayer = Instantiate(player, transform.position, Quaternion.identity).GetComponent<playerController>();
+        newPlayer.inLobby = true;
         newPlayer.playerControl = control;
         newPlayer.playerNum = setControls;
         newPlayer.GetComponent<SpriteRenderer>().color = colors[setControls];
+        players.Add(newPlayer);
         print("player " + setControls + " mapped to " + newPlayer.playerControl);
     }
 
@@ -80,9 +92,25 @@ public class controlAssigmentManager : MonoBehaviour {
         Camera.main.transform.position = targetPos;
     }
 
+    public void characterDropout(playerController player) {
+        controllers.Add(player.playerControl);
+        setControls--;
+        GameManager.instance.numOfPlayers--;
+        players.Remove(player);
+        controllerHandler.controlOrder.Remove(player.playerControl);
+        GameManager.instance.playerScores = new int[setControls];
+        for(int i = 0; i < players.Count; i++) {
+            //players[i].GetComponent<SpriteRenderer>().color = colors[i];
+            //players[i].spriteAnim.GetComponent<SpriteRenderer>().color = colors[i];
+            players[i].setColors(colors[i]);
+            players[i].fullColor = colors[i];
+        }
+    }
+
     public void clearCharacterSelection() {
         controllerHandler.controlOrder.Clear();
         setControls = 0;
+        players.Clear();
         controllers = new List<string> { "Arrow", "WASD", "Joy1", "Joy2", "Joy3", "Joy4" };
         GameManager.instance.numOfPlayers = 0;
         foreach (playerController player in FindObjectsOfType<playerController>()) {

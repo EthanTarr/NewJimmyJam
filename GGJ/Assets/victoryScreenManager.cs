@@ -61,8 +61,8 @@ public class victoryScreenManager : MonoBehaviour {
             }
 
             if (Input.GetButtonDown("Enter" + winner.playerControl)) {
-                Application.LoadLevel(0);
-                Destroy(GameManager.instance.gameObject);
+                Application.LoadLevel(1);
+                GameManager.instance.clearScore();
             }
         }
     }

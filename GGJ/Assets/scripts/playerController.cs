@@ -64,6 +64,7 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
     protected float dashDecel;
 
     [Header("Visual Effects")]
+
     public GameObject shockWave;
     public ParticleSystem chargeParticle;
     protected Color baseColor;
@@ -108,6 +109,8 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
     public GameObject antiPulse;
     public onlineClient client;
 
+    [HideInInspector] public bool inLobby;
+
     protected virtual void Start() {
         rigid = GetComponent<Rigidbody2D>();
         spriteAnim = GetComponentInChildren<SpriteScript>();
@@ -116,14 +119,20 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
          
         changeModifiers();
 
-        spriteAnim.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
 
-        baseColor = GetComponent<SpriteRenderer>().color;
+        setColors(GetComponent<SpriteRenderer>().color);
+        
         sqetch = GetComponent<SquashAndStretch>();
         chargeParticle.startColor = Color.Lerp(baseColor, Color.white, 0.5f);
 
         chargeVisualEffects(0);
         chargeCircle.transform.localScale = Vector3.zero;
+    }
+
+    public void setColors(Color baseColor) {
+        spriteAnim.GetComponent<SpriteRenderer>().color = baseColor;
+        this.baseColor = baseColor;
+        chargeParticle.startColor = Color.Lerp(baseColor, Color.white, 0.5f);
     }
 
     protected void changeModifiers() {
@@ -152,8 +161,8 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
             CmdinputAudit(HorizInput);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            //bounceDirection +=  Vector2.right * 50;
+        if (inLobby && Input.GetButtonDown("Dropout" + playerControl)) {
+            StartCoroutine(dropoutOfLobby());
         }
     }
 
@@ -301,6 +310,28 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
 
     void jumpDelay() {
         jumped = true;
+    }
+
+    IEnumerator dropoutOfLobby() {
+        float t = 1.5f;
+        active = false;
+        while (t > 0) {
+            t -= Time.deltaTime;
+            if (!Input.GetButton("Dropout" + playerControl)) {
+                yield break;
+            }
+            yield return null;
+        }
+
+        audioManager.instance.Play(deathExplosion, 0.5f, UnityEngine.Random.Range(0.96f, 1.04f));
+
+        GameObject particle = Instantiate(deathParticle, transform.position, Quaternion.identity) as GameObject;
+        particle.GetComponent<ParticleSystem>().startColor = Color.Lerp(baseColor, Color.white, 0.5f);
+
+        GetComponent<SpriteRenderer>().color = fullColor;
+
+        FindObjectOfType<controlAssigmentManager>().characterDropout(this);
+        Destroy(this.gameObject);
     }
 
     protected void chargeVisualEffects(float toggle) {
@@ -671,15 +702,18 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
 
         bool onTop = false;
         if (centerOfGravity == null) {
-            onTop = other.transform.position.y + downLazy / 2 < this.transform.position.y - downLazy;
+            onTop = other.transform.position.y + downLazy / 1.25f < this.transform.position.y - downLazy/ 1.25f;
         } else { 
-            onTop = Vector3.Distance(centerOfGravity.position, transform.position + downLazy / 2 * transform.up) < Vector3.Distance(other.transform.GetComponent<playerController>().centerOfGravity.position, other.transform.position - transform.GetComponent<playerController>().downLazy / 1.5f * other.transform.up);
+            onTop = Vector3.Distance(centerOfGravity.position, transform.position + downLazy / 1.5f * transform.up) < Vector3.Distance(other.transform.GetComponent<playerController>().centerOfGravity.position, other.transform.position - transform.GetComponent<playerController>().downLazy / 1.5f * other.transform.up);
         }
         float aboveMultiplyer = (onTop) ? (instantBounceKill ? 20 : 10) : 0;
 
         dir.y = Mathf.Clamp(transform.InverseTransformDirection(other.relativeVelocity).y, aboveMultiplyer, 50);
         dir.y *= (smashing ? 1 : 1.5f) * (chargeValue > 0.1f ? 1.25f : 1);
-        dir.y = Mathf.Min(dir.y, 15);
+        dir.y = Mathf.Min(dir.y, 30);
+        if (onTop) {
+            dir.y = Mathf.Max(dir.y, 25);
+        }
 
         dir.x = transform.InverseTransformDirection(other.relativeVelocity).x * (smashing ? 0.2f : 1);
         if (!touchingGround) {
@@ -745,16 +779,22 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
     protected bool alreadyDead;
 
     public virtual void die() {
-        alreadyDead = true;
-        audioManager.instance.Play(deathExplosion, 0.5f, UnityEngine.Random.Range(0.96f, 1.04f));
+        if (!endingUI.instance.endConditionMet) {
+            alreadyDead = true;
+            audioManager.instance.Play(deathExplosion, 0.5f, UnityEngine.Random.Range(0.96f, 1.04f));
 
-        GameObject particle = Instantiate(deathParticle, transform.position, Quaternion.identity) as GameObject;
-        particle.GetComponent<ParticleSystem>().startColor = Color.Lerp(baseColor, Color.white, 0.5f);
+            GameObject particle = Instantiate(deathParticle, transform.position, Quaternion.identity) as GameObject;
+            particle.GetComponent<ParticleSystem>().startColor = Color.Lerp(baseColor, Color.white, 0.5f);
 
-        GetComponent<SpriteRenderer>().color = fullColor;
-        Shake.instance.shake(2, 3);
-        Destroy(this.gameObject);
-        endingUI.instance.Invoke("checkPlayersLeft", 0.1f);     
+            GetComponent<SpriteRenderer>().color = fullColor;
+            Shake.instance.shake(2, 3);
+
+            endingUI.instance.StopAllCoroutines();
+            endingUI.instance.StartCoroutine(endingUI.instance.checkPlayersLeft());
+
+            Destroy(this.gameObject);
+        }
+
     }
 
     void SpawnTrail() {

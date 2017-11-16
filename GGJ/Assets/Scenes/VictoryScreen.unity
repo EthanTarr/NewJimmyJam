@@ -8954,7 +8954,7 @@ Prefab:
     - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
         type: 2}
       propertyPath: maxSmashSpeed
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114550037253284612, guid: ea95174612e095c4abfc9cadc91e1961,
         type: 2}
@@ -16615,6 +16615,7 @@ MonoBehaviour:
   anyKey: {fileID: 0}
   levelNum: 2
   spacing: 0.87
+  endConditionMet: 0
   scoreText: {fileID: 1293354200339552, guid: e3ffe57eecce77a4dad1c285d7350f9c, type: 2}
   winParticles: {fileID: 920859589}
 --- !u!1 &1239126950
@@ -20079,6 +20080,7 @@ MonoBehaviour:
     type: 2}
   showSpawners: 1
   online: 0
+  lobby: 0
   characterColors:
   - {r: 0.93526274, g: 0.7736808, b: 0.99264705, a: 1}
   - {r: 0.9261664, g: 1, b: 0.58823526, a: 1}
@@ -21436,6 +21438,54 @@ MonoBehaviour:
   maxAmplitude: 15
   dampen: 1
   velocity: 0
+--- !u!1 &1607497040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1607497043}
+  - component: {fileID: 1607497042}
+  m_Layer: 0
+  m_Name: Settings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1607497042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1607497040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c2bf2bd75c2b84eaef12a832d59f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 1
+  fx: 1
+  musicAudio: {fileID: 0}
+--- !u!224 &1607497043
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1607497040}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.46499997, y: 0.465, z: 0.465}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -473.00348, y: 310.20752}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1621516231
 GameObject:
   m_ObjectHideFlags: 0
