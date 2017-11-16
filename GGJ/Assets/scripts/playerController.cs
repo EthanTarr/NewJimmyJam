@@ -610,7 +610,8 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
                 //print(strength);
                 //WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength * smashPower, color, Mathf.Lerp(5,10, strength / 0.8f), null);
                 //print(chargeValue >= maxChargeTime);
-                WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength * smashPower, color, chargeValue >= maxChargeTime ? 10 : 7, null);
+                //WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, strength * smashPower, color, chargeValue >= maxChargeTime ? 10 : 7, centerOfGravity);
+                WaveGenerator.instance.makeWave(other.transform.position, strength * smashPower, color, chargeValue >= maxChargeTime ? 10 : 7, centerOfGravity);
             }
 
             audioManager.instance.Play(smash, 0.75f, UnityEngine.Random.Range(0.95f, 1.05f));
@@ -651,7 +652,7 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
         Destroy(colParticle, 0.75f);
 
         if (smashing && other.transform.GetComponent<playerController>().touchingGround) {
-            WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, 0.75f, Color.white, chargeValue >= maxChargeTime ? 5 : 3, null);
+            WaveGenerator.instance.makeWave(transform.position + Vector3.up * -1, 0.75f, Color.white, chargeValue >= maxChargeTime ? 5 : 3, centerOfGravity);
         }
 
         //if fully charged, and th mod is on, player cannot be bounced

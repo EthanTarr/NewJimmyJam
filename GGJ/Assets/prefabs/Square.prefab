@@ -70,7 +70,7 @@ Transform:
   m_GameObject: {fileID: 1472568061012158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.4, y: 228.22, z: -3.3530893}
-  m_LocalScale: {x: 1, y: 3.7360282, z: 1}
+  m_LocalScale: {x: 0.35, y: 2.633325, z: 1}
   m_Children:
   - {fileID: 4925211213779900}
   - {fileID: 4492236775312806}
@@ -190,8 +190,9 @@ MonoBehaviour:
   matColor: {r: 0.075692035, g: 0.3502878, b: 0.41176468, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
-  circleDampen: 40
+  circleDampen: 80
   velocity: 0
 --- !u!212 &212255483709922236
 SpriteRenderer:
