@@ -17,6 +17,7 @@ public class endingUI : MonoBehaviour {
     float width;
 
     string levelName;
+    public bool endConditionMet;
 
     [Space()]
     public GameObject scoreText;
@@ -25,33 +26,6 @@ public class endingUI : MonoBehaviour {
 
     void Start() {
         instance = this;
-        levelNum = GameManager.instance.numOfPlayers;
-        levelName = Application.loadedLevelName;
-
-        width = spacing * 4 * levelNum;
-        for (int i = 0; i < levelNum - 1; i++) {
-            GameObject text = Instantiate(scoreText, transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width / (levelNum - 1)) / 2, transform.rotation);
-            text.transform.parent = this.transform;
-
-            text.transform.position = transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width / (levelNum - 1)) / 2;
-            text.gameObject.SetActive(false);
-        }
-
-        ps = new Text[levelNum];
-        for (int i = 0; i < levelNum; i++) {
-            GameObject text = Instantiate(scoreText, transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i), transform.rotation);
-            text.transform.parent = this.transform;
-
-            text.GetComponent<Text>().color = Color.red;
-            text.GetComponent<Text>().text = "" + GameManager.instance.playerScores[i];
-            ps[i] = text.GetComponent<Text>();
-            text.GetComponent<Text>().color  = playerSpawner.instance.characterColors[i];
-
-
-            text.transform.position = transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i);
-            ps[i].gameObject.SetActive(false);
-        }
-
     }
 
     void Update() {
@@ -84,24 +58,27 @@ public class endingUI : MonoBehaviour {
         return validStages[Random.Range(2, validStages.Length)];
     }
 
-    public void checkPlayersLeft() {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        
+    public IEnumerator checkPlayersLeft() {      
+        yield return new WaitForSeconds(0.75f);
 
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         if (players.Length == 1) {
-            players[0].GetComponent<Rigidbody2D>().gravityScale = 6;
+            endConditionMet = true;
+            //players[0].GetComponent<Rigidbody2D>().gravityScale = 6;
             StopCoroutine("ending");
             StartCoroutine(ending(players[0].GetComponent<playerController>().playerNum));
-            players[0].GetComponent<playerController>().active = false;
-            players[0].GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            //players[0].GetComponent<playerController>().active = false;
+            //players[0].GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         } else if(players.Length == 0) {
             StartCoroutine(ending(-1));
         }
         
               
     }
+
     IEnumerator ending(int playerId) {
-        
+        setupLayout();
+
         yield return new WaitForSeconds(0.5f);
         cameraAnim.Play("endingTransition");
         yield return new WaitForSeconds(1);
@@ -132,6 +109,37 @@ public class endingUI : MonoBehaviour {
         //anyKey.SetActive(true);
 
 
+    }
+
+    void setupLayout() {
+        levelNum = GameManager.instance.numOfPlayers;
+        levelName = Application.loadedLevelName;
+
+        width = spacing * 4 * levelNum;
+        for (int i = 0; i < levelNum - 1; i++)
+        {
+            GameObject text = Instantiate(scoreText, transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width / (levelNum - 1)) / 2, transform.rotation);
+            text.transform.parent = this.transform;
+
+            text.transform.position = transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i) + Vector3.right * (width / (levelNum - 1)) / 2;
+            text.gameObject.SetActive(false);
+        }
+
+        ps = new Text[levelNum];
+        for (int i = 0; i < levelNum; i++)
+        {
+            GameObject text = Instantiate(scoreText, transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i), transform.rotation);
+            text.transform.parent = this.transform;
+
+            text.GetComponent<Text>().color = Color.red;
+            text.GetComponent<Text>().text = "" + GameManager.instance.playerScores[i];
+            ps[i] = text.GetComponent<Text>();
+            text.GetComponent<Text>().color = playerSpawner.instance.characterColors[i];
+
+
+            text.transform.position = transform.position - Vector3.right * (width / 2 - width / (levelNum - 1) * i);
+            ps[i].gameObject.SetActive(false);
+        }
     }
 
     void OnDrawGizmos() {

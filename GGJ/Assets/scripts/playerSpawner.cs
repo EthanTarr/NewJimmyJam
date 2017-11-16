@@ -12,6 +12,7 @@ public class playerSpawner : NetworkBehaviour {
 
     public bool showSpawners;
     public bool online;
+    public bool lobby;
 
     public Color[] characterColors;
 
@@ -37,12 +38,8 @@ public class playerSpawner : NetworkBehaviour {
         }
     }
 
-    void Awake() {
+    void Awake() { // this might throw things for a loop if its start instead of Awake. keep an eye out to see if stuff happens
         instance = this;
-
-        if (online) {
-            return;
-        }
 
         numOfPlayers = GameManager.instance.numOfPlayers;
         players = new playerController[(int)numOfPlayers];
@@ -53,7 +50,11 @@ public class playerSpawner : NetworkBehaviour {
             player.GetComponent<playerController>().playerNum = i;
             //player.GetComponent<playertest>().fullColor = characterColors[i];
             player.GetComponent<SpriteRenderer>().color = characterColors[i];
-            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+            if (!lobby)
+            {
+                player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            }
             players[i] = player.GetComponent<playerController>();
             if (i < controllerHandler.controlOrder.Count)  {
                 player.GetComponent<playerController>().playerControl = controllerHandler.controlOrder[i];

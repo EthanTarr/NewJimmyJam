@@ -31,36 +31,11 @@ public class GameManager : MonoBehaviour {
     public bool doubleJump;
     public float dashDistance = 15;
 
-    public string[] validStages;
-
-    [Header("Menu Items")]
-    public InputField smashDebugInput;
-    public InputField smashSpeedInput;
-    public InputField bouncinessDebugInput;
-    public InputField maxChargeTimeInput;
-    public InputField dashDistanceInput;
-
-    public Toggle airControlInput;
-    public Toggle groundDashInput;
-    public Toggle separeteDashCooldownInput;
-    public Toggle fullChargeInvicInput;
-    public Toggle holdMaxSmashInput;
-    public Toggle tightDashInput;
-    public Toggle instantBounceKillInput;
-    public Toggle doubleJumpInput;
-
     void Awake() {
 
         if (instance == null) {
             instance = this;
             DontDestroyOnLoad(this);
-
-            if (smashDebugInput != null)
-            {
-                smashDebugInput.text = "" + maxSmashPower;
-                bouncinessDebugInput.text = "" + bounciness;
-                updateModifiers();
-            }
         } else {
 			Destroy(this.gameObject);
         }
@@ -99,24 +74,6 @@ public class GameManager : MonoBehaviour {
             max = Mathf.Max(max, i);
         }
         return max;
-    }
-
-    public void updateModifiers() {
-        maxSmashPower = int.Parse(smashDebugInput.text);
-        maxSmashSpeed = float.Parse(smashSpeedInput.text);
-        bounciness = float.Parse(bouncinessDebugInput.text);
-        dashDistance = float.Parse(dashDistanceInput.text);
-        maxChargeTime = float.Parse(maxChargeTimeInput.text);
-
-        instantBounceKill = instantBounceKillInput.isOn;
-
-        airControl = airControlInput.isOn;
-        canDashOnGround = groundDashInput.isOn;
-        seperateDashCooldown = separeteDashCooldownInput.isOn;
-        holdMaxSmash = holdMaxSmashInput.isOn;
-        fullChargeInvinc = fullChargeInvicInput.isOn;
-        tightDash = tightDashInput.isOn;
-        doubleJump = doubleJumpInput.isOn;
     }
 
     public void isConeHeadMode() {
