@@ -20,6 +20,7 @@ public class SquareBehavior : MonoBehaviour {
     Renderer squareMaterial;
     public Color matColor;
     public Color ampColor;
+    private float circleLength;
 
     Vector2 lastPosition;
 	protected void Start () {
@@ -27,7 +28,6 @@ public class SquareBehavior : MonoBehaviour {
 
         initialY = transform.localPosition.y;
         initialX = transform.localPosition.x;
-        //Debug.Log(name + " " + initialY + "   " + initialX);
 
         initialPositon = transform.position;
 
@@ -42,11 +42,18 @@ public class SquareBehavior : MonoBehaviour {
 
     public float maxAmplitude = 15f;
 
+    public float maxCircleAmplitude = 12f;
+
     public float dampen = 1;
 
     public float circleDampen = 1;
 
     void getPosition() {
+
+        if (TerrainGenerator.instance.shape == Shape.Sphere && circleLength == 0) {
+            circleLength = Mathf.Sqrt(Mathf.Pow(radius - Mathf.Cos(Wavelength / radius), 2) + Mathf.Pow(radius - Mathf.Sin(Wavelength / radius), 2));
+        }
+
         TotalAmplitude = 0;
         standardY += FloorOscillation * (Mathf.Sin(Time.time * OscillationSpeed));
         standardX += FloorOscillation * (Mathf.Sin(Time.time * OscillationSpeed));
@@ -64,26 +71,26 @@ public class SquareBehavior : MonoBehaviour {
                 }
             }
             else {
-                if ((initialPositon - pulse.transform.position).magnitude < Wavelength) {
+                if ((initialPositon - pulse.transform.position).magnitude < circleLength) {
                     if (pulse.transform.position.y > CenterOfGravity.y) {
                         if ((initialY > 0 && standardX < pulse.transform.position.x) ||
                             (initialY <= 0 && initialX < 0)) {
                             TotalAmplitude += (1/(circleDampen * radius)) * pulse.GetComponent<PulseMove>().Amplitude * 
-                                Mathf.Sin((Mathf.PI / Wavelength) * (initialPositon - pulse.transform.position).magnitude);
+                                Mathf.Sin((Mathf.PI / circleLength) * (initialPositon - pulse.transform.position).magnitude);
                         }
                         else {
                             TotalAmplitude -= (1 / (circleDampen * radius)) * pulse.GetComponent<PulseMove>().Amplitude * 
-                                Mathf.Sin((Mathf.PI / Wavelength) * (initialPositon - pulse.transform.position).magnitude);
+                                Mathf.Sin((Mathf.PI / circleLength) * (initialPositon - pulse.transform.position).magnitude);
                         }
                     } else {
                         if ((initialY < 0 && standardX > pulse.transform.position.x) ||
                             (initialY >= 0 && initialX > 0)) {
                             TotalAmplitude += (1 / (circleDampen * radius)) * pulse.GetComponent<PulseMove>().Amplitude * 
-                                Mathf.Sin((Mathf.PI / Wavelength) * (initialPositon - pulse.transform.position).magnitude);
+                                Mathf.Sin((Mathf.PI / circleLength) * (initialPositon - pulse.transform.position).magnitude);
                         }
                         else {
                             TotalAmplitude -= (1 / (circleDampen * radius)) * pulse.GetComponent<PulseMove>().Amplitude * 
-                                Mathf.Sin((Mathf.PI / Wavelength) * (initialPositon - pulse.transform.position).magnitude);
+                                Mathf.Sin((Mathf.PI / circleLength) * (initialPositon - pulse.transform.position).magnitude);
                         }
                     }
                 }
@@ -102,7 +109,7 @@ public class SquareBehavior : MonoBehaviour {
                 }
             }
             else {
-                if ((initialPositon - pulse.transform.position).magnitude < Wavelength)
+                if ((initialPositon - pulse.transform.position).magnitude < circleLength)
                 {
                     if (pulse.transform.position.y > CenterOfGravity.y)
                     {
@@ -110,12 +117,12 @@ public class SquareBehavior : MonoBehaviour {
                             (initialY <= 0 && initialX < 0))
                         {
                             TotalAmplitude += -(1 / (circleDampen * radius)) * pulse.GetComponent<AntiPulseMove>().Amplitude *
-                                Mathf.Sin((Mathf.PI / Wavelength) * (initialPositon - pulse.transform.position).magnitude);
+                                Mathf.Sin((Mathf.PI / circleLength) * (initialPositon - pulse.transform.position).magnitude);
                         }
                         else
                         {
                             TotalAmplitude -= -(1 / (circleDampen * radius)) * pulse.GetComponent<AntiPulseMove>().Amplitude *
-                                Mathf.Sin((Mathf.PI / Wavelength) * (initialPositon - pulse.transform.position).magnitude);
+                                Mathf.Sin((Mathf.PI / circleLength) * (initialPositon - pulse.transform.position).magnitude);
                         }
                     }
                     else
@@ -124,29 +131,27 @@ public class SquareBehavior : MonoBehaviour {
                             (initialY >= 0 && initialX > 0))
                         {
                             TotalAmplitude += -(1 / (circleDampen * radius)) * pulse.GetComponent<AntiPulseMove>().Amplitude *
-                                Mathf.Sin((Mathf.PI / Wavelength) * (initialPositon - pulse.transform.position).magnitude);
+                                Mathf.Sin((Mathf.PI / circleLength) * (initialPositon - pulse.transform.position).magnitude);
                         }
                         else
                         {
                             TotalAmplitude -= -(1 / (circleDampen * radius)) * pulse.GetComponent<AntiPulseMove>().Amplitude *
-                                Mathf.Sin((Mathf.PI / Wavelength) * (initialPositon - pulse.transform.position).magnitude);
+                                Mathf.Sin((Mathf.PI / circleLength) * (initialPositon - pulse.transform.position).magnitude);
                         }
                     }
                 }
             }
         }
         //TotalAmplitude = Mathf.Clamp(TotalAmplitude, -1, 1);
-        TotalAmplitude = Mathf.Clamp(TotalAmplitude, -maxAmplitude, maxAmplitude);
+        
         Vector3 vector = ((-((-transform.localPosition + new Vector3(0,0,0)).normalized)) * TotalAmplitude) /dampen;
 
         if (TerrainGenerator.instance != null && TerrainGenerator.instance.shape == Shape.Sphere) {
-            Debug.Log(name + " " + transform.localPosition.x);
-            Debug.Log(name + " " + (initialX + vector.x));
-            Debug.Log(name + " " + transform.localPosition.y);
-            Debug.Log(name + " " + (initialY + vector.y));
+            TotalAmplitude = Mathf.Clamp(TotalAmplitude, -maxCircleAmplitude, maxCircleAmplitude);
             transform.localPosition = new Vector3(Mathf.Lerp(transform.localPosition.x, initialX + vector.x, Time.deltaTime), Mathf.Lerp(transform.localPosition.y, initialY + vector.y, Time.deltaTime), 0);
         } else {
             //transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, standardY + vector.y, Time.deltaTime), transform.position.z);
+            TotalAmplitude = Mathf.Clamp(TotalAmplitude, -maxAmplitude, maxAmplitude);
             transform.position = transform.right * transform.position.x + Vector3.up * Mathf.Lerp(transform.position.y, standardY + vector.y, Time.deltaTime)+ transform.forward * transform.position.z;
         }
 
