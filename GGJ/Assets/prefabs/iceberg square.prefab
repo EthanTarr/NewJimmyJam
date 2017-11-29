@@ -272,7 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TotalAmplitude: 0
   previousAmplitude: 0
-  Wavelength: 2
+  Wavelength: 3
   FloorOscillation: 0.01
   OscillationSpeed: 0
   initialY: 0
@@ -282,7 +282,9 @@ MonoBehaviour:
   matColor: {r: 0.9411765, g: 0.9892396, b: 1, a: 1}
   ampColor: {r: 0.3913819, g: 0.834596, b: 0.9338235, a: 0.409}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!114 &114867232190773516
 MonoBehaviour:

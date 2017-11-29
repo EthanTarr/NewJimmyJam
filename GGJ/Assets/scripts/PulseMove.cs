@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class PulseMove : NetworkBehaviour{
+public class PulseMove : MonoBehaviour{
 
-    [SyncVar]  public float speed = 5;
-    [SyncVar]  public float angularSpeed = 20;
-    [SyncVar]  public float Amplitude = 1;
-    [SyncVar]  public Color color = Color.white;
-    [SyncVar]  public Transform centerOfGravity;
-    [SyncVar]  private bool forward = true;
+    public float speed = 5;
+    public float angularSpeed = 20;
+    public float Amplitude = 1;
+    public Color color = Color.white;
+    public Transform centerOfGravity;
+    private bool forward = true;
     public AudioClip roll;
     public bool isOnline;
 
@@ -55,6 +54,13 @@ public class PulseMove : NetworkBehaviour{
             }
             other.gameObject.GetComponent<SquareBehavior>().firstBlock = true;
             other.gameObject.GetComponent<SpriteRenderer>().color = color;
+        } else if (other.GetComponent<AntiPulseMove>() != null){
+            if (Mathf.Abs(other.GetComponent<AntiPulseMove>().Amplitude - Amplitude) <= 1.25f) {
+                if (Amplitude < .1f) {
+                    Destroy(this.gameObject);
+                }
+            }
         }
+
     }
 }

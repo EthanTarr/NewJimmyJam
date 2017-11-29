@@ -690,7 +690,9 @@ MonoBehaviour:
   matColor: {r: 0, g: 0, b: 0, a: 0}
   ampColor: {r: 0, g: 0, b: 0, a: 0}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 2
+  circleDampen: 1
   velocity: 0
 --- !u!212 &37583670
 SpriteRenderer:
@@ -964,7 +966,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &43188443
 GameObject:
@@ -1086,7 +1090,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &43321937
 GameObject:
@@ -1284,7 +1290,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &50466073
 GameObject:
@@ -1480,7 +1488,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &61770855
 GameObject:
@@ -3120,7 +3130,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &108246152
 GameObject:
@@ -3242,7 +3254,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &109037595
 GameObject:
@@ -3433,7 +3447,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &125696070
 GameObject:
@@ -3624,7 +3640,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &128156310
 GameObject:
@@ -4091,7 +4109,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &143211778
 GameObject:
@@ -4358,7 +4378,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &148628594
 GameObject:
@@ -4831,7 +4853,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &165390803
 GameObject:
@@ -4953,7 +4977,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &173466113
 GameObject:
@@ -5294,7 +5320,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &187065176
 GameObject:
@@ -5416,7 +5444,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &188632505
 GameObject:
@@ -5538,7 +5568,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &188637370
 GameObject:
@@ -5660,7 +5692,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &189165100
 GameObject:
@@ -5857,7 +5891,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &202589839
 GameObject:
@@ -6260,7 +6296,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &229104486
 GameObject:
@@ -6554,7 +6592,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &250568766
 GameObject:
@@ -6883,7 +6923,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &261243188
 GameObject:
@@ -7236,7 +7278,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &273782611
 GameObject:
@@ -7358,7 +7402,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &275404644
 GameObject:
@@ -8098,7 +8144,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &308653720
 GameObject:
@@ -8289,7 +8337,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &311760896
 GameObject:
@@ -8434,6 +8484,104 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 316991282}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &318301812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 318301813}
+  - component: {fileID: 318301816}
+  - component: {fileID: 318301815}
+  - component: {fileID: 318301814}
+  - component: {fileID: 318301817}
+  m_Layer: 5
+  m_Name: cursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &318301813
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318301812}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.1182842, y: 1.0204359, z: 1.1182842}
+  m_Children: []
+  m_Father: {fileID: 1741890008}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 18, y: 0}
+  m_SizeDelta: {x: 191.08, y: 410}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &318301814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318301812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8dfa9363811acb429343a855c538d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &318301815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318301812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.87623787, g: 0.14192261, b: 0.9191176, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 509e5a8e8ff75ca4fbf8781f3c6435d8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &318301816
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318301812}
+--- !u!95 &318301817
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318301812}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc8382b7810429042ba35eeeb8c1f491, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &325794599
 GameObject:
   m_ObjectHideFlags: 0
@@ -9044,7 +9192,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &351304385
 GameObject:
@@ -9235,7 +9385,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &353560311
 GameObject:
@@ -9564,7 +9716,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &367604823
 GameObject:
@@ -9755,7 +9909,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &382098353
 GameObject:
@@ -9951,7 +10107,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &414095581
 GameObject:
@@ -10269,7 +10427,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &420093910
 GameObject:
@@ -11151,7 +11311,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &454816037
 GameObject:
@@ -11273,7 +11435,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &457818859
 GameObject:
@@ -11395,7 +11559,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &458564112
 GameObject:
@@ -11993,7 +12159,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &493299950
 GameObject:
@@ -12313,7 +12481,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &498772150
 GameObject:
@@ -12504,7 +12674,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &505284137
 GameObject:
@@ -12626,7 +12798,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &506830999
 GameObject:
@@ -13054,7 +13228,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -45533966
+  randomSeed: 447518680
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -16160,7 +16334,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &538979506
 GameObject:
@@ -16282,7 +16458,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &547444516
 GameObject:
@@ -16500,7 +16678,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &548869092
 GameObject:
@@ -16622,7 +16802,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &555827314
 GameObject:
@@ -16744,7 +16926,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &556636871
 GameObject:
@@ -16866,7 +17050,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &571881627
 GameObject:
@@ -17057,7 +17243,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &579289887
 GameObject:
@@ -17143,14 +17331,14 @@ MonoBehaviour:
   playerScores: 
   randomMap: 0
   ConeHeadMode: 0
-  gamesToWin: 5
+  gamesToWin: 1
   numOfPlayers: 0
   selectedCharacters:
   - {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
   - {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
   - {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
   - {fileID: 1338795899029746, guid: 50cd42bc3cfe9cd4c893de18bcc7c56b, type: 2}
-  maxSmashPower: 25
+  maxSmashPower: 10
   bounciness: 0.5
   airControl: 1
   seperateDashCooldown: 0
@@ -18082,7 +18270,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &613764902
 GameObject:
@@ -18204,7 +18394,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &627339061
 GameObject:
@@ -18601,7 +18793,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &647342896
 GameObject:
@@ -18750,7 +18944,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Random
+  m_Text: sHUFFLE
 --- !u!1 &655603172
 GameObject:
   m_ObjectHideFlags: 0
@@ -18871,7 +19065,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &685598314
 GameObject:
@@ -19401,7 +19597,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &729496694
 GameObject:
@@ -19738,7 +19936,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &756162015
 GameObject:
@@ -19933,7 +20133,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &771485080
 GameObject:
@@ -20055,7 +20257,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &771904927
 GameObject:
@@ -20389,7 +20593,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &785152035
 GameObject:
@@ -20511,7 +20717,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &785831351
 GameObject:
@@ -20572,8 +20780,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.35802338, g: 0.5661765, b: 0.41975152, a: 1}
-    m_PressedColor: {r: 0.375, g: 0.3694853, b: 0.3694853, a: 1}
+    m_HighlightedColor: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.33823532, g: 0.33823532, b: 0.33823532, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -20842,7 +21050,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &795556013
 GameObject:
@@ -21122,7 +21332,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &805284787
 GameObject:
@@ -21334,7 +21546,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &812956085
 GameObject:
@@ -21456,7 +21670,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &816882034
 GameObject:
@@ -21578,7 +21794,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &823823542
 GameObject:
@@ -21700,7 +21918,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &826625688
 GameObject:
@@ -22177,7 +22397,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &870423393
 GameObject:
@@ -22299,7 +22521,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &883716780
 GameObject:
@@ -22421,7 +22645,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &889632264
 GameObject:
@@ -22749,7 +22975,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &906716837
 GameObject:
@@ -22940,7 +23168,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &913764688
 GameObject:
@@ -23062,7 +23292,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1001 &916944268
 Prefab:
@@ -23373,7 +23605,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &937601177
 GameObject:
@@ -23667,8 +23901,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.35802338, g: 0.5661765, b: 0.41975152, a: 1}
-    m_PressedColor: {r: 0.375, g: 0.3694853, b: 0.3694853, a: 1}
+    m_HighlightedColor: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.33823532, g: 0.33823532, b: 0.33823532, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -24525,7 +24759,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &984770280
 GameObject:
@@ -24876,7 +25112,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1015174126
 GameObject:
@@ -25067,7 +25305,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1023223154
 GameObject:
@@ -25642,7 +25882,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1041962743
 GameObject:
@@ -25764,7 +26006,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1062563326
 GameObject:
@@ -25886,7 +26130,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1065206493
 GameObject:
@@ -26340,7 +26586,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1080034960
 GameObject:
@@ -26530,7 +26778,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1088332159
 GameObject:
@@ -26993,7 +27243,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1121835148
 GameObject:
@@ -27115,7 +27367,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1123150516
 GameObject:
@@ -27237,7 +27491,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1125518826
 GameObject:
@@ -27428,7 +27684,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1001 &1130518815
 Prefab:
@@ -28046,7 +28304,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1154566590
 GameObject:
@@ -28237,7 +28497,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1161575520
 GameObject:
@@ -28571,7 +28833,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1181892107
 GameObject:
@@ -28693,7 +28957,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1186021854
 GameObject:
@@ -28815,7 +29081,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1189865001
 GameObject:
@@ -29082,7 +29350,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1205379387
 GameObject:
@@ -29411,7 +29681,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1228456391
 GameObject:
@@ -29602,7 +29874,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1234741586
 GameObject:
@@ -30492,7 +30766,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1263108529
 GameObject:
@@ -30614,7 +30890,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1268173454
 GameObject:
@@ -30874,7 +31152,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1285465597
 GameObject:
@@ -30996,7 +31276,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1298533757
 GameObject:
@@ -31391,8 +31673,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.35802338, g: 0.5661765, b: 0.41975152, a: 1}
-    m_PressedColor: {r: 0.375, g: 0.3694853, b: 0.3694853, a: 1}
+    m_HighlightedColor: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.33823532, g: 0.33823532, b: 0.33823532, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -32191,7 +32473,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1368855275
 GameObject:
@@ -32382,7 +32666,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1377591747
 GameObject:
@@ -32504,7 +32790,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1388428829
 GameObject:
@@ -32626,7 +32914,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1391598564
 GameObject:
@@ -32838,7 +33128,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1396988354
 GameObject:
@@ -32960,7 +33252,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1398768808
 GameObject:
@@ -33082,7 +33376,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1408634531
 GameObject:
@@ -33204,7 +33500,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1408772495
 GameObject:
@@ -33469,7 +33767,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1419844996
 GameObject:
@@ -33732,7 +34032,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1428487876
 GameObject:
@@ -33854,7 +34156,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1432895446
 GameObject:
@@ -34365,7 +34669,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1452573232
 GameObject:
@@ -34487,7 +34793,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1455451054
 GameObject:
@@ -35026,7 +35334,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1488823586
 GameObject:
@@ -35217,7 +35527,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1504856034
 GameObject:
@@ -35339,7 +35651,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1504933052
 GameObject:
@@ -35461,7 +35775,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1505921948
 GameObject:
@@ -35789,7 +36105,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1523795677
 GameObject:
@@ -35911,7 +36229,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1548774797
 GameObject:
@@ -36245,7 +36565,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1560774253
 GameObject:
@@ -36639,7 +36961,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1583207827
 GameObject:
@@ -36968,7 +37292,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1605395005
 GameObject:
@@ -37234,7 +37560,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1613949651
 GameObject:
@@ -37356,7 +37684,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1617812047
 GameObject:
@@ -37547,7 +37877,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1625428048
 GameObject:
@@ -37706,7 +38038,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1628422789
 GameObject:
@@ -37828,7 +38162,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1633915513
 GameObject:
@@ -37955,7 +38291,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07115984, y: -0.30088806}
+  m_Offset: {x: -0.07115984, y: -0.5515518}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -37966,7 +38302,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2148762, y: 0.6510773}
+  m_Size: {x: 1.2148762, y: 0.14974976}
   m_EdgeRadius: 0
 --- !u!114 &1633915519
 MonoBehaviour:
@@ -37983,6 +38319,7 @@ MonoBehaviour:
   extraOptions: {fileID: 19883071}
   firstMap: {fileID: 1667409534}
   hitA: {fileID: 1767237101}
+  cursor: {fileID: 318301812}
   selectedLevel: cherryBlossom
 --- !u!1 &1635960173
 GameObject:
@@ -38242,7 +38579,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1644854667
 GameObject:
@@ -38438,7 +38777,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1656130459
 GameObject:
@@ -38629,7 +38970,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1659080111
 GameObject:
@@ -38698,7 +39041,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Random
+  m_Text: sHUFFLE
 --- !u!222 &1659080114
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38825,7 +39168,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1664381685
 GameObject:
@@ -39021,8 +39366,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.35802338, g: 0.5661765, b: 0.41975152, a: 1}
-    m_PressedColor: {r: 0.375, g: 0.3694853, b: 0.3694853, a: 1}
+    m_HighlightedColor: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.33823532, g: 0.33823532, b: 0.33823532, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -39418,7 +39763,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1694950075
 GameObject:
@@ -39540,7 +39887,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1695243152
 GameObject:
@@ -39731,7 +40080,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1711793656
 GameObject:
@@ -39905,7 +40256,7 @@ MonoBehaviour:
   m_SubmitButton: EnterArrow
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
+  m_RepeatDelay: 0.1
   m_ForceModuleActive: 0
 --- !u!114 &1717697410
 MonoBehaviour:
@@ -40172,6 +40523,7 @@ RectTransform:
   - {fileID: 1312581147}
   - {fileID: 785831352}
   - {fileID: 948080406}
+  - {fileID: 318301813}
   m_Father: {fileID: 462094917}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40530,7 +40882,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1001 &1764005183
 Prefab:
@@ -40850,7 +41204,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1789305399
 GameObject:
@@ -41041,7 +41397,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1793660339
 GameObject:
@@ -41438,7 +41796,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1824479172
 GameObject:
@@ -41560,7 +41920,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1847946534
 GameObject:
@@ -41827,7 +42189,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1881673712
 GameObject:
@@ -42018,7 +42382,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1890867022
 GameObject:
@@ -42140,7 +42506,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1895906240
 GameObject:
@@ -42262,7 +42630,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1898621675
 GameObject:
@@ -42394,8 +42764,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.35802338, g: 0.5661765, b: 0.41975152, a: 1}
-    m_PressedColor: {r: 0.375, g: 0.3694853, b: 0.3694853, a: 1}
+    m_HighlightedColor: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.33823532, g: 0.33823532, b: 0.33823532, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -42579,7 +42949,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1919401015
 GameObject:
@@ -43072,7 +43444,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1945919118
 GameObject:
@@ -43332,7 +43706,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1963507276
 GameObject:
@@ -43493,7 +43869,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Random
+  m_Text: sHUFFLE
 --- !u!222 &1964935273
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43757,7 +44133,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &1990437036
 GameObject:
@@ -44147,7 +44525,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &2017022208
 GameObject:
@@ -44735,7 +45115,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &2060620092
 GameObject:
@@ -44926,7 +45308,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &2070651706
 GameObject:
@@ -45048,7 +45432,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &2076908839
 GameObject:
@@ -45170,7 +45556,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &2079399311
 GameObject:
@@ -45292,7 +45680,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &2084057453
 GameObject:
@@ -45552,7 +45942,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &2100343177
 GameObject:
@@ -45674,7 +46066,9 @@ MonoBehaviour:
   matColor: {r: 0.24705884, g: 0.46274513, b: 0.40000004, a: 1}
   ampColor: {r: 0.15938582, g: 0.32352942, b: 0.27577856, a: 1}
   maxAmplitude: 15
+  maxCircleAmplitude: 12
   dampen: 1
+  circleDampen: 1
   velocity: 0
 --- !u!1 &2107240097
 GameObject:

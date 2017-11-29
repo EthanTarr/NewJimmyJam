@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class playerSpawner : NetworkBehaviour {
+public class playerSpawner : MonoBehaviour {
 
     public static playerSpawner instance;
     public float width;
@@ -18,41 +17,37 @@ public class playerSpawner : NetworkBehaviour {
 
     //onlineManagement
     public playerController[] players;
-    [SyncVar] public int queuedPlayer;
-
-    public override void OnStartServer()
-    {
-        players = new playerController[(int)numOfPlayers];
-        if (online)
-        {
-            for (int i = 0; i < numOfPlayers; i++)
-            {
-                Vector3 pos = transform.position - Vector3.right * (width / 2 - width / (numOfPlayers - 1) * i);
-                GameObject player = Instantiate(playerPrefab, pos, transform.rotation);
-
-                player.GetComponent<playerController>().playerNum = i;
-                player.GetComponent<SpriteRenderer>().color = characterColors[i]; 
-                players[i] = player.GetComponent<playerController>();
-                NetworkServer.Spawn(player);
-            }
-        }
-    }
+    public int queuedPlayer;
 
     void Awake() { // this might throw things for a loop if its start instead of Awake. keep an eye out to see if stuff happens
         instance = this;
 
         numOfPlayers = GameManager.instance.numOfPlayers;
         players = new playerController[(int)numOfPlayers];
+        int[] randomPosition = new int[(int)numOfPlayers];
+        if (numOfPlayers > 0) {
+            for (int i = 0; i < numOfPlayers; i++) {
+                randomPosition[i] = i;
+            }
+
+            for (int i = 0; i < 5; i++) {
+                int swap1 = Random.Range(0, (int)numOfPlayers);
+                int swap2 = Random.Range(0, (int)numOfPlayers);
+                int temp = randomPosition[swap1];
+                randomPosition[swap1] = randomPosition[swap2];
+                randomPosition[swap2] = temp;
+            }
+        }
+        
         for (int i = 0; i < numOfPlayers; i++) {
-            Vector3 pos = transform.position - Vector3.right * (width / 2 - width / (numOfPlayers - 1) * i);
+            Vector3 pos = transform.position - Vector3.right * (width / 2 - width / (numOfPlayers - 1) * randomPosition[i]);
             GameObject player = Instantiate(GameManager.instance.selectedCharacters[i], pos, transform.rotation);
 
             player.GetComponent<playerController>().playerNum = i;
             //player.GetComponent<playertest>().fullColor = characterColors[i];
             player.GetComponent<SpriteRenderer>().color = characterColors[i];
 
-            if (!lobby)
-            {
+            if (!lobby) {
                 player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             }
             players[i] = player.GetComponent<playerController>();

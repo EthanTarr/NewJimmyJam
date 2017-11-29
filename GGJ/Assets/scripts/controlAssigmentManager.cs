@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class controlAssigmentManager : MonoBehaviour {
 
-    public List<string> controllers = new List<string> { "Arrow", "WASD", "Joy1", "Joy2", "Joy3", "Joy4" };
+    public List<string> controllers = new List<string> { "Arrow", "WASD", "Joy1", "Joy2", "Joy3", "Joy4",  "Switch1" , "Switch2" , "Switch3" , "Switch4" };
     string[] inputs = new string[] { "Jump", "Smash" };
     public GameObject player;
     int setControls = 0;
@@ -27,6 +27,7 @@ public class controlAssigmentManager : MonoBehaviour {
     void grabOldControllerSet() {
         foreach (string control in controllerHandler.controlOrder) {
             controllers.Remove(control);
+            setControls++;
         }
 
         if (Application.isEditor) {

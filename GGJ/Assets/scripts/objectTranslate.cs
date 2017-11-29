@@ -9,6 +9,6 @@ public class objectTranslate : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(direction * speed);
+        transform.Translate(direction * speed * Time.deltaTime);
 	}
 }

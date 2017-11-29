@@ -1,17 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class AntiPulseMove : NetworkBehaviour
+public class AntiPulseMove : MonoBehaviour
 {
 
-    [SyncVar]  public float speed = 5;
-    [SyncVar]  public float angularSpeed = 5;
-    [SyncVar]  public float Amplitude = 1;
-    [SyncVar]  public Color color = Color.white;
-    [SyncVar]  public Transform centerOfGravity;
-    [SyncVar]  private bool forward = true;
+    public float speed = 5;
+    public float angularSpeed = 5;
+    public float Amplitude = 1;
+    public Color color = Color.white;
+    public Transform centerOfGravity;
+    private bool forward = true;
     public bool isOnline;
 
     // Use this for initialization
@@ -21,6 +20,7 @@ public class AntiPulseMove : NetworkBehaviour
 
 	// Update is called once per frame
 	void Update () {
+
         if (centerOfGravity == null) {
             if (transform.position.x > -TerrainGenerator.boundary && forward) {
                 transform.Translate(new Vector3(Time.deltaTime * -speed, 0, 0));
@@ -49,6 +49,10 @@ public class AntiPulseMove : NetworkBehaviour
             }
             //this.color = Color.Lerp(color, Color.white, Time.deltaTime / 32);
         } else {
+            if (Amplitude < .1f || angularSpeed < 10) {
+                Destroy(this.gameObject);
+            }
+
             transform.RotateAround(centerOfGravity.position, new Vector3(0, 0, 1), -angularSpeed * Time.deltaTime);
         }
     }
@@ -63,12 +67,19 @@ public class AntiPulseMove : NetworkBehaviour
         else if (other.GetComponent<PulseMove>() != null) {
             if (!first) {
                 first = true;
-            } else if(Mathf.Abs(other.GetComponent<PulseMove>().Amplitude - Amplitude) <= 1.25f) {
-                print("hoi1");
+            } else if(Mathf.Abs(other.GetComponent<PulseMove>().Amplitude - Amplitude) <= 1f) {
+                //print("hoi1");
                 other.GetComponent<PulseMove>().Amplitude /= 2;
                 Amplitude /= 2;
                 other.GetComponent<PulseMove>().speed /= 1.75f;
                 speed /= 1.75f;
+                angularSpeed /= 1.5f;
+                other.GetComponent<PulseMove>().angularSpeed /= 1.5f;
+
+                if (Amplitude < .1f)
+                {
+                    Destroy(this.gameObject);
+                }
             }
         }
     }

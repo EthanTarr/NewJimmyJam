@@ -28,7 +28,7 @@ public class pause : MonoBehaviour {
         } else {
             Pause.SetActive(true);
             EventSystem.current.SetSelectedGameObject(firstButton);
-            EventSystem.current.gameObject.GetComponent<myInputModule>().submitButton = "Submit";
+            //EventSystem.current.gameObject.GetComponent<myInputModule>().submitButton = "Submit";
             Time.timeScale = 0;
         }
         audioManager.instance.Play(pauseBeep, 0.25f, 1);

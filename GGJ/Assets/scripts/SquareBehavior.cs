@@ -144,7 +144,7 @@ public class SquareBehavior : MonoBehaviour {
         }
         //TotalAmplitude = Mathf.Clamp(TotalAmplitude, -1, 1);
         
-        Vector3 vector = ((-((-transform.localPosition + new Vector3(0,0,0)).normalized)) * TotalAmplitude) /dampen;
+        Vector3 vector = ((-((-transform.position + new Vector3(0,0,0)).normalized)) * TotalAmplitude) /dampen;
 
         if (TerrainGenerator.instance != null && TerrainGenerator.instance.shape == Shape.Sphere) {
             TotalAmplitude = Mathf.Clamp(TotalAmplitude, -maxCircleAmplitude, maxCircleAmplitude);

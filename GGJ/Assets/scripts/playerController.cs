@@ -152,14 +152,12 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
     }
 
     void LateUpdate() {
-        if (onlinePlayer) {
-            if (client != null) {
-                CmdinputAudit(client.HorizInput);
-            }
-        } else {
-            float HorizInput = Input.GetAxis("Horizontal" + playerControl);
+
+        float HorizInput = Input.GetAxis("Horizontal" + playerControl);
+
+        if(Time.timeScale > 0)
             CmdinputAudit(HorizInput);
-        }
+ 
 
         if (inLobby && Input.GetButtonDown("Dropout" + playerControl)) {
             StartCoroutine(dropoutOfLobby());
@@ -170,7 +168,9 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
     public virtual void CmdinputAudit(float HorizInput) {
         checkGround();
 
-        bounceDirection = new Vector2(Mathf.Lerp(bounceDirection.x, 0, Time.deltaTime * (smashing ? 25 : 2.5f)), Mathf.Lerp(bounceDirection.y, 0, Time.deltaTime * (smashing ? 2 : 35)));
+        bounceDirection = new Vector2(Mathf.Lerp(bounceDirection.x, 0, Time.deltaTime * (smashing ? 25 : 2.25f) * (Mathf.Abs(xSpeed) > 0.5f ? 2f : 1)), 
+            Mathf.Lerp(bounceDirection.y, 0, Time.deltaTime * (smashing ? 2 : 35)));
+    
         dashDirection = Mathf.Lerp(dashDirection, 0, Time.deltaTime * dashDecel);
 
         if (!smashing && !vunrabilityFrames && playerControl != "" && rigid.bodyType == RigidbodyType2D.Dynamic) {
@@ -190,7 +190,7 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
                 Vector2 gravityDirection = (-transform.position + centerOfGravity.position).normalized;
 
                 //rigid.AddForce(gravityDirection * gravityStrength);
-                rigid.velocity -= (Vector2)transform.up * gravityStrength;
+                rigid.velocity -= (Vector2)transform.up * gravityStrength * Time.deltaTime;
 
                 Vector2 dirUp = -gravityDirection;
 
@@ -237,7 +237,7 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
                     canFastFall = true;
                     if (sqetch.animatedStretch > 0.1f) {
                         StartCoroutine(squishControl(0f, 0.01f));
-                    }
+                    }               
                 } else {
                     if (sqetch.animatedStretch < 0.5f) {
                         audioManager.instance.Play(softLanding[0], 0.05f);
@@ -259,10 +259,8 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
 
                         GameObject dashExpurosion = Instantiate(dashCancelParticle, transform.position, transform.rotation);
                         dashExpurosion.GetComponent<ParticleSystem>().startColor = spriteAnim.GetComponent<SpriteRenderer>().color;
-                        Destroy(dashExpurosion, 1.5f);
-
-                        checkGround();
-                    }
+                        Destroy(dashExpurosion, 1.5f);                        
+                   }
 
 
                     //fastFall
@@ -292,6 +290,11 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
             }
             spriteAnimationManager(horizInput, touchingGround);
         }
+    }
+
+    private void FixedUpdate() {
+        if(Time.timeScale == 1)
+            checkGround();
     }
 
     protected void spriteAnimationManager(float HorizInput, bool touchingGround) {
@@ -434,18 +437,18 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
         InvokeRepeating("SpawnTrail", 0, 0.035f);
         GetComponent<SpriteRenderer>().flipX = direction;
 
-        float dir = Input.GetAxis("Horizontal" + playerControl);
+        float dir = Input.GetAxis("Dash" + playerControl);
        // print(dir);
         if (Mathf.Abs(dir) < 0.5f)
            dir = (spriteAnim.GetComponent<SpriteRenderer>().flipX ? -1 : 1);
 
         if (Input.GetAxis("Vertical" + playerControl) <= -0.9f) {
-            dir *= 1.5f;
+            //dir *= 1.5f;
         }
 
-        dashDirection += dashSpeed * dir/ (onGround ? 1.5f : 1);
-        dashDirection *= 1.5f;
-        dashDecel = tightDash ? 7f : 5f;
+        dashDirection += dashSpeed * dir;
+        dashDirection *= 3f;
+        dashDecel = tightDash ? 10f : 5f;
 
         rigid.velocity = transform.TransformDirection(new Vector2(0, onGround ? -10 :  Mathf.Max(0, transform.InverseTransformDirection(rigid.velocity).y) / 2));
 
@@ -719,7 +722,7 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
         if (!touchingGround) {
             dir.x *= 1.25f;
         }
-        dir.x = Mathf.Min(Mathf.Abs(dir.x), 32) * Mathf.Sign(dir.x);
+        dir.x = Mathf.Min(Mathf.Abs(dir.x), 32) * Mathf.Sign(dir.x) * 1.5f;
 
         if (onTop) {
             colParticle.GetComponent<ParticleSystem>().startSize = 1.5f;
@@ -729,7 +732,7 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
             audioManager.instance.Play(softLanding[UnityEngine.Random.Range(0, softLanding.Length - 1)], 1, UnityEngine.Random.Range(0.96f, 1.03f));
         }
 
-        print(dir);
+        //print(dir);
 
         bounceDirection += dir;
     }
@@ -838,8 +841,7 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
                 yield return new WaitForEndOfFrame();
             }
         } else {
-            while (sqetch.animatedStretch >squatchAmount)
-            {
+            while (sqetch.animatedStretch >squatchAmount) {
                 sqetch.animatedStretch -= speed;
                 yield return new WaitForEndOfFrame();
             }

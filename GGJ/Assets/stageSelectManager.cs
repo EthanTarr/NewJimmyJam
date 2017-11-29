@@ -14,6 +14,8 @@ public class stageSelectManager : MonoBehaviour {
     public GameObject firstMap;
     public GameObject hitA;
 
+    public GameObject cursor;
+
     public string selectedLevel;
 
     // Use this for initialization
@@ -22,7 +24,7 @@ public class stageSelectManager : MonoBehaviour {
 	}
 
     IEnumerator turnOnInput(string controller) {
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(0.25f);
         extraOptions.SetActive(false);
         yield return new WaitForSeconds(0.25f);
         EventSystem.current.SetSelectedGameObject(firstMap);
@@ -38,7 +40,7 @@ public class stageSelectManager : MonoBehaviour {
             input.enabled = false;
             StartCoroutine(screenTransition.instance.fadeOut(selectedLevel));
         }
-        if (curPlayer != null && Input.GetAxis("Vertical" + curPlayer.playerControl) < -0.75f) {
+        if (curPlayer != null && Input.GetButtonDown("Smash" + curPlayer.playerControl)) {
             curPlayer.active = true;
             curPlayer.transform.gameObject.layer = LayerMask.NameToLayer("Player");
             curPlayer.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -52,11 +54,13 @@ public class stageSelectManager : MonoBehaviour {
         selectedLevel = level;
     }
 
-    void turnOffInput() {
+    void turnOffInput()
+    {
         extraOptions.SetActive(true);
         stageSelect.SetActive(false);
         hitA.SetActive(true);
         hitA.GetComponent<Animator>().Play("SelectAnim");
+        input.submitButton = "EnterArrow";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -69,16 +73,20 @@ public class stageSelectManager : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.GetComponent<playerController>() && curPlayer == null) {
-            if (Input.GetAxis("Vertical" + collision.gameObject.GetComponent<playerController>().playerControl) > 0)
+            if (Input.GetButton("Jump" + collision.GetComponent<playerController>().playerControl))
             {
                 curPlayer = collision.gameObject.GetComponent<playerController>();
                 curPlayer.transform.gameObject.layer = LayerMask.NameToLayer("background Objects");
                 curPlayer.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 curPlayer.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
                 curPlayer.active = false;
-                StartCoroutine( turnOnInput(curPlayer.playerControl));
+                StartCoroutine(turnOnInput(curPlayer.playerControl));
+                curPlayer.spriteAnim.SetAnimation("idle");
                 stageSelect.GetComponent<Animator>().Play("introAnim");
                 hitA.SetActive(false);
+
+                Color cursorColor = curPlayer.GetComponent<SpriteRenderer>().color;
+                cursor.GetComponent<Image>().color = cursorColor;
             } else {
                 hitA.SetActive(true);
             }

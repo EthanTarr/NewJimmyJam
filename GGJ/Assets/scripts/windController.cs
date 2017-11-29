@@ -18,5 +18,11 @@ public class windController : MonoBehaviour {
             newDir += windDirection * speed;
             collision.transform.position = newDir;
         }
+
+        if (collision.gameObject.name == "snowman") {
+            Vector3 newDir = collision.transform.position;
+            newDir += (Vector3)windDirection * speed / 3;
+            collision.transform.position = newDir;
+        }
     }
 }

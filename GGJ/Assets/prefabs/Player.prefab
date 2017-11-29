@@ -290,12 +290,14 @@ MonoBehaviour:
   minJumpHeight: 5
   gravityStrength: 0.6
   gravityDirection: {x: 0, y: -1}
+  centerOfGravity: {fileID: 0}
   minSmashSpeed: 4
   maxSmashSpeed: 100
   minSmashPower: 3
   maxSmashPower: 25
   bounceForce: 0.85
   jumped: 0
+  smashing: 0
   waveSpeed: 7
   maxChargeTime: 1.5
   dashSpeed: 30
@@ -337,6 +339,8 @@ MonoBehaviour:
   pulse: {fileID: 0}
   antiPulse: {fileID: 0}
   client: {fileID: 0}
+  inLobby: 0
+  active: 1
   downLazy: 0.56
 --- !u!114 &114614685174972176
 MonoBehaviour:
