@@ -45,6 +45,9 @@ public class PulseMove : NetworkBehaviour{
             transform.RotateAround(centerOfGravity.position, new Vector3(0, 0, 1), angularSpeed * Time.deltaTime);
         }
         setPositions();
+        Vector3 size = transform.localScale;
+        size.x = Wavelength;
+        size.y = Wavelength;
     }
 
     void setPositions() {

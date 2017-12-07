@@ -164,6 +164,7 @@ public class playerController : NetworkBehaviour, IComparable<playerController> 
         if (inLobby && Input.GetButtonDown("Dropout" + playerControl)) {
             StartCoroutine(dropoutOfLobby());
         }
+        
     }
 
     // movement for online multiplayer

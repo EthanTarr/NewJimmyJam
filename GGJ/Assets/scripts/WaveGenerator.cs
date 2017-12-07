@@ -6,7 +6,8 @@ public class WaveGenerator : NetworkBehaviour {
     public bool isOnline;
 
 	public GameObject pulse;
-	public GameObject antiPulse; 
+	public GameObject antiPulse;
+    public float wavelengthModifier = .25f;
     public static WaveGenerator instance;
 
     public Color fadeIn;
@@ -44,14 +45,14 @@ public class WaveGenerator : NetworkBehaviour {
         Pulse.GetComponent<PulseMove>().color = color;
         Pulse.GetComponent<PulseMove>().speed = velocity;
         Pulse.GetComponent<PulseMove>().centerOfGravity = centerOfGravity;
-        //Pulse.GetComponent<PulseMove>().Wavelength = .2f * amplitude;
+        Pulse.GetComponent<PulseMove>().Wavelength = wavelengthModifier * amplitude;
 
         GameObject AntiPulse = Instantiate (antiPulse, new Vector3(position.x, position.y, 0), Quaternion.identity);
 		AntiPulse.GetComponent<AntiPulseMove> ().Amplitude = amplitude;
         AntiPulse.GetComponent<AntiPulseMove>().color = color;
         AntiPulse.GetComponent<AntiPulseMove>().speed = velocity;
         AntiPulse.GetComponent<AntiPulseMove>().centerOfGravity = centerOfGravity;
-        //AntiPulse.GetComponent<AntiPulseMove>().Wavelength = .2f * amplitude;
+        AntiPulse.GetComponent<AntiPulseMove>().Wavelength = wavelengthModifier * amplitude;
     }
 
     [Command]
