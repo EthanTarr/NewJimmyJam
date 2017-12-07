@@ -64,25 +64,32 @@ public class SquareBehavior : MonoBehaviour {
         float xPos = transform.position.x;
         float xPulsePos = pulsePosition.x;
 
+        //Debug.Log("pi " + (2 * Mathf.PI));
+        //Debug.Log("magnitude " + ((initialPositon - pulsePosition).magnitude / circleLength));
+        //Debug.Log("magnitude2 " + ((initialPositon - pulsePosition).magnitude));
+        //Debug.Log("magnitude3 " + circleLength);
+        //Debug.Log("wavelength " + Wavelength);
+        //Debug.Log("both " + (2 * Mathf.PI) * ((initialPositon - pulsePosition).magnitude / circleLength));
+
         if (TerrainGenerator.instance.shape == Shape.Plane) {
             Amplitudes.Add(Amplitude * (speed / 4) * Mathf.Sin(((Mathf.PI / Wavelength) * (xPos - xPulsePos))));
         } else {
             if (pulsePosition.y > CenterOfGravity.y) {
                 if ((initialY > 0 && standardX < pulsePosition.x) || (initialY <= 0 && initialX < 0)) {
-                    Amplitudes.Add((1 / (circleDampen * radius)) * Amplitude * Mathf.Sin((Mathf.PI / circleLength) * 
-                        (initialPositon - pulsePosition).magnitude));
+                    Amplitudes.Add((1 / (circleDampen * radius)) * Amplitude * Mathf.Sin(Mathf.PI * 
+                        ((initialPositon - pulsePosition).magnitude / Wavelength)));
                 }
                 else {
-                    Amplitudes.Add(-(1 / (circleDampen * radius)) * Amplitude * Mathf.Sin((Mathf.PI / circleLength) * 
-                        (initialPositon - pulsePosition).magnitude));
+                    Amplitudes.Add(-(1 / (circleDampen * radius)) * Amplitude * Mathf.Sin(Mathf.PI *
+                        ((initialPositon - pulsePosition).magnitude / Wavelength)));
                 }
             } else {
                 if ((initialY < 0 && standardX > pulsePosition.x) || (initialY >= 0 && initialX > 0)) {
-                    Amplitudes.Add((1 / (circleDampen * radius)) * Amplitude * Mathf.Sin((Mathf.PI / circleLength) * 
-                        (initialPositon - pulsePosition).magnitude));
+                    Amplitudes.Add((1 / (circleDampen * radius)) * Amplitude * Mathf.Sin(Mathf.PI *
+                        ((initialPositon - pulsePosition).magnitude / Wavelength)));
                 } else {
-                    Amplitudes.Add(-(1 / (circleDampen * radius)) * Amplitude * Mathf.Sin((Mathf.PI / circleLength) * 
-                        (initialPositon - pulsePosition).magnitude));
+                    Amplitudes.Add(-(1 / (circleDampen * radius)) * Amplitude * Mathf.Sin(Mathf.PI *
+                        ((initialPositon - pulsePosition).magnitude / Wavelength)));
                 }
             }
         }        
