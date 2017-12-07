@@ -9,18 +9,14 @@ public class AntiPulseMove : NetworkBehaviour
     [SyncVar]  public float speed = 5;
     [SyncVar]  public float angularSpeed = 5;
     [SyncVar]  public float Amplitude = 1;
+    public float Wavelength = 2f;
     [SyncVar]  public Color color = Color.white;
     [SyncVar]  public Transform centerOfGravity;
     [SyncVar]  private bool forward = true;
     public bool isOnline;
 
-    // Use this for initialization
-    void Start () {
-
-	}
-
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
         if (centerOfGravity == null) {
             if (transform.position.x > -TerrainGenerator.boundary && forward) {
                 transform.Translate(new Vector3(Time.deltaTime * -speed, 0, 0));
@@ -51,6 +47,15 @@ public class AntiPulseMove : NetworkBehaviour
         } else {
             transform.RotateAround(centerOfGravity.position, new Vector3(0, 0, 1), -angularSpeed * Time.deltaTime);
         }
+        setPositions();
+    }
+
+    void setPositions() {
+        Collider2D[] hitSquares = Physics2D.OverlapCircleAll(transform.position, Wavelength, 1 << 8);
+        foreach (Collider2D square in hitSquares)
+        {
+            square.GetComponent<SquareBehavior>().getPosition(-Amplitude, speed, Wavelength, transform.position);
+        }
     }
 
     bool first;
@@ -64,7 +69,6 @@ public class AntiPulseMove : NetworkBehaviour
             if (!first) {
                 first = true;
             } else if(Mathf.Abs(other.GetComponent<PulseMove>().Amplitude - Amplitude) <= 1.25f) {
-                print("hoi1");
                 other.GetComponent<PulseMove>().Amplitude /= 2;
                 Amplitude /= 2;
                 other.GetComponent<PulseMove>().speed /= 1.75f;

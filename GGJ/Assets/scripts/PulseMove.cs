@@ -8,6 +8,7 @@ public class PulseMove : NetworkBehaviour{
     [SyncVar]  public float speed = 5;
     [SyncVar]  public float angularSpeed = 20;
     [SyncVar]  public float Amplitude = 1;
+    public float Wavelength = 2f;
     [SyncVar]  public Color color = Color.white;
     [SyncVar]  public Transform centerOfGravity;
     [SyncVar]  private bool forward = true;
@@ -42,6 +43,14 @@ public class PulseMove : NetworkBehaviour{
             //this.color = Color.Lerp(color, Color.white, Amplitude);
         } else if (TerrainGenerator.instance.shape == Shape.Sphere) {
             transform.RotateAround(centerOfGravity.position, new Vector3(0, 0, 1), angularSpeed * Time.deltaTime);
+        }
+        setPositions();
+    }
+
+    void setPositions() {
+        Collider2D[] hitSquares = Physics2D.OverlapCircleAll(transform.position, Wavelength, 1 << 8);
+        foreach (Collider2D square in hitSquares) {
+            square.GetComponent<SquareBehavior>().getPosition(Amplitude, speed, Wavelength, transform.position);
         }
     }
 
